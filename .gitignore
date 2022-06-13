@@ -1,2 +1,10 @@
 **.exe
 **.dll
+**.suo
+**.pdb
+**.cache
+**.p7s
+**.nupkg
+packages
+DatabaseTestWFA/bin
+DatabaseTestWFA/obj
