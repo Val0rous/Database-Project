@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="66b43a6375e44e98aa0c2a31843194e5" Name="Diagram1">
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.accessorio" Width="1.5" PointX="15" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.agenzia" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.attrazione" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.bicicletta" Width="1.5" PointX="15" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.cliente" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.dipendente" Width="1.5" PointX="12.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.gerarchia" Width="1.5" PointX="15" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.indirizzo" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.magazzino" Width="1.5" PointX="12.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.pacchetto" Width="1.5" PointX="12.75" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.percorso" Width="1.5" PointX="12.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.ristorante" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.sede" Width="1.5" PointX="10.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.sequenza" Width="1.5" PointX="15" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.servizio" Width="1.5" PointX="15" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.soggiorno" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.tappa" Width="1.5" PointX="12.75" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestionale_per_agenzie_relModel.tour" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKStoccaggioAccessorio" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKFiliale" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKIndirizzoAttrazione" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKStoccaggioBicicletta" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKRichiesta" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKLavoro" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKSottoposto" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKSuperiore" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKViaggio" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKIndirizzoMagazzino_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKIndirizzoRistorante" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKIndirizzoSede" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKIndirizzoSoggiorno" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKStoccaggioM" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKComposizioneServizio" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKOffertaPercorsi" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKPercorso" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKScelta" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKOffertaServizio" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKOffertaTour" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.FKSeq_TAP" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.acquistobiglietto" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.noleggioaccessorio" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.noleggiobicicletta" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.partecipazione" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.partnershipattrazione" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.partnershipristorante" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.partnershipsoggiorno" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.pernottamento" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.prenotazione" ManuallyRouted="false" />
+        <AssociationConnector Association="gestionale_per_agenzie_relModel.ristorazione" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

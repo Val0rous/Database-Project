@@ -1,0 +1,1982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="gestionale_per_agenzie_relModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accessorio">
+          <Key>
+            <PropertyRef Name="IDaccessorio" />
+          </Key>
+          <Property Name="Tipologia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="UltimoControllo" Type="date" Nullable="false" />
+          <Property Name="Produttore" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Taglia" Type="char" MaxLength="1" />
+          <Property Name="IDaccessorio" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IDmagazzino" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="acquistobiglietto">
+          <Key>
+            <PropertyRef Name="PIVA" />
+            <PropertyRef Name="IDtour" />
+          </Key>
+          <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="IDtour" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="agenzia">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NumTotDipendenti" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="attrazione">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="Recapito" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="NomeSocio" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="CostoServizio" Type="float" Nullable="false" />
+          <Property Name="TipoAttrazione" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="EtàMinima" Type="bigint" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bicicletta">
+          <Key>
+            <PropertyRef Name="NumTelaio" />
+          </Key>
+          <Property Name="Produttore" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NumTelaio" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Taglia" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RaggioRuota" Type="int" Nullable="false" />
+          <Property Name="Tipologia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="UltimoControllo" Type="date" Nullable="false" />
+          <Property Name="NumRapportiAnteriori" Type="int" Nullable="false" />
+          <Property Name="NumRapportiPosteriori" Type="int" Nullable="false" />
+          <Property Name="isElettrica" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="PotenzaBatteria" Type="int" />
+          <Property Name="CapacitàBatteria" Type="int" />
+          <Property Name="DurataBatteria" Type="int" />
+          <Property Name="IDmagazzino" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="CF" />
+          </Key>
+          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Cognome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CF" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="NumTelefono" Type="char" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dipendente">
+          <Key>
+            <PropertyRef Name="CF" />
+          </Key>
+          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Cognome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CF" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="Recapito" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="CodiceDipendente" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="Stipendio" Type="float" Nullable="false" />
+          <Property Name="isGuida" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="isTourManager" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="isAltro" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gerarchia">
+          <Key>
+            <PropertyRef Name="CFsottoposto" />
+          </Key>
+          <Property Name="CFsottoposto" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="CFsuperiore" Type="char" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="indirizzo">
+          <Key>
+            <PropertyRef Name="IDIndirizzo" />
+          </Key>
+          <Property Name="NumCivico" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Via" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CAP" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Paese" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="magazzino">
+          <Key>
+            <PropertyRef Name="IDmagazzino" />
+          </Key>
+          <Property Name="CapienzaMassimaAccessori" Type="bigint" Nullable="false" />
+          <Property Name="CapienzaMassimaBici" Type="bigint" Nullable="false" />
+          <Property Name="IDmagazzino" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="noleggioaccessorio">
+          <Key>
+            <PropertyRef Name="IDservizio" />
+            <PropertyRef Name="IDaccessorio" />
+          </Key>
+          <Property Name="IDservizio" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IDaccessorio" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="noleggiobicicletta">
+          <Key>
+            <PropertyRef Name="IDservizio" />
+            <PropertyRef Name="NumTelaio" />
+          </Key>
+          <Property Name="IDservizio" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="NumTelaio" Type="char" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pacchetto">
+          <Key>
+            <PropertyRef Name="IDpacchetto" />
+          </Key>
+          <Property Name="Prezzo" Type="float" Nullable="false" />
+          <Property Name="Sconto" Type="int" Nullable="false" />
+          <Property Name="IDpacchetto" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CFcliente" Type="char" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="partecipazione">
+          <Key>
+            <PropertyRef Name="IDpercorsoGuidato" />
+            <PropertyRef Name="CFguida" />
+          </Key>
+          <Property Name="IDpercorsoGuidato" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CFguida" Type="char" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="partnershipattrazione">
+          <Key>
+            <PropertyRef Name="PIVApartner" />
+            <PropertyRef Name="PIVAagenzia" />
+          </Key>
+          <Property Name="PIVApartner" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="PIVAagenzia" Type="char" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="partnershipristorante">
+          <Key>
+            <PropertyRef Name="PIVApartner" />
+            <PropertyRef Name="PIVAagenzia" />
+          </Key>
+          <Property Name="PIVApartner" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="PIVAagenzia" Type="char" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="partnershipsoggiorno">
+          <Key>
+            <PropertyRef Name="PIVApartner" />
+            <PropertyRef Name="PIVAagenzia" />
+          </Key>
+          <Property Name="PIVApartner" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="PIVAagenzia" Type="char" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="percorso">
+          <Key>
+            <PropertyRef Name="IDpercorso" />
+          </Key>
+          <Property Name="IDpercorso" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="Difficolta" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NumTappe" Type="int" Nullable="false" />
+          <Property Name="LunghezzaPercorso" Type="int" Nullable="false" />
+          <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pernottamento">
+          <Key>
+            <PropertyRef Name="PIVA" />
+            <PropertyRef Name="IDtour" />
+          </Key>
+          <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="IDtour" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prenotazione">
+          <Key>
+            <PropertyRef Name="CFcliente" />
+            <PropertyRef Name="IDtour" />
+          </Key>
+          <Property Name="CFcliente" Type="char" MaxLength="16" Nullable="false" />
+          <Property Name="IDtour" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ristorante">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="Recapito" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="NomeSocio" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="CostoServizio" Type="float" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ristorazione">
+          <Key>
+            <PropertyRef Name="PIVA" />
+            <PropertyRef Name="IDtour" />
+          </Key>
+          <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="IDtour" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sede">
+          <Key>
+            <PropertyRef Name="IDsede" />
+          </Key>
+          <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="PIVAagenzia" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sequenza">
+          <Key>
+            <PropertyRef Name="IDtappa" />
+            <PropertyRef Name="IDpercorso" />
+          </Key>
+          <Property Name="IDtappa" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="Indice" Type="int" Nullable="false" />
+          <Property Name="IDpercorso" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="servizio">
+          <Key>
+            <PropertyRef Name="IDservizio" />
+          </Key>
+          <Property Name="DataInizio" Type="date" Nullable="false" />
+          <Property Name="DataFine" Type="date" Nullable="false" />
+          <Property Name="CostoGiornaliero" Type="float" Nullable="false" />
+          <Property Name="IDservizio" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="tipoServizio" Type="enum" Nullable="false" />
+          <Property Name="IDpacchetto" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="IDpercorso" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="soggiorno">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="Recapito" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="NomeSocio" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="CostoServizio" Type="float" Nullable="false" />
+          <Property Name="TipoSoggiorno" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tappa">
+          <Key>
+            <PropertyRef Name="IDtappa" />
+          </Key>
+          <Property Name="Inizio" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Fine" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LunghezzaTappa" Type="float" Nullable="false" />
+          <Property Name="IDtappa" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tour">
+          <Key>
+            <PropertyRef Name="IDtour" />
+          </Key>
+          <Property Name="Destinazione" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DataInizio" Type="date" Nullable="false" />
+          <Property Name="DataFine" Type="date" Nullable="false" />
+          <Property Name="Prezzo" Type="float" Nullable="false" />
+          <Property Name="IDtour" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="CFtourManager" Type="char" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <Association Name="FKAccessorio">
+          <End Role="accessorio" Type="Self.accessorio" Multiplicity="1" />
+          <End Role="noleggioaccessorio" Type="Self.noleggioaccessorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accessorio">
+              <PropertyRef Name="IDaccessorio" />
+            </Principal>
+            <Dependent Role="noleggioaccessorio">
+              <PropertyRef Name="IDaccessorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAcq_ATT">
+          <End Role="attrazione" Type="Self.attrazione" Multiplicity="1" />
+          <End Role="acquistobiglietto" Type="Self.acquistobiglietto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attrazione">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="acquistobiglietto">
+              <PropertyRef Name="PIVA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAcq_TOU">
+          <End Role="tour" Type="Self.tour" Multiplicity="1" />
+          <End Role="acquistobiglietto" Type="Self.acquistobiglietto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tour">
+              <PropertyRef Name="IDtour" />
+            </Principal>
+            <Dependent Role="acquistobiglietto">
+              <PropertyRef Name="IDtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKBicicletta">
+          <End Role="bicicletta" Type="Self.bicicletta" Multiplicity="1" />
+          <End Role="noleggiobicicletta" Type="Self.noleggiobicicletta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bicicletta">
+              <PropertyRef Name="NumTelaio" />
+            </Principal>
+            <Dependent Role="noleggiobicicletta">
+              <PropertyRef Name="NumTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKComposizioneServizio">
+          <End Role="pacchetto" Type="Self.pacchetto" Multiplicity="1" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pacchetto">
+              <PropertyRef Name="IDpacchetto" />
+            </Principal>
+            <Dependent Role="servizio">
+              <PropertyRef Name="IDpacchetto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKFiliale">
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="1" />
+          <End Role="sede" Type="Self.sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agenzia">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="sede">
+              <PropertyRef Name="PIVAagenzia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoAttrazione">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="attrazione" Type="Self.attrazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="attrazione">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoMagazzino_FK">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="magazzino">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoRistorante">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="ristorante" Type="Self.ristorante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="ristorante">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoSede">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="sede" Type="Self.sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="sede">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoSoggiorno">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="soggiorno" Type="Self.soggiorno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="soggiorno">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKLavoro">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="dipendente">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKOffertaPercorsi">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="percorso" Type="Self.percorso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="percorso">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKOffertaServizio">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="servizio">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKOffertaTour">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="tour">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPar_ATT">
+          <End Role="attrazione" Type="Self.attrazione" Multiplicity="1" />
+          <End Role="partnershipattrazione" Type="Self.partnershipattrazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attrazione">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="partnershipattrazione">
+              <PropertyRef Name="PIVApartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPar_DIP">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
+          <End Role="partecipazione" Type="Self.partecipazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="partecipazione">
+              <PropertyRef Name="CFguida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPar_RIS">
+          <End Role="ristorante" Type="Self.ristorante" Multiplicity="1" />
+          <End Role="partnershipristorante" Type="Self.partnershipristorante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ristorante">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="partnershipristorante">
+              <PropertyRef Name="PIVApartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPar_SER">
+          <End Role="servizio" Type="Self.servizio" Multiplicity="1" />
+          <End Role="partecipazione" Type="Self.partecipazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="servizio">
+              <PropertyRef Name="IDservizio" />
+            </Principal>
+            <Dependent Role="partecipazione">
+              <PropertyRef Name="IDpercorsoGuidato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPar_SOG">
+          <End Role="soggiorno" Type="Self.soggiorno" Multiplicity="1" />
+          <End Role="partnershipsoggiorno" Type="Self.partnershipsoggiorno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="soggiorno">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="partnershipsoggiorno">
+              <PropertyRef Name="PIVApartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPartAttrazioneAgenzia">
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="1" />
+          <End Role="partnershipattrazione" Type="Self.partnershipattrazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agenzia">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="partnershipattrazione">
+              <PropertyRef Name="PIVAagenzia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPartRistoranteAgenzia">
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="1" />
+          <End Role="partnershipristorante" Type="Self.partnershipristorante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agenzia">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="partnershipristorante">
+              <PropertyRef Name="PIVAagenzia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPartSoggiornoAgenzia">
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="1" />
+          <End Role="partnershipsoggiorno" Type="Self.partnershipsoggiorno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agenzia">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="partnershipsoggiorno">
+              <PropertyRef Name="PIVAagenzia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPer_SOG">
+          <End Role="soggiorno" Type="Self.soggiorno" Multiplicity="1" />
+          <End Role="pernottamento" Type="Self.pernottamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="soggiorno">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="pernottamento">
+              <PropertyRef Name="PIVA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPer_TOU">
+          <End Role="tour" Type="Self.tour" Multiplicity="1" />
+          <End Role="pernottamento" Type="Self.pernottamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tour">
+              <PropertyRef Name="IDtour" />
+            </Principal>
+            <Dependent Role="pernottamento">
+              <PropertyRef Name="IDtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPercorso">
+          <End Role="percorso" Type="Self.percorso" Multiplicity="1" />
+          <End Role="sequenza" Type="Self.sequenza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="percorso">
+              <PropertyRef Name="IDpercorso" />
+            </Principal>
+            <Dependent Role="sequenza">
+              <PropertyRef Name="IDpercorso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPre_CLI">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
+          <End Role="prenotazione" Type="Self.prenotazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="prenotazione">
+              <PropertyRef Name="CFcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPre_TOU">
+          <End Role="tour" Type="Self.tour" Multiplicity="1" />
+          <End Role="prenotazione" Type="Self.prenotazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tour">
+              <PropertyRef Name="IDtour" />
+            </Principal>
+            <Dependent Role="prenotazione">
+              <PropertyRef Name="IDtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRichiesta">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
+          <End Role="pacchetto" Type="Self.pacchetto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="pacchetto">
+              <PropertyRef Name="CFcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRis_RIS">
+          <End Role="ristorante" Type="Self.ristorante" Multiplicity="1" />
+          <End Role="ristorazione" Type="Self.ristorazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ristorante">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="ristorazione">
+              <PropertyRef Name="PIVA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRis_TOU">
+          <End Role="tour" Type="Self.tour" Multiplicity="1" />
+          <End Role="ristorazione" Type="Self.ristorazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tour">
+              <PropertyRef Name="IDtour" />
+            </Principal>
+            <Dependent Role="ristorazione">
+              <PropertyRef Name="IDtour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKScelta">
+          <End Role="percorso" Type="Self.percorso" Multiplicity="0..1" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="percorso">
+              <PropertyRef Name="IDpercorso" />
+            </Principal>
+            <Dependent Role="servizio">
+              <PropertyRef Name="IDpercorso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSeq_TAP">
+          <End Role="tappa" Type="Self.tappa" Multiplicity="1" />
+          <End Role="sequenza" Type="Self.sequenza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tappa">
+              <PropertyRef Name="IDtappa" />
+            </Principal>
+            <Dependent Role="sequenza">
+              <PropertyRef Name="IDtappa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKServizioAccessorio">
+          <End Role="servizio" Type="Self.servizio" Multiplicity="1" />
+          <End Role="noleggioaccessorio" Type="Self.noleggioaccessorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="servizio">
+              <PropertyRef Name="IDservizio" />
+            </Principal>
+            <Dependent Role="noleggioaccessorio">
+              <PropertyRef Name="IDservizio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKServizioBicicletta">
+          <End Role="servizio" Type="Self.servizio" Multiplicity="1" />
+          <End Role="noleggiobicicletta" Type="Self.noleggiobicicletta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="servizio">
+              <PropertyRef Name="IDservizio" />
+            </Principal>
+            <Dependent Role="noleggiobicicletta">
+              <PropertyRef Name="IDservizio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSottoposto">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
+          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="gerarchia">
+              <PropertyRef Name="CFsottoposto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKStoccaggioAccessorio">
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="1" />
+          <End Role="accessorio" Type="Self.accessorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="magazzino">
+              <PropertyRef Name="IDmagazzino" />
+            </Principal>
+            <Dependent Role="accessorio">
+              <PropertyRef Name="IDmagazzino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKStoccaggioBicicletta">
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="1" />
+          <End Role="bicicletta" Type="Self.bicicletta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="magazzino">
+              <PropertyRef Name="IDmagazzino" />
+            </Principal>
+            <Dependent Role="bicicletta">
+              <PropertyRef Name="IDmagazzino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKStoccaggioM">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="magazzino">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSuperiore">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="0..1" />
+          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="gerarchia">
+              <PropertyRef Name="CFsuperiore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKViaggio">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="tour">
+              <PropertyRef Name="CFtourManager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="gestionale_per_agenzie_relModelStoreContainer">
+          <EntitySet Name="accessorio" EntityType="Self.accessorio" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="acquistobiglietto" EntityType="Self.acquistobiglietto" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="agenzia" EntityType="Self.agenzia" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="attrazione" EntityType="Self.attrazione" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="bicicletta" EntityType="Self.bicicletta" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="dipendente" EntityType="Self.dipendente" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="gerarchia" EntityType="Self.gerarchia" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="indirizzo" EntityType="Self.indirizzo" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="magazzino" EntityType="Self.magazzino" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="noleggioaccessorio" EntityType="Self.noleggioaccessorio" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="noleggiobicicletta" EntityType="Self.noleggiobicicletta" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="pacchetto" EntityType="Self.pacchetto" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="partecipazione" EntityType="Self.partecipazione" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="partnershipattrazione" EntityType="Self.partnershipattrazione" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="partnershipristorante" EntityType="Self.partnershipristorante" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="partnershipsoggiorno" EntityType="Self.partnershipsoggiorno" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="percorso" EntityType="Self.percorso" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="pernottamento" EntityType="Self.pernottamento" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="prenotazione" EntityType="Self.prenotazione" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="ristorante" EntityType="Self.ristorante" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="ristorazione" EntityType="Self.ristorazione" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="sede" EntityType="Self.sede" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="sequenza" EntityType="Self.sequenza" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="servizio" EntityType="Self.servizio" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="soggiorno" EntityType="Self.soggiorno" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="tappa" EntityType="Self.tappa" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <EntitySet Name="tour" EntityType="Self.tour" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
+          <AssociationSet Name="FKAccessorio" Association="Self.FKAccessorio">
+            <End Role="accessorio" EntitySet="accessorio" />
+            <End Role="noleggioaccessorio" EntitySet="noleggioaccessorio" />
+          </AssociationSet>
+          <AssociationSet Name="FKAcq_ATT" Association="Self.FKAcq_ATT">
+            <End Role="attrazione" EntitySet="attrazione" />
+            <End Role="acquistobiglietto" EntitySet="acquistobiglietto" />
+          </AssociationSet>
+          <AssociationSet Name="FKAcq_TOU" Association="Self.FKAcq_TOU">
+            <End Role="tour" EntitySet="tour" />
+            <End Role="acquistobiglietto" EntitySet="acquistobiglietto" />
+          </AssociationSet>
+          <AssociationSet Name="FKBicicletta" Association="Self.FKBicicletta">
+            <End Role="bicicletta" EntitySet="bicicletta" />
+            <End Role="noleggiobicicletta" EntitySet="noleggiobicicletta" />
+          </AssociationSet>
+          <AssociationSet Name="FKComposizioneServizio" Association="Self.FKComposizioneServizio">
+            <End Role="pacchetto" EntitySet="pacchetto" />
+            <End Role="servizio" EntitySet="servizio" />
+          </AssociationSet>
+          <AssociationSet Name="FKFiliale" Association="Self.FKFiliale">
+            <End Role="agenzia" EntitySet="agenzia" />
+            <End Role="sede" EntitySet="sede" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoAttrazione" Association="Self.FKIndirizzoAttrazione">
+            <End Role="indirizzo" EntitySet="indirizzo" />
+            <End Role="attrazione" EntitySet="attrazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoMagazzino_FK" Association="Self.FKIndirizzoMagazzino_FK">
+            <End Role="indirizzo" EntitySet="indirizzo" />
+            <End Role="magazzino" EntitySet="magazzino" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoRistorante" Association="Self.FKIndirizzoRistorante">
+            <End Role="indirizzo" EntitySet="indirizzo" />
+            <End Role="ristorante" EntitySet="ristorante" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoSede" Association="Self.FKIndirizzoSede">
+            <End Role="indirizzo" EntitySet="indirizzo" />
+            <End Role="sede" EntitySet="sede" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoSoggiorno" Association="Self.FKIndirizzoSoggiorno">
+            <End Role="indirizzo" EntitySet="indirizzo" />
+            <End Role="soggiorno" EntitySet="soggiorno" />
+          </AssociationSet>
+          <AssociationSet Name="FKLavoro" Association="Self.FKLavoro">
+            <End Role="sede" EntitySet="sede" />
+            <End Role="dipendente" EntitySet="dipendente" />
+          </AssociationSet>
+          <AssociationSet Name="FKOffertaPercorsi" Association="Self.FKOffertaPercorsi">
+            <End Role="sede" EntitySet="sede" />
+            <End Role="percorso" EntitySet="percorso" />
+          </AssociationSet>
+          <AssociationSet Name="FKOffertaServizio" Association="Self.FKOffertaServizio">
+            <End Role="sede" EntitySet="sede" />
+            <End Role="servizio" EntitySet="servizio" />
+          </AssociationSet>
+          <AssociationSet Name="FKOffertaTour" Association="Self.FKOffertaTour">
+            <End Role="sede" EntitySet="sede" />
+            <End Role="tour" EntitySet="tour" />
+          </AssociationSet>
+          <AssociationSet Name="FKPar_ATT" Association="Self.FKPar_ATT">
+            <End Role="attrazione" EntitySet="attrazione" />
+            <End Role="partnershipattrazione" EntitySet="partnershipattrazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKPar_DIP" Association="Self.FKPar_DIP">
+            <End Role="dipendente" EntitySet="dipendente" />
+            <End Role="partecipazione" EntitySet="partecipazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKPar_RIS" Association="Self.FKPar_RIS">
+            <End Role="ristorante" EntitySet="ristorante" />
+            <End Role="partnershipristorante" EntitySet="partnershipristorante" />
+          </AssociationSet>
+          <AssociationSet Name="FKPar_SER" Association="Self.FKPar_SER">
+            <End Role="servizio" EntitySet="servizio" />
+            <End Role="partecipazione" EntitySet="partecipazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKPar_SOG" Association="Self.FKPar_SOG">
+            <End Role="soggiorno" EntitySet="soggiorno" />
+            <End Role="partnershipsoggiorno" EntitySet="partnershipsoggiorno" />
+          </AssociationSet>
+          <AssociationSet Name="FKPartAttrazioneAgenzia" Association="Self.FKPartAttrazioneAgenzia">
+            <End Role="agenzia" EntitySet="agenzia" />
+            <End Role="partnershipattrazione" EntitySet="partnershipattrazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKPartRistoranteAgenzia" Association="Self.FKPartRistoranteAgenzia">
+            <End Role="agenzia" EntitySet="agenzia" />
+            <End Role="partnershipristorante" EntitySet="partnershipristorante" />
+          </AssociationSet>
+          <AssociationSet Name="FKPartSoggiornoAgenzia" Association="Self.FKPartSoggiornoAgenzia">
+            <End Role="agenzia" EntitySet="agenzia" />
+            <End Role="partnershipsoggiorno" EntitySet="partnershipsoggiorno" />
+          </AssociationSet>
+          <AssociationSet Name="FKPer_SOG" Association="Self.FKPer_SOG">
+            <End Role="soggiorno" EntitySet="soggiorno" />
+            <End Role="pernottamento" EntitySet="pernottamento" />
+          </AssociationSet>
+          <AssociationSet Name="FKPer_TOU" Association="Self.FKPer_TOU">
+            <End Role="tour" EntitySet="tour" />
+            <End Role="pernottamento" EntitySet="pernottamento" />
+          </AssociationSet>
+          <AssociationSet Name="FKPercorso" Association="Self.FKPercorso">
+            <End Role="percorso" EntitySet="percorso" />
+            <End Role="sequenza" EntitySet="sequenza" />
+          </AssociationSet>
+          <AssociationSet Name="FKPre_CLI" Association="Self.FKPre_CLI">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="prenotazione" EntitySet="prenotazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKPre_TOU" Association="Self.FKPre_TOU">
+            <End Role="tour" EntitySet="tour" />
+            <End Role="prenotazione" EntitySet="prenotazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKRichiesta" Association="Self.FKRichiesta">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="pacchetto" EntitySet="pacchetto" />
+          </AssociationSet>
+          <AssociationSet Name="FKRis_RIS" Association="Self.FKRis_RIS">
+            <End Role="ristorante" EntitySet="ristorante" />
+            <End Role="ristorazione" EntitySet="ristorazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKRis_TOU" Association="Self.FKRis_TOU">
+            <End Role="tour" EntitySet="tour" />
+            <End Role="ristorazione" EntitySet="ristorazione" />
+          </AssociationSet>
+          <AssociationSet Name="FKScelta" Association="Self.FKScelta">
+            <End Role="percorso" EntitySet="percorso" />
+            <End Role="servizio" EntitySet="servizio" />
+          </AssociationSet>
+          <AssociationSet Name="FKSeq_TAP" Association="Self.FKSeq_TAP">
+            <End Role="tappa" EntitySet="tappa" />
+            <End Role="sequenza" EntitySet="sequenza" />
+          </AssociationSet>
+          <AssociationSet Name="FKServizioAccessorio" Association="Self.FKServizioAccessorio">
+            <End Role="servizio" EntitySet="servizio" />
+            <End Role="noleggioaccessorio" EntitySet="noleggioaccessorio" />
+          </AssociationSet>
+          <AssociationSet Name="FKServizioBicicletta" Association="Self.FKServizioBicicletta">
+            <End Role="servizio" EntitySet="servizio" />
+            <End Role="noleggiobicicletta" EntitySet="noleggiobicicletta" />
+          </AssociationSet>
+          <AssociationSet Name="FKSottoposto" Association="Self.FKSottoposto">
+            <End Role="dipendente" EntitySet="dipendente" />
+            <End Role="gerarchia" EntitySet="gerarchia" />
+          </AssociationSet>
+          <AssociationSet Name="FKStoccaggioAccessorio" Association="Self.FKStoccaggioAccessorio">
+            <End Role="magazzino" EntitySet="magazzino" />
+            <End Role="accessorio" EntitySet="accessorio" />
+          </AssociationSet>
+          <AssociationSet Name="FKStoccaggioBicicletta" Association="Self.FKStoccaggioBicicletta">
+            <End Role="magazzino" EntitySet="magazzino" />
+            <End Role="bicicletta" EntitySet="bicicletta" />
+          </AssociationSet>
+          <AssociationSet Name="FKStoccaggioM" Association="Self.FKStoccaggioM">
+            <End Role="sede" EntitySet="sede" />
+            <End Role="magazzino" EntitySet="magazzino" />
+          </AssociationSet>
+          <AssociationSet Name="FKSuperiore" Association="Self.FKSuperiore">
+            <End Role="dipendente" EntitySet="dipendente" />
+            <End Role="gerarchia" EntitySet="gerarchia" />
+          </AssociationSet>
+          <AssociationSet Name="FKViaggio" Association="Self.FKViaggio">
+            <End Role="dipendente" EntitySet="dipendente" />
+            <End Role="tour" EntitySet="tour" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gestionale_per_agenzie_relModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="accessorio">
+          <Key>
+            <PropertyRef Name="IDaccessorio" />
+          </Key>
+          <Property Name="Tipologia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UltimoControllo" Type="DateTime" Nullable="false" />
+          <Property Name="Produttore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Taglia" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IDaccessorio" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDmagazzino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="magazzino" Relationship="Self.FKStoccaggioAccessorio" FromRole="accessorio" ToRole="magazzino" />
+          <NavigationProperty Name="servizios" Relationship="Self.noleggioaccessorio" FromRole="accessorio" ToRole="servizio" />
+        </EntityType>
+        <EntityType Name="agenzia">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumTotDipendenti" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="sedes" Relationship="Self.FKFiliale" FromRole="agenzia" ToRole="sede" />
+          <NavigationProperty Name="attraziones" Relationship="Self.partnershipattrazione" FromRole="agenzia" ToRole="attrazione" />
+          <NavigationProperty Name="ristorantes" Relationship="Self.partnershipristorante" FromRole="agenzia" ToRole="ristorante" />
+          <NavigationProperty Name="soggiornoes" Relationship="Self.partnershipsoggiorno" FromRole="agenzia" ToRole="soggiorno" />
+        </EntityType>
+        <EntityType Name="attrazione">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="Recapito" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeSocio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CostoServizio" Type="Single" Nullable="false" />
+          <Property Name="TipoAttrazione" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EtàMinima" Type="Int64" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="indirizzo" Relationship="Self.FKIndirizzoAttrazione" FromRole="attrazione" ToRole="indirizzo" />
+          <NavigationProperty Name="tours" Relationship="Self.acquistobiglietto" FromRole="attrazione" ToRole="tour" />
+          <NavigationProperty Name="agenzias" Relationship="Self.partnershipattrazione" FromRole="attrazione" ToRole="agenzia" />
+        </EntityType>
+        <EntityType Name="bicicletta">
+          <Key>
+            <PropertyRef Name="NumTelaio" />
+          </Key>
+          <Property Name="Produttore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumTelaio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Taglia" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RaggioRuota" Type="Int32" Nullable="false" />
+          <Property Name="Tipologia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UltimoControllo" Type="DateTime" Nullable="false" />
+          <Property Name="NumRapportiAnteriori" Type="Int32" Nullable="false" />
+          <Property Name="NumRapportiPosteriori" Type="Int32" Nullable="false" />
+          <Property Name="isElettrica" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PotenzaBatteria" Type="Int32" />
+          <Property Name="CapacitàBatteria" Type="Int32" />
+          <Property Name="DurataBatteria" Type="Int32" />
+          <Property Name="IDmagazzino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="magazzino" Relationship="Self.FKStoccaggioBicicletta" FromRole="bicicletta" ToRole="magazzino" />
+          <NavigationProperty Name="servizios" Relationship="Self.noleggiobicicletta" FromRole="bicicletta" ToRole="servizio" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="CF" />
+          </Key>
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cognome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CF" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumTelefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="pacchettoes" Relationship="Self.FKRichiesta" FromRole="cliente" ToRole="pacchetto" />
+          <NavigationProperty Name="tours" Relationship="Self.prenotazione" FromRole="cliente" ToRole="tour" />
+        </EntityType>
+        <EntityType Name="dipendente">
+          <Key>
+            <PropertyRef Name="CF" />
+          </Key>
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cognome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CF" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Recapito" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodiceDipendente" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Stipendio" Type="Single" Nullable="false" />
+          <Property Name="isGuida" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isTourManager" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isAltro" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="sede" Relationship="Self.FKLavoro" FromRole="dipendente" ToRole="sede" />
+          <NavigationProperty Name="gerarchia" Relationship="Self.FKSottoposto" FromRole="dipendente" ToRole="gerarchia" />
+          <NavigationProperty Name="gerarchias" Relationship="Self.FKSuperiore" FromRole="dipendente" ToRole="gerarchia" />
+          <NavigationProperty Name="tours" Relationship="Self.FKViaggio" FromRole="dipendente" ToRole="tour" />
+          <NavigationProperty Name="servizios" Relationship="Self.partecipazione" FromRole="dipendente" ToRole="servizio" />
+        </EntityType>
+        <EntityType Name="gerarchia">
+          <Key>
+            <PropertyRef Name="CFsottoposto" />
+          </Key>
+          <Property Name="CFsottoposto" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CFsuperiore" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dipendente" Relationship="Self.FKSottoposto" FromRole="gerarchia" ToRole="dipendente" />
+          <NavigationProperty Name="dipendente1" Relationship="Self.FKSuperiore" FromRole="gerarchia" ToRole="dipendente" />
+        </EntityType>
+        <EntityType Name="indirizzo">
+          <Key>
+            <PropertyRef Name="IDIndirizzo" />
+          </Key>
+          <Property Name="NumCivico" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Via" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CAP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Paese" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="attraziones" Relationship="Self.FKIndirizzoAttrazione" FromRole="indirizzo" ToRole="attrazione" />
+          <NavigationProperty Name="magazzinoes" Relationship="Self.FKIndirizzoMagazzino_FK" FromRole="indirizzo" ToRole="magazzino" />
+          <NavigationProperty Name="ristorantes" Relationship="Self.FKIndirizzoRistorante" FromRole="indirizzo" ToRole="ristorante" />
+          <NavigationProperty Name="sedes" Relationship="Self.FKIndirizzoSede" FromRole="indirizzo" ToRole="sede" />
+          <NavigationProperty Name="soggiornoes" Relationship="Self.FKIndirizzoSoggiorno" FromRole="indirizzo" ToRole="soggiorno" />
+        </EntityType>
+        <EntityType Name="magazzino">
+          <Key>
+            <PropertyRef Name="IDmagazzino" />
+          </Key>
+          <Property Name="CapienzaMassimaAccessori" Type="Int64" Nullable="false" />
+          <Property Name="CapienzaMassimaBici" Type="Int64" Nullable="false" />
+          <Property Name="IDmagazzino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="accessorios" Relationship="Self.FKStoccaggioAccessorio" FromRole="magazzino" ToRole="accessorio" />
+          <NavigationProperty Name="biciclettas" Relationship="Self.FKStoccaggioBicicletta" FromRole="magazzino" ToRole="bicicletta" />
+          <NavigationProperty Name="indirizzo" Relationship="Self.FKIndirizzoMagazzino_FK" FromRole="magazzino" ToRole="indirizzo" />
+          <NavigationProperty Name="sede" Relationship="Self.FKStoccaggioM" FromRole="magazzino" ToRole="sede" />
+        </EntityType>
+        <EntityType Name="pacchetto">
+          <Key>
+            <PropertyRef Name="IDpacchetto" />
+          </Key>
+          <Property Name="Prezzo" Type="Single" Nullable="false" />
+          <Property Name="Sconto" Type="Int32" Nullable="false" />
+          <Property Name="IDpacchetto" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CFcliente" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.FKRichiesta" FromRole="pacchetto" ToRole="cliente" />
+          <NavigationProperty Name="servizios" Relationship="Self.FKComposizioneServizio" FromRole="pacchetto" ToRole="servizio" />
+        </EntityType>
+        <EntityType Name="percorso">
+          <Key>
+            <PropertyRef Name="IDpercorso" />
+          </Key>
+          <Property Name="IDpercorso" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Difficolta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumTappe" Type="Int32" Nullable="false" />
+          <Property Name="LunghezzaPercorso" Type="Int32" Nullable="false" />
+          <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="sede" Relationship="Self.FKOffertaPercorsi" FromRole="percorso" ToRole="sede" />
+          <NavigationProperty Name="sequenzas" Relationship="Self.FKPercorso" FromRole="percorso" ToRole="sequenza" />
+          <NavigationProperty Name="servizios" Relationship="Self.FKScelta" FromRole="percorso" ToRole="servizio" />
+        </EntityType>
+        <EntityType Name="ristorante">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="Recapito" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeSocio" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CostoServizio" Type="Single" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="indirizzo" Relationship="Self.FKIndirizzoRistorante" FromRole="ristorante" ToRole="indirizzo" />
+          <NavigationProperty Name="agenzias" Relationship="Self.partnershipristorante" FromRole="ristorante" ToRole="agenzia" />
+          <NavigationProperty Name="tours" Relationship="Self.ristorazione" FromRole="ristorante" ToRole="tour" />
+        </EntityType>
+        <EntityType Name="sede">
+          <Key>
+            <PropertyRef Name="IDsede" />
+          </Key>
+          <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PIVAagenzia" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="agenzia" Relationship="Self.FKFiliale" FromRole="sede" ToRole="agenzia" />
+          <NavigationProperty Name="dipendentes" Relationship="Self.FKLavoro" FromRole="sede" ToRole="dipendente" />
+          <NavigationProperty Name="indirizzo" Relationship="Self.FKIndirizzoSede" FromRole="sede" ToRole="indirizzo" />
+          <NavigationProperty Name="magazzinoes" Relationship="Self.FKStoccaggioM" FromRole="sede" ToRole="magazzino" />
+          <NavigationProperty Name="percorsoes" Relationship="Self.FKOffertaPercorsi" FromRole="sede" ToRole="percorso" />
+          <NavigationProperty Name="servizios" Relationship="Self.FKOffertaServizio" FromRole="sede" ToRole="servizio" />
+          <NavigationProperty Name="tours" Relationship="Self.FKOffertaTour" FromRole="sede" ToRole="tour" />
+        </EntityType>
+        <EntityType Name="sequenza">
+          <Key>
+            <PropertyRef Name="IDtappa" />
+            <PropertyRef Name="IDpercorso" />
+          </Key>
+          <Property Name="IDtappa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Indice" Type="Int32" Nullable="false" />
+          <Property Name="IDpercorso" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="percorso" Relationship="Self.FKPercorso" FromRole="sequenza" ToRole="percorso" />
+          <NavigationProperty Name="tappa" Relationship="Self.FKSeq_TAP" FromRole="sequenza" ToRole="tappa" />
+        </EntityType>
+        <EntityType Name="servizio">
+          <Key>
+            <PropertyRef Name="IDservizio" />
+          </Key>
+          <Property Name="DataInizio" Type="DateTime" Nullable="false" />
+          <Property Name="DataFine" Type="DateTime" Nullable="false" />
+          <Property Name="CostoGiornaliero" Type="Single" Nullable="false" />
+          <Property Name="IDservizio" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoServizio" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDpacchetto" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDpercorso" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="pacchetto" Relationship="Self.FKComposizioneServizio" FromRole="servizio" ToRole="pacchetto" />
+          <NavigationProperty Name="percorso" Relationship="Self.FKScelta" FromRole="servizio" ToRole="percorso" />
+          <NavigationProperty Name="sede" Relationship="Self.FKOffertaServizio" FromRole="servizio" ToRole="sede" />
+          <NavigationProperty Name="accessorios" Relationship="Self.noleggioaccessorio" FromRole="servizio" ToRole="accessorio" />
+          <NavigationProperty Name="biciclettas" Relationship="Self.noleggiobicicletta" FromRole="servizio" ToRole="bicicletta" />
+          <NavigationProperty Name="dipendentes" Relationship="Self.partecipazione" FromRole="servizio" ToRole="dipendente" />
+        </EntityType>
+        <EntityType Name="soggiorno">
+          <Key>
+            <PropertyRef Name="PIVA" />
+          </Key>
+          <Property Name="Recapito" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeSocio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CostoServizio" Type="Single" Nullable="false" />
+          <Property Name="TipoSoggiorno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="indirizzo" Relationship="Self.FKIndirizzoSoggiorno" FromRole="soggiorno" ToRole="indirizzo" />
+          <NavigationProperty Name="agenzias" Relationship="Self.partnershipsoggiorno" FromRole="soggiorno" ToRole="agenzia" />
+          <NavigationProperty Name="tours" Relationship="Self.pernottamento" FromRole="soggiorno" ToRole="tour" />
+        </EntityType>
+        <EntityType Name="tappa">
+          <Key>
+            <PropertyRef Name="IDtappa" />
+          </Key>
+          <Property Name="Inizio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fine" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LunghezzaTappa" Type="Single" Nullable="false" />
+          <Property Name="IDtappa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="sequenzas" Relationship="Self.FKSeq_TAP" FromRole="tappa" ToRole="sequenza" />
+        </EntityType>
+        <EntityType Name="tour">
+          <Key>
+            <PropertyRef Name="IDtour" />
+          </Key>
+          <Property Name="Destinazione" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataInizio" Type="DateTime" Nullable="false" />
+          <Property Name="DataFine" Type="DateTime" Nullable="false" />
+          <Property Name="Prezzo" Type="Single" Nullable="false" />
+          <Property Name="IDtour" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CFtourManager" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="dipendente" Relationship="Self.FKViaggio" FromRole="tour" ToRole="dipendente" />
+          <NavigationProperty Name="sede" Relationship="Self.FKOffertaTour" FromRole="tour" ToRole="sede" />
+          <NavigationProperty Name="attraziones" Relationship="Self.acquistobiglietto" FromRole="tour" ToRole="attrazione" />
+          <NavigationProperty Name="soggiornoes" Relationship="Self.pernottamento" FromRole="tour" ToRole="soggiorno" />
+          <NavigationProperty Name="clientes" Relationship="Self.prenotazione" FromRole="tour" ToRole="cliente" />
+          <NavigationProperty Name="ristorantes" Relationship="Self.ristorazione" FromRole="tour" ToRole="ristorante" />
+        </EntityType>
+        <Association Name="FKStoccaggioAccessorio">
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="1" />
+          <End Role="accessorio" Type="Self.accessorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="magazzino">
+              <PropertyRef Name="IDmagazzino" />
+            </Principal>
+            <Dependent Role="accessorio">
+              <PropertyRef Name="IDmagazzino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKFiliale">
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="1" />
+          <End Role="sede" Type="Self.sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agenzia">
+              <PropertyRef Name="PIVA" />
+            </Principal>
+            <Dependent Role="sede">
+              <PropertyRef Name="PIVAagenzia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoAttrazione">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="attrazione" Type="Self.attrazione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="attrazione">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKStoccaggioBicicletta">
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="1" />
+          <End Role="bicicletta" Type="Self.bicicletta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="magazzino">
+              <PropertyRef Name="IDmagazzino" />
+            </Principal>
+            <Dependent Role="bicicletta">
+              <PropertyRef Name="IDmagazzino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKRichiesta">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
+          <End Role="pacchetto" Type="Self.pacchetto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="pacchetto">
+              <PropertyRef Name="CFcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKLavoro">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="dipendente">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSottoposto">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
+          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="gerarchia">
+              <PropertyRef Name="CFsottoposto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSuperiore">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="0..1" />
+          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="gerarchia">
+              <PropertyRef Name="CFsuperiore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKViaggio">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="tour">
+              <PropertyRef Name="CFtourManager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoMagazzino_FK">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="magazzino">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoRistorante">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="ristorante" Type="Self.ristorante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="ristorante">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoSede">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="sede" Type="Self.sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="sede">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIndirizzoSoggiorno">
+          <End Role="indirizzo" Type="Self.indirizzo" Multiplicity="1" />
+          <End Role="soggiorno" Type="Self.soggiorno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="indirizzo">
+              <PropertyRef Name="IDIndirizzo" />
+            </Principal>
+            <Dependent Role="soggiorno">
+              <PropertyRef Name="IDIndirizzo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKStoccaggioM">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="magazzino" Type="Self.magazzino" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="magazzino">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKComposizioneServizio">
+          <End Role="pacchetto" Type="Self.pacchetto" Multiplicity="1" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pacchetto">
+              <PropertyRef Name="IDpacchetto" />
+            </Principal>
+            <Dependent Role="servizio">
+              <PropertyRef Name="IDpacchetto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKOffertaPercorsi">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="percorso" Type="Self.percorso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="percorso">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPercorso">
+          <End Role="percorso" Type="Self.percorso" Multiplicity="1" />
+          <End Role="sequenza" Type="Self.sequenza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="percorso">
+              <PropertyRef Name="IDpercorso" />
+            </Principal>
+            <Dependent Role="sequenza">
+              <PropertyRef Name="IDpercorso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKScelta">
+          <End Role="percorso" Type="Self.percorso" Multiplicity="0..1" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="percorso">
+              <PropertyRef Name="IDpercorso" />
+            </Principal>
+            <Dependent Role="servizio">
+              <PropertyRef Name="IDpercorso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKOffertaServizio">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="servizio">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKOffertaTour">
+          <End Role="sede" Type="Self.sede" Multiplicity="1" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sede">
+              <PropertyRef Name="IDsede" />
+            </Principal>
+            <Dependent Role="tour">
+              <PropertyRef Name="IDsede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSeq_TAP">
+          <End Role="tappa" Type="Self.tappa" Multiplicity="1" />
+          <End Role="sequenza" Type="Self.sequenza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tappa">
+              <PropertyRef Name="IDtappa" />
+            </Principal>
+            <Dependent Role="sequenza">
+              <PropertyRef Name="IDtappa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="acquistobiglietto">
+          <End Role="attrazione" Type="Self.attrazione" Multiplicity="*" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+        </Association>
+        <Association Name="noleggioaccessorio">
+          <End Role="accessorio" Type="Self.accessorio" Multiplicity="*" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+        </Association>
+        <Association Name="noleggiobicicletta">
+          <End Role="bicicletta" Type="Self.bicicletta" Multiplicity="*" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+        </Association>
+        <Association Name="partecipazione">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="*" />
+          <End Role="servizio" Type="Self.servizio" Multiplicity="*" />
+        </Association>
+        <Association Name="partnershipattrazione">
+          <End Role="attrazione" Type="Self.attrazione" Multiplicity="*" />
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="*" />
+        </Association>
+        <Association Name="partnershipristorante">
+          <End Role="ristorante" Type="Self.ristorante" Multiplicity="*" />
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="*" />
+        </Association>
+        <Association Name="partnershipsoggiorno">
+          <End Role="soggiorno" Type="Self.soggiorno" Multiplicity="*" />
+          <End Role="agenzia" Type="Self.agenzia" Multiplicity="*" />
+        </Association>
+        <Association Name="pernottamento">
+          <End Role="soggiorno" Type="Self.soggiorno" Multiplicity="*" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+        </Association>
+        <Association Name="prenotazione">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+        </Association>
+        <Association Name="ristorazione">
+          <End Role="ristorante" Type="Self.ristorante" Multiplicity="*" />
+          <End Role="tour" Type="Self.tour" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="gestionale_per_agenzie_relEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accessorios" EntityType="Self.accessorio" />
+          <EntitySet Name="agenzias" EntityType="Self.agenzia" />
+          <EntitySet Name="attraziones" EntityType="Self.attrazione" />
+          <EntitySet Name="biciclettas" EntityType="Self.bicicletta" />
+          <EntitySet Name="clientes" EntityType="Self.cliente" />
+          <EntitySet Name="dipendentes" EntityType="Self.dipendente" />
+          <EntitySet Name="gerarchias" EntityType="Self.gerarchia" />
+          <EntitySet Name="indirizzoes" EntityType="Self.indirizzo" />
+          <EntitySet Name="magazzinoes" EntityType="Self.magazzino" />
+          <EntitySet Name="pacchettoes" EntityType="Self.pacchetto" />
+          <EntitySet Name="percorsoes" EntityType="Self.percorso" />
+          <EntitySet Name="ristorantes" EntityType="Self.ristorante" />
+          <EntitySet Name="sedes" EntityType="Self.sede" />
+          <EntitySet Name="sequenzas" EntityType="Self.sequenza" />
+          <EntitySet Name="servizios" EntityType="Self.servizio" />
+          <EntitySet Name="soggiornoes" EntityType="Self.soggiorno" />
+          <EntitySet Name="tappas" EntityType="Self.tappa" />
+          <EntitySet Name="tours" EntityType="Self.tour" />
+          <AssociationSet Name="FKStoccaggioAccessorio" Association="Self.FKStoccaggioAccessorio">
+            <End Role="magazzino" EntitySet="magazzinoes" />
+            <End Role="accessorio" EntitySet="accessorios" />
+          </AssociationSet>
+          <AssociationSet Name="FKFiliale" Association="Self.FKFiliale">
+            <End Role="agenzia" EntitySet="agenzias" />
+            <End Role="sede" EntitySet="sedes" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoAttrazione" Association="Self.FKIndirizzoAttrazione">
+            <End Role="indirizzo" EntitySet="indirizzoes" />
+            <End Role="attrazione" EntitySet="attraziones" />
+          </AssociationSet>
+          <AssociationSet Name="FKStoccaggioBicicletta" Association="Self.FKStoccaggioBicicletta">
+            <End Role="magazzino" EntitySet="magazzinoes" />
+            <End Role="bicicletta" EntitySet="biciclettas" />
+          </AssociationSet>
+          <AssociationSet Name="FKRichiesta" Association="Self.FKRichiesta">
+            <End Role="cliente" EntitySet="clientes" />
+            <End Role="pacchetto" EntitySet="pacchettoes" />
+          </AssociationSet>
+          <AssociationSet Name="FKLavoro" Association="Self.FKLavoro">
+            <End Role="sede" EntitySet="sedes" />
+            <End Role="dipendente" EntitySet="dipendentes" />
+          </AssociationSet>
+          <AssociationSet Name="FKSottoposto" Association="Self.FKSottoposto">
+            <End Role="dipendente" EntitySet="dipendentes" />
+            <End Role="gerarchia" EntitySet="gerarchias" />
+          </AssociationSet>
+          <AssociationSet Name="FKSuperiore" Association="Self.FKSuperiore">
+            <End Role="dipendente" EntitySet="dipendentes" />
+            <End Role="gerarchia" EntitySet="gerarchias" />
+          </AssociationSet>
+          <AssociationSet Name="FKViaggio" Association="Self.FKViaggio">
+            <End Role="dipendente" EntitySet="dipendentes" />
+            <End Role="tour" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoMagazzino_FK" Association="Self.FKIndirizzoMagazzino_FK">
+            <End Role="indirizzo" EntitySet="indirizzoes" />
+            <End Role="magazzino" EntitySet="magazzinoes" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoRistorante" Association="Self.FKIndirizzoRistorante">
+            <End Role="indirizzo" EntitySet="indirizzoes" />
+            <End Role="ristorante" EntitySet="ristorantes" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoSede" Association="Self.FKIndirizzoSede">
+            <End Role="indirizzo" EntitySet="indirizzoes" />
+            <End Role="sede" EntitySet="sedes" />
+          </AssociationSet>
+          <AssociationSet Name="FKIndirizzoSoggiorno" Association="Self.FKIndirizzoSoggiorno">
+            <End Role="indirizzo" EntitySet="indirizzoes" />
+            <End Role="soggiorno" EntitySet="soggiornoes" />
+          </AssociationSet>
+          <AssociationSet Name="FKStoccaggioM" Association="Self.FKStoccaggioM">
+            <End Role="sede" EntitySet="sedes" />
+            <End Role="magazzino" EntitySet="magazzinoes" />
+          </AssociationSet>
+          <AssociationSet Name="FKComposizioneServizio" Association="Self.FKComposizioneServizio">
+            <End Role="pacchetto" EntitySet="pacchettoes" />
+            <End Role="servizio" EntitySet="servizios" />
+          </AssociationSet>
+          <AssociationSet Name="FKOffertaPercorsi" Association="Self.FKOffertaPercorsi">
+            <End Role="sede" EntitySet="sedes" />
+            <End Role="percorso" EntitySet="percorsoes" />
+          </AssociationSet>
+          <AssociationSet Name="FKPercorso" Association="Self.FKPercorso">
+            <End Role="percorso" EntitySet="percorsoes" />
+            <End Role="sequenza" EntitySet="sequenzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKScelta" Association="Self.FKScelta">
+            <End Role="percorso" EntitySet="percorsoes" />
+            <End Role="servizio" EntitySet="servizios" />
+          </AssociationSet>
+          <AssociationSet Name="FKOffertaServizio" Association="Self.FKOffertaServizio">
+            <End Role="sede" EntitySet="sedes" />
+            <End Role="servizio" EntitySet="servizios" />
+          </AssociationSet>
+          <AssociationSet Name="FKOffertaTour" Association="Self.FKOffertaTour">
+            <End Role="sede" EntitySet="sedes" />
+            <End Role="tour" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="FKSeq_TAP" Association="Self.FKSeq_TAP">
+            <End Role="tappa" EntitySet="tappas" />
+            <End Role="sequenza" EntitySet="sequenzas" />
+          </AssociationSet>
+          <AssociationSet Name="acquistobiglietto" Association="Self.acquistobiglietto">
+            <End Role="attrazione" EntitySet="attraziones" />
+            <End Role="tour" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="noleggioaccessorio" Association="Self.noleggioaccessorio">
+            <End Role="accessorio" EntitySet="accessorios" />
+            <End Role="servizio" EntitySet="servizios" />
+          </AssociationSet>
+          <AssociationSet Name="noleggiobicicletta" Association="Self.noleggiobicicletta">
+            <End Role="bicicletta" EntitySet="biciclettas" />
+            <End Role="servizio" EntitySet="servizios" />
+          </AssociationSet>
+          <AssociationSet Name="partecipazione" Association="Self.partecipazione">
+            <End Role="dipendente" EntitySet="dipendentes" />
+            <End Role="servizio" EntitySet="servizios" />
+          </AssociationSet>
+          <AssociationSet Name="partnershipattrazione" Association="Self.partnershipattrazione">
+            <End Role="attrazione" EntitySet="attraziones" />
+            <End Role="agenzia" EntitySet="agenzias" />
+          </AssociationSet>
+          <AssociationSet Name="partnershipristorante" Association="Self.partnershipristorante">
+            <End Role="ristorante" EntitySet="ristorantes" />
+            <End Role="agenzia" EntitySet="agenzias" />
+          </AssociationSet>
+          <AssociationSet Name="partnershipsoggiorno" Association="Self.partnershipsoggiorno">
+            <End Role="soggiorno" EntitySet="soggiornoes" />
+            <End Role="agenzia" EntitySet="agenzias" />
+          </AssociationSet>
+          <AssociationSet Name="pernottamento" Association="Self.pernottamento">
+            <End Role="soggiorno" EntitySet="soggiornoes" />
+            <End Role="tour" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="prenotazione" Association="Self.prenotazione">
+            <End Role="cliente" EntitySet="clientes" />
+            <End Role="tour" EntitySet="tours" />
+          </AssociationSet>
+          <AssociationSet Name="ristorazione" Association="Self.ristorazione">
+            <End Role="ristorante" EntitySet="ristorantes" />
+            <End Role="tour" EntitySet="tours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gestionale_per_agenzie_relModelStoreContainer" CdmEntityContainer="gestionale_per_agenzie_relEntities1">
+          <EntitySetMapping Name="accessorios">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.accessorio">
+              <MappingFragment StoreEntitySet="accessorio">
+                <ScalarProperty Name="Tipologia" ColumnName="Tipologia" />
+                <ScalarProperty Name="UltimoControllo" ColumnName="UltimoControllo" />
+                <ScalarProperty Name="Produttore" ColumnName="Produttore" />
+                <ScalarProperty Name="Taglia" ColumnName="Taglia" />
+                <ScalarProperty Name="IDaccessorio" ColumnName="IDaccessorio" />
+                <ScalarProperty Name="IDmagazzino" ColumnName="IDmagazzino" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="agenzias">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.agenzia">
+              <MappingFragment StoreEntitySet="agenzia">
+                <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="NumTotDipendenti" ColumnName="NumTotDipendenti" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="attraziones">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.attrazione">
+              <MappingFragment StoreEntitySet="attrazione">
+                <ScalarProperty Name="Recapito" ColumnName="Recapito" />
+                <ScalarProperty Name="NomeSocio" ColumnName="NomeSocio" />
+                <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+                <ScalarProperty Name="CostoServizio" ColumnName="CostoServizio" />
+                <ScalarProperty Name="TipoAttrazione" ColumnName="TipoAttrazione" />
+                <ScalarProperty Name="EtàMinima" ColumnName="EtàMinima" />
+                <ScalarProperty Name="IDIndirizzo" ColumnName="IDIndirizzo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="biciclettas">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.bicicletta">
+              <MappingFragment StoreEntitySet="bicicletta">
+                <ScalarProperty Name="Produttore" ColumnName="Produttore" />
+                <ScalarProperty Name="NumTelaio" ColumnName="NumTelaio" />
+                <ScalarProperty Name="Taglia" ColumnName="Taglia" />
+                <ScalarProperty Name="RaggioRuota" ColumnName="RaggioRuota" />
+                <ScalarProperty Name="Tipologia" ColumnName="Tipologia" />
+                <ScalarProperty Name="UltimoControllo" ColumnName="UltimoControllo" />
+                <ScalarProperty Name="NumRapportiAnteriori" ColumnName="NumRapportiAnteriori" />
+                <ScalarProperty Name="NumRapportiPosteriori" ColumnName="NumRapportiPosteriori" />
+                <ScalarProperty Name="isElettrica" ColumnName="isElettrica" />
+                <ScalarProperty Name="PotenzaBatteria" ColumnName="PotenzaBatteria" />
+                <ScalarProperty Name="CapacitàBatteria" ColumnName="CapacitàBatteria" />
+                <ScalarProperty Name="DurataBatteria" ColumnName="DurataBatteria" />
+                <ScalarProperty Name="IDmagazzino" ColumnName="IDmagazzino" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="CF" ColumnName="CF" />
+                <ScalarProperty Name="NumTelefono" ColumnName="NumTelefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dipendentes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.dipendente">
+              <MappingFragment StoreEntitySet="dipendente">
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="CF" ColumnName="CF" />
+                <ScalarProperty Name="Recapito" ColumnName="Recapito" />
+                <ScalarProperty Name="CodiceDipendente" ColumnName="CodiceDipendente" />
+                <ScalarProperty Name="Stipendio" ColumnName="Stipendio" />
+                <ScalarProperty Name="isGuida" ColumnName="isGuida" />
+                <ScalarProperty Name="isTourManager" ColumnName="isTourManager" />
+                <ScalarProperty Name="isAltro" ColumnName="isAltro" />
+                <ScalarProperty Name="IDsede" ColumnName="IDsede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gerarchias">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.gerarchia">
+              <MappingFragment StoreEntitySet="gerarchia">
+                <ScalarProperty Name="CFsottoposto" ColumnName="CFsottoposto" />
+                <ScalarProperty Name="CFsuperiore" ColumnName="CFsuperiore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="indirizzoes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.indirizzo">
+              <MappingFragment StoreEntitySet="indirizzo">
+                <ScalarProperty Name="NumCivico" ColumnName="NumCivico" />
+                <ScalarProperty Name="Via" ColumnName="Via" />
+                <ScalarProperty Name="CAP" ColumnName="CAP" />
+                <ScalarProperty Name="Paese" ColumnName="Paese" />
+                <ScalarProperty Name="IDIndirizzo" ColumnName="IDIndirizzo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="magazzinoes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.magazzino">
+              <MappingFragment StoreEntitySet="magazzino">
+                <ScalarProperty Name="CapienzaMassimaAccessori" ColumnName="CapienzaMassimaAccessori" />
+                <ScalarProperty Name="CapienzaMassimaBici" ColumnName="CapienzaMassimaBici" />
+                <ScalarProperty Name="IDmagazzino" ColumnName="IDmagazzino" />
+                <ScalarProperty Name="IDIndirizzo" ColumnName="IDIndirizzo" />
+                <ScalarProperty Name="IDsede" ColumnName="IDsede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pacchettoes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.pacchetto">
+              <MappingFragment StoreEntitySet="pacchetto">
+                <ScalarProperty Name="Prezzo" ColumnName="Prezzo" />
+                <ScalarProperty Name="Sconto" ColumnName="Sconto" />
+                <ScalarProperty Name="IDpacchetto" ColumnName="IDpacchetto" />
+                <ScalarProperty Name="CFcliente" ColumnName="CFcliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="percorsoes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.percorso">
+              <MappingFragment StoreEntitySet="percorso">
+                <ScalarProperty Name="IDpercorso" ColumnName="IDpercorso" />
+                <ScalarProperty Name="Difficolta" ColumnName="Difficolta" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="NumTappe" ColumnName="NumTappe" />
+                <ScalarProperty Name="LunghezzaPercorso" ColumnName="LunghezzaPercorso" />
+                <ScalarProperty Name="IDsede" ColumnName="IDsede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ristorantes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.ristorante">
+              <MappingFragment StoreEntitySet="ristorante">
+                <ScalarProperty Name="Recapito" ColumnName="Recapito" />
+                <ScalarProperty Name="NomeSocio" ColumnName="NomeSocio" />
+                <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+                <ScalarProperty Name="CostoServizio" ColumnName="CostoServizio" />
+                <ScalarProperty Name="IDIndirizzo" ColumnName="IDIndirizzo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sedes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.sede">
+              <MappingFragment StoreEntitySet="sede">
+                <ScalarProperty Name="IDsede" ColumnName="IDsede" />
+                <ScalarProperty Name="PIVAagenzia" ColumnName="PIVAagenzia" />
+                <ScalarProperty Name="IDIndirizzo" ColumnName="IDIndirizzo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sequenzas">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.sequenza">
+              <MappingFragment StoreEntitySet="sequenza">
+                <ScalarProperty Name="IDtappa" ColumnName="IDtappa" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="IDpercorso" ColumnName="IDpercorso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="servizios">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.servizio">
+              <MappingFragment StoreEntitySet="servizio">
+                <ScalarProperty Name="DataInizio" ColumnName="DataInizio" />
+                <ScalarProperty Name="DataFine" ColumnName="DataFine" />
+                <ScalarProperty Name="CostoGiornaliero" ColumnName="CostoGiornaliero" />
+                <ScalarProperty Name="IDservizio" ColumnName="IDservizio" />
+                <ScalarProperty Name="tipoServizio" ColumnName="tipoServizio" />
+                <ScalarProperty Name="IDpacchetto" ColumnName="IDpacchetto" />
+                <ScalarProperty Name="IDsede" ColumnName="IDsede" />
+                <ScalarProperty Name="IDpercorso" ColumnName="IDpercorso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="soggiornoes">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.soggiorno">
+              <MappingFragment StoreEntitySet="soggiorno">
+                <ScalarProperty Name="Recapito" ColumnName="Recapito" />
+                <ScalarProperty Name="NomeSocio" ColumnName="NomeSocio" />
+                <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+                <ScalarProperty Name="CostoServizio" ColumnName="CostoServizio" />
+                <ScalarProperty Name="TipoSoggiorno" ColumnName="TipoSoggiorno" />
+                <ScalarProperty Name="IDIndirizzo" ColumnName="IDIndirizzo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tappas">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.tappa">
+              <MappingFragment StoreEntitySet="tappa">
+                <ScalarProperty Name="Inizio" ColumnName="Inizio" />
+                <ScalarProperty Name="Fine" ColumnName="Fine" />
+                <ScalarProperty Name="LunghezzaTappa" ColumnName="LunghezzaTappa" />
+                <ScalarProperty Name="IDtappa" ColumnName="IDtappa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tours">
+            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.tour">
+              <MappingFragment StoreEntitySet="tour">
+                <ScalarProperty Name="Destinazione" ColumnName="Destinazione" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="DataInizio" ColumnName="DataInizio" />
+                <ScalarProperty Name="DataFine" ColumnName="DataFine" />
+                <ScalarProperty Name="Prezzo" ColumnName="Prezzo" />
+                <ScalarProperty Name="IDtour" ColumnName="IDtour" />
+                <ScalarProperty Name="IDsede" ColumnName="IDsede" />
+                <ScalarProperty Name="CFtourManager" ColumnName="CFtourManager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="acquistobiglietto" TypeName="gestionale_per_agenzie_relModel.acquistobiglietto" StoreEntitySet="acquistobiglietto">
+            <EndProperty Name="attrazione">
+              <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+            </EndProperty>
+            <EndProperty Name="tour">
+              <ScalarProperty Name="IDtour" ColumnName="IDtour" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="noleggioaccessorio" TypeName="gestionale_per_agenzie_relModel.noleggioaccessorio" StoreEntitySet="noleggioaccessorio">
+            <EndProperty Name="accessorio">
+              <ScalarProperty Name="IDaccessorio" ColumnName="IDaccessorio" />
+            </EndProperty>
+            <EndProperty Name="servizio">
+              <ScalarProperty Name="IDservizio" ColumnName="IDservizio" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="noleggiobicicletta" TypeName="gestionale_per_agenzie_relModel.noleggiobicicletta" StoreEntitySet="noleggiobicicletta">
+            <EndProperty Name="bicicletta">
+              <ScalarProperty Name="NumTelaio" ColumnName="NumTelaio" />
+            </EndProperty>
+            <EndProperty Name="servizio">
+              <ScalarProperty Name="IDservizio" ColumnName="IDservizio" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="partecipazione" TypeName="gestionale_per_agenzie_relModel.partecipazione" StoreEntitySet="partecipazione">
+            <EndProperty Name="dipendente">
+              <ScalarProperty Name="CF" ColumnName="CFguida" />
+            </EndProperty>
+            <EndProperty Name="servizio">
+              <ScalarProperty Name="IDservizio" ColumnName="IDpercorsoGuidato" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="partnershipattrazione" TypeName="gestionale_per_agenzie_relModel.partnershipattrazione" StoreEntitySet="partnershipattrazione">
+            <EndProperty Name="attrazione">
+              <ScalarProperty Name="PIVA" ColumnName="PIVApartner" />
+            </EndProperty>
+            <EndProperty Name="agenzia">
+              <ScalarProperty Name="PIVA" ColumnName="PIVAagenzia" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="partnershipristorante" TypeName="gestionale_per_agenzie_relModel.partnershipristorante" StoreEntitySet="partnershipristorante">
+            <EndProperty Name="ristorante">
+              <ScalarProperty Name="PIVA" ColumnName="PIVApartner" />
+            </EndProperty>
+            <EndProperty Name="agenzia">
+              <ScalarProperty Name="PIVA" ColumnName="PIVAagenzia" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="partnershipsoggiorno" TypeName="gestionale_per_agenzie_relModel.partnershipsoggiorno" StoreEntitySet="partnershipsoggiorno">
+            <EndProperty Name="soggiorno">
+              <ScalarProperty Name="PIVA" ColumnName="PIVApartner" />
+            </EndProperty>
+            <EndProperty Name="agenzia">
+              <ScalarProperty Name="PIVA" ColumnName="PIVAagenzia" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="pernottamento" TypeName="gestionale_per_agenzie_relModel.pernottamento" StoreEntitySet="pernottamento">
+            <EndProperty Name="soggiorno">
+              <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+            </EndProperty>
+            <EndProperty Name="tour">
+              <ScalarProperty Name="IDtour" ColumnName="IDtour" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="prenotazione" TypeName="gestionale_per_agenzie_relModel.prenotazione" StoreEntitySet="prenotazione">
+            <EndProperty Name="cliente">
+              <ScalarProperty Name="CF" ColumnName="CFcliente" />
+            </EndProperty>
+            <EndProperty Name="tour">
+              <ScalarProperty Name="IDtour" ColumnName="IDtour" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ristorazione" TypeName="gestionale_per_agenzie_relModel.ristorazione" StoreEntitySet="ristorazione">
+            <EndProperty Name="ristorante">
+              <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+            </EndProperty>
+            <EndProperty Name="tour">
+              <ScalarProperty Name="IDtour" ColumnName="IDtour" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
