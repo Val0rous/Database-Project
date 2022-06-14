@@ -30,15 +30,21 @@ namespace DatabaseTestWFA
         private void InitializeComponent()
         {
             this.TabPage = new System.Windows.Forms.TabControl();
+            this.Clienti = new System.Windows.Forms.TabPage();
             this.Prenotazioni = new System.Windows.Forms.TabPage();
             this.Magazzino = new System.Windows.Forms.TabPage();
-            this.Clienti = new System.Windows.Forms.TabPage();
             this.Agenzie = new System.Windows.Forms.TabPage();
             this.Sedi = new System.Windows.Forms.TabPage();
             this.Percorsi = new System.Windows.Forms.TabPage();
             this.Business_Partners = new System.Windows.Forms.TabPage();
             this.Dipendenti = new System.Windows.Forms.TabPage();
+            this.Nome = new System.Windows.Forms.TextBox();
+            this.Cognome = new System.Windows.Forms.TextBox();
+            this.CodiceFiscale = new System.Windows.Forms.TextBox();
+            this.Telefono = new System.Windows.Forms.TextBox();
+            this.AggiungiCliente = new System.Windows.Forms.Button();
             this.TabPage.SuspendLayout();
+            this.Clienti.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabPage
@@ -59,6 +65,21 @@ namespace DatabaseTestWFA
             this.TabPage.TabIndex = 4;
             this.TabPage.Tag = "";
             // 
+            // Clienti
+            // 
+            this.Clienti.Controls.Add(this.AggiungiCliente);
+            this.Clienti.Controls.Add(this.Telefono);
+            this.Clienti.Controls.Add(this.CodiceFiscale);
+            this.Clienti.Controls.Add(this.Cognome);
+            this.Clienti.Controls.Add(this.Nome);
+            this.Clienti.Location = new System.Drawing.Point(4, 25);
+            this.Clienti.Name = "Clienti";
+            this.Clienti.Padding = new System.Windows.Forms.Padding(3);
+            this.Clienti.Size = new System.Drawing.Size(951, 538);
+            this.Clienti.TabIndex = 0;
+            this.Clienti.Text = "Clienti";
+            this.Clienti.UseVisualStyleBackColor = true;
+            // 
             // Prenotazioni
             // 
             this.Prenotazioni.Location = new System.Drawing.Point(4, 25);
@@ -78,16 +99,6 @@ namespace DatabaseTestWFA
             this.Magazzino.TabIndex = 2;
             this.Magazzino.Text = "Magazzino";
             this.Magazzino.UseVisualStyleBackColor = true;
-            // 
-            // Clienti
-            // 
-            this.Clienti.Location = new System.Drawing.Point(4, 25);
-            this.Clienti.Name = "Clienti";
-            this.Clienti.Padding = new System.Windows.Forms.Padding(3);
-            this.Clienti.Size = new System.Drawing.Size(951, 538);
-            this.Clienti.TabIndex = 0;
-            this.Clienti.Text = "Clienti";
-            this.Clienti.UseVisualStyleBackColor = true;
             // 
             // Agenzie
             // 
@@ -139,6 +150,51 @@ namespace DatabaseTestWFA
             this.Dipendenti.Text = "Dipendenti";
             this.Dipendenti.UseVisualStyleBackColor = true;
             // 
+            // Nome
+            // 
+            this.Nome.Location = new System.Drawing.Point(19, 38);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(165, 22);
+            this.Nome.TabIndex = 0;
+            this.Nome.Text = "Nome";
+            // 
+            // Cognome
+            // 
+            this.Cognome.Location = new System.Drawing.Point(19, 66);
+            this.Cognome.Name = "Cognome";
+            this.Cognome.Size = new System.Drawing.Size(165, 22);
+            this.Cognome.TabIndex = 1;
+            this.Cognome.Text = "Cognome";
+            this.Cognome.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // CodiceFiscale
+            // 
+            this.CodiceFiscale.Location = new System.Drawing.Point(19, 94);
+            this.CodiceFiscale.Name = "CodiceFiscale";
+            this.CodiceFiscale.Size = new System.Drawing.Size(165, 22);
+            this.CodiceFiscale.TabIndex = 2;
+            this.CodiceFiscale.Text = "Codice Fiscale";
+            this.CodiceFiscale.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            // 
+            // Telefono
+            // 
+            this.Telefono.Location = new System.Drawing.Point(19, 123);
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Size = new System.Drawing.Size(165, 22);
+            this.Telefono.TabIndex = 3;
+            this.Telefono.Text = "Numero di Telefono";
+            this.Telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
+            // 
+            // AggiungiCliente
+            // 
+            this.AggiungiCliente.Location = new System.Drawing.Point(19, 151);
+            this.AggiungiCliente.Name = "AggiungiCliente";
+            this.AggiungiCliente.Size = new System.Drawing.Size(165, 23);
+            this.AggiungiCliente.TabIndex = 4;
+            this.AggiungiCliente.Text = "Aggiungi Cliente";
+            this.AggiungiCliente.UseVisualStyleBackColor = true;
+            this.AggiungiCliente.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -149,6 +205,8 @@ namespace DatabaseTestWFA
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.TabPage.ResumeLayout(false);
+            this.Clienti.ResumeLayout(false);
+            this.Clienti.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -164,6 +222,11 @@ namespace DatabaseTestWFA
         private System.Windows.Forms.TabPage Percorsi;
         private System.Windows.Forms.TabPage Business_Partners;
         private System.Windows.Forms.TabPage Dipendenti;
+        private System.Windows.Forms.TextBox Cognome;
+        private System.Windows.Forms.TextBox Nome;
+        private System.Windows.Forms.TextBox CodiceFiscale;
+        private System.Windows.Forms.TextBox Telefono;
+        private System.Windows.Forms.Button AggiungiCliente;
     }
 }
 
