@@ -16,5 +16,10 @@ namespace DatabaseProject
         {
             InitializeComponent();
         }
+
+        private void SelezioneSede_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

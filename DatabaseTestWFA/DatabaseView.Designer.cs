@@ -215,6 +215,7 @@ namespace DatabaseProject
             this.ClientSize = new System.Drawing.Size(983, 591);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TabPage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DatabaseView";
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.Form1_Load);

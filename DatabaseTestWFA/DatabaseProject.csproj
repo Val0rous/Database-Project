@@ -202,6 +202,9 @@
     <EmbeddedResource Include="DatabaseView.resx">
       <DependentUpon>DatabaseView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelezioneSede.resx">
       <DependentUpon>SelezioneSede.cs</DependentUpon>
     </EmbeddedResource>

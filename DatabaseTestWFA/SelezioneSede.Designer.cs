@@ -29,15 +29,18 @@ namespace DatabaseProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelezioneSede));
             this.SuspendLayout();
             // 
-            // SedeSelection
+            // SelezioneSede
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "SedeSelection";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "SelezioneSede";
             this.Text = "Agenzia di Cicloturismo";
+            this.Load += new System.EventHandler(this.SelezioneSede_Load);
             this.ResumeLayout(false);
 
         }
