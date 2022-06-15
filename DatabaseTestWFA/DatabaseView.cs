@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DatabaseTestWFA
 {
-    public partial class Form1 : Form
+    public partial class DatabaseView : Form
     {
-        public Form1()
+        public DatabaseView()
         {
             InitializeComponent();
         }

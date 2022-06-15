@@ -1,7 +1,7 @@
 ﻿
 namespace DatabaseTestWFA
 {
-    partial class Form1
+    partial class DatabaseView
     {
         /// <summary>
         /// Required designer variable.

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DatabaseTestWFA
 {
-    public partial class Form2 : Form
+    public partial class UserAdminChoice : Form
     {
-        public Form2()
+        public UserAdminChoice()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace DatabaseTestWFA
         private void userLaunch(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f = new Form1();
+            DatabaseView f = new DatabaseView();
             f.Show();
         }
 

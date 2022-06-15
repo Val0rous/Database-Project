@@ -1,7 +1,7 @@
 ﻿
 namespace DatabaseTestWFA
 {
-    partial class Form2
+    partial class UserAdminChoice
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace DatabaseTestWFA
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAdminChoice));
             this.admin = new System.Windows.Forms.Button();
             this.utente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
