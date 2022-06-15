@@ -47,7 +47,7 @@ namespace DatabaseTestWFA
             this.admin.TabIndex = 0;
             this.admin.Text = "Admin";
             this.admin.UseVisualStyleBackColor = true;
-            this.admin.Click += new System.EventHandler(this.button1_Click);
+            this.admin.Click += new System.EventHandler(this.adminLaunch);
             // 
             // utente
             // 

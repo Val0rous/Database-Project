@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DatabaseTestWFA
 {
     public partial class Form2 : Form
@@ -15,11 +16,6 @@ namespace DatabaseTestWFA
         public Form2()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,6 +28,12 @@ namespace DatabaseTestWFA
             this.Hide();
             Form1 f = new Form1();
             f.Show();
+        }
+
+        private void adminLaunch(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            l.Show();
         }
     }
 }
