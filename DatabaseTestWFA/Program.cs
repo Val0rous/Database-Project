@@ -38,8 +38,8 @@ namespace DatabaseTestWFA
             command.Parameters.AddWithValue("@IDmagazzino", "011");
 
 
-            string script = File.ReadAllText(@"C:\Users\fv260\source\repos\DatabaseTestWFA\insert_accessorio.sql");
-            command.CommandText = script;
+            //string script = File.ReadAllText(@"C:\Users\fv260\source\repos\DatabaseTestWFA\insert_accessorio.sql");
+            //command.CommandText = script;
             //command.CommandText = "INSERT INTO accessorio (Tipologia, UltimoControllo, Produttore, Taglia, IDaccessorio, IDmagazzino) VALUES (@Tipologia, @UltimoControllo, @Produttore, @Taglia, @IDaccessorio, @IDmagazzino)";
             /*if (command.ExecuteNonQuery() > 0)
             {
@@ -53,7 +53,7 @@ namespace DatabaseTestWFA
             connection.Close();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form2());
         }
     }
 }
