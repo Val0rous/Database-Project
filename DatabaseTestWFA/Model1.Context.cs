@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseTestWFA
+namespace DatabaseProject
 {
     using System;
     using System.Data.Entity;

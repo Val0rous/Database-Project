@@ -1,5 +1,5 @@
 ﻿
-namespace DatabaseTestWFA
+namespace DatabaseProject
 {
     partial class UserAdminChoice
     {
@@ -41,6 +41,7 @@ namespace DatabaseTestWFA
             // 
             // admin
             // 
+            this.admin.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.admin.Location = new System.Drawing.Point(211, 303);
             this.admin.Name = "admin";
             this.admin.Size = new System.Drawing.Size(113, 48);
@@ -51,6 +52,7 @@ namespace DatabaseTestWFA
             // 
             // utente
             // 
+            this.utente.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.utente.Location = new System.Drawing.Point(491, 303);
             this.utente.Name = "utente";
             this.utente.Size = new System.Drawing.Size(113, 48);
@@ -90,7 +92,7 @@ namespace DatabaseTestWFA
             this.label1.Text = "Chi sta accedendo al database?";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form2
+            // UserAdminChoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,7 +103,7 @@ namespace DatabaseTestWFA
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.admin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "UserAdminChoice";
             this.Text = "Agenzia di Cicloturismo";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

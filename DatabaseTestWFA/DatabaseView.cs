@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DatabaseTestWFA
+namespace DatabaseProject
 {
     public partial class DatabaseView : Form
     {
@@ -55,6 +55,23 @@ namespace DatabaseTestWFA
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void launchUserAdminChoice(object sender, EventArgs e)
+        {
+            this.Hide();
+            UserAdminChoice u = new UserAdminChoice();
+            u.Show();
         }
     }
 }

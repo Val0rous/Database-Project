@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace DatabaseTestWFA
+namespace DatabaseProject
 {
     public partial class UserAdminChoice : Form
     {

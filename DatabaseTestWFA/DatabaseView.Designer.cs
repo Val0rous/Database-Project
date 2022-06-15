@@ -1,5 +1,5 @@
 ﻿
-namespace DatabaseTestWFA
+namespace DatabaseProject
 {
     partial class DatabaseView
     {
@@ -29,8 +29,14 @@ namespace DatabaseTestWFA
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseView));
             this.TabPage = new System.Windows.Forms.TabControl();
             this.Clienti = new System.Windows.Forms.TabPage();
+            this.AggiungiCliente = new System.Windows.Forms.Button();
+            this.Telefono = new System.Windows.Forms.TextBox();
+            this.CodiceFiscale = new System.Windows.Forms.TextBox();
+            this.Cognome = new System.Windows.Forms.TextBox();
+            this.Nome = new System.Windows.Forms.TextBox();
             this.Prenotazioni = new System.Windows.Forms.TabPage();
             this.Magazzino = new System.Windows.Forms.TabPage();
             this.Agenzie = new System.Windows.Forms.TabPage();
@@ -38,11 +44,7 @@ namespace DatabaseTestWFA
             this.Percorsi = new System.Windows.Forms.TabPage();
             this.Business_Partners = new System.Windows.Forms.TabPage();
             this.Dipendenti = new System.Windows.Forms.TabPage();
-            this.Nome = new System.Windows.Forms.TextBox();
-            this.Cognome = new System.Windows.Forms.TextBox();
-            this.CodiceFiscale = new System.Windows.Forms.TextBox();
-            this.Telefono = new System.Windows.Forms.TextBox();
-            this.AggiungiCliente = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.TabPage.SuspendLayout();
             this.Clienti.SuspendLayout();
             this.SuspendLayout();
@@ -58,10 +60,10 @@ namespace DatabaseTestWFA
             this.TabPage.Controls.Add(this.Percorsi);
             this.TabPage.Controls.Add(this.Business_Partners);
             this.TabPage.Controls.Add(this.Dipendenti);
-            this.TabPage.Location = new System.Drawing.Point(12, 12);
+            this.TabPage.Location = new System.Drawing.Point(12, 55);
             this.TabPage.Name = "TabPage";
             this.TabPage.SelectedIndex = 0;
-            this.TabPage.Size = new System.Drawing.Size(959, 567);
+            this.TabPage.Size = new System.Drawing.Size(959, 524);
             this.TabPage.TabIndex = 4;
             this.TabPage.Tag = "";
             // 
@@ -75,10 +77,55 @@ namespace DatabaseTestWFA
             this.Clienti.Location = new System.Drawing.Point(4, 25);
             this.Clienti.Name = "Clienti";
             this.Clienti.Padding = new System.Windows.Forms.Padding(3);
-            this.Clienti.Size = new System.Drawing.Size(951, 538);
+            this.Clienti.Size = new System.Drawing.Size(951, 495);
             this.Clienti.TabIndex = 0;
             this.Clienti.Text = "Clienti";
             this.Clienti.UseVisualStyleBackColor = true;
+            // 
+            // AggiungiCliente
+            // 
+            this.AggiungiCliente.Location = new System.Drawing.Point(19, 151);
+            this.AggiungiCliente.Name = "AggiungiCliente";
+            this.AggiungiCliente.Size = new System.Drawing.Size(165, 23);
+            this.AggiungiCliente.TabIndex = 4;
+            this.AggiungiCliente.Text = "Aggiungi Cliente";
+            this.AggiungiCliente.UseVisualStyleBackColor = true;
+            this.AggiungiCliente.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Telefono
+            // 
+            this.Telefono.Location = new System.Drawing.Point(19, 123);
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Size = new System.Drawing.Size(165, 22);
+            this.Telefono.TabIndex = 3;
+            this.Telefono.Text = "Numero di Telefono";
+            this.Telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
+            // 
+            // CodiceFiscale
+            // 
+            this.CodiceFiscale.Location = new System.Drawing.Point(19, 94);
+            this.CodiceFiscale.Name = "CodiceFiscale";
+            this.CodiceFiscale.Size = new System.Drawing.Size(165, 22);
+            this.CodiceFiscale.TabIndex = 2;
+            this.CodiceFiscale.Text = "Codice Fiscale";
+            this.CodiceFiscale.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            // 
+            // Cognome
+            // 
+            this.Cognome.Location = new System.Drawing.Point(19, 66);
+            this.Cognome.Name = "Cognome";
+            this.Cognome.Size = new System.Drawing.Size(165, 22);
+            this.Cognome.TabIndex = 1;
+            this.Cognome.Text = "Cognome";
+            this.Cognome.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // Nome
+            // 
+            this.Nome.Location = new System.Drawing.Point(19, 38);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(165, 22);
+            this.Nome.TabIndex = 0;
+            this.Nome.Text = "Nome";
             // 
             // Prenotazioni
             // 
@@ -150,58 +197,25 @@ namespace DatabaseTestWFA
             this.Dipendenti.Text = "Dipendenti";
             this.Dipendenti.UseVisualStyleBackColor = true;
             // 
-            // Nome
+            // button1
             // 
-            this.Nome.Location = new System.Drawing.Point(19, 38);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(165, 22);
-            this.Nome.TabIndex = 0;
-            this.Nome.Text = "Nome";
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 37);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.launchUserAdminChoice);
             // 
-            // Cognome
-            // 
-            this.Cognome.Location = new System.Drawing.Point(19, 66);
-            this.Cognome.Name = "Cognome";
-            this.Cognome.Size = new System.Drawing.Size(165, 22);
-            this.Cognome.TabIndex = 1;
-            this.Cognome.Text = "Cognome";
-            this.Cognome.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // CodiceFiscale
-            // 
-            this.CodiceFiscale.Location = new System.Drawing.Point(19, 94);
-            this.CodiceFiscale.Name = "CodiceFiscale";
-            this.CodiceFiscale.Size = new System.Drawing.Size(165, 22);
-            this.CodiceFiscale.TabIndex = 2;
-            this.CodiceFiscale.Text = "Codice Fiscale";
-            this.CodiceFiscale.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
-            // 
-            // Telefono
-            // 
-            this.Telefono.Location = new System.Drawing.Point(19, 123);
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Size = new System.Drawing.Size(165, 22);
-            this.Telefono.TabIndex = 3;
-            this.Telefono.Text = "Numero di Telefono";
-            this.Telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
-            // 
-            // AggiungiCliente
-            // 
-            this.AggiungiCliente.Location = new System.Drawing.Point(19, 151);
-            this.AggiungiCliente.Name = "AggiungiCliente";
-            this.AggiungiCliente.Size = new System.Drawing.Size(165, 23);
-            this.AggiungiCliente.TabIndex = 4;
-            this.AggiungiCliente.Text = "Aggiungi Cliente";
-            this.AggiungiCliente.UseVisualStyleBackColor = true;
-            this.AggiungiCliente.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Form1
+            // DatabaseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 591);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.TabPage);
-            this.Name = "Form1";
+            this.Name = "DatabaseView";
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.TabPage.ResumeLayout(false);
@@ -227,6 +241,7 @@ namespace DatabaseTestWFA
         private System.Windows.Forms.TextBox CodiceFiscale;
         private System.Windows.Forms.TextBox Telefono;
         private System.Windows.Forms.Button AggiungiCliente;
+        private System.Windows.Forms.Button button1;
     }
 }
 
