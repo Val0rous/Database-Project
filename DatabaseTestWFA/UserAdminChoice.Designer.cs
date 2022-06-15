@@ -35,6 +35,7 @@ namespace DatabaseProject
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -92,11 +93,23 @@ namespace DatabaseProject
             this.label1.Text = "Chi sta accedendo al database?";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // BackButton
+            // 
+            this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackButton.Location = new System.Drawing.Point(12, 12);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(39, 37);
+            this.BackButton.TabIndex = 8;
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.LaunchSelezioneSede);
+            // 
             // UserAdminChoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.utente);
             this.Controls.Add(this.pictureBox1);
@@ -119,5 +132,6 @@ namespace DatabaseProject
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BackButton;
     }
 }

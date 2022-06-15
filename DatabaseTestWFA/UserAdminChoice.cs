@@ -26,14 +26,21 @@ namespace DatabaseProject
         private void userLaunch(object sender, EventArgs e)
         {
             this.Hide();
-            DatabaseView f = new DatabaseView();
-            f.Show();
+            DatabaseView databaseView = new DatabaseView();
+            databaseView.Show();
         }
 
         private void adminLaunch(object sender, EventArgs e)
         {
-            Login l = new Login();
-            l.Show();
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void LaunchSelezioneSede(object sender, EventArgs e)
+        {
+            this.Hide();
+            SelezioneSede selezioneSede = new SelezioneSede();
+            selezioneSede.Show();
         }
     }
 }
