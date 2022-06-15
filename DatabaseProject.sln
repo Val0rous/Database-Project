@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTestWFA", "DatabaseTestWFA\DatabaseTestWFA.csproj", "{C4C360AA-8FD7-4619-BE71-02D9AF768CAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseProject", "DatabaseTestWFA\DatabaseProject.csproj", "{C4C360AA-8FD7-4619-BE71-02D9AF768CAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
