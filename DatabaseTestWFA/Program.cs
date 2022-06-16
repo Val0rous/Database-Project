@@ -40,14 +40,10 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@Taglia", "M");
             command.Parameters.AddWithValue("@IDaccessorio", "034");
             command.Parameters.AddWithValue("@IDmagazzino", "011");
-<<<<<<< Updated upstream
+
 
             //string script = File.ReadAllText(@"C:\Users\fv260\source\repos\DatabaseProject\insert_accessorio.sql");
-=======
-            */
-            
-            //string script = File.ReadAllText(@"C:\Users\fv260\source\repos\DatabaseTestWFA\insert_accessorio.sql");
->>>>>>> Stashed changes
+
             //command.CommandText = script;
             //command.CommandText = "INSERT INTO accessorio (Tipologia, UltimoControllo, Produttore, Taglia, IDaccessorio, IDmagazzino) VALUES (@Tipologia, @UltimoControllo, @Produttore, @Taglia, @IDaccessorio, @IDmagazzino)";
             /*if (command.ExecuteNonQuery() > 0)
