@@ -15,7 +15,7 @@ namespace DatabaseProject
         public Login()
         {
             InitializeComponent();
-            UsernameBox.
+            
         }
 
         private void PasswordBox_TextChanged(object sender, EventArgs e)
