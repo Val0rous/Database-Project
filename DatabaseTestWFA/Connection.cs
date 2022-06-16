@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DatabaseProject
 {
-    public class Connection
+    public class CreateConnection
     {
         public MySqlConnectionStringBuilder Builder { get; set; }
         public MySqlConnection Connection { get; set; }
-        public Connection()
+        public CreateConnection()
         {
             this.Builder = new MySqlConnectionStringBuilder();
             this.Builder.Server = "localhost";
