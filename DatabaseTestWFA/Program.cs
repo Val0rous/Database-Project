@@ -37,7 +37,6 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@IDaccessorio", "034");
             command.Parameters.AddWithValue("@IDmagazzino", "011");
 
-
             //string script = File.ReadAllText(@"C:\Users\fv260\source\repos\DatabaseProject\insert_accessorio.sql");
             //command.CommandText = script;
             //command.CommandText = "INSERT INTO accessorio (Tipologia, UltimoControllo, Produttore, Taglia, IDaccessorio, IDmagazzino) VALUES (@Tipologia, @UltimoControllo, @Produttore, @Taglia, @IDaccessorio, @IDmagazzino)";
