@@ -34,6 +34,7 @@ namespace DatabaseProject
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.LaunchButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,11 +87,23 @@ namespace DatabaseProject
             this.LaunchButton.UseVisualStyleBackColor = true;
             this.LaunchButton.Click += new System.EventHandler(this.LaunchButton_Click);
             // 
+            // BackButton
+            // 
+            this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackButton.Location = new System.Drawing.Point(12, 12);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(39, 37);
+            this.BackButton.TabIndex = 9;
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // SelezioneSede
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.LaunchButton);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -110,5 +123,6 @@ namespace DatabaseProject
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button LaunchButton;
+        private System.Windows.Forms.Button BackButton;
     }
 }

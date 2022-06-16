@@ -37,11 +37,11 @@ namespace DatabaseProject
             this.Magazzino = new System.Windows.Forms.TabPage();
             this.Prenotazioni = new System.Windows.Forms.TabPage();
             this.Clienti = new System.Windows.Forms.TabPage();
-            this.Nome = new System.Windows.Forms.TextBox();
-            this.Cognome = new System.Windows.Forms.TextBox();
-            this.CodiceFiscale = new System.Windows.Forms.TextBox();
-            this.Telefono = new System.Windows.Forms.TextBox();
             this.AggiungiCliente = new System.Windows.Forms.Button();
+            this.Telefono = new System.Windows.Forms.TextBox();
+            this.CodiceFiscale = new System.Windows.Forms.TextBox();
+            this.Cognome = new System.Windows.Forms.TextBox();
+            this.Nome = new System.Windows.Forms.TextBox();
             this.TabPage = new System.Windows.Forms.TabControl();
             this.Clienti.SuspendLayout();
             this.TabPage.SuspendLayout();
@@ -56,7 +56,7 @@ namespace DatabaseProject
             this.button1.Size = new System.Drawing.Size(39, 37);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.launchUserAdminChoice);
+            this.button1.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // Dipendenti
             // 
@@ -95,7 +95,7 @@ namespace DatabaseProject
             this.Magazzino.Padding = new System.Windows.Forms.Padding(3);
             this.Magazzino.Size = new System.Drawing.Size(951, 495);
             this.Magazzino.TabIndex = 2;
-            this.Magazzino.Text = "Magazzino";
+            this.Magazzino.Text = "Magazzini";
             this.Magazzino.UseVisualStyleBackColor = true;
             // 
             // Prenotazioni
@@ -123,31 +123,15 @@ namespace DatabaseProject
             this.Clienti.Text = "Clienti";
             this.Clienti.UseVisualStyleBackColor = true;
             // 
-            // Nome
+            // AggiungiCliente
             // 
-            this.Nome.Location = new System.Drawing.Point(19, 38);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(165, 22);
-            this.Nome.TabIndex = 0;
-            this.Nome.Text = "Nome";
-            // 
-            // Cognome
-            // 
-            this.Cognome.Location = new System.Drawing.Point(19, 66);
-            this.Cognome.Name = "Cognome";
-            this.Cognome.Size = new System.Drawing.Size(165, 22);
-            this.Cognome.TabIndex = 1;
-            this.Cognome.Text = "Cognome";
-            this.Cognome.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // CodiceFiscale
-            // 
-            this.CodiceFiscale.Location = new System.Drawing.Point(19, 94);
-            this.CodiceFiscale.Name = "CodiceFiscale";
-            this.CodiceFiscale.Size = new System.Drawing.Size(165, 22);
-            this.CodiceFiscale.TabIndex = 2;
-            this.CodiceFiscale.Text = "Codice Fiscale";
-            this.CodiceFiscale.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            this.AggiungiCliente.Location = new System.Drawing.Point(19, 151);
+            this.AggiungiCliente.Name = "AggiungiCliente";
+            this.AggiungiCliente.Size = new System.Drawing.Size(165, 23);
+            this.AggiungiCliente.TabIndex = 4;
+            this.AggiungiCliente.Text = "Aggiungi Cliente";
+            this.AggiungiCliente.UseVisualStyleBackColor = true;
+            this.AggiungiCliente.Click += new System.EventHandler(this.button1_Click);
             // 
             // Telefono
             // 
@@ -158,15 +142,31 @@ namespace DatabaseProject
             this.Telefono.Text = "Numero di Telefono";
             this.Telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
             // 
-            // AggiungiCliente
+            // CodiceFiscale
             // 
-            this.AggiungiCliente.Location = new System.Drawing.Point(19, 151);
-            this.AggiungiCliente.Name = "AggiungiCliente";
-            this.AggiungiCliente.Size = new System.Drawing.Size(165, 23);
-            this.AggiungiCliente.TabIndex = 4;
-            this.AggiungiCliente.Text = "Aggiungi Cliente";
-            this.AggiungiCliente.UseVisualStyleBackColor = true;
-            this.AggiungiCliente.Click += new System.EventHandler(this.button1_Click);
+            this.CodiceFiscale.Location = new System.Drawing.Point(19, 94);
+            this.CodiceFiscale.Name = "CodiceFiscale";
+            this.CodiceFiscale.Size = new System.Drawing.Size(165, 22);
+            this.CodiceFiscale.TabIndex = 2;
+            this.CodiceFiscale.Text = "Codice Fiscale";
+            this.CodiceFiscale.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            // 
+            // Cognome
+            // 
+            this.Cognome.Location = new System.Drawing.Point(19, 66);
+            this.Cognome.Name = "Cognome";
+            this.Cognome.Size = new System.Drawing.Size(165, 22);
+            this.Cognome.TabIndex = 1;
+            this.Cognome.Text = "Cognome";
+            this.Cognome.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // Nome
+            // 
+            this.Nome.Location = new System.Drawing.Point(19, 38);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(165, 22);
+            this.Nome.TabIndex = 0;
+            this.Nome.Text = "Nome";
             // 
             // TabPage
             // 

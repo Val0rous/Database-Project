@@ -94,6 +94,7 @@ namespace DatabaseProject
             this.Controls.Add(this.UsernameBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
+            this.ShowInTaskbar = false;
             this.Text = "Agenzia di Cicloturismo";
             this.ResumeLayout(false);
             this.PerformLayout();

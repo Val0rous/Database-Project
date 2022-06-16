@@ -116,7 +116,8 @@
     <Compile Include="bicicletta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="QueryLibrary.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="cliente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

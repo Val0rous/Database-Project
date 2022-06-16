@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DatabaseTestWFA;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,8 +20,10 @@ namespace DatabaseProject
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.UserID = "root";
-            builder.Password = "SIMONE2001";
+            //builder.Password = "SIMONE2001";
+            builder.Password = "S@9WfQHnqrgFPN";
             builder.Database = "gestionale_per_agenzie_rel";
+
             MySqlConnection connection = new MySqlConnection(builder.ToString());
             connection.Open();
             QueryLibrary bro = new QueryLibrary(connection);
@@ -40,14 +43,10 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@Taglia", "M");
             command.Parameters.AddWithValue("@IDaccessorio", "034");
             command.Parameters.AddWithValue("@IDmagazzino", "011");
-<<<<<<< Updated upstream
+
 
             //string script = File.ReadAllText(@"C:\Users\fv260\source\repos\DatabaseProject\insert_accessorio.sql");
-=======
-            */
-            
-            //string script = File.ReadAllText(@"C:\Users\fv260\source\repos\DatabaseTestWFA\insert_accessorio.sql");
->>>>>>> Stashed changes
+
             //command.CommandText = script;
             //command.CommandText = "INSERT INTO accessorio (Tipologia, UltimoControllo, Produttore, Taglia, IDaccessorio, IDmagazzino) VALUES (@Tipologia, @UltimoControllo, @Produttore, @Taglia, @IDaccessorio, @IDmagazzino)";
             /*if (command.ExecuteNonQuery() > 0)
@@ -62,7 +61,7 @@ namespace DatabaseProject
             connection.Close();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelezioneSede());
+            Application.Run(new UserAdminChoice());
         }
     }
 }

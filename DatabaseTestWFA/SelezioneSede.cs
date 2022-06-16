@@ -12,8 +12,11 @@ namespace DatabaseProject
 {
     public partial class SelezioneSede : Form
     {
-        public SelezioneSede()
+        bool IsAdmin { get; set; }
+
+        public SelezioneSede(bool isAdmin)
         {
+            this.IsAdmin = IsAdmin;
             InitializeComponent();
         }
 
@@ -38,6 +41,13 @@ namespace DatabaseProject
         }
 
         private void LaunchButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var d = new DatabaseView(this.IsAdmin);
+            d.Show();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             var u = new UserAdminChoice();
