@@ -35,5 +35,10 @@ namespace DatabaseProject
             var login = new Login(this);
             login.Show();
         }
+
+        private void UserAdminChoice_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -105,6 +105,7 @@ namespace DatabaseProject
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserAdminChoice";
             this.Text = "Agenzia di Cicloturismo";
+            this.Load += new System.EventHandler(this.UserAdminChoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
