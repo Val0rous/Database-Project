@@ -218,9 +218,10 @@ namespace DatabaseTestWFA
         * input: 
         * output: risultato query-> true: tutto ok, false: errore
         */
-        public MySqlDataReader LeggiSedi()
+        public MySqlDataReader LeggiAgenzie()
         {
-            return null;
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@PIVA", )
         }
     }
 }
