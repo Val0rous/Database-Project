@@ -17,23 +17,17 @@ namespace DatabaseProject
         [STAThread]
         static void Main()
         {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.UserID = "root";
-            builder.Password = "SIMONE2001";
-            //builder.Password = "S@9WfQHnqrgFPN";
-            builder.Database = "gestionale_per_agenzie_rel";
-
-            MySqlConnection connection = new MySqlConnection(builder.ToString());
-            connection.Open();
-            QueryLibrary bro = new QueryLibrary(connection);
+            var connection = new CreateConnection();
+            
+            connection.Connection.Open();
+            QueryLibrary bro = new QueryLibrary(connection.Connection);
             var reader = bro.LeggiAgenzie();
             while (reader.Read())
             {
                 String PIVA = reader.GetString("PIVA");
                 String Nome = reader.GetString("Nome");
                 var NumTotDipendenti = reader.GetInt64("NumTotDipendenti");
-                Console.WriteLine(PIVA + Nome + NumTotDipendenti);
+                Console.WriteLine(PIVA + " " + Nome + " " + NumTotDipendenti);
             }
 
             //string nuovoAccessorio_sql = "INSERT INTO accessorio (Tipologia, UltimoControllo, Produttore, Taglia, IDaccessorio, IDmagazzino) VALUES ('Guanto', '2022-06-15', 'Bianchi', 'M', '034', '011')";
