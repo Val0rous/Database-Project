@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DatabaseTestWFA;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,8 +20,10 @@ namespace DatabaseProject
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.UserID = "root";
-            builder.Password = "SIMONE2001";
+            //builder.Password = "SIMONE2001";
+            builder.Password = "S@9WfQHnqrgFPN";
             builder.Database = "gestionale_per_agenzie_rel";
+
             MySqlConnection connection = new MySqlConnection(builder.ToString());
             connection.Open();
             QueryLibrary bro = new QueryLibrary(connection);
@@ -58,7 +61,7 @@ namespace DatabaseProject
             connection.Close();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelezioneSede());
+            Application.Run(new UserAdminChoice());
         }
     }
 }

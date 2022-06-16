@@ -24,8 +24,8 @@ namespace DatabaseProject
         {
             this.Hide();
             this.PreviousWindow.Hide();
-            DatabaseView databaseView = new DatabaseView();
-            databaseView.Show();
+            var selezioneSede = new SelezioneSede(true);
+            selezioneSede.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)

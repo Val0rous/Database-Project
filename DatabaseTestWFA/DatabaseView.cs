@@ -12,8 +12,10 @@ namespace DatabaseProject
 {
     public partial class DatabaseView : Form
     {
-        public DatabaseView()
+        bool IsAdmin { get; set; }
+        public DatabaseView(bool isAdmin)
         {
+            this.IsAdmin = isAdmin;
             InitializeComponent();
         }
 
@@ -67,11 +69,11 @@ namespace DatabaseProject
 
         }
 
-        private void launchUserAdminChoice(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UserAdminChoice u = new UserAdminChoice();
-            u.Show();
+            var s = new SelezioneSede(this.IsAdmin);
+            s.Show();
         }
     }
 }
