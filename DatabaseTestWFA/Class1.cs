@@ -7,11 +7,6 @@ using MySql.Data.MySqlClient;
 
 namespace DatabaseTestWFA
 {
-    /* Funzioni per la creazione ed esecuzione di query sul database
-     * input: MySqlConnection connection 
-     * input: parametri query
-     * output: risultato query-> true: tutto ok, false: errore
-     */
     public class QueryLibrary
     {
         MySqlConnection connection { get; set; }
@@ -19,6 +14,10 @@ namespace DatabaseTestWFA
         {
             this.connection = connection;
         }
+        /* Funzioni per l'inserimento di dati nel database
+        * input: parametri query
+        * output: risultato query-> true: tutto ok, false: errore
+        */
         public bool inserisciAccessorio (String Tipologia, String UltimoControllo, String Produttore, char Taglia, String IDaccessorio, String IDmagazzino)
         {
             MySqlCommand command = this.connection.CreateCommand();
@@ -138,5 +137,87 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
+        public bool inserisciServizio(String DataInizio, String DataFine, float CostoGiornaliero, String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@DataInizio", DataInizio);
+            command.Parameters.AddWithValue("@DataFine", DataFine);
+            command.Parameters.AddWithValue("@CostoGiornaliero", CostoGiornaliero);
+            command.Parameters.AddWithValue("@IDservizio", IDservizio);
+            command.Parameters.AddWithValue("@tipoServizio", tipoServizio);
+            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
+            if (tipoServizio=="PERCORSO_GUIDATO")
+            {
+                command.CommandText = "INSERT INTO servizio (DataInizio, DataFine, CostoGiornaliero, IDservizio, tipoServizio, IDpacchetto, IDsede, IDpercorso) " +
+                "VALUES (@DataInizio, @DataFine, @CostoGiornaliero, @IDservizio, @tipoServizio, @IDpacchetto, @IDsede, @IDpercorso)";
+            }
+            else
+            {
+                command.CommandText = "INSERT INTO servizio (DataInizio, DataFine, CostoGiornaliero, IDservizio, tipoServizio, IDpacchetto, IDsede) " +
+                "VALUES (@DataInizio, @DataFine, @CostoGiornaliero, @IDservizio, @tipoServizio, @IDpacchetto, @IDsede)";
+            }
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+        public bool inserisciTour(String Destinazione, String Nome, String DataInizio, String DataFine, float Prezzo, String IDtour, String IDsede, String CFtourManager)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@Destinazione", Destinazione);
+            command.Parameters.AddWithValue("@Nome", Nome);
+            command.Parameters.AddWithValue("@DataInizio", DataInizio);
+            command.Parameters.AddWithValue("@DataFine", DataFine);
+            command.Parameters.AddWithValue("@Prezzo", Prezzo);
+            command.Parameters.AddWithValue("@IDtour", IDtour);
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.Parameters.AddWithValue("@CFtourManager", CFtourManager);
+            command.CommandText = "INSERT INTO cliente (Destinazione, Nome, DataInizio, DataFine, Prezzo, IDtour, IDsede, CFtourManager) " +
+                "VALUES (@Destinazione, @Nome, @DataInizio, @DataFine, @Prezzo, @IDtour, @IDsede, @CFtourManager)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+        public bool inserisciMagazzino(long CapienzaMassimaAccessori, long CapienzaMassimaBici, String IDmagazzino, String IDIndirizzo, String IDsede)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@CapienzaMassimaAccessori", CapienzaMassimaAccessori);
+            command.Parameters.AddWithValue("@CapienzaMassimiBici", CapienzaMassimaBici);
+            command.Parameters.AddWithValue("@IDmagazzino", IDmagazzino);
+            command.Parameters.AddWithValue("@IDIndirizzo", IDIndirizzo);
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "INSERT INTO magazzino (CapienzaMassimaAccessori, CapienzaMassimaBici, IDmagazzino, IDInidirizzo, IDsede) " +
+                "VALUES (@CapienzaMassimaAccessori, @CapienzaMassimaBici, @IDmagazzino, @IDIndirizzo, @IDsede)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+        /* Funzioni per la lettura di dati dal database
+        * input: 
+        * output: risultato query-> true: tutto ok, false: errore
+        */
+        public MySqlDataReader leggiSedi
     }
 }
