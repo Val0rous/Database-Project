@@ -12,33 +12,68 @@ namespace DatabaseProject
 {
     public partial class Login : Form
     {
-        public Login()
+        private Form PreviousWindow { get; set; }
+
+        public Login(Form PreviousWindow)
         {
             InitializeComponent();
-            
-        }
-
-        private void PasswordBox_TextChanged(object sender, EventArgs e)
-        {
-
+            this.PreviousWindow = PreviousWindow;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void UsernameBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordBox_TextChanged_1(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            this.PreviousWindow.Hide();
+            DatabaseView databaseView = new DatabaseView();
+            databaseView.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void UsernameBox_Enter(object sender, EventArgs e)
+        {
+            if (this.UsernameBox.Text.Equals("Username"))
+            {
+                this.UsernameBox.Text = "";
+            }
+            this.UsernameBox.ForeColor = Color.Black;
+        }
+
+        private void UsernameBox_Leave(object sender, EventArgs e)
+        {
+            if (this.UsernameBox.Text.Equals(""))
+            {
+                this.UsernameBox.Text = "Username";
+                this.UsernameBox.ForeColor = Color.Gray;
+            }
+        }
+
+        private void PasswordBox_Enter(object sender, EventArgs e)
+        {
+            if (this.PasswordBox.Text.Equals("Password"))
+            {
+                this.PasswordBox.Text = "";
+            }
+            this.PasswordBox.ForeColor = Color.Black;
+            this.PasswordBox.UseSystemPasswordChar = true;
+        }
+
+        private void PasswordBox_Leave(object sender, EventArgs e)
+        {
+            if (this.PasswordBox.Text.Equals(""))
+            {
+                this.PasswordBox.Text = "Password";
+                this.PasswordBox.ForeColor = Color.Gray;
+                this.PasswordBox.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void UsernameBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -21,5 +21,27 @@ namespace DatabaseProject
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LaunchButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var u = new UserAdminChoice();
+            u.Show();
+        }
     }
 }

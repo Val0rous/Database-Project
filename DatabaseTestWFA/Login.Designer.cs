@@ -46,6 +46,8 @@ namespace DatabaseProject
             this.UsernameBox.Text = "Username";
             this.UsernameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UsernameBox.TextChanged += new System.EventHandler(this.UsernameBox_TextChanged);
+            this.UsernameBox.Enter += new System.EventHandler(this.UsernameBox_Enter);
+            this.UsernameBox.Leave += new System.EventHandler(this.UsernameBox_Leave);
             // 
             // PasswordBox
             // 
@@ -56,8 +58,8 @@ namespace DatabaseProject
             this.PasswordBox.TabIndex = 2;
             this.PasswordBox.Text = "Password";
             this.PasswordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.PasswordBox.UseSystemPasswordChar = true;
-            this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged_1);
+            this.PasswordBox.Enter += new System.EventHandler(this.PasswordBox_Enter);
+            this.PasswordBox.Leave += new System.EventHandler(this.PasswordBox_Leave);
             // 
             // LoginButton
             // 
@@ -76,7 +78,7 @@ namespace DatabaseProject
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(240, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 39);
+            this.label1.Size = new System.Drawing.Size(299, 38);
             this.label1.TabIndex = 4;
             this.label1.Text = "Accedi al Database";
             this.label1.Click += new System.EventHandler(this.label1_Click);

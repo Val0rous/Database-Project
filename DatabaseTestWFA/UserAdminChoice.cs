@@ -32,7 +32,7 @@ namespace DatabaseProject
 
         private void adminLaunch(object sender, EventArgs e)
         {
-            Login login = new Login();
+            Login login = new Login(this);
             login.Show();
         }
 
