@@ -39,7 +39,7 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
-        public bool inserisciBicicletta(String Produttore, String NumTelaio, char Taglia, int RaggioRuota, String Tipologia, String UltimoControllo, int NumeroRapportiAnteriori, int NumeroRapportiPosteriori, int isElettrica, int PotenzaBatteria, int CapacitàBatteria, String IDmagazzino)
+        public bool InserisciBicicletta(String Produttore, String NumTelaio, char Taglia, int RaggioRuota, String Tipologia, String UltimoControllo, int NumeroRapportiAnteriori, int NumeroRapportiPosteriori, int isElettrica, int PotenzaBatteria, int CapacitàBatteria, String IDmagazzino)
         {
             MySqlCommand command = this.connection.CreateCommand();
             command.Parameters.AddWithValue("@Produttore", Produttore);
@@ -70,7 +70,7 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
-        public bool inserisciPercorso(String IDpercorso, String Difficolta, int NumTappe, float LunghezzaPercorso, String IDsede)
+        public bool InserisciPercorso(String IDpercorso, String Difficolta, int NumTappe, float LunghezzaPercorso, String IDsede)
         {
             MySqlCommand command = this.connection.CreateCommand();
             command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
@@ -91,7 +91,7 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
-        public bool inserisciCliente(String Nome, String Cognome, String CF, String Recapito)
+        public bool InserisciCliente(String Nome, String Cognome, String CF, String Recapito)
         {
             MySqlCommand command = this.connection.CreateCommand();
             command.Parameters.AddWithValue("@Nome", Nome);
@@ -111,7 +111,7 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
-        public bool inserisciDipendente(String Nome, String Cognome, String CF, String Recapito, String CodiceDipendente, float Stipendio, byte isGuida, byte isTourManager, byte isAltro, String IDsede)
+        public bool InserisciDipendente(String Nome, String Cognome, String CF, String Recapito, String CodiceDipendente, float Stipendio, byte isGuida, byte isTourManager, byte isAltro, String IDsede)
         {
             MySqlCommand command = this.connection.CreateCommand();
             command.Parameters.AddWithValue("@Nome", Nome);
@@ -137,7 +137,7 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
-        public bool inserisciServizio(String DataInizio, String DataFine, float CostoGiornaliero, String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
+        public bool InserisciServizio(String DataInizio, String DataFine, float CostoGiornaliero, String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
         {
             MySqlCommand command = this.connection.CreateCommand();
             command.Parameters.AddWithValue("@DataInizio", DataInizio);
@@ -169,7 +169,7 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
-        public bool inserisciTour(String Destinazione, String Nome, String DataInizio, String DataFine, float Prezzo, String IDtour, String IDsede, String CFtourManager)
+        public bool InserisciTour(String Destinazione, String Nome, String DataInizio, String DataFine, float Prezzo, String IDtour, String IDsede, String CFtourManager)
         {
             MySqlCommand command = this.connection.CreateCommand();
             command.Parameters.AddWithValue("@Destinazione", Destinazione);
@@ -193,7 +193,7 @@ namespace DatabaseTestWFA
                 return false;
             }
         }
-        public bool inserisciMagazzino(long CapienzaMassimaAccessori, long CapienzaMassimaBici, String IDmagazzino, String IDIndirizzo, String IDsede)
+        public bool InserisciMagazzino(long CapienzaMassimaAccessori, long CapienzaMassimaBici, String IDmagazzino, String IDIndirizzo, String IDsede)
         {
             MySqlCommand command = this.connection.CreateCommand();
             command.Parameters.AddWithValue("@CapienzaMassimaAccessori", CapienzaMassimaAccessori);
@@ -218,6 +218,9 @@ namespace DatabaseTestWFA
         * input: 
         * output: risultato query-> true: tutto ok, false: errore
         */
-        public MySqlDataReader leggiSedi
+        public MySqlDataReader LeggiSedi()
+        {
+            return null;
+        }
     }
 }
