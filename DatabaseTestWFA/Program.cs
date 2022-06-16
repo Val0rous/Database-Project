@@ -57,7 +57,7 @@ namespace DatabaseProject
                 MessageBox.Show("Record was NOT added!");
             }
             */
-            connection.Close();
+            connection.Connection.Close();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UserAdminChoice());
