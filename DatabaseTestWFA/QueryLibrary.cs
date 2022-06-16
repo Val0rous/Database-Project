@@ -215,8 +215,8 @@ namespace DatabaseTestWFA
             }
         }
         /* Funzioni per la lettura di dati dal database
-        * input: 
-        * output: risultato query-> true: tutto ok, false: errore
+        * input: eventuali parametri WHERE
+        * output: MySqlDataReader, poi gestito da programma
         */
         public MySqlDataReader LeggiAgenzie()
         {
@@ -224,5 +224,27 @@ namespace DatabaseTestWFA
             command.CommandText = "SELECT * FROM agenzia";
             return command.ExecuteReader();
         }
+        public MySqlDataReader LeggiSedi()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM sede";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiSedi(String PIVAagenzia)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@PIVA", PIVAagenzia);
+            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=@PIVA";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiAccessori()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM accessorio";
+            return command.ExecuteReader();
+        }
+
+
+
     }
 }
