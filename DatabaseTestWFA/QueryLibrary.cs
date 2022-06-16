@@ -221,7 +221,8 @@ namespace DatabaseTestWFA
         public MySqlDataReader LeggiAgenzie()
         {
             MySqlCommand command = this.connection.CreateCommand();
-            command.Parameters.AddWithValue("@PIVA", )
+            command.CommandText = "SELECT * FROM agenzia";
+            return command.ExecuteReader();
         }
     }
 }

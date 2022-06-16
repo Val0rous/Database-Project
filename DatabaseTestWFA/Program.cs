@@ -20,16 +20,21 @@ namespace DatabaseProject
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.UserID = "root";
-            //builder.Password = "SIMONE2001";
-            builder.Password = "S@9WfQHnqrgFPN";
+            builder.Password = "SIMONE2001";
+            //builder.Password = "S@9WfQHnqrgFPN";
             builder.Database = "gestionale_per_agenzie_rel";
 
             MySqlConnection connection = new MySqlConnection(builder.ToString());
             connection.Open();
             QueryLibrary bro = new QueryLibrary(connection);
-            var result = bro.inserisciBicicletta("Baldoni", "B1001", 'M', 20, "MountainBike", "2022-06-16", 3, 8, 0, 123, 2000, "M3");
-            if (!result) Console.WriteLine("impossibile eseguire la query");
-            else Console.WriteLine("Query eseguita correttamente");
+            var reader = bro.LeggiAgenzie();
+            while (reader.Read())
+            {
+                String PIVA = reader.GetString("PIVA");
+                String Nome = reader.GetString("Nome");
+                var NumTotDipendenti = reader.GetInt64("NumTotDipendenti");
+                Console.WriteLine(PIVA + Nome + NumTotDipendenti);
+            }
 
             //string nuovoAccessorio_sql = "INSERT INTO accessorio (Tipologia, UltimoControllo, Produttore, Taglia, IDaccessorio, IDmagazzino) VALUES ('Guanto', '2022-06-15', 'Bianchi', 'M', '034', '011')";
             //MySqlCommand nuovoAccessorio = new MySqlCommand(nuovoAccessorio_sql, connection);
