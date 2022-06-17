@@ -397,6 +397,17 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM accessorio WHERE accessorio.IDmagazzino=@IDmagazzino";
             return command.ExecuteReader();
         }
+        public MySqlDataReader LeggiAccessori(String IDsede, String Date)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.CommandText = "WITH NoleggiAccessoriAttivi(IDaccessorio) AS(SELECT A.IDaccessorio FROM accessorio A, noleggioaccessorio NA, servizio S " +
+            "WHERE A.IDaccessorio = NA.IDaccessorio AND NA.IDservizio = S.IDservizio AND @Date >= S.DataInizio AND @Date <= S.DataFine) " +
+            "SELECT * FROM accessorio A WHERE A.IDaccessorio NOT IN(SELECT NAA.IDaccessorio FROM NoleggiAccessoriAttivi AS NAA) " +
+            "AND A.IDmagazzino IN(SELECT IDmagazzino FROM sede S, magazzino M WHERE S.IDsede= @IDsede AND M.IDsede= S.IDsede);";
+            return command.ExecuteReader();
+        }
         public MySqlDataReader LeggiBiciclette()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -408,6 +419,26 @@ namespace DatabaseProject
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDmagazzino", IDmagazzino);
             command.CommandText = "SELECT * FROM bicicletta WHERE bicicletta.IDmagazzino=@IDmagazzino";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiBiciclette(String IDsede, String Date)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.CommandText = "WITH NoleggiBicicletteAttivi(NumTelaio) AS(SELECT B.NumTelaio FROM bicicletta B, noleggiobicicletta NB, servizio S " +
+            "WHERE B.NumTelaio = NB.NumTelaio AND NB.IDservizio = S.IDservizio AND @Date >= S.DataInizio AND @Date <= S.DataFine) " +
+            "SELECT * FROM bicicletta B WHERE B.NumTelaio NOT IN(SELECT NBA.NumTelaio FROM NoleggiBicicletteAttivi AS NBA) " +
+            "AND B.IDmagazzino IN(SELECT IDmagazzino FROM sede S, magazzino M WHERE S.IDsede= @IDsede AND M.IDsede= S.IDsede);";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiBusinessPartner(String PIVAagenzia)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@PIVAagenzia", PIVAagenzia);
+            command.CommandText = "SELECT * " +
+                "FROM partnershipattrazione as PA, partnershipristorante as PR, partnershipsoggiorno as PS " +
+                "WHERE PA.PIVAagenzia=PR.PIVAagenzia AND PR.PIVAagenzia=PS.PIVAagenzia AND PS.PIVAagenzia=@PIVAagezia";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiClienti()
@@ -507,6 +538,26 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede=@IDsede";
             return command.ExecuteReader();
         }
+        public MySqlDataReader LeggiPrenotazioni()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM prenotazione";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPrenotazioniTour(String IDtour)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDtour", IDtour);
+            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.IDtour=@IDtour";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPrenotazioniCliente(String CFcliente)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@CFcliente", CFcliente);
+            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.CFcliente=@CFcliente";
+            return command.ExecuteReader();
+        }
         public MySqlDataReader LeggiSedi()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -545,6 +596,15 @@ namespace DatabaseProject
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.CommandText = "SELECT * FROM tour WHERE tour.IDsede=@IDsede";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiTour(String IDsede, String Date)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.Parameters.AddWithValue("@Date", Date);
+            command.CommandText = "SELECT * FROM tour AS t " +
+                "WHERE t.IDsede=@IDsede AND @Date >= t.DataInizio AND @Date <= t.DataFine ";
             return command.ExecuteReader();
         }
     }
