@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace DatabaseTestWFA
+namespace DatabaseProject
 {
     public class QueryLibrary
     {
@@ -262,6 +262,20 @@ namespace DatabaseTestWFA
             command.CommandText = "SELECT * FROM dipendente WHERE dipendente.IDsede=@IDsede";
             return command.ExecuteReader();
         }
+        public MySqlDataReader LeggiIndirizzi()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM insirizzo";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiIndirizzi(String IDindirizzo)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDindirizzo", IDindirizzo);
+            command.CommandText = "SELECT * FROM indirizzo WHERE indirizzo.IDindirizzo=@IDindirizzo";
+            return command.ExecuteReader();
+        }
+
         public MySqlDataReader LeggiMagazzini()
         {
             MySqlCommand command = this.connection.CreateCommand();

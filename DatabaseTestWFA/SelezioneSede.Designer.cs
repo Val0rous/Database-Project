@@ -52,10 +52,6 @@ namespace DatabaseProject
             // SedeComboBox
             // 
             this.SedeComboBox.FormattingEnabled = true;
-            this.SedeComboBox.Items.AddRange(new object[] {
-            "S01",
-            "S02",
-            "S03"});
             this.SedeComboBox.Location = new System.Drawing.Point(268, 176);
             this.SedeComboBox.Name = "SedeComboBox";
             this.SedeComboBox.Size = new System.Drawing.Size(293, 24);
@@ -66,10 +62,6 @@ namespace DatabaseProject
             // AgenziaComboBox
             // 
             this.AgenziaComboBox.FormattingEnabled = true;
-            this.AgenziaComboBox.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
             this.AgenziaComboBox.Location = new System.Drawing.Point(268, 127);
             this.AgenziaComboBox.Name = "AgenziaComboBox";
             this.AgenziaComboBox.Size = new System.Drawing.Size(293, 24);
