@@ -42,6 +42,7 @@ namespace DatabaseProject
             // admin
             // 
             this.admin.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin.Location = new System.Drawing.Point(211, 303);
             this.admin.Name = "admin";
             this.admin.Size = new System.Drawing.Size(113, 48);
@@ -53,6 +54,7 @@ namespace DatabaseProject
             // utente
             // 
             this.utente.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.utente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.utente.Location = new System.Drawing.Point(491, 303);
             this.utente.Name = "utente";
             this.utente.Size = new System.Drawing.Size(113, 48);
@@ -87,7 +89,7 @@ namespace DatabaseProject
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(152, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 38);
+            this.label1.Size = new System.Drawing.Size(503, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "Chi sta accedendo al database?";
             this.label1.Click += new System.EventHandler(this.label1_Click);

@@ -106,5 +106,10 @@ namespace DatabaseProject
             }
             this.Connection.Connection.Close();
         }
+
+        private void SelezioneSede_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
