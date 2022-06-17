@@ -243,6 +243,65 @@ namespace DatabaseTestWFA
             command.CommandText = "SELECT * FROM accessorio";
             return command.ExecuteReader();
         }
+        public MySqlDataReader LeggiClienti()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM cliente";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiDipendenti()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM dipendente";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiDipendenti(String IDsede)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM dipendente WHERE dipendente.IDsede=@IDsede";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiMagazzini()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM magazzino";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiMagazzini(String IDsede)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede=@IDsede";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPacchetti()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM pacchetti";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPacchetti(String IDpacchetto)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
+            command.CommandText = "SELECT * FROM servizi WHERE servizi.IDpacchetto=@IDpacchetto";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiServizi()
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = "SELECT * FROM servizi";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiServizi(String IDpacchetto)
+        {
+            MySqlCommand command = this.connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
+            command.CommandText = "SELECT * FROM servizi WHERE servizi.IDpacchetto=@IDpacchetto";
+            return command.ExecuteReader();
+        }
+
 
 
 
