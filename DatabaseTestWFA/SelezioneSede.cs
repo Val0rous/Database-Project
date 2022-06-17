@@ -29,7 +29,7 @@ namespace DatabaseProject
             {
                 var PIVA = reader.GetString("PIVA");
                 var Nome = reader.GetString("Nome");
-                var NumTotDipendenti = reader.GetInt64("NumTotDipendenti");
+                //var NumTotDipendenti = reader.GetInt64("NumTotDipendenti");
                 this.AgenziaComboBox.Items.Add(Nome);
                 this.ListaAgenzie.Add((PIVA, Nome));
             }
@@ -72,6 +72,7 @@ namespace DatabaseProject
 
         private void AgenziaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.SedeComboBox.ResetText();
             var index = this.AgenziaComboBox.SelectedIndex;
             this.Connection = new CreateConnection();
             this.Connection.Connection.Open();
@@ -83,7 +84,19 @@ namespace DatabaseProject
                 var IDsede = reader.GetString("IDsede");
                 var PIVAagenzia = reader.GetString("PIVAagenzia");
                 var IDindirizzo = reader.GetString("IDindirizzo");
-                this.SedeComboBox.Items.Add(IDsede + ": " + IDindirizzo);
+
+                var addressConnection = new CreateConnection();
+                addressConnection.Connection.Open();
+                var addressQuery = new QueryLibrary(addressConnection.Connection);
+                var addressReader = addressQuery.LeggiIndirizzi(IDindirizzo);
+                addressReader.Read();
+                var NumCivico = addressReader.GetString("NumCivico");
+                var Via = addressReader.GetString("Via");
+                var CAP = addressReader.GetString("CAP");
+                var Paese = addressReader.GetString("Paese");
+
+                this.SedeComboBox.Items.Add(IDsede + ": " + Via + ", " + NumCivico + ", " + CAP + ", " + Paese);
+                addressConnection.Connection.Close();
             }
             this.Connection.Connection.Close();
         }

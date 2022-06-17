@@ -384,19 +384,6 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM agenzia";
             return command.ExecuteReader();
         }
-        public MySqlDataReader LeggiSedi()
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM sede";
-            return command.ExecuteReader();
-        }
-        public MySqlDataReader LeggiSedi(String PIVAagenzia)
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@PIVA", PIVAagenzia);
-            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=@PIVA";
-            return command.ExecuteReader();
-        }
         public MySqlDataReader LeggiAccessori()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -410,7 +397,6 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM accessorio WHERE accessorio.IDmagazzino=@IDmagazzino";
             return command.ExecuteReader();
         }
-
         public MySqlDataReader LeggiBiciclette()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -445,18 +431,17 @@ namespace DatabaseProject
         }
         public MySqlDataReader LeggiIndirizzi()
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM insirizzo";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiIndirizzi(String IDindirizzo)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDindirizzo", IDindirizzo);
             command.CommandText = "SELECT * FROM indirizzo WHERE indirizzo.IDindirizzo=@IDindirizzo";
             return command.ExecuteReader();
         }
-
         public MySqlDataReader LeggiMagazzini()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -468,45 +453,6 @@ namespace DatabaseProject
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede=@IDsede";
-            return command.ExecuteReader();
-        }
-        public MySqlDataReader LeggiPacchetti()
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM pacchetto";
-            return command.ExecuteReader();
-        }
-        public MySqlDataReader LeggiPacchetti(String CFcliente)
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@CFcliente", CFcliente);
-            command.CommandText = "SELECT * FROM pacchetto WHERE pacchetto.CFcliente=@CFcliente";
-            return command.ExecuteReader();
-        }
-        public MySqlDataReader LeggiPercorso()
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM percorso";
-            return command.ExecuteReader();
-        }
-        public MySqlDataReader LeggiPercorso(String IDsede)
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede=@IDsede";
-            return command.ExecuteReader();
-        }
-        public MySqlDataReader LeggiServizi()
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM servizio";
-            return command.ExecuteReader();
-        }
-        public MySqlDataReader LeggiServizi(String IDpacchetto)
-        {
-            MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
-            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto=@IDpacchetto";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiNoleggiAccessori()
@@ -535,6 +481,59 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM noleggiobicicletta WHERE noleggiobicicletta.IDservizio=@IDservizio";
             return command.ExecuteReader();
         }
+        public MySqlDataReader LeggiPacchetti()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM pacchetto";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPacchetti(String CFcliente)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@CFcliente", CFcliente);
+            command.CommandText = "SELECT * FROM pacchetto WHERE pacchetto.CFcliente=@CFcliente";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPercorso()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM percorso";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPercorso(String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede=@IDsede";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiSedi()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM sede";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiSedi(String PIVAagenzia)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@PIVA", PIVAagenzia);
+            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=@PIVA";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiServizi()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM servizio";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiServizi(String IDpacchetto)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
+            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto=@IDpacchetto";
+            return command.ExecuteReader();
+        }
+        
         public MySqlDataReader LeggiTour()
         {
             MySqlCommand command = this.Connection.CreateCommand();
