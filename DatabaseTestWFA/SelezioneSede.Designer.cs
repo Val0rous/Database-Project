@@ -31,8 +31,8 @@ namespace DatabaseProject
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelezioneSede));
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.SedeComboBox = new System.Windows.Forms.ComboBox();
+            this.AgenziaComboBox = new System.Windows.Forms.ComboBox();
             this.LaunchButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -49,32 +49,33 @@ namespace DatabaseProject
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // comboBox1
+            // SedeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.SedeComboBox.FormattingEnabled = true;
+            this.SedeComboBox.Items.AddRange(new object[] {
             "S01",
             "S02",
             "S03"});
-            this.comboBox1.Location = new System.Drawing.Point(268, 176);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(293, 24);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "-- Seleziona una sede --";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.SedeComboBox.Location = new System.Drawing.Point(268, 176);
+            this.SedeComboBox.Name = "SedeComboBox";
+            this.SedeComboBox.Size = new System.Drawing.Size(293, 24);
+            this.SedeComboBox.TabIndex = 1;
+            this.SedeComboBox.Text = "-- Seleziona una sede --";
+            this.SedeComboBox.SelectedIndexChanged += new System.EventHandler(this.SedeComboBox_SelectedIndexChanged);
             // 
-            // comboBox2
+            // AgenziaComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.AgenziaComboBox.FormattingEnabled = true;
+            this.AgenziaComboBox.Items.AddRange(new object[] {
             "A",
             "B",
             "C"});
-            this.comboBox2.Location = new System.Drawing.Point(268, 127);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(293, 24);
-            this.comboBox2.TabIndex = 2;
-            this.comboBox2.Text = "-- Seleziona un\'agenzia --";
+            this.AgenziaComboBox.Location = new System.Drawing.Point(268, 127);
+            this.AgenziaComboBox.Name = "AgenziaComboBox";
+            this.AgenziaComboBox.Size = new System.Drawing.Size(293, 24);
+            this.AgenziaComboBox.TabIndex = 2;
+            this.AgenziaComboBox.Text = "-- Seleziona un\'agenzia --";
+            this.AgenziaComboBox.SelectedIndexChanged += new System.EventHandler(this.AgenziaComboBox_SelectedIndexChanged);
             // 
             // LaunchButton
             // 
@@ -105,8 +106,8 @@ namespace DatabaseProject
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.LaunchButton);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.AgenziaComboBox);
+            this.Controls.Add(this.SedeComboBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelezioneSede";
@@ -120,8 +121,8 @@ namespace DatabaseProject
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox SedeComboBox;
+        private System.Windows.Forms.ComboBox AgenziaComboBox;
         private System.Windows.Forms.Button LaunchButton;
         private System.Windows.Forms.Button BackButton;
     }

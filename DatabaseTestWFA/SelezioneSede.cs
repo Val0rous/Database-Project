@@ -35,11 +35,6 @@ namespace DatabaseProject
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void LaunchButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -52,6 +47,16 @@ namespace DatabaseProject
             this.Hide();
             var u = new UserAdminChoice();
             u.Show();
+        }
+
+        private void SedeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgenziaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
