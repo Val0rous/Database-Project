@@ -12,10 +12,14 @@ namespace DatabaseProject
 {
     public partial class DatabaseView : Form
     {
-        bool IsAdmin { get; set; }
-        public DatabaseView(bool isAdmin)
+        bool IsAdmin { get; }
+        string PIVAagenzia { get; }
+        string IDsede { get; }
+        public DatabaseView(bool isAdmin, string PIVAagenzia, string IDsede)
         {
             this.IsAdmin = isAdmin;
+            this.PIVAagenzia = PIVAagenzia;
+            this.IDsede = IDsede;
             InitializeComponent();
         }
 

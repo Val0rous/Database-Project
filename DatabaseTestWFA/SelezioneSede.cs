@@ -15,7 +15,9 @@ namespace DatabaseProject
         private bool IsAdmin { get; set; }
         private CreateConnection Connection { get; set; }
 
-        private List<(string, string)> ListaAgenzie = new List<(string PIVA, String Nome)>();
+        private List<(string, string, Int64)> ListaAgenzie = new List<(string PIVA, string Nome, Int64 NumTotDipendenti)>();
+        private List<(string, string, string)> ListaSedi = new List<(string IDsede, string PIVAagenzia, string IDindirizzo)>();
+
 
         public SelezioneSede(bool isAdmin)
         {
@@ -29,33 +31,33 @@ namespace DatabaseProject
             {
                 var PIVA = reader.GetString("PIVA");
                 var Nome = reader.GetString("Nome");
-                //var NumTotDipendenti = reader.GetInt64("NumTotDipendenti");
+                var NumTotDipendenti = reader.GetInt64("NumTotDipendenti");
                 this.AgenziaComboBox.Items.Add(Nome);
-                this.ListaAgenzie.Add((PIVA, Nome));
+                this.ListaAgenzie.Add((PIVA, Nome, NumTotDipendenti));
             }
             this.Connection.Connection.Close();
         }
 
-        private void SelezioneSede_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void LaunchButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var d = new DatabaseView(this.IsAdmin);
-            d.Show();
+            if (this.AgenziaComboBox.SelectedItem == null || this.SedeComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Devi selezionare un'agenzia e una sede per poter continuare", 
+                    "Errore",
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Hide();
+                var d = new DatabaseView(this.IsAdmin,
+                    this.ListaAgenzie[this.AgenziaComboBox.SelectedIndex].Item1,
+                    this.ListaSedi[this.SedeComboBox.SelectedIndex].Item1);
+                d.Show();
+            }
+            
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -79,11 +81,15 @@ namespace DatabaseProject
             var query = new QueryLibrary(this.Connection.Connection);
             var reader = query.LeggiSedi(ListaAgenzie[index].Item1);
             this.SedeComboBox.Items.Clear();
+            this.ListaSedi.Clear();
+
             while (reader.Read())
             {
                 var IDsede = reader.GetString("IDsede");
                 var PIVAagenzia = reader.GetString("PIVAagenzia");
                 var IDindirizzo = reader.GetString("IDindirizzo");
+
+                this.ListaSedi.Add((IDsede, PIVAagenzia, IDindirizzo));
 
                 var addressConnection = new CreateConnection();
                 addressConnection.Connection.Open();

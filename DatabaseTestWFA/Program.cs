@@ -20,6 +20,7 @@ namespace DatabaseProject
             
             connection.Connection.Open();
             QueryLibrary bro = new QueryLibrary(connection.Connection);
+            /*
             var reader = bro.LeggiAgenzie();
             while (reader.Read())
             {
@@ -28,6 +29,7 @@ namespace DatabaseProject
                 var NumTotDipendenti = reader.GetInt64("NumTotDipendenti");
                 Console.WriteLine(PIVA + " " + Nome + " " + NumTotDipendenti);
             }
+            */
 
             //string nuovoAccessorio_sql = "INSERT INTO accessorio (Tipologia, UltimoControllo, Produttore, Taglia, IDaccessorio, IDmagazzino) VALUES ('Guanto', '2022-06-15', 'Bianchi', 'M', '034', '011')";
             //MySqlCommand nuovoAccessorio = new MySqlCommand(nuovoAccessorio_sql, connection);

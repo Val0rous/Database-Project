@@ -18,19 +18,27 @@ namespace DatabaseProject
         {
             InitializeComponent();
             this.PreviousWindow = PreviousWindow;
+            this.UsernameBox.ForeColor = Color.Gray;
+            this.PasswordBox.ForeColor = Color.Gray;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.PreviousWindow.Hide();
-            var selezioneSede = new SelezioneSede(true);
-            selezioneSede.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            if (this.UsernameBox.Text.Equals("admin") && this.PasswordBox.Text.Equals("admin"))
+            {
+                this.Hide();
+                this.PreviousWindow.Hide();
+                var selezioneSede = new SelezioneSede(true);
+                selezioneSede.Show();
+            }
+            else
+            {
+                MessageBox.Show("Username o password errati",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            
         }
 
         
@@ -72,10 +80,12 @@ namespace DatabaseProject
                 this.PasswordBox.UseSystemPasswordChar = false;
             }
         }
-
-        private void UsernameBox_TextChanged(object sender, EventArgs e)
+        private void CheckEnter(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)13)
+            {
+                this.LoginButton_Click(sender, e);
+            }
         }
     }
 }

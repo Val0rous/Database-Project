@@ -47,7 +47,6 @@ namespace DatabaseProject
             this.label1.TabIndex = 0;
             this.label1.Text = "Benvenuto nel gestionale!\r\nSeleziona un\'agenzia e una sede per iniziare:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // SedeComboBox
             // 
@@ -104,7 +103,6 @@ namespace DatabaseProject
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelezioneSede";
             this.Text = "Agenzia di Cicloturismo";
-            this.Load += new System.EventHandler(this.SelezioneSede_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
