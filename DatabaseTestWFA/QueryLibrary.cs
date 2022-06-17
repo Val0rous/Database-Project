@@ -9,18 +9,18 @@ namespace DatabaseProject
 {
     public class QueryLibrary
     {
-        MySqlConnection connection { get; set; }
+        MySqlConnection Connection { get; set; }
         public QueryLibrary(MySqlConnection connection)
         {
-            this.connection = connection;
+            this.Connection = connection;
         }
         /* Funzioni per l'inserimento di dati nel database
         * input: parametri query
         * output: risultato query-> true: tutto ok, false: errore
         */
-        public bool inserisciAccessorio (String Tipologia, String UltimoControllo, String Produttore, char Taglia, String IDaccessorio, String IDmagazzino)
+        public bool InserisciAccessorio (String Tipologia, String UltimoControllo, String Produttore, char Taglia, String IDaccessorio, String IDmagazzino)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@Tipologia", Tipologia);
             command.Parameters.AddWithValue("@UltimoControllo", UltimoControllo);
             command.Parameters.AddWithValue("@Produttore", Produttore);
@@ -41,7 +41,7 @@ namespace DatabaseProject
         }
         public bool InserisciBicicletta(String Produttore, String NumTelaio, char Taglia, int RaggioRuota, String Tipologia, String UltimoControllo, int NumeroRapportiAnteriori, int NumeroRapportiPosteriori, int isElettrica, int PotenzaBatteria, int CapacitàBatteria, String IDmagazzino)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@Produttore", Produttore);
             command.Parameters.AddWithValue("@NumTelaio", NumTelaio);
             command.Parameters.AddWithValue("@Taglia", Taglia);
@@ -72,7 +72,7 @@ namespace DatabaseProject
         }
         public bool InserisciPercorso(String IDpercorso, String Difficolta, int NumTappe, float LunghezzaPercorso, String IDsede)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
             command.Parameters.AddWithValue("@Difficolta", Difficolta);
             command.Parameters.AddWithValue("@NumTappe", NumTappe);
@@ -91,9 +91,49 @@ namespace DatabaseProject
                 return false;
             }
         }
+        public bool InserisciTappa(String Inizio, String Fine, float LunghezzaTappa, String IDtappa)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@Inizio", Inizio);
+            command.Parameters.AddWithValue("@Fine", Fine);
+            command.Parameters.AddWithValue("@LunghezzaTappa", LunghezzaTappa);
+            command.Parameters.AddWithValue("@IDtappa", IDtappa);
+            command.CommandText = "INSERT INTO tappa (Inizio, Fine, LunghezzaTappa, IDtappa) " +
+                "VALUES (@Inizio, @Fine, @LunghezzaTappa, @IDtappa)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+        public bool InserisciSequenza(String IDtappa, int Indice, String IDpercorso)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDtappa", IDtappa);
+            command.Parameters.AddWithValue("@Indice", Indice);
+            command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
+            command.CommandText = "INSERT INTO sequenza (IDtappa, Indice, IDpercorso) " +
+                "VALUES (@IDtappa, @Indice, @IDpercorso)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+
         public bool InserisciCliente(String Nome, String Cognome, String CF, String Recapito)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@Nome", Nome);
             command.Parameters.AddWithValue("@Cognome", Cognome);
             command.Parameters.AddWithValue("@CF", CF);
@@ -113,7 +153,7 @@ namespace DatabaseProject
         }
         public bool InserisciDipendente(String Nome, String Cognome, String CF, String Recapito, String CodiceDipendente, float Stipendio, byte isGuida, byte isTourManager, byte isAltro, String IDsede)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@Nome", Nome);
             command.Parameters.AddWithValue("@Cognome", Cognome);
             command.Parameters.AddWithValue("@CF", CF);
@@ -137,9 +177,56 @@ namespace DatabaseProject
                 return false;
             }
         }
+        public bool InserisciDipendente(String Nome, String Cognome, String CF, String Recapito, String CodiceDipendente, float Stipendio, byte isGuida, byte isTourManager, byte isAltro, String IDsede, String CFsuperiore)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@Nome", Nome);
+            command.Parameters.AddWithValue("@Cognome", Cognome);
+            command.Parameters.AddWithValue("@CF", CF);
+            command.Parameters.AddWithValue("@Recapito", Recapito);
+            command.Parameters.AddWithValue("@CodiceDipendente", CodiceDipendente);
+            command.Parameters.AddWithValue("@Stipendio", Stipendio);
+            command.Parameters.AddWithValue("@isGuida", isGuida);
+            command.Parameters.AddWithValue("@isTourManager", isTourManager);
+            command.Parameters.AddWithValue("@isAltro", isAltro);
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.Parameters.AddWithValue("@CFsuperiore", CFsuperiore);
+            command.CommandText = "INSERT INTO dipendente (Nome, Cognome, CF, Recapito, CodiceDipendente, Stipendio, isGuida, isTourManager, isAltro, IDsede, CFsuperiore) " +
+                "VALUES (@Nome, @Cognome, @CF, @Recapito, @CodiceDipendente, @Stipendio, @isGuida, @isTourManager, @isAltro, @IDsede, @CFsuperiore)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+        public bool InserisciPacchetto(float Prezzo, int Sconto, String IDpacchetto, String CFcliente)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@Prezzo", Prezzo);
+            command.Parameters.AddWithValue("@Sconto", Sconto);
+            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
+            command.Parameters.AddWithValue("@CFcliente", CFcliente);
+            command.CommandText = "INSERT INTO pacchetto (Prezzo, Sconto, IDpacchetto, CFcliente) " +
+                "VALUES (@Prezzo, @Sconto, @IDpacchetto, @CFcliente)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
         public bool InserisciServizio(String DataInizio, String DataFine, float CostoGiornaliero, String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@DataInizio", DataInizio);
             command.Parameters.AddWithValue("@DataFine", DataFine);
             command.Parameters.AddWithValue("@CostoGiornaliero", CostoGiornaliero);
@@ -169,9 +256,64 @@ namespace DatabaseProject
                 return false;
             }
         }
+
+        public bool InserisciNoleggioBicicletta(String IDservizio, String NumTelaio)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDservizio", IDservizio);
+            command.Parameters.AddWithValue("@NumTelaio", NumTelaio);
+            command.CommandText = "INSERT INTO noleggiobicicletta (IDservizio, NumTelaio) " +
+                "VALUES (@IDservizio, @NumTelaio)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+        public bool InserisciNoleggioAccessorio(String IDservizio, String IDaccessorio)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDservizio", IDservizio);
+            command.Parameters.AddWithValue("@IDaccessorio", IDaccessorio);
+            command.CommandText = "INSERT INTO noleggioaccessorio (IDservizio, IDaccessorio) " +
+                "VALUES (@IDservizio, @IDaccessorio)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
+        public bool InserisciPartecipazione(String IDpercorsoGuidato, String CFguida)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDpercorsoGuidato", IDpercorsoGuidato);
+            command.Parameters.AddWithValue("@CFguida", CFguida);
+            command.CommandText = "INSERT INTO partecipazione (IDpercorsoGuidato, CFguida) " +
+                "VALUES (@IDpercorsoGuidato, @CFguida)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
         public bool InserisciTour(String Destinazione, String Nome, String DataInizio, String DataFine, float Prezzo, String IDtour, String IDsede, String CFtourManager)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@Destinazione", Destinazione);
             command.Parameters.AddWithValue("@Nome", Nome);
             command.Parameters.AddWithValue("@DataInizio", DataInizio);
@@ -193,9 +335,27 @@ namespace DatabaseProject
                 return false;
             }
         }
+        public bool InserisciPrenotazione(String CFcliente, String IDtour)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@CFcliente", CFcliente);
+            command.Parameters.AddWithValue("@IDtour", IDtour);
+            command.CommandText = "INSERT INTO prenotazione (CFcliente, IDtour) " +
+                "VALUES (@CFcliente, @IDtour)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
         public bool InserisciMagazzino(long CapienzaMassimaAccessori, long CapienzaMassimaBici, String IDmagazzino, String IDIndirizzo, String IDsede)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@CapienzaMassimaAccessori", CapienzaMassimaAccessori);
             command.Parameters.AddWithValue("@CapienzaMassimiBici", CapienzaMassimaBici);
             command.Parameters.AddWithValue("@IDmagazzino", IDmagazzino);
@@ -220,44 +380,65 @@ namespace DatabaseProject
         */
         public MySqlDataReader LeggiAgenzie()
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM agenzia";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiSedi()
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM sede";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiSedi(String PIVAagenzia)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@PIVA", PIVAagenzia);
             command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=@PIVA";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiAccessori()
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM accessorio";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiAccessori(String IDmagazzino)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDmagazzino", IDmagazzino);
+            command.CommandText = "SELECT * FROM accessorio WHERE accessorio.IDmagazzino=@IDmagazzino";
+            return command.ExecuteReader();
+        }
+
+        public MySqlDataReader LeggiBiciclette()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM bicicletta";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiBiciclette(String IDmagazzino)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDmagazzino", IDmagazzino);
+            command.CommandText = "SELECT * FROM bicicletta WHERE bicicletta.IDmagazzino=@IDmagazzino";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiClienti()
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM cliente";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiDipendenti()
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM dipendente";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiDipendenti(String IDsede)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.CommandText = "SELECT * FROM dipendente WHERE dipendente.IDsede=@IDsede";
             return command.ExecuteReader();
@@ -278,46 +459,94 @@ namespace DatabaseProject
 
         public MySqlDataReader LeggiMagazzini()
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM magazzino";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiMagazzini(String IDsede)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede=@IDsede";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiPacchetti()
         {
-            MySqlCommand command = this.connection.CreateCommand();
-            command.CommandText = "SELECT * FROM pacchetti";
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM pacchetto";
             return command.ExecuteReader();
         }
-        public MySqlDataReader LeggiPacchetti(String IDpacchetto)
+        public MySqlDataReader LeggiPacchetti(String CFcliente)
         {
-            MySqlCommand command = this.connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
-            command.CommandText = "SELECT * FROM servizi WHERE servizi.IDpacchetto=@IDpacchetto";
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@CFcliente", CFcliente);
+            command.CommandText = "SELECT * FROM pacchetto WHERE pacchetto.CFcliente=@CFcliente";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPercorso()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM percorso";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiPercorso(String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede=@IDsede";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiServizi()
         {
-            MySqlCommand command = this.connection.CreateCommand();
-            command.CommandText = "SELECT * FROM servizi";
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM servizio";
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiServizi(String IDpacchetto)
         {
-            MySqlCommand command = this.connection.CreateCommand();
+            MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
-            command.CommandText = "SELECT * FROM servizi WHERE servizi.IDpacchetto=@IDpacchetto";
+            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto=@IDpacchetto";
             return command.ExecuteReader();
         }
-
-
-
-
+        public MySqlDataReader LeggiNoleggiAccessori()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM noleggioaccessorio";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiNoleggiAccessori(String IDservizio)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDservizio", IDservizio);
+            command.CommandText = "SELECT * FROM noleggioaccessorio WHERE noleggioaccessorio.IDservizio=@IDservizio";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiNoleggiBiciclette()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM noleggiobicicletta";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiNoleggiBiciclette(String IDservizio)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDservizio", IDservizio);
+            command.CommandText = "SELECT * FROM noleggiobicicletta WHERE noleggiobicicletta.IDservizio=@IDservizio";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiTour()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM tour";
+            return command.ExecuteReader();
+        }
+        public MySqlDataReader LeggiTour(String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM tour WHERE tour.IDsede=@IDsede";
+            return command.ExecuteReader();
+        }
     }
 }
