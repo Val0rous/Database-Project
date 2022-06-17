@@ -16,10 +16,10 @@ namespace DatabaseProject
         [STAThread]
         static void Main()
         {
-            var connection = new CreateConnection();
+            //var connection = new CreateConnection();
             
-            connection.Connection.Open();
-            QueryLibrary bro = new QueryLibrary(connection.Connection);
+            //connection.Connection.Open();
+            //QueryLibrary bro = new QueryLibrary(connection.Connection);
             /*
             var reader = bro.LeggiAgenzie();
             while (reader.Read())
@@ -58,7 +58,7 @@ namespace DatabaseProject
                 MessageBox.Show("Record was NOT added!");
             }
             */
-            connection.Connection.Close();
+            //connection.Connection.Close();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UserAdminChoice());

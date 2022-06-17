@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using System.Threading;
 
 namespace DatabaseProject
 {
@@ -48,16 +50,27 @@ namespace DatabaseProject
                     "Errore",
                     MessageBoxButtons.OK, 
                     MessageBoxIcon.Error);
+                //SystemSounds.Exclamation.Play();
             }
             else
             {
                 this.Hide();
-                var d = new DatabaseView(this.IsAdmin,
+                if (this.IsAdmin)
+                {
+                    var d = new DatabaseViewAdmin(this.IsAdmin,
                     this.ListaAgenzie[this.AgenziaComboBox.SelectedIndex].Item1,
                     this.ListaSedi[this.SedeComboBox.SelectedIndex].Item1);
-                d.Show();
+                    d.Show();
+
+                }
+                else
+                {
+                    var d = new DatabaseViewUser(this.IsAdmin,
+                    this.ListaAgenzie[this.AgenziaComboBox.SelectedIndex].Item1,
+                    this.ListaSedi[this.SedeComboBox.SelectedIndex].Item1);
+                    d.Show();
+                }
             }
-            
         }
 
         private void BackButton_Click(object sender, EventArgs e)

@@ -10,42 +10,18 @@ using System.Windows.Forms;
 
 namespace DatabaseProject
 {
-    public partial class DatabaseViewAdmin : Form
+    public partial class DatabaseViewUser : Form
     {
         bool IsAdmin { get; }
         string PIVAagenzia { get; }
         string IDsede { get; }
-        public DatabaseViewAdmin(bool isAdmin, string PIVAagenzia, string IDsede)
+
+        public DatabaseViewUser(bool isAdmin, string PIVAagenzia, string IDsede)
         {
             this.IsAdmin = isAdmin;
             this.PIVAagenzia = PIVAagenzia;
             this.IDsede = IDsede;
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_3(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void BackButton_Click(object sender, EventArgs e)

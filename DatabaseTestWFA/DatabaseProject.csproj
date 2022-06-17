@@ -116,6 +116,12 @@
     <Compile Include="bicicletta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseViewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseViewUser.Designer.cs">
+      <DependentUpon>DatabaseViewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueryLibrary.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="cliente.cs">
@@ -203,6 +209,9 @@
     </Compile>
     <EmbeddedResource Include="DatabaseViewAdmin.resx">
       <DependentUpon>DatabaseViewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseViewUser.resx">
+      <DependentUpon>DatabaseViewUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

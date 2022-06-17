@@ -1,7 +1,7 @@
 ﻿
 namespace DatabaseProject
 {
-    partial class DatabaseView
+    partial class DatabaseViewAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace DatabaseProject
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseViewAdmin));
             this.button1 = new System.Windows.Forms.Button();
             this.Dipendenti = new System.Windows.Forms.TabPage();
             this.Business_Partners = new System.Windows.Forms.TabPage();
