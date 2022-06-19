@@ -568,14 +568,14 @@ namespace DatabaseProject
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDtour", IDtour);
-            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.IDtour=@IDtour";
+            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.IDtour=" + Convert(IDtour);
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiPrenotazioniCliente(String CFcliente)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@CFcliente", CFcliente);
-            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.CFcliente=@CFcliente";
+            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.CFcliente=" + Convert(CFcliente);
             return command.ExecuteReader();
         }
         public MySqlDataReader LeggiSedi()
@@ -588,7 +588,7 @@ namespace DatabaseProject
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@PIVA", PIVAagenzia);
-            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia='" + PIVAagenzia + "'";
+            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=" + Convert(PIVAagenzia);
             return command;
         }
         public MySqlDataReader LeggiServizi()
@@ -620,7 +620,7 @@ namespace DatabaseProject
         public MySqlCommand LeggiTour(String IDsede, String Date)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM tour AS t " + "WHERE t.IDsede='" + IDsede + "' AND '" + Date + "' >= t.DataInizio AND '" + Date + "' <= t.DataFine ";
+            command.CommandText = "SELECT * FROM tour AS t WHERE t.IDsede=" + Convert(IDsede) + " AND " + Convert(Date) + " >= t.DataInizio AND " + Convert(Date) + " <= t.DataFine ";
             return command;
         }
     }
