@@ -506,126 +506,115 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede='" + IDsede + "'";
             return command.CommandText;
         }
-        public MySqlDataReader LeggiNoleggiAccessori()
+        public MySqlCommand LeggiNoleggiAccessori()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM noleggioaccessorio";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiNoleggiAccessori(String IDservizio)
+        public MySqlCommand LeggiNoleggiAccessori(String IDservizio)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDservizio", IDservizio);
-            command.CommandText = "SELECT * FROM noleggioaccessorio WHERE noleggioaccessorio.IDservizio=@IDservizio";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM noleggioaccessorio WHERE noleggioaccessorio.IDservizio="+Convert(IDservizio);
+            return command;
         }
-        public MySqlDataReader LeggiNoleggiBiciclette()
+        public MySqlCommand LeggiNoleggiBiciclette()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM noleggiobicicletta";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiNoleggiBiciclette(String IDservizio)
+        public MySqlCommand LeggiNoleggiBiciclette(String IDservizio)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDservizio", IDservizio);
-            command.CommandText = "SELECT * FROM noleggiobicicletta WHERE noleggiobicicletta.IDservizio=@IDservizio";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM noleggiobicicletta WHERE noleggiobicicletta.IDservizio="+Convert(IDservizio);
+            return command;
         }
-        public MySqlDataReader LeggiPacchetti()
+        public MySqlCommand LeggiPacchetti()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM pacchetto";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPacchetti(String CFcliente)
+        public MySqlCommand LeggiPacchetti(String CFcliente)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@CFcliente", CFcliente);
-            command.CommandText = "SELECT * FROM pacchetto WHERE pacchetto.CFcliente=@CFcliente";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM pacchetto WHERE pacchetto.CFcliente="+Convert(CFcliente);
+            return command;
         }
-        public MySqlDataReader LeggiPercorso()
+        public MySqlCommand LeggiPercorso()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM percorso";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPercorso(String IDsede)
+        public MySqlCommand LeggiPercorso(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede=@IDsede";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede="+Convert(IDsede);
+            return command;
         }
-        public MySqlDataReader LeggiPrenotazioni()
+        public MySqlCommand LeggiPrenotazioni()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM prenotazione";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPrenotazioniTour(String IDtour)
+        public MySqlCommand LeggiPrenotazioniTour(String IDtour)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDtour", IDtour);
-            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.IDtour=@IDtour";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.IDtour="+Convert(IDtour);
+            return command;
         }
-        public MySqlDataReader LeggiPrenotazioniCliente(String CFcliente)
+        public MySqlCommand LeggiPrenotazioniCliente(String CFcliente)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@CFcliente", CFcliente);
-            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.CFcliente=@CFcliente";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.CFcliente="+Convert(CFcliente);
+            return command;
         }
-        public MySqlDataReader LeggiSedi()
+        public MySqlCommand LeggiSedi()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM sede";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiSedi(String PIVAagenzia)
+        public MySqlCommand LeggiSedi(String PIVAagenzia)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@PIVA", PIVAagenzia);
-            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=@PIVA";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia="+Convert(PIVAagenzia);
+            return command;
         }
-        public MySqlDataReader LeggiServizi()
+        public MySqlCommand LeggiServizi()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM servizio";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiServizi(String IDpacchetto)
+        public MySqlCommand LeggiServizi(String IDpacchetto)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
-            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto=@IDpacchetto";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto="+Convert(IDpacchetto);
+            return command;
         }
         
-        public MySqlDataReader LeggiTour()
+        public MySqlCommand LeggiTour()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM tour";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiTour(String IDsede)
+        public MySqlCommand LeggiTour(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.CommandText = "SELECT * FROM tour WHERE tour.IDsede=@IDsede";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM tour WHERE tour.IDsede="+Convert(IDsede);
+            return command;
         }
-        public MySqlDataReader LeggiTour(String IDsede, String Date)
+        public MySqlCommand LeggiTour(String IDsede, String Date)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.Parameters.AddWithValue("@Date", Date);
             command.CommandText = "SELECT * FROM tour AS t " +
-                "WHERE t.IDsede=@IDsede AND @Date >= t.DataInizio AND @Date <= t.DataFine ";
-            return command.ExecuteReader();
+                "WHERE t.IDsede="+Convert(IDsede)+" AND "+Convert(Date)+">= t.DataInizio AND "+Convert(Date)+"<= t.DataFine ";
+            return command;
         }
     }
 }
