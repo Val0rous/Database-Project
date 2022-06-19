@@ -441,7 +441,6 @@ namespace DatabaseProject
         public MySqlDataReader LeggiBusinessPartner(String PIVAagenzia)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@PIVAagenzia", PIVAagenzia);
             command.CommandText = "SELECT * " +
                 "FROM partnershipattrazione as PA, partnershipristorante as PR, partnershipsoggiorno as PS " +
                 "WHERE PA.PIVAagenzia=PR.PIVAagenzia AND PR.PIVAagenzia=PS.PIVAagenzia AND PS.PIVAagenzia=" + Convert(PIVAagenzia);
@@ -489,89 +488,89 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM magazzino";
             return command.ExecuteReader();
         }
-        public MySqlDataReader LeggiMagazzini(String IDsede)
+        public MySqlCommand LeggiMagazzini(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede=" + Convert(IDsede);
-            return command.ExecuteReader();
+            return command;
         }
-        public string LeggiMagazziniToString(String IDsede)
+        public MySqlCommand LeggiMagazziniToString(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede='" + Convert(IDsede);
-            return command.CommandText;
+            return command;
         }
-        public MySqlDataReader LeggiNoleggiAccessori()
+        public MySqlCommand LeggiNoleggiAccessori()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM noleggioaccessorio";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiNoleggiAccessori(String IDservizio)
+        public MySqlCommand LeggiNoleggiAccessori(String IDservizio)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM noleggioaccessorio WHERE noleggioaccessorio.IDservizio=" + Convert(IDservizio);
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiNoleggiBiciclette()
+        public MySqlCommand LeggiNoleggiBiciclette()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM noleggiobicicletta";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiNoleggiBiciclette(String IDservizio)
+        public MySqlCommand LeggiNoleggiBiciclette(String IDservizio)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM noleggiobicicletta WHERE noleggiobicicletta.IDservizio=" + Convert(IDservizio);
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPacchetti()
+        public MySqlCommand LeggiPacchetti()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM pacchetto";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPacchetti(String CFcliente)
+        public MySqlCommand LeggiPacchetti(String CFcliente)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM pacchetto WHERE pacchetto.CFcliente=" + Convert(CFcliente);
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPercorso()
+        public MySqlCommand LeggiPercorso()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM percorso";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPercorso(String IDsede)
+        public MySqlCommand LeggiPercorso(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede=" + Convert(IDsede);
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPrenotazioni()
+        public MySqlCommand LeggiPrenotazioni()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM prenotazione";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPrenotazioniTour(String IDtour)
+        public MySqlCommand LeggiPrenotazioniTour(String IDtour)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.IDtour=" + Convert(IDtour);
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiPrenotazioniCliente(String CFcliente)
+        public MySqlCommand LeggiPrenotazioniCliente(String CFcliente)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM prenotazione WHERE prenotazione.CFcliente=" + Convert(CFcliente);
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiSedi()
+        public MySqlCommand LeggiSedi()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM sede";
-            return command.ExecuteReader();
+            return command;
         }
         public MySqlCommand LeggiSedi(String PIVAagenzia)
         {
@@ -579,24 +578,24 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=" + Convert(PIVAagenzia);
             return command;
         }
-        public MySqlDataReader LeggiServizi()
+        public MySqlCommand LeggiServizi()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM servizio";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiServizi(String IDpacchetto)
+        public MySqlCommand LeggiServizi(String IDpacchetto)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto=" + Convert(IDpacchetto);
-            return command.ExecuteReader();
+            return command;
         }
         
-        public MySqlDataReader LeggiTour()
+        public MySqlCommand LeggiTour()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM tour";
-            return command.ExecuteReader();
+            return command;
         }
         public MySqlCommand LeggiTour(String IDsede)
         {

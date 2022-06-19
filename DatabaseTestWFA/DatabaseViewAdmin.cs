@@ -85,5 +85,10 @@ namespace DatabaseProject
             var s = new SelezioneSede(this.IsAdmin);
             s.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
