@@ -601,7 +601,7 @@ namespace DatabaseProject
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
-            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto=@IDpacchetto";
+            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto=" + Convert(IDpacchetto);
             return command.ExecuteReader();
         }
         
@@ -614,17 +614,13 @@ namespace DatabaseProject
         public MySqlCommand LeggiTour(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.CommandText = "SELECT * FROM tour WHERE tour.IDsede=@IDsede";
+            command.CommandText = "SELECT * FROM tour WHERE tour.IDsede=" + Convert(IDsede);
             return command;
         }
         public MySqlCommand LeggiTour(String IDsede, String Date)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.Parameters.AddWithValue("@Date", Date);
-            command.CommandText = "SELECT * FROM tour AS t " +
-                "WHERE t.IDsede='" + IDsede + "' AND '" + Date + "' >= t.DataInizio AND '" + Date + "' <= t.DataFine ";
+            command.CommandText = "SELECT * FROM tour AS t " + "WHERE t.IDsede='" + IDsede + "' AND '" + Date + "' >= t.DataInizio AND '" + Date + "' <= t.DataFine ";
             return command;
         }
     }
