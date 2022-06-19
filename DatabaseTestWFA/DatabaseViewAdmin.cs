@@ -47,6 +47,13 @@ namespace DatabaseProject
             SBind = new BindingSource();
             SBind.DataSource = table;
             TabellaTour.DataSource = SBind;
+
+            dataAdapter = new MySqlDataAdapter(queries.LeggiBusinessPartners(this.IDsede).CommandText, connection.Connection);
+            table = new DataTable();
+            dataAdapter.Fill(table);
+            SBind = new BindingSource();
+            SBind.DataSource = table;
+            TabellaTour.DataSource = SBind;
         }
 
         private void Form1_Load(object sender, EventArgs e)

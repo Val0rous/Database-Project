@@ -438,13 +438,13 @@ namespace DatabaseProject
             "AND B.IDmagazzino IN(SELECT IDmagazzino FROM sede S, magazzino M WHERE S.IDsede= @IDsede AND M.IDsede= S.IDsede);";
             return command.ExecuteReader();
         }
-        public MySqlDataReader LeggiBusinessPartner(String PIVAagenzia)
+        public MySqlCommand LeggiBusinessPartner(String PIVAagenzia)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * " +
                 "FROM partnershipattrazione as PA, partnershipristorante as PR, partnershipsoggiorno as PS " +
                 "WHERE PA.PIVAagenzia=PR.PIVAagenzia AND PR.PIVAagenzia=PS.PIVAagenzia AND PS.PIVAagenzia=" + Convert(PIVAagenzia);
-            return command.ExecuteReader();
+            return command;
         }
         public MySqlDataReader LeggiClienti()
         {
