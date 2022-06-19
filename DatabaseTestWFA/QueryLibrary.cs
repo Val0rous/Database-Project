@@ -403,7 +403,7 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM accessorio WHERE accessorio.IDmagazzino=" + Convert(IDmagazzino);
             return command;
         }
-        public MySqlDataReader LeggiAccessori(String IDsede, String Date)
+        public MySqlCommand LeggiAccessori(String IDsede, String Date)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             //command.Parameters.AddWithValue("@IDsede", IDsede);
@@ -444,6 +444,17 @@ namespace DatabaseProject
             command.CommandText = "SELECT * " +
                 "FROM partnershipattrazione as PA, partnershipristorante as PR, partnershipsoggiorno as PS " +
                 "WHERE PA.PIVAagenzia=PR.PIVAagenzia AND PR.PIVAagenzia=PS.PIVAagenzia AND PS.PIVAagenzia=" + Convert(PIVAagenzia);
+            command.CommandText = "SELECT A.PIVA, A.NomeSocio, A.CostoServizio, A.Recapito, 'Attrazione' AS Tipo " +
+                "FROM partnershipattrazione as PA, attrazione AS A " +
+                "WHERE PA.PIVAagenzia = "+Convert(PIVAagenzia)+" AND PA.PIVApartner = A.PIVA " +
+                "UNION " +
+                "SELECT A.PIVA, A.NomeSocio, A.CostoServizio, A.Recapito, 'Ristorante' AS Tipo " +
+                "FROM partnershipristorante as PA, ristorante AS A " +
+                "WHERE PA.PIVAagenzia = " + Convert(PIVAagenzia) + " AND PA.PIVApartner = A.PIVA " +
+                "UNION " +
+                "SELECT A.PIVA, A.NomeSocio, A.CostoServizio, A.Recapito, 'Soggiorno' AS Tipo " +
+                "FROM partnershipsoggiorno as PA, soggiorno AS A " +
+                "WHERE PA.PIVAagenzia = " + Convert(PIVAagenzia) + " AND PA.PIVApartner = A.PIVA";
             return command;
         }
         public MySqlCommand LeggiClienti()
