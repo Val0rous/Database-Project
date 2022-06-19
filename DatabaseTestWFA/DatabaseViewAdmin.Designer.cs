@@ -43,6 +43,7 @@ namespace DatabaseProject
             this.Cognome = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.TextBox();
             this.TabPage = new System.Windows.Forms.TabControl();
+            this.Tour = new System.Windows.Forms.TabPage();
             this.Clienti.SuspendLayout();
             this.TabPage.SuspendLayout();
             this.SuspendLayout();
@@ -177,6 +178,7 @@ namespace DatabaseProject
             this.TabPage.Controls.Add(this.Percorsi);
             this.TabPage.Controls.Add(this.Business_Partners);
             this.TabPage.Controls.Add(this.Dipendenti);
+            this.TabPage.Controls.Add(this.Tour);
             this.TabPage.Location = new System.Drawing.Point(12, 55);
             this.TabPage.Name = "TabPage";
             this.TabPage.SelectedIndex = 0;
@@ -184,7 +186,17 @@ namespace DatabaseProject
             this.TabPage.TabIndex = 4;
             this.TabPage.Tag = "";
             // 
-            // DatabaseView
+            // Tour
+            // 
+            this.Tour.Location = new System.Drawing.Point(4, 25);
+            this.Tour.Name = "Tour";
+            this.Tour.Padding = new System.Windows.Forms.Padding(3);
+            this.Tour.Size = new System.Drawing.Size(951, 495);
+            this.Tour.TabIndex = 8;
+            this.Tour.Text = "Tour";
+            this.Tour.UseVisualStyleBackColor = true;
+            // 
+            // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +204,7 @@ namespace DatabaseProject
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TabPage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DatabaseView";
+            this.Name = "DatabaseViewAdmin";
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Clienti.ResumeLayout(false);
@@ -216,6 +228,7 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox Cognome;
         private System.Windows.Forms.TextBox Nome;
         private System.Windows.Forms.TabControl TabPage;
+        private System.Windows.Forms.TabPage Tour;
     }
 }
 
