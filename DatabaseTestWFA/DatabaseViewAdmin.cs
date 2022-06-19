@@ -34,12 +34,26 @@ namespace DatabaseProject
             SBind.DataSource = table;
             TabellaDipendenti.DataSource = SBind;
 
-            dataAdapter = new MySqlDataAdapter(queries.LeggiMagazziniToString(this.IDsede), connection.Connection);
+            dataAdapter = new MySqlDataAdapter(queries.LeggiMagazzini(this.IDsede).CommandText, connection.Connection);
             table = new DataTable();
             dataAdapter.Fill(table);
             SBind = new BindingSource();
             SBind.DataSource = table;
             TabellaMagazzini.DataSource = SBind;
+
+            dataAdapter = new MySqlDataAdapter(queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
+            table = new DataTable();
+            dataAdapter.Fill(table);
+            SBind = new BindingSource();
+            SBind.DataSource = table;
+            TabellaTour.DataSource = SBind;
+
+            dataAdapter = new MySqlDataAdapter(queries.LeggiBusinessPartner(this.IDsede).CommandText, connection.Connection);
+            table = new DataTable();
+            dataAdapter.Fill(table);
+            SBind = new BindingSource();
+            SBind.DataSource = table;
+            TabellaBusinessPartners.DataSource = SBind;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -77,6 +91,11 @@ namespace DatabaseProject
             this.Hide();
             var s = new SelezioneSede(this.IsAdmin);
             s.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
