@@ -25,42 +25,14 @@ namespace DatabaseProject
             
             var connection = new CreateConnection();
             var queries = new QueryLibrary(connection.Connection);
-            var dataAdapter = new MySqlDataAdapter(queries.LeggiDipendentiToString(this.IDsede), connection.Connection);
 
-            //TabellaDipendenti.DataSource = queries.LeggiDipendenti(this.IDsede);
-            DataTable table = new DataTable();
-            dataAdapter.Fill(table);
-            BindingSource SBind = new BindingSource();
-            SBind.DataSource = table;
-            TabellaDipendenti.DataSource = SBind;
-
-            dataAdapter = new MySqlDataAdapter(queries.LeggiMagazzini(this.IDsede).CommandText, connection.Connection);
-            table = new DataTable();
-            dataAdapter.Fill(table);
-            SBind = new BindingSource();
-            SBind.DataSource = table;
-            TabellaMagazzini.DataSource = SBind;
-
-            dataAdapter = new MySqlDataAdapter(queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
-            table = new DataTable();
-            dataAdapter.Fill(table);
-            SBind = new BindingSource();
-            SBind.DataSource = table;
-            TabellaTour.DataSource = SBind;
-
-            dataAdapter = new MySqlDataAdapter(queries.LeggiBusinessPartner(this.IDsede).CommandText, connection.Connection);
-            table = new DataTable();
-            dataAdapter.Fill(table);
-            SBind = new BindingSource();
-            SBind.DataSource = table;
-            TabellaBusinessPartners.DataSource = SBind;
-
-            dataAdapter = new MySqlDataAdapter(queries.LeggiPercorso(this.IDsede).CommandText, connection.Connection);
-            table = new DataTable();
-            dataAdapter.Fill(table);
-            SBind = new BindingSource();
-            SBind.DataSource = table;
-            TabellaPercorsi.DataSource = SBind;
+            FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaMagazzini, queries.LeggiMagazzini(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaTour, queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaBusinessPartners, queries.LeggiBusinessPartner(this.PIVAagenzia).CommandText, connection.Connection);
+            FillTable(TabellaPercorsi, queries.LeggiPercorso(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaClienti, queries.LeggiClienti().CommandText, connection.Connection);
+            FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -103,6 +75,16 @@ namespace DatabaseProject
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private static void FillTable(DataGridView grid, string command, MySqlConnection connection)
+        {
+            var dataAdapter = new MySqlDataAdapter(command, connection);
+            var table = new DataTable();
+            dataAdapter.Fill(table);
+            var SBind = new BindingSource();
+            SBind.DataSource = table;
+            grid.DataSource = SBind;
         }
     }
 }

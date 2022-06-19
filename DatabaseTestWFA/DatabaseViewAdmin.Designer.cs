@@ -56,10 +56,13 @@ namespace DatabaseProject
             this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
+            this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
+            this.TabellaClienti = new System.Windows.Forms.DataGridView();
             this.Dipendenti.SuspendLayout();
             this.Business_Partners.SuspendLayout();
             this.Percorsi.SuspendLayout();
             this.Magazzino.SuspendLayout();
+            this.Prenotazioni.SuspendLayout();
             this.Clienti.SuspendLayout();
             this.TabPage.SuspendLayout();
             this.Tour.SuspendLayout();
@@ -72,6 +75,8 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -131,6 +136,7 @@ namespace DatabaseProject
             // 
             // Prenotazioni
             // 
+            this.Prenotazioni.Controls.Add(this.TabellaPrenotazioni);
             this.Prenotazioni.Location = new System.Drawing.Point(4, 25);
             this.Prenotazioni.Name = "Prenotazioni";
             this.Prenotazioni.Padding = new System.Windows.Forms.Padding(3);
@@ -141,6 +147,7 @@ namespace DatabaseProject
             // 
             // Clienti
             // 
+            this.Clienti.Controls.Add(this.TabellaClienti);
             this.Clienti.Controls.Add(this.AggiungiCliente);
             this.Clienti.Controls.Add(this.Telefono);
             this.Clienti.Controls.Add(this.CodiceFiscale);
@@ -306,6 +313,26 @@ namespace DatabaseProject
             this.TabellaPercorsi.Size = new System.Drawing.Size(939, 486);
             this.TabellaPercorsi.TabIndex = 0;
             // 
+            // TabellaPrenotazioni
+            // 
+            this.TabellaPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPrenotazioni.Location = new System.Drawing.Point(6, 6);
+            this.TabellaPrenotazioni.Name = "TabellaPrenotazioni";
+            this.TabellaPrenotazioni.RowHeadersWidth = 51;
+            this.TabellaPrenotazioni.RowTemplate.Height = 24;
+            this.TabellaPrenotazioni.Size = new System.Drawing.Size(939, 483);
+            this.TabellaPrenotazioni.TabIndex = 0;
+            // 
+            // TabellaClienti
+            // 
+            this.TabellaClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaClienti.Location = new System.Drawing.Point(190, 6);
+            this.TabellaClienti.Name = "TabellaClienti";
+            this.TabellaClienti.RowHeadersWidth = 51;
+            this.TabellaClienti.RowTemplate.Height = 24;
+            this.TabellaClienti.Size = new System.Drawing.Size(755, 483);
+            this.TabellaClienti.TabIndex = 5;
+            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,6 +348,7 @@ namespace DatabaseProject
             this.Business_Partners.ResumeLayout(false);
             this.Percorsi.ResumeLayout(false);
             this.Magazzino.ResumeLayout(false);
+            this.Prenotazioni.ResumeLayout(false);
             this.Clienti.ResumeLayout(false);
             this.Clienti.PerformLayout();
             this.TabPage.ResumeLayout(false);
@@ -334,6 +362,8 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,6 +394,8 @@ namespace DatabaseProject
         private System.Windows.Forms.DataGridView TabellaTour;
         private System.Windows.Forms.DataGridView TabellaBusinessPartners;
         private System.Windows.Forms.DataGridView TabellaPercorsi;
+        private System.Windows.Forms.DataGridView TabellaPrenotazioni;
+        private System.Windows.Forms.DataGridView TabellaClienti;
     }
 }
 
