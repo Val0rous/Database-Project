@@ -53,16 +53,22 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
+            this.TabellaTour = new System.Windows.Forms.DataGridView();
+            this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.Dipendenti.SuspendLayout();
+            this.Business_Partners.SuspendLayout();
             this.Magazzino.SuspendLayout();
             this.Clienti.SuspendLayout();
             this.TabPage.SuspendLayout();
+            this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -89,6 +95,7 @@ namespace DatabaseProject
             // 
             // Business_Partners
             // 
+            this.Business_Partners.Controls.Add(this.TabellaBusinessPartners);
             this.Business_Partners.Location = new System.Drawing.Point(4, 25);
             this.Business_Partners.Name = "Business_Partners";
             this.Business_Partners.Padding = new System.Windows.Forms.Padding(3);
@@ -207,6 +214,7 @@ namespace DatabaseProject
             // 
             // Tour
             // 
+            this.Tour.Controls.Add(this.TabellaTour);
             this.Tour.Location = new System.Drawing.Point(4, 25);
             this.Tour.Name = "Tour";
             this.Tour.Padding = new System.Windows.Forms.Padding(3);
@@ -263,6 +271,27 @@ namespace DatabaseProject
             // 
             this.magazzinoTableAdapter.ClearBeforeFill = true;
             // 
+            // TabellaTour
+            // 
+            this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaTour.Location = new System.Drawing.Point(6, 6);
+            this.TabellaTour.Name = "TabellaTour";
+            this.TabellaTour.RowHeadersWidth = 51;
+            this.TabellaTour.RowTemplate.Height = 24;
+            this.TabellaTour.Size = new System.Drawing.Size(939, 486);
+            this.TabellaTour.TabIndex = 0;
+            // 
+            // TabellaBusinessPartners
+            // 
+            this.TabellaBusinessPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaBusinessPartners.Location = new System.Drawing.Point(6, 6);
+            this.TabellaBusinessPartners.Name = "TabellaBusinessPartners";
+            this.TabellaBusinessPartners.RowHeadersWidth = 51;
+            this.TabellaBusinessPartners.RowTemplate.Height = 24;
+            this.TabellaBusinessPartners.Size = new System.Drawing.Size(939, 483);
+            this.TabellaBusinessPartners.TabIndex = 0;
+            this.TabellaBusinessPartners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,16 +304,20 @@ namespace DatabaseProject
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Dipendenti.ResumeLayout(false);
+            this.Business_Partners.ResumeLayout(false);
             this.Magazzino.ResumeLayout(false);
             this.Clienti.ResumeLayout(false);
             this.Clienti.PerformLayout();
             this.TabPage.ResumeLayout(false);
+            this.Tour.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,6 +345,8 @@ namespace DatabaseProject
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet3 gestionale_per_agenzie_relDataSet3;
         private System.Windows.Forms.BindingSource magazzinoBindingSource;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter magazzinoTableAdapter;
+        private System.Windows.Forms.DataGridView TabellaTour;
+        private System.Windows.Forms.DataGridView TabellaBusinessPartners;
     }
 }
 
