@@ -14,6 +14,12 @@ namespace DatabaseProject
         {
             this.Connection = connection;
         }
+
+        private static string Convert(string parameter)
+        {
+            return "'" + parameter + "'";
+        }
+
         /* Funzioni per l'inserimento di dati nel database
         * input: parametri query
         * output: risultato query-> true: tutto ok, false: errore
@@ -378,19 +384,19 @@ namespace DatabaseProject
         * input: eventuali parametri WHERE
         * output: MySqlDataReader, poi gestito da programma
         */
-        public MySqlDataReader LeggiAgenzie()
+        public MySqlCommand LeggiAgenzie()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM agenzia";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiAccessori()
+        public MySqlCommand LeggiAccessori()
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM accessorio";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiAccessori(String IDmagazzino)
+        public MySqlCommand LeggiAccessori(String IDmagazzino)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDmagazzino", IDmagazzino);
