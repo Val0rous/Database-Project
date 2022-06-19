@@ -578,12 +578,12 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM sede";
             return command.ExecuteReader();
         }
-        public MySqlDataReader LeggiSedi(String PIVAagenzia)
+        public MySqlCommand LeggiSedi(String PIVAagenzia)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@PIVA", PIVAagenzia);
-            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia=@PIVA";
-            return command.ExecuteReader();
+            command.CommandText = "SELECT * FROM sede WHERE sede.PIVAagenzia='" + PIVAagenzia + "'";
+            return command;
         }
         public MySqlDataReader LeggiServizi()
         {
@@ -605,21 +605,21 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM tour";
             return command.ExecuteReader();
         }
-        public MySqlDataReader LeggiTour(String IDsede)
+        public MySqlCommand LeggiTour(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.CommandText = "SELECT * FROM tour WHERE tour.IDsede=@IDsede";
-            return command.ExecuteReader();
+            return command;
         }
-        public MySqlDataReader LeggiTour(String IDsede, String Date)
+        public MySqlCommand LeggiTour(String IDsede, String Date)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.Parameters.AddWithValue("@Date", Date);
             command.CommandText = "SELECT * FROM tour AS t " +
-                "WHERE t.IDsede=@IDsede AND @Date >= t.DataInizio AND @Date <= t.DataFine ";
-            return command.ExecuteReader();
+                "WHERE t.IDsede='" + IDsede + "' AND '" + Date + "' >= t.DataInizio AND '" + Date + "' <= t.DataFine ";
+            return command;
         }
     }
 }
