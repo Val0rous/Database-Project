@@ -55,8 +55,10 @@ namespace DatabaseProject
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
+            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
             this.Dipendenti.SuspendLayout();
             this.Business_Partners.SuspendLayout();
+            this.Percorsi.SuspendLayout();
             this.Magazzino.SuspendLayout();
             this.Clienti.SuspendLayout();
             this.TabPage.SuspendLayout();
@@ -69,6 +71,7 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -106,6 +109,7 @@ namespace DatabaseProject
             // 
             // Percorsi
             // 
+            this.Percorsi.Controls.Add(this.TabellaPercorsi);
             this.Percorsi.Location = new System.Drawing.Point(4, 25);
             this.Percorsi.Name = "Percorsi";
             this.Percorsi.Padding = new System.Windows.Forms.Padding(3);
@@ -292,6 +296,16 @@ namespace DatabaseProject
             this.TabellaBusinessPartners.TabIndex = 0;
             this.TabellaBusinessPartners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // TabellaPercorsi
+            // 
+            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPercorsi.Location = new System.Drawing.Point(6, 6);
+            this.TabellaPercorsi.Name = "TabellaPercorsi";
+            this.TabellaPercorsi.RowHeadersWidth = 51;
+            this.TabellaPercorsi.RowTemplate.Height = 24;
+            this.TabellaPercorsi.Size = new System.Drawing.Size(939, 486);
+            this.TabellaPercorsi.TabIndex = 0;
+            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,6 +319,7 @@ namespace DatabaseProject
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Dipendenti.ResumeLayout(false);
             this.Business_Partners.ResumeLayout(false);
+            this.Percorsi.ResumeLayout(false);
             this.Magazzino.ResumeLayout(false);
             this.Clienti.ResumeLayout(false);
             this.Clienti.PerformLayout();
@@ -318,6 +333,7 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,6 +363,7 @@ namespace DatabaseProject
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter magazzinoTableAdapter;
         private System.Windows.Forms.DataGridView TabellaTour;
         private System.Windows.Forms.DataGridView TabellaBusinessPartners;
+        private System.Windows.Forms.DataGridView TabellaPercorsi;
     }
 }
 

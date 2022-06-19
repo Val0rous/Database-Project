@@ -403,7 +403,7 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM accessorio WHERE accessorio.IDmagazzino=" + Convert(IDmagazzino);
             return command;
         }
-        public MySqlDataReader LeggiAccessori(String IDsede, String Date)
+        public MySqlCommand LeggiAccessori(String IDsede, String Date)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             //command.Parameters.AddWithValue("@IDsede", IDsede);
