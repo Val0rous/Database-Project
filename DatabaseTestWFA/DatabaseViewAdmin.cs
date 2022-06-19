@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,33 @@ namespace DatabaseProject
             this.PIVAagenzia = PIVAagenzia;
             this.IDsede = IDsede;
             InitializeComponent();
+            
+            var connection = new CreateConnection();
+            var queries = new QueryLibrary(connection.Connection);
+            var dataAdapter = new MySqlDataAdapter(queries.LeggiDipendentiToString(this.IDsede), connection.Connection);
+
+            //TabellaDipendenti.DataSource = queries.LeggiDipendenti(this.IDsede);
+            DataTable table = new DataTable();
+            dataAdapter.Fill(table);
+            BindingSource SBind = new BindingSource();
+            SBind.DataSource = table;
+            TabellaDipendenti.DataSource = SBind;
+
+            dataAdapter = new MySqlDataAdapter(queries.LeggiMagazziniToString(this.IDsede), connection.Connection);
+            table = new DataTable();
+            dataAdapter.Fill(table);
+            SBind = new BindingSource();
+            SBind.DataSource = table;
+            TabellaMagazzini.DataSource = SBind;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet3.magazzino' table. You can move, or remove it, as needed.
+            //this.magazzinoTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet3.magazzino);
+            // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet2.dipendente' table. You can move, or remove it, as needed.
+            //this.dipendenteTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet2.dipendente);
 
         }
 

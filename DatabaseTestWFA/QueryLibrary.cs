@@ -460,6 +460,13 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM dipendente WHERE dipendente.IDsede=@IDsede";
             return command.ExecuteReader();
         }
+        public string LeggiDipendentiToString(String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM dipendente WHERE dipendente.IDsede='" + IDsede + "'";
+            return command.CommandText;
+        }
         public MySqlDataReader LeggiIndirizzi()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -485,6 +492,13 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede=@IDsede";
             return command.ExecuteReader();
+        }
+        public string LeggiMagazziniToString(String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM magazzino WHERE magazzino.IDsede='" + IDsede + "'";
+            return command.CommandText;
         }
         public MySqlDataReader LeggiNoleggiAccessori()
         {

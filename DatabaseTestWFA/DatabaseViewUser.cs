@@ -30,5 +30,14 @@ namespace DatabaseProject
             var s = new SelezioneSede(this.IsAdmin);
             s.Show();
         }
+
+        private void DatabaseViewUser_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet1.prenotazione' table. You can move, or remove it, as needed.
+            this.prenotazioneTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet1.prenotazione);
+            // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet.cliente' table. You can move, or remove it, as needed.
+            this.clienteTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet.cliente);
+            
+        }
     }
 }

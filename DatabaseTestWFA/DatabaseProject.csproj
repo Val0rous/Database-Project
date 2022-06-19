@@ -122,6 +122,26 @@
     <Compile Include="DatabaseViewUser.Designer.cs">
       <DependentUpon>DatabaseViewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestionale_per_agenzie_relDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionale_per_agenzie_relDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gestionale_per_agenzie_relDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionale_per_agenzie_relDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gestionale_per_agenzie_relDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionale_per_agenzie_relDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gestionale_per_agenzie_relDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionale_per_agenzie_relDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QueryLibrary.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="cliente.cs">
@@ -235,6 +255,50 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SchemaGestionaleAgenzie.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="gestionale_per_agenzie_relDataSet.xsc">
+      <DependentUpon>gestionale_per_agenzie_relDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gestionale_per_agenzie_relDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet.xss">
+      <DependentUpon>gestionale_per_agenzie_relDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet1.xsc">
+      <DependentUpon>gestionale_per_agenzie_relDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gestionale_per_agenzie_relDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet1.xss">
+      <DependentUpon>gestionale_per_agenzie_relDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet2.xsc">
+      <DependentUpon>gestionale_per_agenzie_relDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gestionale_per_agenzie_relDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet2.xss">
+      <DependentUpon>gestionale_per_agenzie_relDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet3.xsc">
+      <DependentUpon>gestionale_per_agenzie_relDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gestionale_per_agenzie_relDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gestionale_per_agenzie_relDataSet3.xss">
+      <DependentUpon>gestionale_per_agenzie_relDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="SchemaGestionaleAgenzie.edmx.diagram">
       <DependentUpon>SchemaGestionaleAgenzie.edmx</DependentUpon>
     </None>

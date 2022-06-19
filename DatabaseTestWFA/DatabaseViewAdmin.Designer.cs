@@ -29,6 +29,7 @@ namespace DatabaseProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseViewAdmin));
             this.button1 = new System.Windows.Forms.Button();
             this.Dipendenti = new System.Windows.Forms.TabPage();
@@ -44,8 +45,24 @@ namespace DatabaseProject
             this.Nome = new System.Windows.Forms.TextBox();
             this.TabPage = new System.Windows.Forms.TabControl();
             this.Tour = new System.Windows.Forms.TabPage();
+            this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
+            this.gestionale_per_agenzie_relDataSet2 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet2();
+            this.dipendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dipendenteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet2TableAdapters.dipendenteTableAdapter();
+            this.TabellaMagazzini = new System.Windows.Forms.DataGridView();
+            this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
+            this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
+            this.Dipendenti.SuspendLayout();
+            this.Magazzino.SuspendLayout();
             this.Clienti.SuspendLayout();
             this.TabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -61,6 +78,7 @@ namespace DatabaseProject
             // 
             // Dipendenti
             // 
+            this.Dipendenti.Controls.Add(this.TabellaDipendenti);
             this.Dipendenti.Location = new System.Drawing.Point(4, 25);
             this.Dipendenti.Name = "Dipendenti";
             this.Dipendenti.Padding = new System.Windows.Forms.Padding(3);
@@ -91,6 +109,7 @@ namespace DatabaseProject
             // 
             // Magazzino
             // 
+            this.Magazzino.Controls.Add(this.TabellaMagazzini);
             this.Magazzino.Location = new System.Drawing.Point(4, 25);
             this.Magazzino.Name = "Magazzino";
             this.Magazzino.Padding = new System.Windows.Forms.Padding(3);
@@ -196,6 +215,54 @@ namespace DatabaseProject
             this.Tour.Text = "Tour";
             this.Tour.UseVisualStyleBackColor = true;
             // 
+            // TabellaDipendenti
+            // 
+            this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaDipendenti.Location = new System.Drawing.Point(6, 6);
+            this.TabellaDipendenti.Name = "TabellaDipendenti";
+            this.TabellaDipendenti.RowHeadersWidth = 51;
+            this.TabellaDipendenti.RowTemplate.Height = 24;
+            this.TabellaDipendenti.Size = new System.Drawing.Size(939, 486);
+            this.TabellaDipendenti.TabIndex = 0;
+            // 
+            // gestionale_per_agenzie_relDataSet2
+            // 
+            this.gestionale_per_agenzie_relDataSet2.DataSetName = "gestionale_per_agenzie_relDataSet2";
+            this.gestionale_per_agenzie_relDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dipendenteBindingSource
+            // 
+            this.dipendenteBindingSource.DataMember = "dipendente";
+            this.dipendenteBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet2;
+            // 
+            // dipendenteTableAdapter
+            // 
+            this.dipendenteTableAdapter.ClearBeforeFill = true;
+            // 
+            // TabellaMagazzini
+            // 
+            this.TabellaMagazzini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaMagazzini.Location = new System.Drawing.Point(6, 6);
+            this.TabellaMagazzini.Name = "TabellaMagazzini";
+            this.TabellaMagazzini.RowHeadersWidth = 51;
+            this.TabellaMagazzini.RowTemplate.Height = 24;
+            this.TabellaMagazzini.Size = new System.Drawing.Size(939, 483);
+            this.TabellaMagazzini.TabIndex = 0;
+            // 
+            // gestionale_per_agenzie_relDataSet3
+            // 
+            this.gestionale_per_agenzie_relDataSet3.DataSetName = "gestionale_per_agenzie_relDataSet3";
+            this.gestionale_per_agenzie_relDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // magazzinoBindingSource
+            // 
+            this.magazzinoBindingSource.DataMember = "magazzino";
+            this.magazzinoBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet3;
+            // 
+            // magazzinoTableAdapter
+            // 
+            this.magazzinoTableAdapter.ClearBeforeFill = true;
+            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,9 +274,17 @@ namespace DatabaseProject
             this.Name = "DatabaseViewAdmin";
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Dipendenti.ResumeLayout(false);
+            this.Magazzino.ResumeLayout(false);
             this.Clienti.ResumeLayout(false);
             this.Clienti.PerformLayout();
             this.TabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +304,14 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox Nome;
         private System.Windows.Forms.TabControl TabPage;
         private System.Windows.Forms.TabPage Tour;
+        private System.Windows.Forms.DataGridView TabellaDipendenti;
+        private DatabaseTestWFA.gestionale_per_agenzie_relDataSet2 gestionale_per_agenzie_relDataSet2;
+        private System.Windows.Forms.BindingSource dipendenteBindingSource;
+        private DatabaseTestWFA.gestionale_per_agenzie_relDataSet2TableAdapters.dipendenteTableAdapter dipendenteTableAdapter;
+        private System.Windows.Forms.DataGridView TabellaMagazzini;
+        private DatabaseTestWFA.gestionale_per_agenzie_relDataSet3 gestionale_per_agenzie_relDataSet3;
+        private System.Windows.Forms.BindingSource magazzinoBindingSource;
+        private DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter magazzinoTableAdapter;
     }
 }
 
