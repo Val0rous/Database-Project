@@ -28,7 +28,7 @@ namespace DatabaseProject
             this.Connection = new CreateConnection();
             this.Connection.Connection.Open();
             var query = new QueryLibrary(this.Connection.Connection);
-            var reader = query.LeggiAgenzie();
+            var reader = query.LeggiAgenzie().ExecuteReader();
             while (reader.Read())
             {
                 var PIVA = reader.GetString("PIVA");
@@ -92,7 +92,7 @@ namespace DatabaseProject
             this.Connection = new CreateConnection();
             this.Connection.Connection.Open();
             var query = new QueryLibrary(this.Connection.Connection);
-            var reader = query.LeggiSedi(ListaAgenzie[index].Item1);
+            var reader = query.LeggiSedi(ListaAgenzie[index].Item1).ExecuteReader();
             this.SedeComboBox.Items.Clear();
             this.ListaSedi.Clear();
 
@@ -107,7 +107,7 @@ namespace DatabaseProject
                 var addressConnection = new CreateConnection();
                 addressConnection.Connection.Open();
                 var addressQuery = new QueryLibrary(addressConnection.Connection);
-                var addressReader = addressQuery.LeggiIndirizzi(IDindirizzo);
+                var addressReader = addressQuery.LeggiIndirizzi(IDindirizzo).ExecuteReader();
                 addressReader.Read();
                 var NumCivico = addressReader.GetString("NumCivico");
                 var Via = addressReader.GetString("Via");
