@@ -34,7 +34,7 @@ namespace DatabaseProject
             SBind.DataSource = table;
             TabellaDipendenti.DataSource = SBind;
 
-            dataAdapter = new MySqlDataAdapter(queries.LeggiMagazziniToString(this.IDsede), connection.Connection);
+            dataAdapter = new MySqlDataAdapter(queries.LeggiMagazzini(this.IDsede).CommandText, connection.Connection);
             table = new DataTable();
             dataAdapter.Fill(table);
             SBind = new BindingSource();
@@ -48,12 +48,12 @@ namespace DatabaseProject
             SBind.DataSource = table;
             TabellaTour.DataSource = SBind;
 
-            dataAdapter = new MySqlDataAdapter(queries.LeggiBusinessPartners(this.IDsede).CommandText, connection.Connection);
+            dataAdapter = new MySqlDataAdapter(queries.LeggiBusinessPartner(this.IDsede).CommandText, connection.Connection);
             table = new DataTable();
             dataAdapter.Fill(table);
             SBind = new BindingSource();
             SBind.DataSource = table;
-            TabellaTour.DataSource = SBind;
+            TabellaBusinessPartners.DataSource = SBind;
         }
 
         private void Form1_Load(object sender, EventArgs e)
