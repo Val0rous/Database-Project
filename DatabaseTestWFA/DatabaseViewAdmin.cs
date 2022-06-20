@@ -51,7 +51,6 @@ namespace DatabaseProject
         bool dipendente_stipendio;
         bool dipendente_ruolo;
         bool dipendente_IDsede;
-        bool dipendente_CFsuperiore;
 
         bool tour_destinazione;
         bool tour_nome;
@@ -279,11 +278,11 @@ namespace DatabaseProject
 
         private void Prenotazioni_CFcliente_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Prenotazioni_CFcliente.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Prenotazioni_CFcliente.Text = "Codice Fiscale Cliente";
+                this.Prenotazioni_CFcliente.ForeColor = Color.Gray;
+                this.prenotazione_CF = false;
             }
         }
 
@@ -299,11 +298,11 @@ namespace DatabaseProject
 
         private void Prenotazioni_IDtour_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Prenotazioni_IDtour.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Prenotazioni_IDtour.Text = "ID Tour";
+                this.Prenotazioni_IDtour.ForeColor = Color.Gray;
+                this.prenotazione_IDtour = false;
             }
         }
 
@@ -324,11 +323,11 @@ namespace DatabaseProject
 
         private void Magazzini_CapMaxAccessori_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Magazzini_CapMaxAccessori.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Magazzini_CapMaxAccessori.Text = "Capienza Max Accessori";
+                this.Magazzini_CapMaxAccessori.ForeColor = Color.Gray;
+                this.magazzino_capMaxAccessori = false;
             }
         }
 
@@ -344,11 +343,11 @@ namespace DatabaseProject
 
         private void Magazzini_CapMaxBici_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Magazzini_CapMaxBici.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Magazzini_CapMaxBici.Text = "Capienza Max Bici";
+                this.Magazzini_CapMaxBici.ForeColor = Color.Gray;
+                this.magazzino_capMaxBici = false;
             }
         }
 
@@ -364,11 +363,11 @@ namespace DatabaseProject
 
         private void Magazzini_IDmagazzino_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Magazzini_IDmagazzino.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Magazzini_IDmagazzino.Text = "ID Magazzino";
+                this.Magazzini_IDmagazzino.ForeColor = Color.Gray;
+                this.magazzino_IDmagazzino = false;
             }
         }
 
@@ -384,11 +383,11 @@ namespace DatabaseProject
 
         private void Magazzini_IDindirizzo_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Magazzini_IDindirizzo.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Magazzini_IDindirizzo.Text = "ID Indirizzo";
+                this.Magazzini_IDindirizzo.ForeColor = Color.Gray;
+                this.magazzino_IDindirizzo = false;
             }
         }
 
@@ -404,11 +403,11 @@ namespace DatabaseProject
 
         private void Magazzini_IDsede_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Magazzini_IDsede.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Magazzini_IDsede.Text = "ID Sede";
+                this.Magazzini_IDsede.ForeColor = Color.Gray;
+                this.magazzino_IDsede = false;
             }
         }
 
@@ -429,11 +428,11 @@ namespace DatabaseProject
 
         private void Percorsi_IDpercorso_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Percorsi_IDpercorso.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Percorsi_IDpercorso.Text = "ID Percorso";
+                this.Percorsi_IDpercorso.ForeColor = Color.Gray;
+                this.percorso_IDpercorso = false;
             }
         }
 
@@ -449,11 +448,11 @@ namespace DatabaseProject
 
         private void Percorsi_Difficolta_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Percorsi_Difficolta.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Percorsi_Difficolta.Text = "Difficoltà";
+                this.Percorsi_Difficolta.ForeColor = Color.Gray;
+                this.percorso_difficolta = false;
             }
         }
 
@@ -469,11 +468,11 @@ namespace DatabaseProject
 
         private void Percorsi_NomePercorso_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Percorsi_NomePercorso.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Percorsi_NomePercorso.Text = "Nome";
+                this.Percorsi_NomePercorso.ForeColor = Color.Gray;
+                this.percorso_nome = false;
             }
         }
 
@@ -489,11 +488,11 @@ namespace DatabaseProject
 
         private void Percorsi_NumTappe_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Percorsi_NumTappe.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Percorsi_NumTappe.Text = "Numero di Tappe";
+                this.Percorsi_NumTappe.ForeColor = Color.Gray;
+                this.percorso_numTappe = false;
             }
         }
 
@@ -509,11 +508,11 @@ namespace DatabaseProject
 
         private void Percorsi_LunghezzaPercorso_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Percorsi_LunghezzaPercorso.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Percorsi_LunghezzaPercorso.Text = "Lunghezza Percorso";
+                this.Percorsi_LunghezzaPercorso.ForeColor = Color.Gray;
+                this.percorso_lunghezzaPercorso = false;
             }
         }
 
@@ -529,11 +528,11 @@ namespace DatabaseProject
 
         private void Percorsi_IDsede_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Percorsi_IDsede.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Percorsi_IDsede.Text = "ID Sede";
+                this.Percorsi_IDsede.ForeColor = Color.Gray;
+                this.percorso_IDsede = false;
             }
         }
 
@@ -554,11 +553,11 @@ namespace DatabaseProject
 
         private void BP_PIVA_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.BP_PIVA.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.BP_PIVA.Text = "Partita IVA";
+                this.BP_PIVA.ForeColor = Color.Gray;
+                this.bp_PIVA = false;
             }
         }
 
@@ -574,11 +573,11 @@ namespace DatabaseProject
 
         private void BP_NomeSocio_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.BP_NomeSocio.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.BP_NomeSocio.Text = "Nome Socio";
+                this.BP_NomeSocio.ForeColor = Color.Gray;
+                this.bp_nomeSocio = false;
             }
         }
 
@@ -594,11 +593,11 @@ namespace DatabaseProject
 
         private void BP_CostoServizio_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.BP_CostoServizio.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.BP_CostoServizio.Text = "Nome";
+                this.BP_CostoServizio.ForeColor = Color.Gray;
+                this.bp_costoServizio = false;
             }
         }
 
@@ -614,11 +613,11 @@ namespace DatabaseProject
 
         private void BP_Telefono_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.BP_Telefono.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.BP_Telefono.Text = "Numero di Telefono";
+                this.BP_Telefono.ForeColor = Color.Gray;
+                this.bp_telefono = false;
             }
         }
 
@@ -634,11 +633,11 @@ namespace DatabaseProject
 
         private void BP_Tipologia_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.BP_Tipologia.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.BP_Tipologia.Text = "Tipologia";
+                this.BP_Tipologia.ForeColor = Color.Gray;
+                this.bp_tipologia = false;
             }
         }
 
@@ -659,11 +658,11 @@ namespace DatabaseProject
 
         private void Dipendenti_Nome_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Dipendenti_Nome.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Dipendenti_Nome.Text = "Nome";
+                this.Dipendenti_Nome.ForeColor = Color.Gray;
+                this.dipendente_nome = false;
             }
         }
 
@@ -679,11 +678,11 @@ namespace DatabaseProject
 
         private void Dipendenti_Cognome_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Dipendenti_Cognome.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Dipendenti_Cognome.Text = "Cognome";
+                this.Dipendenti_Cognome.ForeColor = Color.Gray;
+                this.dipendente_cognome = false;
             }
         }
 
@@ -699,11 +698,11 @@ namespace DatabaseProject
 
         private void Dipendenti_CF_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Dipendenti_CF.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Dipendenti_CF.Text = "Codice Fiscale";
+                this.Dipendenti_CF.ForeColor = Color.Gray;
+                this.dipendente_CF = false;
             }
         }
 
@@ -719,11 +718,11 @@ namespace DatabaseProject
 
         private void Dipendenti_Telefono_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Dipendenti_Telefono.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Dipendenti_Telefono.Text = "Numero di Telefono";
+                this.Dipendenti_Telefono.ForeColor = Color.Gray;
+                this.dipendente_telefono = false;
             }
         }
 
@@ -739,11 +738,11 @@ namespace DatabaseProject
 
         private void Dipendenti_CodiceDipendente_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Dipendenti_CodiceDipendente.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Dipendenti_CodiceDipendente.Text = "Codice Dipendente";
+                this.Dipendenti_CodiceDipendente.ForeColor = Color.Gray;
+                this.dipendente_codiceDipendente = false;
             }
         }
 
@@ -759,11 +758,11 @@ namespace DatabaseProject
 
         private void Dipendenti_Stipendio_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Dipendenti_Stipendio.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Dipendenti_Stipendio.Text = "Stipendio";
+                this.Dipendenti_Stipendio.ForeColor = Color.Gray;
+                this.dipendente_stipendio = false;
             }
         }
 
@@ -779,11 +778,11 @@ namespace DatabaseProject
 
         private void Dipendenti_IDsede_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Dipendenti_IDsede.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Dipendenti_IDsede.Text = "ID Sede";
+                this.Dipendenti_IDsede.ForeColor = Color.Gray;
+                this.dipendente_IDsede = false;
             }
         }
 
@@ -800,9 +799,8 @@ namespace DatabaseProject
         {
             if (this.Clienti_Nome.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.Text = "Cod. Fiscale del Superiore";
                 this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
             }
         }
 
@@ -823,11 +821,11 @@ namespace DatabaseProject
 
         private void Tour_Destinazione_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_Destinazione.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_Destinazione.Text = "Destinazione";
+                this.Tour_Destinazione.ForeColor = Color.Gray;
+                this.tour_destinazione = false;
             }
         }
 
@@ -843,11 +841,11 @@ namespace DatabaseProject
 
         private void Tour_Nome_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_Nome.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_Nome.Text = "Nome";
+                this.Tour_Nome.ForeColor = Color.Gray;
+                this.tour_nome = false;
             }
         }
 
@@ -863,11 +861,11 @@ namespace DatabaseProject
 
         private void Tour_DataInizio_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_DataInizio.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_DataInizio.Text = "Data Inizio (YYYY-MM-DD)";
+                this.Tour_DataInizio.ForeColor = Color.Gray;
+                this.tour_dataInizio = false;
             }
         }
 
@@ -883,11 +881,11 @@ namespace DatabaseProject
 
         private void Tour_DataFine_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_DataFine.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_DataFine.Text = "Data Inizio (YYYY-MM-DD)";
+                this.Tour_DataFine.ForeColor = Color.Gray;
+                this.tour_dataFine = false;
             }
         }
 
@@ -903,11 +901,11 @@ namespace DatabaseProject
 
         private void Tour_Prezzo_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_Prezzo.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_Prezzo.Text = "Prezzo";
+                this.Tour_Prezzo.ForeColor = Color.Gray;
+                this.tour_prezzo = false;
             }
         }
 
@@ -923,11 +921,11 @@ namespace DatabaseProject
 
         private void Tour_IDtour_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_IDtour.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_IDtour.Text = "ID Tour";
+                this.Tour_IDtour.ForeColor = Color.Gray;
+                this.tour_IDtour = false;
             }
         }
 
@@ -943,11 +941,11 @@ namespace DatabaseProject
 
         private void Tour_IDsede_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_IDsede.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_IDsede.Text = "ID Sede";
+                this.Tour_IDsede.ForeColor = Color.Gray;
+                this.tour_IDsede = false;
             }
         }
 
@@ -963,11 +961,11 @@ namespace DatabaseProject
 
         private void Tour_CFtourManager_Leave(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals(""))
+            if (this.Tour_CFtourManager.Text.Equals(""))
             {
-                this.Clienti_Nome.Text = "Nome";
-                this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.Tour_CFtourManager.Text = "CF del Tour Manager";
+                this.Tour_CFtourManager.ForeColor = Color.Gray;
+                this.tour_CFtourManager = false;
             }
         }
 
