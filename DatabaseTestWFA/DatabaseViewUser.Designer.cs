@@ -34,6 +34,11 @@ namespace DatabaseProject
             this.button1 = new System.Windows.Forms.Button();
             this.TabView = new System.Windows.Forms.TabControl();
             this.Clienti = new System.Windows.Forms.TabPage();
+            this.AggiungiCliente = new System.Windows.Forms.Button();
+            this.Clienti_Telefono = new System.Windows.Forms.TextBox();
+            this.Clienti_CF = new System.Windows.Forms.TextBox();
+            this.Clienti_Cognome = new System.Windows.Forms.TextBox();
+            this.Clienti_Nome = new System.Windows.Forms.TextBox();
             this.TabellaClienti = new System.Windows.Forms.DataGridView();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +59,9 @@ namespace DatabaseProject
             this.clienteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter();
             this.prenotazioneTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.AggiungiCliente = new System.Windows.Forms.Button();
-            this.Clienti_Telefono = new System.Windows.Forms.TextBox();
-            this.Clienti_CF = new System.Windows.Forms.TextBox();
-            this.Clienti_Cognome = new System.Windows.Forms.TextBox();
-            this.Clienti_Nome = new System.Windows.Forms.TextBox();
+            this.Pacchetti = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.TabView.SuspendLayout();
             this.Clienti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).BeginInit();
@@ -72,6 +75,7 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
+            this.Pacchetti.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -91,10 +95,11 @@ namespace DatabaseProject
             this.TabView.Controls.Add(this.Prenotazioni);
             this.TabView.Controls.Add(this.Percorsi);
             this.TabView.Controls.Add(this.Tour);
+            this.TabView.Controls.Add(this.Pacchetti);
             this.TabView.Location = new System.Drawing.Point(12, 55);
             this.TabView.Name = "TabView";
             this.TabView.SelectedIndex = 0;
-            this.TabView.Size = new System.Drawing.Size(819, 430);
+            this.TabView.Size = new System.Drawing.Size(787, 393);
             this.TabView.TabIndex = 9;
             // 
             // Clienti
@@ -108,10 +113,51 @@ namespace DatabaseProject
             this.Clienti.Location = new System.Drawing.Point(4, 25);
             this.Clienti.Name = "Clienti";
             this.Clienti.Padding = new System.Windows.Forms.Padding(3);
-            this.Clienti.Size = new System.Drawing.Size(811, 401);
+            this.Clienti.Size = new System.Drawing.Size(779, 364);
             this.Clienti.TabIndex = 0;
             this.Clienti.Text = "Clienti";
             this.Clienti.UseVisualStyleBackColor = true;
+            // 
+            // AggiungiCliente
+            // 
+            this.AggiungiCliente.Location = new System.Drawing.Point(6, 119);
+            this.AggiungiCliente.Name = "AggiungiCliente";
+            this.AggiungiCliente.Size = new System.Drawing.Size(178, 39);
+            this.AggiungiCliente.TabIndex = 9;
+            this.AggiungiCliente.Text = "Aggiungi Cliente";
+            this.AggiungiCliente.UseVisualStyleBackColor = true;
+            // 
+            // Clienti_Telefono
+            // 
+            this.Clienti_Telefono.Location = new System.Drawing.Point(6, 91);
+            this.Clienti_Telefono.Name = "Clienti_Telefono";
+            this.Clienti_Telefono.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_Telefono.TabIndex = 8;
+            this.Clienti_Telefono.Text = "Numero di Telefono";
+            // 
+            // Clienti_CF
+            // 
+            this.Clienti_CF.Location = new System.Drawing.Point(6, 62);
+            this.Clienti_CF.Name = "Clienti_CF";
+            this.Clienti_CF.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_CF.TabIndex = 7;
+            this.Clienti_CF.Text = "Codice Fiscale";
+            // 
+            // Clienti_Cognome
+            // 
+            this.Clienti_Cognome.Location = new System.Drawing.Point(6, 34);
+            this.Clienti_Cognome.Name = "Clienti_Cognome";
+            this.Clienti_Cognome.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_Cognome.TabIndex = 6;
+            this.Clienti_Cognome.Text = "Cognome";
+            // 
+            // Clienti_Nome
+            // 
+            this.Clienti_Nome.Location = new System.Drawing.Point(6, 6);
+            this.Clienti_Nome.Name = "Clienti_Nome";
+            this.Clienti_Nome.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_Nome.TabIndex = 5;
+            this.Clienti_Nome.Text = "Nome";
             // 
             // TabellaClienti
             // 
@@ -183,7 +229,7 @@ namespace DatabaseProject
             this.Prenotazioni.Location = new System.Drawing.Point(4, 25);
             this.Prenotazioni.Name = "Prenotazioni";
             this.Prenotazioni.Padding = new System.Windows.Forms.Padding(3);
-            this.Prenotazioni.Size = new System.Drawing.Size(768, 354);
+            this.Prenotazioni.Size = new System.Drawing.Size(779, 364);
             this.Prenotazioni.TabIndex = 1;
             this.Prenotazioni.Text = "Prenotazioni";
             this.Prenotazioni.UseVisualStyleBackColor = true;
@@ -238,7 +284,7 @@ namespace DatabaseProject
             this.Percorsi.Location = new System.Drawing.Point(4, 25);
             this.Percorsi.Name = "Percorsi";
             this.Percorsi.Padding = new System.Windows.Forms.Padding(3);
-            this.Percorsi.Size = new System.Drawing.Size(768, 354);
+            this.Percorsi.Size = new System.Drawing.Size(779, 364);
             this.Percorsi.TabIndex = 2;
             this.Percorsi.Text = "Percorsi";
             this.Percorsi.UseVisualStyleBackColor = true;
@@ -260,7 +306,7 @@ namespace DatabaseProject
             this.Tour.Location = new System.Drawing.Point(4, 25);
             this.Tour.Name = "Tour";
             this.Tour.Padding = new System.Windows.Forms.Padding(3);
-            this.Tour.Size = new System.Drawing.Size(768, 354);
+            this.Tour.Size = new System.Drawing.Size(779, 364);
             this.Tour.TabIndex = 3;
             this.Tour.Text = "Tour";
             this.Tour.UseVisualStyleBackColor = true;
@@ -295,46 +341,31 @@ namespace DatabaseProject
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshAll);
             // 
-            // AggiungiCliente
+            // Pacchetti
             // 
-            this.AggiungiCliente.Location = new System.Drawing.Point(6, 119);
-            this.AggiungiCliente.Name = "AggiungiCliente";
-            this.AggiungiCliente.Size = new System.Drawing.Size(178, 39);
-            this.AggiungiCliente.TabIndex = 9;
-            this.AggiungiCliente.Text = "Aggiungi Cliente";
-            this.AggiungiCliente.UseVisualStyleBackColor = true;
+            this.Pacchetti.Controls.Add(this.textBox2);
+            this.Pacchetti.Controls.Add(this.textBox1);
+            this.Pacchetti.Location = new System.Drawing.Point(4, 25);
+            this.Pacchetti.Name = "Pacchetti";
+            this.Pacchetti.Padding = new System.Windows.Forms.Padding(3);
+            this.Pacchetti.Size = new System.Drawing.Size(779, 364);
+            this.Pacchetti.TabIndex = 4;
+            this.Pacchetti.Text = "Pacchetti";
+            this.Pacchetti.UseVisualStyleBackColor = true;
             // 
-            // Clienti_Telefono
+            // textBox1
             // 
-            this.Clienti_Telefono.Location = new System.Drawing.Point(6, 91);
-            this.Clienti_Telefono.Name = "Clienti_Telefono";
-            this.Clienti_Telefono.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_Telefono.TabIndex = 8;
-            this.Clienti_Telefono.Text = "Numero di Telefono";
+            this.textBox1.Location = new System.Drawing.Point(6, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 0;
             // 
-            // Clienti_CF
+            // textBox2
             // 
-            this.Clienti_CF.Location = new System.Drawing.Point(6, 62);
-            this.Clienti_CF.Name = "Clienti_CF";
-            this.Clienti_CF.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_CF.TabIndex = 7;
-            this.Clienti_CF.Text = "Codice Fiscale";
-            // 
-            // Clienti_Cognome
-            // 
-            this.Clienti_Cognome.Location = new System.Drawing.Point(6, 34);
-            this.Clienti_Cognome.Name = "Clienti_Cognome";
-            this.Clienti_Cognome.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_Cognome.TabIndex = 6;
-            this.Clienti_Cognome.Text = "Cognome";
-            // 
-            // Clienti_Nome
-            // 
-            this.Clienti_Nome.Location = new System.Drawing.Point(6, 6);
-            this.Clienti_Nome.Name = "Clienti_Nome";
-            this.Clienti_Nome.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_Nome.TabIndex = 5;
-            this.Clienti_Nome.Text = "Nome";
+            this.textBox2.Location = new System.Drawing.Point(6, 34);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 1;
             // 
             // DatabaseViewUser
             // 
@@ -362,6 +393,8 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
             this.Tour.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
+            this.Pacchetti.ResumeLayout(false);
+            this.Pacchetti.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -396,5 +429,8 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox Clienti_CF;
         private System.Windows.Forms.TextBox Clienti_Cognome;
         private System.Windows.Forms.TextBox Clienti_Nome;
+        private System.Windows.Forms.TabPage Pacchetti;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
