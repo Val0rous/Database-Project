@@ -95,6 +95,47 @@ namespace DatabaseProject
             this.Clienti_Cognome.ForeColor = Color.Gray;
             this.Clienti_CF.ForeColor = Color.Gray;
             this.Clienti_Telefono.ForeColor = Color.Gray;
+
+            this.Prenotazioni_CFcliente.ForeColor = Color.Gray;
+            this.Prenotazioni_IDtour.ForeColor = Color.Gray;
+
+            this.Magazzini_CapMaxAccessori.ForeColor = Color.Gray;
+            this.Magazzini_CapMaxBici.ForeColor = Color.Gray;
+            this.Magazzini_IDmagazzino.ForeColor = Color.Gray;
+            this.Magazzini_IDindirizzo.ForeColor = Color.Gray;
+            this.Magazzini_IDsede.ForeColor = Color.Gray;
+
+            this.Percorsi_IDpercorso.ForeColor = Color.Gray;
+            this.Percorsi_Difficolta.ForeColor = Color.Gray;
+            this.Percorsi_NomePercorso.ForeColor = Color.Gray;
+            this.Percorsi_NumTappe.ForeColor = Color.Gray;
+            this.Percorsi_LunghezzaPercorso.ForeColor = Color.Gray;
+            this.Percorsi_IDsede.ForeColor = Color.Gray;
+
+            this.BP_PIVA.ForeColor = Color.Gray;
+            this.BP_NomeSocio.ForeColor = Color.Gray;
+            this.BP_CostoServizio.ForeColor = Color.Gray;
+            this.BP_Telefono.ForeColor = Color.Gray;
+            this.BP_Tipologia.ForeColor = Color.Gray;
+
+            this.Dipendenti_Nome.ForeColor = Color.Gray;
+            this.Dipendenti_Cognome.ForeColor = Color.Gray;
+            this.Dipendenti_CF.ForeColor = Color.Gray;
+            this.Dipendenti_Telefono.ForeColor = Color.Gray;
+            this.Dipendenti_CodiceDipendente.ForeColor = Color.Gray;
+            this.Dipendenti_Stipendio.ForeColor = Color.Gray;
+            this.Dipendenti_Ruolo.ForeColor = Color.Gray;
+            this.Dipendenti_IDsede.ForeColor = Color.Gray;
+            this.Dipendenti_CFsuperiore.ForeColor = Color.Gray;
+
+            this.Tour_Destinazione.ForeColor = Color.Gray;
+            this.Tour_Nome.ForeColor = Color.Gray;
+            this.Tour_DataInizio.ForeColor = Color.Gray;
+            this.Tour_DataFine.ForeColor = Color.Gray;
+            this.Tour_Prezzo.ForeColor = Color.Gray;
+            this.Tour_IDtour.ForeColor = Color.Gray;
+            this.Tour_IDsede.ForeColor = Color.Gray;
+            this.Tour_CFtourManager.ForeColor = Color.Gray;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -140,7 +181,10 @@ namespace DatabaseProject
 
         private void AggiungiCliente_Click(object sender, EventArgs e)
         {
-            if (this.cliente_nome && this.cliente_cognome && this.cliente_CF && this.cliente_telefono)
+            if (this.cliente_nome 
+                && this.cliente_cognome 
+                && this.cliente_CF 
+                && this.cliente_telefono)
             {
                 var connection = new CreateConnection();
                 connection.Connection.Open();
@@ -148,7 +192,11 @@ namespace DatabaseProject
 
                 try
                 {
-                    var result = queries.InserisciCliente(this.Clienti_Nome.Text, this.Clienti_Cognome.Text, this.Clienti_CF.Text, this.Clienti_Telefono.Text);
+                    var result = queries.InserisciCliente(
+                        this.Clienti_Nome.Text, 
+                        this.Clienti_Cognome.Text, 
+                        this.Clienti_CF.Text, 
+                        this.Clienti_Telefono.Text);
                     if (result)
                     {
                         MessageBox.Show("Cliente inserito correttamente",
@@ -308,7 +356,42 @@ namespace DatabaseProject
 
         private void AggiungiPrenotazione_Click(object sender, EventArgs e)
         {
+            if (this.prenotazione_CF && this.prenotazione_IDtour)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
 
+                try
+                {
+                    var result = queries.InserisciPrenotazione(
+                        this.Prenotazioni_CFcliente.Text, 
+                        this.Prenotazioni_IDtour.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("Prenotazione inserita correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Prenotazione non inserita",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception) { }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
 
         private void Magazzini_CapMaxAccessori_Enter(object sender, EventArgs e)
@@ -413,7 +496,45 @@ namespace DatabaseProject
 
         private void AggiungiMagazzino_Click(object sender, EventArgs e)
         {
+            if (this.magazzino_capMaxAccessori && this.magazzino_capMaxBici && this.magazzino_IDmagazzino && this.magazzino_IDindirizzo && this.magazzino_IDsede)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
 
+                try
+                {
+                    var result = queries.InserisciMagazzino(
+                        int.Parse(this.Magazzini_CapMaxAccessori.Text), 
+                        int.Parse(this.Magazzini_CapMaxBici.Text), 
+                        this.Magazzini_IDmagazzino.Text, 
+                        this.Magazzini_IDindirizzo.Text, 
+                        this.Magazzini_IDsede.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("Magazzino inserito correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Magazzino non inserito",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception) { }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
 
         private void Percorsi_IDpercorso_Enter(object sender, EventArgs e)
@@ -538,7 +659,50 @@ namespace DatabaseProject
 
         private void AggiungiPercorso_Click(object sender, EventArgs e)
         {
+            if (this.percorso_IDpercorso 
+                && this.percorso_difficolta 
+                && this.percorso_nome 
+                && this.percorso_numTappe
+                && this.percorso_lunghezzaPercorso
+                && this.percorso_IDsede)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
 
+                try
+                {
+                    var result = queries.InserisciPercorso(
+                        this.Percorsi_IDpercorso.Text,
+                        this.Percorsi_Difficolta.Text,
+                        int.Parse(this.Percorsi_NumTappe.Text),
+                        float.Parse(this.Percorsi_LunghezzaPercorso.Text),
+                        this.Percorsi_IDsede.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("Percorso inserito correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Percorso non inserito",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception) { }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
 
         private void BP_PIVA_Enter(object sender, EventArgs e)
