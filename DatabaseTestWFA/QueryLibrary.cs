@@ -30,6 +30,7 @@ namespace DatabaseProject
             String head = index.Substring(0,1);
             int num = Int32.Parse(index.Substring(1));
             num++;
+            reader.Close();
             return head + num.ToString();
         }
 
