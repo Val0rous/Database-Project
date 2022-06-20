@@ -269,12 +269,12 @@ namespace DatabaseProject
 
         private void Prenotazioni_CFcliente_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Prenotazioni_CFcliente.Text.Equals("Codice Fiscale Cliente"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Prenotazioni_CFcliente.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Prenotazioni_CFcliente.ForeColor = Color.Black;
+            this.prenotazione_CF = true;
         }
 
         private void Prenotazioni_CFcliente_Leave(object sender, EventArgs e)
@@ -289,12 +289,12 @@ namespace DatabaseProject
 
         private void Prenotazioni_IDtour_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Prenotazioni_IDtour.Text.Equals("ID Tour"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Prenotazioni_IDtour.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Prenotazioni_IDtour.ForeColor = Color.Black;
+            this.prenotazione_IDtour= true;
         }
 
         private void Prenotazioni_IDtour_Leave(object sender, EventArgs e)
@@ -314,12 +314,12 @@ namespace DatabaseProject
 
         private void Magazzini_CapMaxAccessori_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Magazzini_CapMaxAccessori.Text.Equals("Capienza Max Accessori"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Magazzini_CapMaxAccessori.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Magazzini_CapMaxAccessori.ForeColor = Color.Black;
+            this.magazzino_capMaxAccessori = true;
         }
 
         private void Magazzini_CapMaxAccessori_Leave(object sender, EventArgs e)
@@ -334,12 +334,12 @@ namespace DatabaseProject
 
         private void Magazzini_CapMaxBici_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Magazzini_CapMaxBici.Text.Equals("Capienza Max Bici"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Magazzini_CapMaxBici.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Magazzini_CapMaxBici.ForeColor = Color.Black;
+            this.magazzino_capMaxBici = true;
         }
 
         private void Magazzini_CapMaxBici_Leave(object sender, EventArgs e)
@@ -354,12 +354,12 @@ namespace DatabaseProject
 
         private void Magazzini_IDmagazzino_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Magazzini_IDmagazzino.Text.Equals("ID Magazzino"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Magazzini_IDmagazzino.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Magazzini_IDmagazzino.ForeColor = Color.Black;
+            this.magazzino_IDmagazzino = true;
         }
 
         private void Magazzini_IDmagazzino_Leave(object sender, EventArgs e)
@@ -374,12 +374,12 @@ namespace DatabaseProject
 
         private void Magazzini_IDindirizzo_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Magazzini_IDindirizzo.Text.Equals("ID Indirizzo"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Magazzini_IDindirizzo.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Magazzini_IDindirizzo.ForeColor = Color.Black;
+            this.magazzino_IDindirizzo = true;
         }
 
         private void Magazzini_IDindirizzo_Leave(object sender, EventArgs e)
@@ -394,12 +394,12 @@ namespace DatabaseProject
 
         private void Magazzini_IDsede_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Magazzini_IDsede.Text.Equals("ID Sede"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Magazzini_IDsede.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Magazzini_IDsede.ForeColor = Color.Black;
+            this.magazzino_IDsede = true;
         }
 
         private void Magazzini_IDsede_Leave(object sender, EventArgs e)
@@ -419,12 +419,12 @@ namespace DatabaseProject
 
         private void Percorsi_IDpercorso_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Percorsi_IDpercorso.Text.Equals("ID Percorso"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Percorsi_IDpercorso.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Percorsi_IDpercorso.ForeColor = Color.Black;
+            this.percorso_IDpercorso = true;
         }
 
         private void Percorsi_IDpercorso_Leave(object sender, EventArgs e)
@@ -439,12 +439,12 @@ namespace DatabaseProject
 
         private void Percorsi_Difficolta_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Percorsi_Difficolta.Text.Equals("Difficoltà"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Percorsi_Difficolta.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Percorsi_Difficolta.ForeColor = Color.Black;
+            this.percorso_difficolta = true;
         }
 
         private void Percorsi_Difficolta_Leave(object sender, EventArgs e)
@@ -459,12 +459,12 @@ namespace DatabaseProject
 
         private void Percorsi_NomePercorso_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Percorsi_NomePercorso.Text.Equals("Nome"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Percorsi_NomePercorso.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Percorsi_NomePercorso.ForeColor = Color.Black;
+            this.percorso_nome = true;
         }
 
         private void Percorsi_NomePercorso_Leave(object sender, EventArgs e)
@@ -479,12 +479,12 @@ namespace DatabaseProject
 
         private void Percorsi_NumTappe_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Percorsi_NumTappe.Text.Equals("Numero di tappe"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Percorsi_NumTappe.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Percorsi_NumTappe.ForeColor = Color.Black;
+            this.percorso_numTappe = true;
         }
 
         private void Percorsi_NumTappe_Leave(object sender, EventArgs e)
@@ -499,12 +499,12 @@ namespace DatabaseProject
 
         private void Percorsi_LunghezzaPercorso_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Percorsi_LunghezzaPercorso.Text.Equals("Lunghezza Percorso"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Percorsi_LunghezzaPercorso.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Percorsi_LunghezzaPercorso.ForeColor = Color.Black;
+            this.percorso_lunghezzaPercorso = true;
         }
 
         private void Percorsi_LunghezzaPercorso_Leave(object sender, EventArgs e)
@@ -519,12 +519,12 @@ namespace DatabaseProject
 
         private void Percorsi_IDsede_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Percorsi_IDsede.Text.Equals("ID sede"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Percorsi_IDsede.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Percorsi_IDsede.ForeColor = Color.Black;
+            this.percorso_IDsede = true;
         }
 
         private void Percorsi_IDsede_Leave(object sender, EventArgs e)
@@ -544,12 +544,12 @@ namespace DatabaseProject
 
         private void BP_PIVA_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.BP_PIVA.Text.Equals("Partita IVA"))
             {
-                this.Clienti_Nome.Text = "";
+                this.BP_PIVA.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.BP_PIVA.ForeColor = Color.Black;
+            this.bp_PIVA = true;
         }
 
         private void BP_PIVA_Leave(object sender, EventArgs e)
@@ -564,12 +564,12 @@ namespace DatabaseProject
 
         private void BP_NomeSocio_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.BP_NomeSocio.Text.Equals("Nome Socio"))
             {
-                this.Clienti_Nome.Text = "";
+                this.BP_NomeSocio.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.BP_NomeSocio.ForeColor = Color.Black;
+            this.bp_nomeSocio = true;
         }
 
         private void BP_NomeSocio_Leave(object sender, EventArgs e)
@@ -584,12 +584,12 @@ namespace DatabaseProject
 
         private void BP_CostoServizio_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.BP_CostoServizio.Text.Equals("Costo Servizio"))
             {
-                this.Clienti_Nome.Text = "";
+                this.BP_CostoServizio.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.BP_CostoServizio.ForeColor = Color.Black;
+            this.bp_costoServizio = true;
         }
 
         private void BP_CostoServizio_Leave(object sender, EventArgs e)
@@ -604,12 +604,12 @@ namespace DatabaseProject
 
         private void BP_Telefono_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.BP_Telefono.Text.Equals("Numero di Telefono"))
             {
-                this.Clienti_Nome.Text = "";
+                this.BP_Telefono.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.BP_Telefono.ForeColor = Color.Black;
+            this.bp_telefono = true;
         }
 
         private void BP_Telefono_Leave(object sender, EventArgs e)
@@ -624,12 +624,12 @@ namespace DatabaseProject
 
         private void BP_Tipologia_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.BP_Tipologia.Text.Equals("Tipologia"))
             {
-                this.Clienti_Nome.Text = "";
+                this.BP_Tipologia.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.BP_Tipologia.ForeColor = Color.Black;
+            this.bp_tipologia = true;
         }
 
         private void BP_Tipologia_Leave(object sender, EventArgs e)
@@ -649,12 +649,12 @@ namespace DatabaseProject
 
         private void Dipendenti_Nome_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_Nome.Text.Equals("Nome"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_Nome.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_Nome.ForeColor = Color.Black;
+            this.dipendente_nome = true;
         }
 
         private void Dipendenti_Nome_Leave(object sender, EventArgs e)
@@ -669,12 +669,12 @@ namespace DatabaseProject
 
         private void Dipendenti_Cognome_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_Cognome.Text.Equals("Cognome"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_Cognome.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_Cognome.ForeColor = Color.Black;
+            this.dipendente_cognome = true;
         }
 
         private void Dipendenti_Cognome_Leave(object sender, EventArgs e)
@@ -689,12 +689,12 @@ namespace DatabaseProject
 
         private void Dipendenti_CF_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_CF.Text.Equals("Codice Fiscale"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_CF.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_CF.ForeColor = Color.Black;
+            this.dipendente_CF = true;
         }
 
         private void Dipendenti_CF_Leave(object sender, EventArgs e)
@@ -709,12 +709,12 @@ namespace DatabaseProject
 
         private void Dipendenti_Telefono_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_Telefono.Text.Equals("Numero di Telefono"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_Telefono.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_Telefono.ForeColor = Color.Black;
+            this.dipendente_telefono = true;
         }
 
         private void Dipendenti_Telefono_Leave(object sender, EventArgs e)
@@ -729,12 +729,12 @@ namespace DatabaseProject
 
         private void Dipendenti_CodiceDipendente_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_CodiceDipendente.Text.Equals("Codice Dipendente"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_CodiceDipendente.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_CodiceDipendente.ForeColor = Color.Black;
+            this.dipendente_codiceDipendente = true;
         }
 
         private void Dipendenti_CodiceDipendente_Leave(object sender, EventArgs e)
@@ -749,12 +749,12 @@ namespace DatabaseProject
 
         private void Dipendenti_Stipendio_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_Stipendio.Text.Equals("Stipendio"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_Stipendio.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_Stipendio.ForeColor = Color.Black;
+            this.dipendente_stipendio = true;
         }
 
         private void Dipendenti_Stipendio_Leave(object sender, EventArgs e)
@@ -769,12 +769,12 @@ namespace DatabaseProject
 
         private void Dipendenti_IDsede_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_IDsede.Text.Equals("ID Sede"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_IDsede.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_IDsede.ForeColor = Color.Black;
+            this.dipendente_IDsede = true;
         }
 
         private void Dipendenti_IDsede_Leave(object sender, EventArgs e)
@@ -789,12 +789,11 @@ namespace DatabaseProject
 
         private void Dipendenti_CFsuperiore_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Dipendenti_CFsuperiore.Text.Equals("Cod. Fiscale del Superiore"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Dipendenti_CFsuperiore.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Dipendenti_CFsuperiore.ForeColor = Color.Black;
         }
 
         private void Dipendenti_CFsuperiore_Leave(object sender, EventArgs e)
@@ -814,12 +813,12 @@ namespace DatabaseProject
 
         private void Tour_Destinazione_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_Destinazione.Text.Equals("Destinazione"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_Destinazione.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_Destinazione.ForeColor = Color.Black;
+            this.tour_destinazione = true;
         }
 
         private void Tour_Destinazione_Leave(object sender, EventArgs e)
@@ -834,12 +833,12 @@ namespace DatabaseProject
 
         private void Tour_Nome_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_Nome.Text.Equals("Nome"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_Nome.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_Nome.ForeColor = Color.Black;
+            this.tour_nome = true;
         }
 
         private void Tour_Nome_Leave(object sender, EventArgs e)
@@ -854,12 +853,12 @@ namespace DatabaseProject
 
         private void Tour_DataInizio_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_DataInizio.Text.Equals("Data Inizio (YYYY-MM-DD)"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_DataInizio.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_DataInizio.ForeColor = Color.Black;
+            this.tour_dataInizio = true;
         }
 
         private void Tour_DataInizio_Leave(object sender, EventArgs e)
@@ -874,12 +873,12 @@ namespace DatabaseProject
 
         private void Tour_DataFine_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_DataFine.Text.Equals("Data Fine (YYYY-MM-DD)"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_DataFine.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_DataFine.ForeColor = Color.Black;
+            this.tour_dataFine = true;
         }
 
         private void Tour_DataFine_Leave(object sender, EventArgs e)
@@ -894,12 +893,12 @@ namespace DatabaseProject
 
         private void Tour_Prezzo_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_Prezzo.Text.Equals("Prezzo"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_Prezzo.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_Prezzo.ForeColor = Color.Black;
+            this.tour_prezzo = true;
         }
 
         private void Tour_Prezzo_Leave(object sender, EventArgs e)
@@ -914,12 +913,12 @@ namespace DatabaseProject
 
         private void Tour_IDtour_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_IDtour.Text.Equals("ID Tour"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_IDtour.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_IDtour.ForeColor = Color.Black;
+            this.tour_IDtour = true;
         }
 
         private void Tour_IDtour_Leave(object sender, EventArgs e)
@@ -934,12 +933,12 @@ namespace DatabaseProject
 
         private void Tour_IDsede_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_IDsede.Text.Equals("ID Sede"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_IDsede.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_IDsede.ForeColor = Color.Black;
+            this.tour_IDsede = true;
         }
 
         private void Tour_IDsede_Leave(object sender, EventArgs e)
@@ -954,12 +953,12 @@ namespace DatabaseProject
 
         private void Tour_CFtourManager_Enter(object sender, EventArgs e)
         {
-            if (this.Clienti_Nome.Text.Equals("Nome"))
+            if (this.Tour_CFtourManager.Text.Equals("CF del Tour Manager"))
             {
-                this.Clienti_Nome.Text = "";
+                this.Tour_CFtourManager.Text = "";
             }
-            this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.Tour_CFtourManager.ForeColor = Color.Black;
+            this.tour_CFtourManager = true;
         }
 
         private void Tour_CFtourManager_Leave(object sender, EventArgs e)
