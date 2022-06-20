@@ -493,6 +493,7 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM cliente";
             return command;
         }
+
         public MySqlCommand LeggiDipendenti()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -610,6 +611,14 @@ namespace DatabaseProject
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT * FROM prenotazione";
+            return command;
+        }
+        public MySqlCommand LeggiPrenotazioni(String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT prenotazione.* " +
+                "FROM prenotazione, tour " +
+                "WHERE prenotazione.IDtour = tour.IDtour AND tour.IDsede ="+Convert(IDsede);
             return command;
         }
         public MySqlCommand LeggiPrenotazioniTour(String IDtour)
