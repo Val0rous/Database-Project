@@ -20,10 +20,10 @@ namespace DatabaseProject
             return "'" + parameter + "'";
         }
         /*This function returns the new ID for the table, given the id field name*/
-        private string GetID(string tableName, string IDFieldName)
+        private string GetNextID(string tableName, string IDFieldName)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT MAX(" + Convert(IDFieldName) + ") FROM " + Convert(tableName);
+            command.CommandText = "SELECT MAX(" + IDFieldName + ") FROM " + tableName;
             var index = command.ExecuteNonQuery().GetString(0);
             string head = index.SubString(0,1);
             int num = Int32.Parse(index.SubString(1));
