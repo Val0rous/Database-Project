@@ -33,11 +33,17 @@ namespace DatabaseProject
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseViewAdmin));
             this.button1 = new System.Windows.Forms.Button();
             this.Dipendenti = new System.Windows.Forms.TabPage();
+            this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
             this.Business_Partners = new System.Windows.Forms.TabPage();
+            this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.Percorsi = new System.Windows.Forms.TabPage();
+            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
             this.Magazzino = new System.Windows.Forms.TabPage();
+            this.TabellaMagazzini = new System.Windows.Forms.DataGridView();
             this.Prenotazioni = new System.Windows.Forms.TabPage();
+            this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
             this.Clienti = new System.Windows.Forms.TabPage();
+            this.TabellaClienti = new System.Windows.Forms.DataGridView();
             this.AggiungiCliente = new System.Windows.Forms.Button();
             this.Telefono = new System.Windows.Forms.TextBox();
             this.CodiceFiscale = new System.Windows.Forms.TextBox();
@@ -45,38 +51,32 @@ namespace DatabaseProject
             this.Nome = new System.Windows.Forms.TextBox();
             this.TabPage = new System.Windows.Forms.TabControl();
             this.Tour = new System.Windows.Forms.TabPage();
-            this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
+            this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.gestionale_per_agenzie_relDataSet2 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet2();
             this.dipendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dipendenteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet2TableAdapters.dipendenteTableAdapter();
-            this.TabellaMagazzini = new System.Windows.Forms.DataGridView();
             this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
-            this.TabellaTour = new System.Windows.Forms.DataGridView();
-            this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
-            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
-            this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
-            this.TabellaClienti = new System.Windows.Forms.DataGridView();
             this.Dipendenti.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).BeginInit();
             this.Business_Partners.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).BeginInit();
             this.Percorsi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
             this.Magazzino.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).BeginInit();
             this.Prenotazioni.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).BeginInit();
             this.Clienti.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).BeginInit();
             this.TabPage.SuspendLayout();
             this.Tour.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -101,6 +101,17 @@ namespace DatabaseProject
             this.Dipendenti.Text = "Dipendenti";
             this.Dipendenti.UseVisualStyleBackColor = true;
             // 
+            // TabellaDipendenti
+            // 
+            this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaDipendenti.Location = new System.Drawing.Point(6, 6);
+            this.TabellaDipendenti.Name = "TabellaDipendenti";
+            this.TabellaDipendenti.ReadOnly = true;
+            this.TabellaDipendenti.RowHeadersWidth = 51;
+            this.TabellaDipendenti.RowTemplate.Height = 24;
+            this.TabellaDipendenti.Size = new System.Drawing.Size(939, 486);
+            this.TabellaDipendenti.TabIndex = 0;
+            // 
             // Business_Partners
             // 
             this.Business_Partners.Controls.Add(this.TabellaBusinessPartners);
@@ -111,6 +122,18 @@ namespace DatabaseProject
             this.Business_Partners.TabIndex = 6;
             this.Business_Partners.Text = "Business Partners";
             this.Business_Partners.UseVisualStyleBackColor = true;
+            // 
+            // TabellaBusinessPartners
+            // 
+            this.TabellaBusinessPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaBusinessPartners.Location = new System.Drawing.Point(6, 6);
+            this.TabellaBusinessPartners.Name = "TabellaBusinessPartners";
+            this.TabellaBusinessPartners.ReadOnly = true;
+            this.TabellaBusinessPartners.RowHeadersWidth = 51;
+            this.TabellaBusinessPartners.RowTemplate.Height = 24;
+            this.TabellaBusinessPartners.Size = new System.Drawing.Size(939, 483);
+            this.TabellaBusinessPartners.TabIndex = 0;
+            this.TabellaBusinessPartners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Percorsi
             // 
@@ -123,6 +146,17 @@ namespace DatabaseProject
             this.Percorsi.Text = "Percorsi";
             this.Percorsi.UseVisualStyleBackColor = true;
             // 
+            // TabellaPercorsi
+            // 
+            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPercorsi.Location = new System.Drawing.Point(6, 6);
+            this.TabellaPercorsi.Name = "TabellaPercorsi";
+            this.TabellaPercorsi.ReadOnly = true;
+            this.TabellaPercorsi.RowHeadersWidth = 51;
+            this.TabellaPercorsi.RowTemplate.Height = 24;
+            this.TabellaPercorsi.Size = new System.Drawing.Size(939, 486);
+            this.TabellaPercorsi.TabIndex = 0;
+            // 
             // Magazzino
             // 
             this.Magazzino.Controls.Add(this.TabellaMagazzini);
@@ -134,6 +168,17 @@ namespace DatabaseProject
             this.Magazzino.Text = "Magazzini";
             this.Magazzino.UseVisualStyleBackColor = true;
             // 
+            // TabellaMagazzini
+            // 
+            this.TabellaMagazzini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaMagazzini.Location = new System.Drawing.Point(6, 6);
+            this.TabellaMagazzini.Name = "TabellaMagazzini";
+            this.TabellaMagazzini.ReadOnly = true;
+            this.TabellaMagazzini.RowHeadersWidth = 51;
+            this.TabellaMagazzini.RowTemplate.Height = 24;
+            this.TabellaMagazzini.Size = new System.Drawing.Size(939, 483);
+            this.TabellaMagazzini.TabIndex = 0;
+            // 
             // Prenotazioni
             // 
             this.Prenotazioni.Controls.Add(this.TabellaPrenotazioni);
@@ -144,6 +189,17 @@ namespace DatabaseProject
             this.Prenotazioni.TabIndex = 1;
             this.Prenotazioni.Text = "Prenotazioni";
             this.Prenotazioni.UseVisualStyleBackColor = true;
+            // 
+            // TabellaPrenotazioni
+            // 
+            this.TabellaPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPrenotazioni.Location = new System.Drawing.Point(6, 6);
+            this.TabellaPrenotazioni.Name = "TabellaPrenotazioni";
+            this.TabellaPrenotazioni.ReadOnly = true;
+            this.TabellaPrenotazioni.RowHeadersWidth = 51;
+            this.TabellaPrenotazioni.RowTemplate.Height = 24;
+            this.TabellaPrenotazioni.Size = new System.Drawing.Size(939, 483);
+            this.TabellaPrenotazioni.TabIndex = 0;
             // 
             // Clienti
             // 
@@ -160,6 +216,17 @@ namespace DatabaseProject
             this.Clienti.TabIndex = 0;
             this.Clienti.Text = "Clienti";
             this.Clienti.UseVisualStyleBackColor = true;
+            // 
+            // TabellaClienti
+            // 
+            this.TabellaClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaClienti.Location = new System.Drawing.Point(190, 6);
+            this.TabellaClienti.Name = "TabellaClienti";
+            this.TabellaClienti.ReadOnly = true;
+            this.TabellaClienti.RowHeadersWidth = 51;
+            this.TabellaClienti.RowTemplate.Height = 24;
+            this.TabellaClienti.Size = new System.Drawing.Size(755, 483);
+            this.TabellaClienti.TabIndex = 5;
             // 
             // AggiungiCliente
             // 
@@ -234,15 +301,16 @@ namespace DatabaseProject
             this.Tour.Text = "Tour";
             this.Tour.UseVisualStyleBackColor = true;
             // 
-            // TabellaDipendenti
+            // TabellaTour
             // 
-            this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaDipendenti.Location = new System.Drawing.Point(6, 6);
-            this.TabellaDipendenti.Name = "TabellaDipendenti";
-            this.TabellaDipendenti.RowHeadersWidth = 51;
-            this.TabellaDipendenti.RowTemplate.Height = 24;
-            this.TabellaDipendenti.Size = new System.Drawing.Size(939, 486);
-            this.TabellaDipendenti.TabIndex = 0;
+            this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaTour.Location = new System.Drawing.Point(6, 6);
+            this.TabellaTour.Name = "TabellaTour";
+            this.TabellaTour.ReadOnly = true;
+            this.TabellaTour.RowHeadersWidth = 51;
+            this.TabellaTour.RowTemplate.Height = 24;
+            this.TabellaTour.Size = new System.Drawing.Size(939, 486);
+            this.TabellaTour.TabIndex = 0;
             // 
             // gestionale_per_agenzie_relDataSet2
             // 
@@ -258,16 +326,6 @@ namespace DatabaseProject
             // 
             this.dipendenteTableAdapter.ClearBeforeFill = true;
             // 
-            // TabellaMagazzini
-            // 
-            this.TabellaMagazzini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaMagazzini.Location = new System.Drawing.Point(6, 6);
-            this.TabellaMagazzini.Name = "TabellaMagazzini";
-            this.TabellaMagazzini.RowHeadersWidth = 51;
-            this.TabellaMagazzini.RowTemplate.Height = 24;
-            this.TabellaMagazzini.Size = new System.Drawing.Size(939, 483);
-            this.TabellaMagazzini.TabIndex = 0;
-            // 
             // gestionale_per_agenzie_relDataSet3
             // 
             this.gestionale_per_agenzie_relDataSet3.DataSetName = "gestionale_per_agenzie_relDataSet3";
@@ -282,57 +340,6 @@ namespace DatabaseProject
             // 
             this.magazzinoTableAdapter.ClearBeforeFill = true;
             // 
-            // TabellaTour
-            // 
-            this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaTour.Location = new System.Drawing.Point(6, 6);
-            this.TabellaTour.Name = "TabellaTour";
-            this.TabellaTour.RowHeadersWidth = 51;
-            this.TabellaTour.RowTemplate.Height = 24;
-            this.TabellaTour.Size = new System.Drawing.Size(939, 486);
-            this.TabellaTour.TabIndex = 0;
-            // 
-            // TabellaBusinessPartners
-            // 
-            this.TabellaBusinessPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaBusinessPartners.Location = new System.Drawing.Point(6, 6);
-            this.TabellaBusinessPartners.Name = "TabellaBusinessPartners";
-            this.TabellaBusinessPartners.RowHeadersWidth = 51;
-            this.TabellaBusinessPartners.RowTemplate.Height = 24;
-            this.TabellaBusinessPartners.Size = new System.Drawing.Size(939, 483);
-            this.TabellaBusinessPartners.TabIndex = 0;
-            this.TabellaBusinessPartners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // TabellaPercorsi
-            // 
-            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaPercorsi.Location = new System.Drawing.Point(6, 6);
-            this.TabellaPercorsi.Name = "TabellaPercorsi";
-            this.TabellaPercorsi.RowHeadersWidth = 51;
-            this.TabellaPercorsi.RowTemplate.Height = 24;
-            this.TabellaPercorsi.Size = new System.Drawing.Size(939, 486);
-            this.TabellaPercorsi.TabIndex = 0;
-            // 
-            // TabellaPrenotazioni
-            // 
-            this.TabellaPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaPrenotazioni.Location = new System.Drawing.Point(6, 6);
-            this.TabellaPrenotazioni.Name = "TabellaPrenotazioni";
-            this.TabellaPrenotazioni.RowHeadersWidth = 51;
-            this.TabellaPrenotazioni.RowTemplate.Height = 24;
-            this.TabellaPrenotazioni.Size = new System.Drawing.Size(939, 483);
-            this.TabellaPrenotazioni.TabIndex = 0;
-            // 
-            // TabellaClienti
-            // 
-            this.TabellaClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaClienti.Location = new System.Drawing.Point(190, 6);
-            this.TabellaClienti.Name = "TabellaClienti";
-            this.TabellaClienti.RowHeadersWidth = 51;
-            this.TabellaClienti.RowTemplate.Height = 24;
-            this.TabellaClienti.Size = new System.Drawing.Size(755, 483);
-            this.TabellaClienti.TabIndex = 5;
-            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -343,27 +350,27 @@ namespace DatabaseProject
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DatabaseViewAdmin";
             this.Text = "Agenzia di Cicloturismo";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.DatabaseViewAdmin_Load);
             this.Dipendenti.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).EndInit();
             this.Business_Partners.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
             this.Percorsi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
             this.Magazzino.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).EndInit();
             this.Prenotazioni.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).EndInit();
             this.Clienti.ResumeLayout(false);
             this.Clienti.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).EndInit();
             this.TabPage.ResumeLayout(false);
             this.Tour.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).EndInit();
             this.ResumeLayout(false);
 
         }
