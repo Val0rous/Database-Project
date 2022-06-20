@@ -33,7 +33,6 @@ namespace DatabaseProject
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseViewAdmin));
             this.BackButton = new System.Windows.Forms.Button();
             this.Dipendenti = new System.Windows.Forms.TabPage();
-            this.Dipendenti_Ruolo = new System.Windows.Forms.CheckedListBox();
             this.Dipendenti_CFsuperiore = new System.Windows.Forms.TextBox();
             this.Dipendenti_IDsede = new System.Windows.Forms.TextBox();
             this.Dipendenti_Stipendio = new System.Windows.Forms.TextBox();
@@ -83,6 +82,10 @@ namespace DatabaseProject
             this.Clienti_Nome = new System.Windows.Forms.TextBox();
             this.TabPage = new System.Windows.Forms.TabControl();
             this.Tour = new System.Windows.Forms.TabPage();
+            this.Tour_CFtourManager = new System.Windows.Forms.TextBox();
+            this.Tour_IDsede = new System.Windows.Forms.TextBox();
+            this.Tour_IDtour = new System.Windows.Forms.TextBox();
+            this.Tour_Prezzo = new System.Windows.Forms.TextBox();
             this.AggiungiTour = new System.Windows.Forms.Button();
             this.Tour_DataFine = new System.Windows.Forms.TextBox();
             this.Tour_DataInizio = new System.Windows.Forms.TextBox();
@@ -96,10 +99,9 @@ namespace DatabaseProject
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.Tour_CFtourManager = new System.Windows.Forms.TextBox();
-            this.Tour_IDsede = new System.Windows.Forms.TextBox();
-            this.Tour_IDtour = new System.Windows.Forms.TextBox();
-            this.Tour_Prezzo = new System.Windows.Forms.TextBox();
+            this.Dipendente_isGuida = new System.Windows.Forms.CheckBox();
+            this.Dipendente_isTourManager = new System.Windows.Forms.CheckBox();
+            this.Dipendente_isAltro = new System.Windows.Forms.CheckBox();
             this.Dipendenti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).BeginInit();
             this.Business_Partners.SuspendLayout();
@@ -134,7 +136,9 @@ namespace DatabaseProject
             // 
             // Dipendenti
             // 
-            this.Dipendenti.Controls.Add(this.Dipendenti_Ruolo);
+            this.Dipendenti.Controls.Add(this.Dipendente_isAltro);
+            this.Dipendenti.Controls.Add(this.Dipendente_isTourManager);
+            this.Dipendenti.Controls.Add(this.Dipendente_isGuida);
             this.Dipendenti.Controls.Add(this.Dipendenti_CFsuperiore);
             this.Dipendenti.Controls.Add(this.Dipendenti_IDsede);
             this.Dipendenti.Controls.Add(this.Dipendenti_Stipendio);
@@ -152,20 +156,6 @@ namespace DatabaseProject
             this.Dipendenti.TabIndex = 7;
             this.Dipendenti.Text = "Dipendenti";
             this.Dipendenti.UseVisualStyleBackColor = true;
-            // 
-            // Dipendenti_Ruolo
-            // 
-            this.Dipendenti_Ruolo.FormattingEnabled = true;
-            this.Dipendenti_Ruolo.Items.AddRange(new object[] {
-            "Guida",
-            "Tour Manager",
-            "Altro"});
-            this.Dipendenti_Ruolo.Location = new System.Drawing.Point(6, 175);
-            this.Dipendenti_Ruolo.Name = "Dipendenti_Ruolo";
-            this.Dipendenti_Ruolo.Size = new System.Drawing.Size(178, 72);
-            this.Dipendenti_Ruolo.TabIndex = 18;
-            this.Dipendenti_Ruolo.Tag = "";
-            this.Dipendenti_Ruolo.SelectedIndexChanged += new System.EventHandler(this.Dipendenti_Ruolo_SelectedIndexChanged);
             // 
             // Dipendenti_CFsuperiore
             // 
@@ -715,6 +705,46 @@ namespace DatabaseProject
             this.Tour.Text = "Tour";
             this.Tour.UseVisualStyleBackColor = true;
             // 
+            // Tour_CFtourManager
+            // 
+            this.Tour_CFtourManager.Location = new System.Drawing.Point(6, 204);
+            this.Tour_CFtourManager.Name = "Tour_CFtourManager";
+            this.Tour_CFtourManager.Size = new System.Drawing.Size(178, 22);
+            this.Tour_CFtourManager.TabIndex = 13;
+            this.Tour_CFtourManager.Text = "CF del Tour Manager";
+            this.Tour_CFtourManager.Enter += new System.EventHandler(this.Tour_CFtourManager_Enter);
+            this.Tour_CFtourManager.Leave += new System.EventHandler(this.Tour_CFtourManager_Leave);
+            // 
+            // Tour_IDsede
+            // 
+            this.Tour_IDsede.Location = new System.Drawing.Point(6, 175);
+            this.Tour_IDsede.Name = "Tour_IDsede";
+            this.Tour_IDsede.Size = new System.Drawing.Size(178, 22);
+            this.Tour_IDsede.TabIndex = 12;
+            this.Tour_IDsede.Text = "ID Sede";
+            this.Tour_IDsede.Enter += new System.EventHandler(this.Tour_IDsede_Enter);
+            this.Tour_IDsede.Leave += new System.EventHandler(this.Tour_IDsede_Leave);
+            // 
+            // Tour_IDtour
+            // 
+            this.Tour_IDtour.Location = new System.Drawing.Point(6, 147);
+            this.Tour_IDtour.Name = "Tour_IDtour";
+            this.Tour_IDtour.Size = new System.Drawing.Size(178, 22);
+            this.Tour_IDtour.TabIndex = 11;
+            this.Tour_IDtour.Text = "ID Tour";
+            this.Tour_IDtour.Enter += new System.EventHandler(this.Tour_IDtour_Enter);
+            this.Tour_IDtour.Leave += new System.EventHandler(this.Tour_IDtour_Leave);
+            // 
+            // Tour_Prezzo
+            // 
+            this.Tour_Prezzo.Location = new System.Drawing.Point(6, 119);
+            this.Tour_Prezzo.Name = "Tour_Prezzo";
+            this.Tour_Prezzo.Size = new System.Drawing.Size(178, 22);
+            this.Tour_Prezzo.TabIndex = 10;
+            this.Tour_Prezzo.Text = "Prezzo";
+            this.Tour_Prezzo.Enter += new System.EventHandler(this.Tour_Prezzo_Enter);
+            this.Tour_Prezzo.Leave += new System.EventHandler(this.Tour_Prezzo_Leave);
+            // 
             // AggiungiTour
             // 
             this.AggiungiTour.Location = new System.Drawing.Point(6, 232);
@@ -815,45 +845,36 @@ namespace DatabaseProject
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshAll);
             // 
-            // Tour_CFtourManager
+            // Dipendente_isGuida
             // 
-            this.Tour_CFtourManager.Location = new System.Drawing.Point(6, 204);
-            this.Tour_CFtourManager.Name = "Tour_CFtourManager";
-            this.Tour_CFtourManager.Size = new System.Drawing.Size(178, 22);
-            this.Tour_CFtourManager.TabIndex = 13;
-            this.Tour_CFtourManager.Text = "CF del Tour Manager";
-            this.Tour_CFtourManager.Enter += new System.EventHandler(this.Tour_CFtourManager_Enter);
-            this.Tour_CFtourManager.Leave += new System.EventHandler(this.Tour_CFtourManager_Leave);
+            this.Dipendente_isGuida.AutoSize = true;
+            this.Dipendente_isGuida.Location = new System.Drawing.Point(6, 175);
+            this.Dipendente_isGuida.Name = "Dipendente_isGuida";
+            this.Dipendente_isGuida.Size = new System.Drawing.Size(68, 21);
+            this.Dipendente_isGuida.TabIndex = 19;
+            this.Dipendente_isGuida.Text = "Guida";
+            this.Dipendente_isGuida.UseVisualStyleBackColor = true;
+            this.Dipendente_isGuida.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // Tour_IDsede
+            // Dipendente_isTourManager
             // 
-            this.Tour_IDsede.Location = new System.Drawing.Point(6, 175);
-            this.Tour_IDsede.Name = "Tour_IDsede";
-            this.Tour_IDsede.Size = new System.Drawing.Size(178, 22);
-            this.Tour_IDsede.TabIndex = 12;
-            this.Tour_IDsede.Text = "ID Sede";
-            this.Tour_IDsede.Enter += new System.EventHandler(this.Tour_IDsede_Enter);
-            this.Tour_IDsede.Leave += new System.EventHandler(this.Tour_IDsede_Leave);
+            this.Dipendente_isTourManager.AutoSize = true;
+            this.Dipendente_isTourManager.Location = new System.Drawing.Point(7, 203);
+            this.Dipendente_isTourManager.Name = "Dipendente_isTourManager";
+            this.Dipendente_isTourManager.Size = new System.Drawing.Size(116, 21);
+            this.Dipendente_isTourManager.TabIndex = 20;
+            this.Dipendente_isTourManager.Text = "TourManager";
+            this.Dipendente_isTourManager.UseVisualStyleBackColor = true;
             // 
-            // Tour_IDtour
+            // Dipendente_isAltro
             // 
-            this.Tour_IDtour.Location = new System.Drawing.Point(6, 147);
-            this.Tour_IDtour.Name = "Tour_IDtour";
-            this.Tour_IDtour.Size = new System.Drawing.Size(178, 22);
-            this.Tour_IDtour.TabIndex = 11;
-            this.Tour_IDtour.Text = "ID Tour";
-            this.Tour_IDtour.Enter += new System.EventHandler(this.Tour_IDtour_Enter);
-            this.Tour_IDtour.Leave += new System.EventHandler(this.Tour_IDtour_Leave);
-            // 
-            // Tour_Prezzo
-            // 
-            this.Tour_Prezzo.Location = new System.Drawing.Point(6, 119);
-            this.Tour_Prezzo.Name = "Tour_Prezzo";
-            this.Tour_Prezzo.Size = new System.Drawing.Size(178, 22);
-            this.Tour_Prezzo.TabIndex = 10;
-            this.Tour_Prezzo.Text = "Prezzo";
-            this.Tour_Prezzo.Enter += new System.EventHandler(this.Tour_Prezzo_Enter);
-            this.Tour_Prezzo.Leave += new System.EventHandler(this.Tour_Prezzo_Leave);
+            this.Dipendente_isAltro.AutoSize = true;
+            this.Dipendente_isAltro.Location = new System.Drawing.Point(7, 230);
+            this.Dipendente_isAltro.Name = "Dipendente_isAltro";
+            this.Dipendente_isAltro.Size = new System.Drawing.Size(59, 21);
+            this.Dipendente_isAltro.TabIndex = 21;
+            this.Dipendente_isAltro.Text = "Altro";
+            this.Dipendente_isAltro.UseVisualStyleBackColor = true;
             // 
             // DatabaseViewAdmin
             // 
@@ -961,12 +982,14 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox Dipendenti_IDsede;
         private System.Windows.Forms.TextBox Dipendenti_Stipendio;
         private System.Windows.Forms.TextBox Dipendenti_CodiceDipendente;
-        private System.Windows.Forms.CheckedListBox Dipendenti_Ruolo;
         private System.Windows.Forms.TextBox Tour_CFtourManager;
         private System.Windows.Forms.TextBox Tour_IDsede;
         private System.Windows.Forms.TextBox Tour_IDtour;
         private System.Windows.Forms.TextBox Tour_Prezzo;
         private System.Windows.Forms.Button AggiungiDipendente;
+        private System.Windows.Forms.CheckBox Dipendente_isAltro;
+        private System.Windows.Forms.CheckBox Dipendente_isTourManager;
+        private System.Windows.Forms.CheckBox Dipendente_isGuida;
     }
 }
 

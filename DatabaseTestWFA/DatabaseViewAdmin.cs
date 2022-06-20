@@ -1009,7 +1009,43 @@ namespace DatabaseProject
 
         private void AggiungiDipendente_Click(object sender, EventArgs e)
         {
+            if (this.dipendente_nome && this.dipendente_cognome && this.dipendente_CF && this.dipendente_telefono
+               && this.dipendente_stipendio && this.dipendente_codiceDipendente)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
 
+                try
+                {
+                    var result = queries.InserisciDipendente(Dipendenti_Nome.Text, Dipendenti_Cognome.Text, Dipendenti_CF.Text, Dipendenti_Telefono.Text, 
+                        Dipendenti_CodiceDipendente.Text, float.Parse(Dipendenti_Stipendio.Text), Convert.ToByte(Dipendente_isGuida.Checked), 
+                        Convert.ToByte(Dipendente_isTourManager.Checked), Convert.ToByte(Dipendente_isAltro.Checked), Dipendenti_IDsede.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("Dipendente inserito correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dipendente non inserito",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception) { }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
 
         private void Tour_Destinazione_Enter(object sender, EventArgs e)
@@ -1174,13 +1210,48 @@ namespace DatabaseProject
 
         private void AggiungiTour_Click(object sender, EventArgs e)
         {
+            if (this.tour_destinazione && this.tour_nome && this.tour_dataInizio &&
+                this.tour_dataFine && this.tour_prezzo && this.tour_IDtour && this.tour_IDsede && this.tour_CFtourManager)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
 
+                try
+                {
+                    var result = queries.InserisciTour(this.Tour_Destinazione.Text, this.Tour_Nome.Text, this.Tour_DataInizio.Text, this.Tour_DataFine.Text, float.Parse(this.Tour_Prezzo.Text), this.Tour_IDtour.Text, this.Tour_IDsede.Text, this.Tour_CFtourManager.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("Tour inserito correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tour non inserito",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception) { }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
 
         private void Dipendenti_Ruolo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+<<<<<<< Updated upstream
         private void AggiungiTappa_Click(object sender, EventArgs e)
         {
             if (this.tappa_inizio && this.tappa_fine && this.tappa_lunghezzaTappa && this.tappa_ID && this.tappa_IDPercorso)
@@ -1233,6 +1304,12 @@ namespace DatabaseProject
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
+=======
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+>>>>>>> Stashed changes
         }
     }
 }
