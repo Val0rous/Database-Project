@@ -227,22 +227,42 @@ namespace DatabaseProject
 
         private void Prenotazioni_CFcliente_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Prenotazioni_CFcliente_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Prenotazioni_IDtour_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Prenotazioni_IDtour_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void AggiungiPrenotazione_Click(object sender, EventArgs e)
@@ -252,52 +272,102 @@ namespace DatabaseProject
 
         private void Magazzini_CapMaxAccessori_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Magazzini_CapMaxAccessori_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Magazzini_CapMaxBici_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Magazzini_CapMaxBici_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Magazzini_IDmagazzino_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Magazzini_IDmagazzino_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Magazzini_IDindirizzo_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Magazzini_IDindirizzo_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Magazzini_IDsede_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Magazzini_IDsede_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void AggiungiMagazzino_Click(object sender, EventArgs e)
@@ -307,62 +377,122 @@ namespace DatabaseProject
 
         private void Percorsi_IDpercorso_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Percorsi_IDpercorso_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Percorsi_Difficolta_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Percorsi_Difficolta_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Percorsi_NomePercorso_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Percorsi_NomePercorso_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Percorsi_NumTappe_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Percorsi_NumTappe_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Percorsi_LunghezzaPercorso_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Percorsi_LunghezzaPercorso_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Percorsi_IDsede_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Percorsi_IDsede_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void AggiungiPercorso_Click(object sender, EventArgs e)
@@ -372,52 +502,102 @@ namespace DatabaseProject
 
         private void BP_PIVA_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void BP_PIVA_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void BP_NomeSocio_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void BP_NomeSocio_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void BP_CostoServizio_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void BP_CostoServizio_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void BP_Telefono_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void BP_Telefono_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void BP_Tipologia_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void BP_Tipologia_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void AggiungiBusinessPartner_Click(object sender, EventArgs e)
@@ -427,82 +607,162 @@ namespace DatabaseProject
 
         private void Dipendenti_Nome_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_Nome_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Dipendenti_Cognome_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_Cognome_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Dipendenti_CF_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_CF_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Dipendenti_Telefono_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_Telefono_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Dipendenti_CodiceDipendente_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_CodiceDipendente_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Dipendenti_Stipendio_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_Stipendio_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Dipendenti_IDsede_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_IDsede_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Dipendenti_CFsuperiore_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Dipendenti_CFsuperiore_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void AggiungiDipendente_Click(object sender, EventArgs e)
@@ -512,82 +772,162 @@ namespace DatabaseProject
 
         private void Tour_Destinazione_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_Destinazione_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Tour_Nome_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_Nome_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Tour_DataInizio_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_DataInizio_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Tour_DataFine_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_DataFine_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Tour_Prezzo_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_Prezzo_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Tour_IDtour_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_IDtour_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Tour_IDsede_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_IDsede_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void Tour_CFtourManager_Enter(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.nome = true;
         }
 
         private void Tour_CFtourManager_Leave(object sender, EventArgs e)
         {
-
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.nome = false;
+            }
         }
 
         private void AggiungiTour_Click(object sender, EventArgs e)
