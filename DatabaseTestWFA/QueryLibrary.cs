@@ -423,7 +423,7 @@ namespace DatabaseProject
             command.CommandText = "SELECT A.IDaccessorio, COUNT(NA.IDservizio) "+
                 "FROM accessorio AS A, noleggioAccessorio AS NA, servizio AS S"+
                 "WHERE A.IDaccessorio=NA.IDaccessorio AND NA.IDservizio=S.IDservizio "+
-                "AND S.IDsede=" + Convert(IDSede) + $" AND MONTH(S.DataInizio)={Month} " + 
+                "AND S.IDsede=" + Convert(IDsede) + $" AND MONTH(S.DataInizio)={Month} " + 
                 "ORDER BY Count(NA.IDservizio) DESC LIMIT 1";
             return command;
         }
