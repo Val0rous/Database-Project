@@ -16,10 +16,52 @@ namespace DatabaseProject
         bool IsAdmin { get; }
         string PIVAagenzia { get; }
         string IDsede { get; }
-        bool nome;
-        bool cognome;
-        bool CF;
-        bool telefono;
+        bool cliente_nome;
+        bool cliente_cognome;
+        bool cliente_CF;
+        bool cliente_telefono;
+
+        bool prenotazione_CF;
+        bool prenotazione_IDtour;
+
+        bool magazzino_capMaxAccessori;
+        bool magazzino_capMaxBici;
+        bool magazzino_IDmagazzino;
+        bool magazzino_IDindirizzo;
+        bool magazzino_IDsede;
+
+        bool percorso_IDpercorso;
+        bool percorso_difficolta;
+        bool percorso_nome;
+        bool percorso_numTappe;
+        bool percorso_lunghezzaPercorso;
+        bool percorso_IDsede;
+
+        bool bp_PIVA;
+        bool bp_nomeSocio;
+        bool bp_costoServizio;
+        bool bp_telefono;
+        bool bp_tipologia;
+
+        bool dipendente_nome;
+        bool dipendente_cognome;
+        bool dipendente_CF;
+        bool dipendente_telefono;
+        bool dipendente_codiceDipendente;
+        bool dipendente_stipendio;
+        bool dipendente_ruolo;
+        bool dipendente_IDsede;
+        bool dipendente_CFsuperiore;
+
+        bool tour_destinazione;
+        bool tour_nome;
+        bool tour_dataInizio;
+        bool tour_dataFine;
+        bool tour_prezzo;
+        bool tour_IDtour;
+        bool tour_IDsede;
+        bool tour_CFtourManager;
+
         public DatabaseViewAdmin(bool isAdmin, string PIVAagenzia, string IDsede)
         {
             this.IsAdmin = isAdmin;
@@ -99,7 +141,7 @@ namespace DatabaseProject
 
         private void AggiungiCliente_Click(object sender, EventArgs e)
         {
-            if (this.nome && this.cognome && this.CF && this.telefono)
+            if (this.cliente_nome && this.cliente_cognome && this.cliente_CF && this.cliente_telefono)
             {
                 var connection = new CreateConnection();
                 connection.Connection.Open();
@@ -142,7 +184,7 @@ namespace DatabaseProject
                 this.Clienti_Nome.Text = "";
             }
             this.Clienti_Nome.ForeColor = Color.Black;
-            this.nome = true;
+            this.cliente_nome = true;
         }
 
         private void Nome_Leave(object sender, EventArgs e)
@@ -151,7 +193,7 @@ namespace DatabaseProject
             {
                 this.Clienti_Nome.Text = "Nome";
                 this.Clienti_Nome.ForeColor = Color.Gray;
-                this.nome = false;
+                this.cliente_nome = false;
             }
         }
 
@@ -162,7 +204,7 @@ namespace DatabaseProject
                 this.Clienti_Cognome.Text = "";
             }
             this.Clienti_Cognome.ForeColor = Color.Black;
-            this.cognome = true;
+            this.cliente_cognome = true;
         }
 
         private void Cognome_Leave(object sender, EventArgs e)
@@ -171,7 +213,7 @@ namespace DatabaseProject
             {
                 this.Clienti_Cognome.Text = "Cognome";
                 this.Clienti_Cognome.ForeColor = Color.Gray;
-                this.cognome = false;
+                this.cliente_cognome = false;
             }
         }
 
@@ -182,7 +224,7 @@ namespace DatabaseProject
                 this.Clienti_CF.Text = "";
             }
             this.Clienti_CF.ForeColor = Color.Black;
-            this.CF = true;
+            this.cliente_CF = true;
         }
 
         private void CodiceFiscale_Leave(object sender, EventArgs e)
@@ -191,7 +233,7 @@ namespace DatabaseProject
             {
                 this.Clienti_CF.Text = "Codice Fiscale";
                 this.Clienti_CF.ForeColor = Color.Gray;
-                this.CF = false;
+                this.cliente_CF = false;
             }
         }
 
@@ -202,7 +244,7 @@ namespace DatabaseProject
                 this.Clienti_Telefono.Text = "";
             }
             this.Clienti_Telefono.ForeColor = Color.Black;
-            this.telefono = true;
+            this.cliente_telefono = true;
         }
 
         private void Telefono_Leave(object sender, EventArgs e)
@@ -211,7 +253,7 @@ namespace DatabaseProject
             {
                 this.Clienti_Telefono.Text = "Numero di Telefono";
                 this.Clienti_Telefono.ForeColor = Color.Gray;
-                this.telefono = false;
+                this.cliente_telefono = false;
             }
         }
 
