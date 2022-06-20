@@ -31,14 +31,14 @@ namespace DatabaseProject
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseViewAdmin));
-            this.button1 = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             this.Dipendenti = new System.Windows.Forms.TabPage();
             this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
             this.Business_Partners = new System.Windows.Forms.TabPage();
             this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.Percorsi = new System.Windows.Forms.TabPage();
             this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
-            this.Magazzino = new System.Windows.Forms.TabPage();
+            this.Magazzini = new System.Windows.Forms.TabPage();
             this.TabellaMagazzini = new System.Windows.Forms.DataGridView();
             this.Prenotazioni = new System.Windows.Forms.TabPage();
             this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
@@ -58,13 +58,14 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.Dipendenti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).BeginInit();
             this.Business_Partners.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).BeginInit();
             this.Percorsi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
-            this.Magazzino.SuspendLayout();
+            this.Magazzini.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).BeginInit();
             this.Prenotazioni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).BeginInit();
@@ -79,16 +80,16 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // BackButton
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 37);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.BackButton_Click);
+            this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackButton.Location = new System.Drawing.Point(12, 12);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(39, 37);
+            this.BackButton.TabIndex = 7;
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // Dipendenti
             // 
@@ -157,16 +158,16 @@ namespace DatabaseProject
             this.TabellaPercorsi.Size = new System.Drawing.Size(939, 486);
             this.TabellaPercorsi.TabIndex = 0;
             // 
-            // Magazzino
+            // Magazzini
             // 
-            this.Magazzino.Controls.Add(this.TabellaMagazzini);
-            this.Magazzino.Location = new System.Drawing.Point(4, 25);
-            this.Magazzino.Name = "Magazzino";
-            this.Magazzino.Padding = new System.Windows.Forms.Padding(3);
-            this.Magazzino.Size = new System.Drawing.Size(951, 495);
-            this.Magazzino.TabIndex = 2;
-            this.Magazzino.Text = "Magazzini";
-            this.Magazzino.UseVisualStyleBackColor = true;
+            this.Magazzini.Controls.Add(this.TabellaMagazzini);
+            this.Magazzini.Location = new System.Drawing.Point(4, 25);
+            this.Magazzini.Name = "Magazzini";
+            this.Magazzini.Padding = new System.Windows.Forms.Padding(3);
+            this.Magazzini.Size = new System.Drawing.Size(951, 495);
+            this.Magazzini.TabIndex = 2;
+            this.Magazzini.Text = "Magazzini";
+            this.Magazzini.UseVisualStyleBackColor = true;
             // 
             // TabellaMagazzini
             // 
@@ -278,7 +279,7 @@ namespace DatabaseProject
             this.TabPage.AccessibleName = "";
             this.TabPage.Controls.Add(this.Clienti);
             this.TabPage.Controls.Add(this.Prenotazioni);
-            this.TabPage.Controls.Add(this.Magazzino);
+            this.TabPage.Controls.Add(this.Magazzini);
             this.TabPage.Controls.Add(this.Percorsi);
             this.TabPage.Controls.Add(this.Business_Partners);
             this.TabPage.Controls.Add(this.Dipendenti);
@@ -340,12 +341,24 @@ namespace DatabaseProject
             // 
             this.magazzinoTableAdapter.ClearBeforeFill = true;
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RefreshButton.Location = new System.Drawing.Point(57, 12);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(39, 37);
+            this.RefreshButton.TabIndex = 11;
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshAll);
+            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 591);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RefreshButton);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.TabPage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DatabaseViewAdmin";
@@ -357,7 +370,7 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
             this.Percorsi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
-            this.Magazzino.ResumeLayout(false);
+            this.Magazzini.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaMagazzini)).EndInit();
             this.Prenotazioni.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).EndInit();
@@ -376,11 +389,11 @@ namespace DatabaseProject
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.TabPage Dipendenti;
         private System.Windows.Forms.TabPage Business_Partners;
         private System.Windows.Forms.TabPage Percorsi;
-        private System.Windows.Forms.TabPage Magazzino;
+        private System.Windows.Forms.TabPage Magazzini;
         private System.Windows.Forms.TabPage Prenotazioni;
         private System.Windows.Forms.TabPage Clienti;
         private System.Windows.Forms.Button AggiungiCliente;
@@ -403,6 +416,7 @@ namespace DatabaseProject
         private System.Windows.Forms.DataGridView TabellaPercorsi;
         private System.Windows.Forms.DataGridView TabellaPrenotazioni;
         private System.Windows.Forms.DataGridView TabellaClienti;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }
 

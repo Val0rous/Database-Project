@@ -53,6 +53,7 @@ namespace DatabaseProject
             this.iDtourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.TabView.SuspendLayout();
             this.Clienti.SuspendLayout();
             this.Prenotazioni.SuspendLayout();
@@ -173,6 +174,7 @@ namespace DatabaseProject
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             this.nomeDataGridViewTextBoxColumn.Width = 125;
             // 
             // cognomeDataGridViewTextBoxColumn
@@ -181,6 +183,7 @@ namespace DatabaseProject
             this.cognomeDataGridViewTextBoxColumn.HeaderText = "Cognome";
             this.cognomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cognomeDataGridViewTextBoxColumn.Name = "cognomeDataGridViewTextBoxColumn";
+            this.cognomeDataGridViewTextBoxColumn.ReadOnly = true;
             this.cognomeDataGridViewTextBoxColumn.Width = 125;
             // 
             // cFDataGridViewTextBoxColumn
@@ -189,6 +192,7 @@ namespace DatabaseProject
             this.cFDataGridViewTextBoxColumn.HeaderText = "CF";
             this.cFDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cFDataGridViewTextBoxColumn.Name = "cFDataGridViewTextBoxColumn";
+            this.cFDataGridViewTextBoxColumn.ReadOnly = true;
             this.cFDataGridViewTextBoxColumn.Width = 125;
             // 
             // recapitoDataGridViewTextBoxColumn
@@ -197,6 +201,7 @@ namespace DatabaseProject
             this.recapitoDataGridViewTextBoxColumn.HeaderText = "Recapito";
             this.recapitoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.recapitoDataGridViewTextBoxColumn.Name = "recapitoDataGridViewTextBoxColumn";
+            this.recapitoDataGridViewTextBoxColumn.ReadOnly = true;
             this.recapitoDataGridViewTextBoxColumn.Width = 125;
             // 
             // TabellaPrenotazioni
@@ -235,6 +240,7 @@ namespace DatabaseProject
             this.cFclienteDataGridViewTextBoxColumn.HeaderText = "CFcliente";
             this.cFclienteDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cFclienteDataGridViewTextBoxColumn.Name = "cFclienteDataGridViewTextBoxColumn";
+            this.cFclienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.cFclienteDataGridViewTextBoxColumn.Width = 125;
             // 
             // iDtourDataGridViewTextBoxColumn
@@ -243,6 +249,7 @@ namespace DatabaseProject
             this.iDtourDataGridViewTextBoxColumn.HeaderText = "IDtour";
             this.iDtourDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDtourDataGridViewTextBoxColumn.Name = "iDtourDataGridViewTextBoxColumn";
+            this.iDtourDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDtourDataGridViewTextBoxColumn.Width = 125;
             // 
             // TabellaPercorsi
@@ -267,11 +274,23 @@ namespace DatabaseProject
             this.TabellaTour.Size = new System.Drawing.Size(756, 342);
             this.TabellaTour.TabIndex = 0;
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RefreshButton.Location = new System.Drawing.Point(57, 12);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(39, 37);
+            this.RefreshButton.TabIndex = 10;
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshAll);
+            // 
             // DatabaseViewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.TabView);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -319,5 +338,6 @@ namespace DatabaseProject
         private System.Windows.Forms.DataGridViewTextBoxColumn iDtourDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView TabellaPercorsi;
         private System.Windows.Forms.DataGridView TabellaTour;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }
