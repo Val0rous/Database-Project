@@ -35,7 +35,7 @@ namespace DatabaseProject
             FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void DatabaseViewAdmin_Load(object sender, EventArgs e)
         {
 
             // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet3.magazzino' table. You can move, or remove it, as needed.

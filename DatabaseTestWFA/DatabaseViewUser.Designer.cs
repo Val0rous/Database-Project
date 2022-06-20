@@ -32,12 +32,12 @@ namespace DatabaseProject
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseViewUser));
             this.button1 = new System.Windows.Forms.Button();
-            this.TabPage = new System.Windows.Forms.TabControl();
+            this.TabView = new System.Windows.Forms.TabControl();
             this.Clienti = new System.Windows.Forms.TabPage();
             this.Prenotazioni = new System.Windows.Forms.TabPage();
             this.Percorsi = new System.Windows.Forms.TabPage();
             this.Tour = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TabellaClienti = new System.Windows.Forms.DataGridView();
             this.gestionale_per_agenzie_relDataSet = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter();
@@ -45,27 +45,27 @@ namespace DatabaseProject
             this.cognomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recapitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
             this.gestionale_per_agenzie_relDataSet1 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1();
             this.prenotazioneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prenotazioneTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter();
             this.cFclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDtourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.TabPage.SuspendLayout();
+            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
+            this.TabellaTour = new System.Windows.Forms.DataGridView();
+            this.TabView.SuspendLayout();
             this.Clienti.SuspendLayout();
             this.Prenotazioni.SuspendLayout();
             this.Percorsi.SuspendLayout();
             this.Tour.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -79,21 +79,21 @@ namespace DatabaseProject
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // TabPage
+            // TabView
             // 
-            this.TabPage.Controls.Add(this.Clienti);
-            this.TabPage.Controls.Add(this.Prenotazioni);
-            this.TabPage.Controls.Add(this.Percorsi);
-            this.TabPage.Controls.Add(this.Tour);
-            this.TabPage.Location = new System.Drawing.Point(12, 55);
-            this.TabPage.Name = "TabPage";
-            this.TabPage.SelectedIndex = 0;
-            this.TabPage.Size = new System.Drawing.Size(776, 383);
-            this.TabPage.TabIndex = 9;
+            this.TabView.Controls.Add(this.Clienti);
+            this.TabView.Controls.Add(this.Prenotazioni);
+            this.TabView.Controls.Add(this.Percorsi);
+            this.TabView.Controls.Add(this.Tour);
+            this.TabView.Location = new System.Drawing.Point(12, 55);
+            this.TabView.Name = "TabView";
+            this.TabView.SelectedIndex = 0;
+            this.TabView.Size = new System.Drawing.Size(776, 383);
+            this.TabView.TabIndex = 9;
             // 
             // Clienti
             // 
-            this.Clienti.Controls.Add(this.dataGridView1);
+            this.Clienti.Controls.Add(this.TabellaClienti);
             this.Clienti.Location = new System.Drawing.Point(4, 25);
             this.Clienti.Name = "Clienti";
             this.Clienti.Padding = new System.Windows.Forms.Padding(3);
@@ -104,7 +104,7 @@ namespace DatabaseProject
             // 
             // Prenotazioni
             // 
-            this.Prenotazioni.Controls.Add(this.dataGridView2);
+            this.Prenotazioni.Controls.Add(this.TabellaPrenotazioni);
             this.Prenotazioni.Location = new System.Drawing.Point(4, 25);
             this.Prenotazioni.Name = "Prenotazioni";
             this.Prenotazioni.Padding = new System.Windows.Forms.Padding(3);
@@ -115,7 +115,7 @@ namespace DatabaseProject
             // 
             // Percorsi
             // 
-            this.Percorsi.Controls.Add(this.dataGridView3);
+            this.Percorsi.Controls.Add(this.TabellaPercorsi);
             this.Percorsi.Location = new System.Drawing.Point(4, 25);
             this.Percorsi.Name = "Percorsi";
             this.Percorsi.Padding = new System.Windows.Forms.Padding(3);
@@ -126,7 +126,7 @@ namespace DatabaseProject
             // 
             // Tour
             // 
-            this.Tour.Controls.Add(this.dataGridView4);
+            this.Tour.Controls.Add(this.TabellaTour);
             this.Tour.Location = new System.Drawing.Point(4, 25);
             this.Tour.Name = "Tour";
             this.Tour.Padding = new System.Windows.Forms.Padding(3);
@@ -135,22 +135,23 @@ namespace DatabaseProject
             this.Tour.Text = "Tour";
             this.Tour.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // TabellaClienti
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TabellaClienti.AutoGenerateColumns = false;
+            this.TabellaClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaClienti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeDataGridViewTextBoxColumn,
             this.cognomeDataGridViewTextBoxColumn,
             this.cFDataGridViewTextBoxColumn,
             this.recapitoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.clienteBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(756, 342);
-            this.dataGridView1.TabIndex = 0;
+            this.TabellaClienti.DataSource = this.clienteBindingSource;
+            this.TabellaClienti.Location = new System.Drawing.Point(6, 6);
+            this.TabellaClienti.Name = "TabellaClienti";
+            this.TabellaClienti.ReadOnly = true;
+            this.TabellaClienti.RowHeadersWidth = 51;
+            this.TabellaClienti.RowTemplate.Height = 24;
+            this.TabellaClienti.Size = new System.Drawing.Size(756, 342);
+            this.TabellaClienti.TabIndex = 0;
             // 
             // gestionale_per_agenzie_relDataSet
             // 
@@ -198,20 +199,21 @@ namespace DatabaseProject
             this.recapitoDataGridViewTextBoxColumn.Name = "recapitoDataGridViewTextBoxColumn";
             this.recapitoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // dataGridView2
+            // TabellaPrenotazioni
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TabellaPrenotazioni.AutoGenerateColumns = false;
+            this.TabellaPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPrenotazioni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cFclienteDataGridViewTextBoxColumn,
             this.iDtourDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.prenotazioneBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(759, 345);
-            this.dataGridView2.TabIndex = 0;
+            this.TabellaPrenotazioni.DataSource = this.prenotazioneBindingSource;
+            this.TabellaPrenotazioni.Location = new System.Drawing.Point(3, 6);
+            this.TabellaPrenotazioni.Name = "TabellaPrenotazioni";
+            this.TabellaPrenotazioni.ReadOnly = true;
+            this.TabellaPrenotazioni.RowHeadersWidth = 51;
+            this.TabellaPrenotazioni.RowTemplate.Height = 24;
+            this.TabellaPrenotazioni.Size = new System.Drawing.Size(759, 345);
+            this.TabellaPrenotazioni.TabIndex = 0;
             // 
             // gestionale_per_agenzie_relDataSet1
             // 
@@ -243,50 +245,52 @@ namespace DatabaseProject
             this.iDtourDataGridViewTextBoxColumn.Name = "iDtourDataGridViewTextBoxColumn";
             this.iDtourDataGridViewTextBoxColumn.Width = 125;
             // 
-            // dataGridView3
+            // TabellaPercorsi
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(756, 342);
-            this.dataGridView3.TabIndex = 0;
+            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPercorsi.Location = new System.Drawing.Point(6, 6);
+            this.TabellaPercorsi.Name = "TabellaPercorsi";
+            this.TabellaPercorsi.ReadOnly = true;
+            this.TabellaPercorsi.RowHeadersWidth = 51;
+            this.TabellaPercorsi.RowTemplate.Height = 24;
+            this.TabellaPercorsi.Size = new System.Drawing.Size(756, 342);
+            this.TabellaPercorsi.TabIndex = 0;
             // 
-            // dataGridView4
+            // TabellaTour
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(756, 342);
-            this.dataGridView4.TabIndex = 0;
+            this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaTour.Location = new System.Drawing.Point(6, 6);
+            this.TabellaTour.Name = "TabellaTour";
+            this.TabellaTour.ReadOnly = true;
+            this.TabellaTour.RowHeadersWidth = 51;
+            this.TabellaTour.RowTemplate.Height = 24;
+            this.TabellaTour.Size = new System.Drawing.Size(756, 342);
+            this.TabellaTour.TabIndex = 0;
             // 
             // DatabaseViewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TabPage);
+            this.Controls.Add(this.TabView);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DatabaseViewUser";
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.DatabaseViewUser_Load);
-            this.TabPage.ResumeLayout(false);
+            this.TabView.ResumeLayout(false);
             this.Clienti.ResumeLayout(false);
             this.Prenotazioni.ResumeLayout(false);
             this.Percorsi.ResumeLayout(false);
             this.Tour.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,12 +298,12 @@ namespace DatabaseProject
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl TabPage;
+        private System.Windows.Forms.TabControl TabView;
         private System.Windows.Forms.TabPage Clienti;
         private System.Windows.Forms.TabPage Prenotazioni;
         private System.Windows.Forms.TabPage Percorsi;
         private System.Windows.Forms.TabPage Tour;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView TabellaClienti;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet gestionale_per_agenzie_relDataSet;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter clienteTableAdapter;
@@ -307,13 +311,13 @@ namespace DatabaseProject
         private System.Windows.Forms.DataGridViewTextBoxColumn cognomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn recapitoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView TabellaPrenotazioni;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet1 gestionale_per_agenzie_relDataSet1;
         private System.Windows.Forms.BindingSource prenotazioneBindingSource;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter prenotazioneTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFclienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDtourDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView TabellaPercorsi;
+        private System.Windows.Forms.DataGridView TabellaTour;
     }
 }
