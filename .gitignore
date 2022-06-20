@@ -9,3 +9,5 @@ packages
 DatabaseTestWFA/bin
 DatabaseTestWFA/obj
 /.idea
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json

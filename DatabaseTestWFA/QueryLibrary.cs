@@ -23,7 +23,9 @@ namespace DatabaseProject
         public string GetNextID(string tableName, string IDFieldName)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT MAX(" + IDFieldName + ") FROM " + tableName;
+            command.CommandText = "WITH T(A) AS (SELECT " + IDFieldName + " AS A " +
+                                  "FROM " + tableName + " WHERE LENGTH(" + IDFieldName + ") = (SELECT MAX(LENGTH(" + IDFieldName + ")) FROM " + tableName + ")) " +
+                                  "SELECT MAX(A) FROM T";
             var reader = command.ExecuteReader();
             reader.Read();
             var index = reader.GetString(0);
@@ -364,7 +366,7 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@IDtour", IDtour);
             command.Parameters.AddWithValue("@IDsede", IDsede);
             command.Parameters.AddWithValue("@CFtourManager", CFtourManager);
-            command.CommandText = "INSERT INTO cliente (Destinazione, Nome, DataInizio, DataFine, Prezzo, IDtour, IDsede, CFtourManager) " +
+            command.CommandText = "INSERT INTO tour (Destinazione, Nome, DataInizio, DataFine, Prezzo, IDtour, IDsede, CFtourManager) " +
                 "VALUES (@Destinazione, @Nome, @DataInizio, @DataFine, @Prezzo, @IDtour, @IDsede, @CFtourManager)";
             try
             {
@@ -372,8 +374,9 @@ namespace DatabaseProject
                 else return false;
 
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
         }

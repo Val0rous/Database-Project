@@ -80,7 +80,29 @@ namespace DatabaseProject
             this.IDsede = IDsede;
             InitializeComponent();
         }
+        public void ExecuteQueryIf(bool condition, Action<QueryLibrary> query)
+        {
+            if (condition)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
 
+                try
+                {
+                    query(queries);
+                }
+                catch (Exception e) { Console.WriteLine(e.StackTrace); }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
         private void DatabaseViewAdmin_Load(object sender, EventArgs e)
         {
 
@@ -130,11 +152,13 @@ namespace DatabaseProject
             this.NuovaTappa_IDtappa.ForeColor = Color.Gray;
             this.NuovaTappa_IDpercorso.ForeColor = Color.Gray;
 
+            /*
             this.BP_PIVA.ForeColor = Color.Gray;
             this.BP_NomeSocio.ForeColor = Color.Gray;
             this.BP_CostoServizio.ForeColor = Color.Gray;
             this.BP_Telefono.ForeColor = Color.Gray;
             this.BP_Tipologia.ForeColor = Color.Gray;
+            */
 
             this.Dipendenti_Nome.ForeColor = Color.Gray;
             this.Dipendenti_Cognome.ForeColor = Color.Gray;
@@ -145,6 +169,7 @@ namespace DatabaseProject
             this.Dipendenti_IDsede.ForeColor = Color.Gray;
             this.Dipendenti_CFsuperiore.ForeColor = Color.Gray;
 
+            /*
             this.Tour_Destinazione.ForeColor = Color.Gray;
             this.Tour_Nome.ForeColor = Color.Gray;
             this.Tour_DataInizio.ForeColor = Color.Gray;
@@ -153,6 +178,9 @@ namespace DatabaseProject
             this.Tour_IDtour.ForeColor = Color.Gray;
             this.Tour_IDsede.ForeColor = Color.Gray;
             this.Tour_CFtourManager.ForeColor = Color.Gray;
+            */
+
+            this.ThisSedeID.Text = "ID Sede: " + this.IDsede;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -194,11 +222,26 @@ namespace DatabaseProject
             TabellaDipendenti.Refresh();
             TabellaTour.Update();
             TabellaTour.Refresh();
+
+            //this.Tour_ID.Text = queries.GetNextID("tour", "IDtour");
+        }
+        private void TabPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var connection = new CreateConnection();
+            connection.Connection.Open();
+            var queries = new QueryLibrary(connection.Connection);
+
+            if (this.TabPage.SelectedTab.Text == "Tour")
+            {
+                TabellaTour.Update();
+                TabellaTour.Refresh();
+                this.Tour_ID.Text = queries.GetNextID("tour", "IDtour");
+            }
         }
 
         private void AggiungiCliente_Click(object sender, EventArgs e)
         {
-            if (this.cliente_nome 
+            /*if (this.cliente_nome 
                 && this.cliente_cognome 
                 && this.cliente_CF 
                 && this.cliente_telefono)
@@ -239,6 +282,30 @@ namespace DatabaseProject
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
+            */
+            bool condition = this.cliente_nome && this.cliente_cognome && this.cliente_CF && this.cliente_telefono;
+            ExecuteQueryIf(condition, q =>
+            {
+                 var result = q.InserisciCliente(
+                                  this.Clienti_Nome.Text,
+                                  this.Clienti_Cognome.Text,
+                                  this.Clienti_CF.Text,
+                                  this.Clienti_Telefono.Text);
+                 if (result)
+                 {
+                     MessageBox.Show("Cliente inserito correttamente",
+                     "Info",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Information);
+                 }
+                 else
+                 {
+                     MessageBox.Show("Cliente non inserito",
+                     "Errore",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Error);
+                 }
+            });
         }
 
         private void Nome_Enter(object sender, EventArgs e)
@@ -373,7 +440,7 @@ namespace DatabaseProject
 
         private void AggiungiPrenotazione_Click(object sender, EventArgs e)
         {
-            if (this.prenotazione_CF && this.prenotazione_IDtour)
+            /*if (this.prenotazione_CF && this.prenotazione_IDtour)
             {
                 var connection = new CreateConnection();
                 connection.Connection.Open();
@@ -408,7 +475,27 @@ namespace DatabaseProject
                 "Attenzione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
-            }
+            }*/
+            bool condition = this.prenotazione_CF && this.prenotazione_IDtour;
+            ExecuteQueryIf(condition, q => {
+                var result = q.InserisciPrenotazione(
+                        this.Prenotazioni_CFcliente.Text,
+                        this.Prenotazioni_IDtour.Text);
+                if (result)
+                {
+                    MessageBox.Show("Prenotazione inserita correttamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Prenotazione non inserita",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
         }
 
         private void Magazzini_CapMaxAccessori_Enter(object sender, EventArgs e)
@@ -513,7 +600,7 @@ namespace DatabaseProject
 
         private void AggiungiMagazzino_Click(object sender, EventArgs e)
         {
-            if (this.magazzino_capMaxAccessori && this.magazzino_capMaxBici && this.magazzino_IDmagazzino && this.magazzino_IDindirizzo && this.magazzino_IDsede)
+            /*if (this.magazzino_capMaxAccessori && this.magazzino_capMaxBici && this.magazzino_IDmagazzino && this.magazzino_IDindirizzo && this.magazzino_IDsede)
             {
                 var connection = new CreateConnection();
                 connection.Connection.Open();
@@ -551,7 +638,30 @@ namespace DatabaseProject
                 "Attenzione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
-            }
+            }*/
+            bool condition = this.magazzino_capMaxAccessori && this.magazzino_capMaxBici && this.magazzino_IDmagazzino && this.magazzino_IDindirizzo && this.magazzino_IDsede;
+            ExecuteQueryIf(condition, q => {
+                var result = q.InserisciMagazzino(
+                        int.Parse(this.Magazzini_CapMaxAccessori.Text),
+                        int.Parse(this.Magazzini_CapMaxBici.Text),
+                        this.Magazzini_IDmagazzino.Text,
+                        this.Magazzini_IDindirizzo.Text,
+                        this.Magazzini_IDsede.Text);
+                if (result)
+                {
+                    MessageBox.Show("Magazzino inserito correttamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Magazzino non inserito",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
         }
 
         private void Percorsi_IDpercorso_Enter(object sender, EventArgs e)
@@ -676,7 +786,7 @@ namespace DatabaseProject
 
         private void AggiungiPercorso_Click(object sender, EventArgs e)
         {
-            if (this.percorso_IDpercorso 
+            /*if (this.percorso_IDpercorso 
                 && this.percorso_difficolta 
                 && this.percorso_nome 
                 && this.percorso_numTappe
@@ -719,7 +829,30 @@ namespace DatabaseProject
                 "Attenzione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
-            }
+            }*/
+            bool condition = this.percorso_IDpercorso && this.percorso_difficolta && this.percorso_nome && this.percorso_numTappe && this.percorso_lunghezzaPercorso && this.percorso_IDsede;
+            ExecuteQueryIf(condition, q => {
+                var result = q.InserisciPercorso(
+                        this.Percorsi_IDpercorso.Text,
+                        this.Percorsi_Difficolta.Text,
+                        int.Parse(this.Percorsi_NumTappe.Text),
+                        float.Parse(this.Percorsi_LunghezzaPercorso.Text),
+                        this.Percorsi_IDsede.Text);
+                if (result)
+                {
+                    MessageBox.Show("Percorso inserito correttamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Percorso non inserito",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
         }
 
         private void BP_PIVA_Enter(object sender, EventArgs e)
@@ -1020,7 +1153,7 @@ namespace DatabaseProject
 
         private void AggiungiDipendente_Click(object sender, EventArgs e)
         {
-            if (this.dipendente_nome && this.dipendente_cognome && this.dipendente_CF && this.dipendente_telefono
+            /*if (this.dipendente_nome && this.dipendente_cognome && this.dipendente_CF && this.dipendente_telefono
                && this.dipendente_stipendio && this.dipendente_codiceDipendente)
             {
                 var connection = new CreateConnection();
@@ -1056,206 +1189,190 @@ namespace DatabaseProject
                 "Attenzione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
-            }
+            }*/
+            bool condition = this.dipendente_nome && this.dipendente_cognome && this.dipendente_CF && this.dipendente_telefono
+               && this.dipendente_stipendio && this.dipendente_codiceDipendente;
+            ExecuteQueryIf(condition, q => {
+                var result = q.InserisciDipendente(Dipendenti_Nome.Text, Dipendenti_Cognome.Text, Dipendenti_CF.Text, Dipendenti_Telefono.Text,
+                        Dipendenti_CodiceDipendente.Text, float.Parse(Dipendenti_Stipendio.Text), Convert.ToByte(Dipendente_isGuida.Checked),
+                        Convert.ToByte(Dipendente_isTourManager.Checked), Convert.ToByte(Dipendente_isAltro.Checked), Dipendenti_IDsede.Text);
+                if (result)
+                {
+                    MessageBox.Show("Dipendente inserito correttamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Dipendente non inserito",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
         }
 
-        private void Tour_Destinazione_Enter(object sender, EventArgs e)
+        private void TourDestinazione_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_Destinazione.Text.Equals("Destinazione"))
+            if (this.TourDestinazione.Text.Equals("Destinazione"))
             {
-                this.Tour_Destinazione.Text = "";
+                this.TourDestinazione.Text = "";
             }
-            this.Tour_Destinazione.ForeColor = Color.Black;
+            this.TourDestinazione.ForeColor = Color.Black;
             this.tour_destinazione = true;
         }
 
-        private void Tour_Destinazione_Leave(object sender, EventArgs e)
+        private void TourDestinazione_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_Destinazione.Text.Equals(""))
+            if (this.TourDestinazione.Text.Equals(""))
             {
-                this.Tour_Destinazione.Text = "Destinazione";
-                this.Tour_Destinazione.ForeColor = Color.Gray;
+                this.TourDestinazione.Text = "Destinazione";
+                this.TourDestinazione.ForeColor = Color.Gray;
                 this.tour_destinazione = false;
             }
         }
 
-        private void Tour_Nome_Enter(object sender, EventArgs e)
+        private void TourNome_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_Nome.Text.Equals("Nome"))
+            if (this.TourNome.Text.Equals("Nome"))
             {
-                this.Tour_Nome.Text = "";
+                this.TourNome.Text = "";
             }
-            this.Tour_Nome.ForeColor = Color.Black;
+            this.TourNome.ForeColor = Color.Black;
             this.tour_nome = true;
         }
 
         private void Tour_Nome_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_Nome.Text.Equals(""))
+            if (this.TourNome.Text.Equals(""))
             {
-                this.Tour_Nome.Text = "Nome";
-                this.Tour_Nome.ForeColor = Color.Gray;
+                this.TourNome.Text = "Nome";
+                this.TourNome.ForeColor = Color.Gray;
                 this.tour_nome = false;
             }
         }
 
-        private void Tour_DataInizio_Enter(object sender, EventArgs e)
+        private void TourDataInizio_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_DataInizio.Text.Equals("Data Inizio (YYYY-MM-DD)"))
+            if (this.TourDataInizio.Text.Equals("Data Inizio (YYYY-MM-DD)"))
             {
-                this.Tour_DataInizio.Text = "";
+                this.TourDataInizio.Text = "";
             }
-            this.Tour_DataInizio.ForeColor = Color.Black;
+            this.TourDataInizio.ForeColor = Color.Black;
             this.tour_dataInizio = true;
         }
 
-        private void Tour_DataInizio_Leave(object sender, EventArgs e)
+        private void TourDataInizio_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_DataInizio.Text.Equals(""))
+            if (this.TourDataInizio.Text.Equals(""))
             {
-                this.Tour_DataInizio.Text = "Data Inizio (YYYY-MM-DD)";
-                this.Tour_DataInizio.ForeColor = Color.Gray;
+                this.TourDataInizio.Text = "Data Inizio (YYYY-MM-DD)";
+                this.TourDataInizio.ForeColor = Color.Gray;
                 this.tour_dataInizio = false;
             }
         }
 
-        private void Tour_DataFine_Enter(object sender, EventArgs e)
+        private void TourDataFine_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_DataFine.Text.Equals("Data Fine (YYYY-MM-DD)"))
+            if (this.TourDataFine.Text.Equals("Data Fine (YYYY-MM-DD)"))
             {
-                this.Tour_DataFine.Text = "";
+                this.TourDataFine.Text = "";
             }
-            this.Tour_DataFine.ForeColor = Color.Black;
+            this.TourDataFine.ForeColor = Color.Black;
             this.tour_dataFine = true;
         }
 
-        private void Tour_DataFine_Leave(object sender, EventArgs e)
+        private void TourDataFine_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_DataFine.Text.Equals(""))
+            if (this.TourDataFine.Text.Equals(""))
             {
-                this.Tour_DataFine.Text = "Data Inizio (YYYY-MM-DD)";
-                this.Tour_DataFine.ForeColor = Color.Gray;
+                this.TourDataFine.Text = "Data Inizio (YYYY-MM-DD)";
+                this.TourDataFine.ForeColor = Color.Gray;
                 this.tour_dataFine = false;
             }
         }
 
-        private void Tour_Prezzo_Enter(object sender, EventArgs e)
+        private void TourPrezzo_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_Prezzo.Text.Equals("Prezzo"))
+            if (this.TourPrezzo.Text.Equals("Prezzo"))
             {
-                this.Tour_Prezzo.Text = "";
+                this.TourPrezzo.Text = "";
             }
-            this.Tour_Prezzo.ForeColor = Color.Black;
+            this.TourPrezzo.ForeColor = Color.Black;
             this.tour_prezzo = true;
         }
 
         private void Tour_Prezzo_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_Prezzo.Text.Equals(""))
+            if (this.TourPrezzo.Text.Equals(""))
             {
-                this.Tour_Prezzo.Text = "Prezzo";
-                this.Tour_Prezzo.ForeColor = Color.Gray;
+                this.TourPrezzo.Text = "Prezzo";
+                this.TourPrezzo.ForeColor = Color.Gray;
                 this.tour_prezzo = false;
             }
         }
 
-        private void Tour_IDtour_Enter(object sender, EventArgs e)
+        private void Tour_ID_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_IDtour.Text.Equals("ID Tour"))
+            if (this.Tour_ID.Text.Equals("ID Tour"))
             {
-                this.Tour_IDtour.Text = "";
+                this.Tour_ID.Text = "";
             }
-            this.Tour_IDtour.ForeColor = Color.Black;
+            this.Tour_ID.ForeColor = Color.Black;
             this.tour_IDtour = true;
         }
 
-        private void Tour_IDtour_Leave(object sender, EventArgs e)
+        private void Tour_ID_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_IDtour.Text.Equals(""))
+            if (this.Tour_ID.Text.Equals(""))
             {
-                this.Tour_IDtour.Text = "ID Tour";
-                this.Tour_IDtour.ForeColor = Color.Gray;
+                this.Tour_ID.Text = "ID Tour";
+                this.Tour_ID.ForeColor = Color.Gray;
                 this.tour_IDtour = false;
             }
         }
 
-        private void Tour_IDsede_Enter(object sender, EventArgs e)
+        private void TourCFtourManager_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_IDsede.Text.Equals("ID Sede"))
+            if (this.TourCFManager.Text.Equals("CF del Tour Manager"))
             {
-                this.Tour_IDsede.Text = "";
+                this.TourCFManager.Text = "";
             }
-            this.Tour_IDsede.ForeColor = Color.Black;
-            this.tour_IDsede = true;
-        }
-
-        private void Tour_IDsede_Leave(object sender, EventArgs e)
-        {
-            if (this.Tour_IDsede.Text.Equals(""))
-            {
-                this.Tour_IDsede.Text = "ID Sede";
-                this.Tour_IDsede.ForeColor = Color.Gray;
-                this.tour_IDsede = false;
-            }
-        }
-
-        private void Tour_CFtourManager_Enter(object sender, EventArgs e)
-        {
-            if (this.Tour_CFtourManager.Text.Equals("CF del Tour Manager"))
-            {
-                this.Tour_CFtourManager.Text = "";
-            }
-            this.Tour_CFtourManager.ForeColor = Color.Black;
+            this.TourCFManager.ForeColor = Color.Black;
             this.tour_CFtourManager = true;
         }
 
-        private void Tour_CFtourManager_Leave(object sender, EventArgs e)
+        private void TourCFtourManager_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_CFtourManager.Text.Equals(""))
+            if (this.TourCFManager.Text.Equals(""))
             {
-                this.Tour_CFtourManager.Text = "CF del Tour Manager";
-                this.Tour_CFtourManager.ForeColor = Color.Gray;
+                this.TourCFManager.Text = "CF del Tour Manager";
+                this.TourCFManager.ForeColor = Color.Gray;
                 this.tour_CFtourManager = false;
             }
         }
 
         private void AggiungiTour_Click(object sender, EventArgs e)
         {
-            if (this.tour_destinazione && this.tour_nome && this.tour_dataInizio &&
-                this.tour_dataFine && this.tour_prezzo && this.tour_IDtour && this.tour_IDsede && this.tour_CFtourManager)
-            {
-                var connection = new CreateConnection();
-                connection.Connection.Open();
-                var queries = new QueryLibrary(connection.Connection);
-
-                try
+            bool condition = this.tour_dataInizio && this.tour_dataFine && this.tour_prezzo && this.tour_CFtourManager;
+            ExecuteQueryIf(condition, q => {
+                var result = q.InserisciTour(this.TourDestinazione.Text, this.TourNome.Text, this.TourDataInizio.Text, this.TourDataFine.Text, float.Parse(this.TourPrezzo.Text), this.Tour_ID.Text, this.IDsede, this.TourCFManager.Text);
+                if (result)
                 {
-                    var result = queries.InserisciTour(this.Tour_Destinazione.Text, this.Tour_Nome.Text, this.Tour_DataInizio.Text, this.Tour_DataFine.Text, float.Parse(this.Tour_Prezzo.Text), this.Tour_IDtour.Text, this.Tour_IDsede.Text, this.Tour_CFtourManager.Text);
-                    if (result)
-                    {
-                        MessageBox.Show("Tour inserito correttamente",
-                        "Info",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Tour non inserito",
-                        "Errore",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Tour inserito correttamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 }
-                catch (Exception) { }
-                connection.Connection.Close();
-            }
-            else
-            {
-                MessageBox.Show("Si prega di completare tutti i campi",
-                "Attenzione",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
-            }
+                else
+                {
+                    MessageBox.Show("Tour non inserito",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
         }
 
         private void Dipendenti_Ruolo_SelectedIndexChanged(object sender, EventArgs e)
@@ -1265,7 +1382,7 @@ namespace DatabaseProject
 
         private void AggiungiTappa_Click(object sender, EventArgs e)
         {
-            if (this.tappa_inizio && this.tappa_fine && this.tappa_lunghezzaTappa && this.tappa_ID && this.tappa_IDPercorso)
+            /*if (this.tappa_inizio && this.tappa_fine && this.tappa_lunghezzaTappa && this.tappa_ID && this.tappa_IDPercorso)
             {
                 var connection = new CreateConnection();
                 connection.Connection.Open();
@@ -1314,7 +1431,40 @@ namespace DatabaseProject
                 "Attenzione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
-            }
+            }*/
+            bool condition = this.tappa_inizio && this.tappa_fine && this.tappa_lunghezzaTappa && this.tappa_ID && this.tappa_IDPercorso;
+            ExecuteQueryIf(condition, q => {
+                var result = q.InserisciTappa(this.NuovaTappa_Inizio.Text, this.NuovaTappa_Fine.Text, int.Parse(this.NuovaTappa_Lunghezza.Text), this.NuovaTappa_IDtappa.Text);
+                if (result)
+                {
+                    result = q.InserisciSequenza(this.NuovaTappa_IDtappa.Text, this.NuovaTappa_IDpercorso.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("Tappa inserita correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tappa non inserita",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    MessageBox.Show("Tappa inserita correttamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Tappa non inserita",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -1429,11 +1579,6 @@ namespace DatabaseProject
         }
 
         private void AggiungiTappa_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
