@@ -16,10 +16,11 @@ namespace DatabaseProject
         [STAThread]
         static void Main()
         {
-            //var connection = new CreateConnection();
+            var connection = new CreateConnection();
             
-            //connection.Connection.Open();
-            //QueryLibrary bro = new QueryLibrary(connection.Connection);
+            connection.Connection.Open();
+            QueryLibrary bro = new QueryLibrary(connection.Connection);
+            Console.WriteLine(bro.GetNextID("accessorio","IDaccessorio"));
             /*
             var reader = bro.LeggiAgenzie();
             while (reader.Read())
