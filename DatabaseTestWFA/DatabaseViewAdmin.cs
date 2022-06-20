@@ -37,6 +37,12 @@ namespace DatabaseProject
         bool percorso_lunghezzaPercorso;
         bool percorso_IDsede;
 
+        bool nuovatappa_inizio;
+        bool nuovatappa_fine;
+        bool nuovatappa_lunghezza;
+        bool nuovatappa_IDtappa;
+        bool nuovatappa_IDpercorso;
+
         bool bp_PIVA;
         bool bp_nomeSocio;
         bool bp_costoServizio;
@@ -118,6 +124,12 @@ namespace DatabaseProject
             this.Percorsi_LunghezzaPercorso.ForeColor = Color.Gray;
             this.Percorsi_IDsede.ForeColor = Color.Gray;
 
+            this.NuovaTappa_Inizio.ForeColor = Color.Gray;
+            this.NuovaTappa_Fine.ForeColor = Color.Gray;
+            this.NuovaTappa_Lunghezza.ForeColor = Color.Gray;
+            this.NuovaTappa_IDtappa.ForeColor = Color.Gray;
+            this.NuovaTappa_IDpercorso.ForeColor = Color.Gray;
+
             this.BP_PIVA.ForeColor = Color.Gray;
             this.BP_NomeSocio.ForeColor = Color.Gray;
             this.BP_CostoServizio.ForeColor = Color.Gray;
@@ -130,7 +142,6 @@ namespace DatabaseProject
             this.Dipendenti_Telefono.ForeColor = Color.Gray;
             this.Dipendenti_CodiceDipendente.ForeColor = Color.Gray;
             this.Dipendenti_Stipendio.ForeColor = Color.Gray;
-            this.Dipendenti_Ruolo.ForeColor = Color.Gray;
             this.Dipendenti_IDsede.ForeColor = Color.Gray;
             this.Dipendenti_CFsuperiore.ForeColor = Color.Gray;
 
@@ -821,7 +832,7 @@ namespace DatabaseProject
 
                 try
                 {
-                    var result = queries.Inserisci(this.BP_PIVA.Text, this.BP_NomeSocio.Text, this.BP_CostoServizio.Text, this.BP_Telefono.Text, this.BP_Tipologia);
+                    var result = queries.InserisciBusinessPartner(this.BP_PIVA.Text, this.BP_NomeSocio.Text, int.Parse(this.BP_CostoServizio.Text), float.Parse(this.BP_Telefono.Text), this.BP_Tipologia.Text);
                     if (result)
                     {
                         MessageBox.Show("BP inserito correttamente",
@@ -1251,7 +1262,7 @@ namespace DatabaseProject
         {
 
         }
-<<<<<<< Updated upstream
+
         private void AggiungiTappa_Click(object sender, EventArgs e)
         {
             if (this.tappa_inizio && this.tappa_fine && this.tappa_lunghezzaTappa && this.tappa_ID && this.tappa_IDPercorso)
@@ -1262,10 +1273,10 @@ namespace DatabaseProject
 
                 try
                 {
-                    var result = queries.InserisciTappa(this.Tappa_Inizio.Text, this.Tappa_Fine.Text, this.Tappa_LunghezzaPercorso.Text, this.Tappa_ID.Text);
+                    var result = queries.InserisciTappa(this.NuovaTappa_Inizio.Text, this.NuovaTappa_Fine.Text, int.Parse(this.NuovaTappa_Lunghezza.Text), this.NuovaTappa_IDtappa.Text);
                     if (result)
                     {
-                        result = queries.InserisciSequenza(this.Tappa_ID.Text, this.Tappa_IDPercorso);
+                        result = queries.InserisciSequenza(this.NuovaTappa_IDtappa.Text, this.NuovaTappa_IDpercorso.Text);
                         if (result)
                         {
                             MessageBox.Show("Tappa inserita correttamente",
@@ -1292,7 +1303,7 @@ namespace DatabaseProject
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }
-                    
+
                 }
                 catch (Exception) { }
                 connection.Connection.Close();
@@ -1304,12 +1315,122 @@ namespace DatabaseProject
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
-=======
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
->>>>>>> Stashed changes
+
+        }
+
+        private void Dipendenti_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NuovaTappa_Inizio_Enter(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_Inizio.Text.Equals("Inizio"))
+            {
+                this.NuovaTappa_Inizio.Text = "";
+            }
+            this.NuovaTappa_Inizio.ForeColor = Color.Black;
+            this.nuovatappa_inizio = true;
+        }
+
+        private void NuovaTappa_Inizio_Leave(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_Inizio.Text.Equals(""))
+            {
+                this.NuovaTappa_Inizio.Text = "Inizio";
+                this.NuovaTappa_Inizio.ForeColor = Color.Gray;
+                this.nuovatappa_inizio = false;
+            }
+        }
+
+        private void NuovaTappa_Fine_Enter(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_Fine.Text.Equals("Fine"))
+            {
+                this.NuovaTappa_Fine.Text = "";
+            }
+            this.NuovaTappa_Fine.ForeColor = Color.Black;
+            this.nuovatappa_fine = true;
+        }
+
+        private void NuovaTappa_Fine_Leave(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_Fine.Text.Equals(""))
+            {
+                this.NuovaTappa_Fine.Text = "Fine";
+                this.NuovaTappa_Fine.ForeColor = Color.Gray;
+                this.nuovatappa_fine = false;
+            }
+        }
+
+        private void NuovaTappa_Lunghezza_Enter(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_Lunghezza.Text.Equals("Lunghezza Tappa"))
+            {
+                this.NuovaTappa_Lunghezza.Text = "";
+            }
+            this.NuovaTappa_Lunghezza.ForeColor = Color.Black;
+            this.nuovatappa_lunghezza = true;
+        }
+
+        private void NuovaTappa_Lunghezza_Leave(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_Lunghezza.Text.Equals(""))
+            {
+                this.NuovaTappa_Lunghezza.Text = "Lunghezza Tappa";
+                this.NuovaTappa_Lunghezza.ForeColor = Color.Gray;
+                this.nuovatappa_lunghezza = false;
+            }
+        }
+
+        private void NuovaTappa_IDtappa_Enter(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_IDtappa.Text.Equals("ID Tappa"))
+            {
+                this.NuovaTappa_IDtappa.Text = "";
+            }
+            this.NuovaTappa_IDtappa.ForeColor = Color.Black;
+            this.nuovatappa_IDtappa = true;
+        }
+
+        private void NuovaTappa_IDtappa_Leave(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_IDtappa.Text.Equals(""))
+            {
+                this.NuovaTappa_IDtappa.Text = "ID Tappa";
+                this.NuovaTappa_IDtappa.ForeColor = Color.Gray;
+                this.nuovatappa_IDtappa = false;
+            }
+        }
+
+        private void NuovaTappa_IDpercorso_Enter(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_IDpercorso.Text.Equals("ID Percorso"))
+            {
+                this.NuovaTappa_IDpercorso.Text = "";
+            }
+            this.NuovaTappa_IDpercorso.ForeColor = Color.Black;
+            this.nuovatappa_IDpercorso = true;
+        }
+
+        private void NuovaTappa_IDpercorso_Leave(object sender, EventArgs e)
+        {
+            if (this.NuovaTappa_IDpercorso.Text.Equals(""))
+            {
+                this.NuovaTappa_IDpercorso.Text = "ID Percorso";
+                this.NuovaTappa_IDpercorso.ForeColor = Color.Gray;
+                this.nuovatappa_IDpercorso = false;
+            }
+        }
+
+        private void AggiungiTappa_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
