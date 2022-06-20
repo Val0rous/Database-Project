@@ -162,26 +162,30 @@ namespace DatabaseProject
             "Altro"});
             this.Dipendenti_Ruolo.Location = new System.Drawing.Point(6, 175);
             this.Dipendenti_Ruolo.Name = "Dipendenti_Ruolo";
-            this.Dipendenti_Ruolo.Size = new System.Drawing.Size(178, 55);
+            this.Dipendenti_Ruolo.Size = new System.Drawing.Size(178, 72);
             this.Dipendenti_Ruolo.TabIndex = 18;
             this.Dipendenti_Ruolo.Tag = "";
-            this.Dipendenti_Ruolo.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.Dipendenti_Ruolo.SelectedIndexChanged += new System.EventHandler(this.Dipendenti_Ruolo_SelectedIndexChanged);
             // 
             // Dipendenti_CFsuperiore
             // 
-            this.Dipendenti_CFsuperiore.Location = new System.Drawing.Point(6, 264);
+            this.Dipendenti_CFsuperiore.Location = new System.Drawing.Point(3, 281);
             this.Dipendenti_CFsuperiore.Name = "Dipendenti_CFsuperiore";
             this.Dipendenti_CFsuperiore.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_CFsuperiore.TabIndex = 17;
             this.Dipendenti_CFsuperiore.Text = "Cod. Fiscale del Superiore";
+            this.Dipendenti_CFsuperiore.Enter += new System.EventHandler(this.Dipendenti_CFsuperiore_Enter);
+            this.Dipendenti_CFsuperiore.Leave += new System.EventHandler(this.Dipendenti_CFsuperiore_Leave);
             // 
             // Dipendenti_IDsede
             // 
-            this.Dipendenti_IDsede.Location = new System.Drawing.Point(6, 236);
+            this.Dipendenti_IDsede.Location = new System.Drawing.Point(3, 253);
             this.Dipendenti_IDsede.Name = "Dipendenti_IDsede";
             this.Dipendenti_IDsede.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_IDsede.TabIndex = 16;
             this.Dipendenti_IDsede.Text = "ID Sede";
+            this.Dipendenti_IDsede.Enter += new System.EventHandler(this.Dipendenti_IDsede_Enter);
+            this.Dipendenti_IDsede.Leave += new System.EventHandler(this.Dipendenti_IDsede_Leave);
             // 
             // Dipendenti_Stipendio
             // 
@@ -190,6 +194,8 @@ namespace DatabaseProject
             this.Dipendenti_Stipendio.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_Stipendio.TabIndex = 11;
             this.Dipendenti_Stipendio.Text = "Stipendio";
+            this.Dipendenti_Stipendio.Enter += new System.EventHandler(this.Dipendenti_Stipendio_Enter);
+            this.Dipendenti_Stipendio.Leave += new System.EventHandler(this.Dipendenti_Stipendio_Leave);
             // 
             // Dipendenti_CodiceDipendente
             // 
@@ -198,15 +204,18 @@ namespace DatabaseProject
             this.Dipendenti_CodiceDipendente.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_CodiceDipendente.TabIndex = 10;
             this.Dipendenti_CodiceDipendente.Text = "Codice Dipendente";
+            this.Dipendenti_CodiceDipendente.Enter += new System.EventHandler(this.Dipendenti_CodiceDipendente_Enter);
+            this.Dipendenti_CodiceDipendente.Leave += new System.EventHandler(this.Dipendenti_CodiceDipendente_Leave);
             // 
             // AggiungiDipendente
             // 
-            this.AggiungiDipendente.Location = new System.Drawing.Point(6, 292);
+            this.AggiungiDipendente.Location = new System.Drawing.Point(3, 309);
             this.AggiungiDipendente.Name = "AggiungiDipendente";
             this.AggiungiDipendente.Size = new System.Drawing.Size(178, 47);
             this.AggiungiDipendente.TabIndex = 9;
             this.AggiungiDipendente.Text = "Aggiungi Dipendente";
             this.AggiungiDipendente.UseVisualStyleBackColor = true;
+            this.AggiungiDipendente.Click += new System.EventHandler(this.AggiungiDipendente_Click);
             // 
             // Dipendenti_Telefono
             // 
@@ -215,6 +224,8 @@ namespace DatabaseProject
             this.Dipendenti_Telefono.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_Telefono.TabIndex = 8;
             this.Dipendenti_Telefono.Text = "Numero di Telefono";
+            this.Dipendenti_Telefono.Enter += new System.EventHandler(this.Dipendenti_Telefono_Enter);
+            this.Dipendenti_Telefono.Leave += new System.EventHandler(this.Dipendenti_Telefono_Leave);
             // 
             // Dipendenti_CF
             // 
@@ -223,6 +234,8 @@ namespace DatabaseProject
             this.Dipendenti_CF.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_CF.TabIndex = 7;
             this.Dipendenti_CF.Text = "Codice Fiscale";
+            this.Dipendenti_CF.Enter += new System.EventHandler(this.Dipendenti_CF_Enter);
+            this.Dipendenti_CF.Leave += new System.EventHandler(this.Dipendenti_CF_Leave);
             // 
             // Dipendenti_Cognome
             // 
@@ -231,6 +244,8 @@ namespace DatabaseProject
             this.Dipendenti_Cognome.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_Cognome.TabIndex = 6;
             this.Dipendenti_Cognome.Text = "Cognome";
+            this.Dipendenti_Cognome.Enter += new System.EventHandler(this.Dipendenti_Cognome_Enter);
+            this.Dipendenti_Cognome.Leave += new System.EventHandler(this.Dipendenti_Cognome_Leave);
             // 
             // Dipendenti_Nome
             // 
@@ -239,6 +254,8 @@ namespace DatabaseProject
             this.Dipendenti_Nome.Size = new System.Drawing.Size(178, 22);
             this.Dipendenti_Nome.TabIndex = 5;
             this.Dipendenti_Nome.Text = "Nome";
+            this.Dipendenti_Nome.Enter += new System.EventHandler(this.Dipendenti_Nome_Enter);
+            this.Dipendenti_Nome.Leave += new System.EventHandler(this.Dipendenti_Nome_Leave);
             // 
             // TabellaDipendenti
             // 
@@ -275,6 +292,8 @@ namespace DatabaseProject
             this.BP_Tipologia.Size = new System.Drawing.Size(178, 22);
             this.BP_Tipologia.TabIndex = 10;
             this.BP_Tipologia.Text = "Tipologia";
+            this.BP_Tipologia.Enter += new System.EventHandler(this.BP_Tipologia_Enter);
+            this.BP_Tipologia.Leave += new System.EventHandler(this.BP_Tipologia_Leave);
             // 
             // AggiungiBusinessPartner
             // 
@@ -284,6 +303,7 @@ namespace DatabaseProject
             this.AggiungiBusinessPartner.TabIndex = 9;
             this.AggiungiBusinessPartner.Text = "Aggiungi Business Partner";
             this.AggiungiBusinessPartner.UseVisualStyleBackColor = true;
+            this.AggiungiBusinessPartner.Click += new System.EventHandler(this.AggiungiBusinessPartner_Click);
             // 
             // BP_Telefono
             // 
@@ -292,6 +312,8 @@ namespace DatabaseProject
             this.BP_Telefono.Size = new System.Drawing.Size(178, 22);
             this.BP_Telefono.TabIndex = 8;
             this.BP_Telefono.Text = "Numero di Telefono";
+            this.BP_Telefono.Enter += new System.EventHandler(this.BP_Telefono_Enter);
+            this.BP_Telefono.Leave += new System.EventHandler(this.BP_Telefono_Leave);
             // 
             // BP_CostoServizio
             // 
@@ -300,6 +322,8 @@ namespace DatabaseProject
             this.BP_CostoServizio.Size = new System.Drawing.Size(178, 22);
             this.BP_CostoServizio.TabIndex = 7;
             this.BP_CostoServizio.Text = "Costo Servizio";
+            this.BP_CostoServizio.Enter += new System.EventHandler(this.BP_CostoServizio_Enter);
+            this.BP_CostoServizio.Leave += new System.EventHandler(this.BP_CostoServizio_Leave);
             // 
             // BP_NomeSocio
             // 
@@ -308,6 +332,8 @@ namespace DatabaseProject
             this.BP_NomeSocio.Size = new System.Drawing.Size(178, 22);
             this.BP_NomeSocio.TabIndex = 6;
             this.BP_NomeSocio.Text = "Nome Socio";
+            this.BP_NomeSocio.Enter += new System.EventHandler(this.BP_NomeSocio_Enter);
+            this.BP_NomeSocio.Leave += new System.EventHandler(this.BP_NomeSocio_Leave);
             // 
             // BP_PIVA
             // 
@@ -316,6 +342,8 @@ namespace DatabaseProject
             this.BP_PIVA.Size = new System.Drawing.Size(178, 22);
             this.BP_PIVA.TabIndex = 5;
             this.BP_PIVA.Text = "Partita IVA";
+            this.BP_PIVA.Enter += new System.EventHandler(this.BP_PIVA_Enter);
+            this.BP_PIVA.Leave += new System.EventHandler(this.BP_PIVA_Leave);
             // 
             // TabellaBusinessPartners
             // 
@@ -355,6 +383,8 @@ namespace DatabaseProject
             this.Percorsi_IDsede.Size = new System.Drawing.Size(178, 22);
             this.Percorsi_IDsede.TabIndex = 11;
             this.Percorsi_IDsede.Text = "ID Sede";
+            this.Percorsi_IDsede.Enter += new System.EventHandler(this.Percorsi_IDsede_Enter);
+            this.Percorsi_IDsede.Leave += new System.EventHandler(this.Percorsi_IDsede_Leave);
             // 
             // Percorsi_LunghezzaPercorso
             // 
@@ -363,6 +393,8 @@ namespace DatabaseProject
             this.Percorsi_LunghezzaPercorso.Size = new System.Drawing.Size(178, 22);
             this.Percorsi_LunghezzaPercorso.TabIndex = 10;
             this.Percorsi_LunghezzaPercorso.Text = "Lunghezza Percorso";
+            this.Percorsi_LunghezzaPercorso.Enter += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Enter);
+            this.Percorsi_LunghezzaPercorso.Leave += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Leave);
             // 
             // AggiungiPercorso
             // 
@@ -372,6 +404,7 @@ namespace DatabaseProject
             this.AggiungiPercorso.TabIndex = 9;
             this.AggiungiPercorso.Text = "Aggiungi Percorso";
             this.AggiungiPercorso.UseVisualStyleBackColor = true;
+            this.AggiungiPercorso.Click += new System.EventHandler(this.AggiungiPercorso_Click);
             // 
             // Percorsi_NumTappe
             // 
@@ -380,6 +413,8 @@ namespace DatabaseProject
             this.Percorsi_NumTappe.Size = new System.Drawing.Size(178, 22);
             this.Percorsi_NumTappe.TabIndex = 8;
             this.Percorsi_NumTappe.Text = "Numero di Tappe";
+            this.Percorsi_NumTappe.Enter += new System.EventHandler(this.Percorsi_NumTappe_Enter);
+            this.Percorsi_NumTappe.Leave += new System.EventHandler(this.Percorsi_NumTappe_Leave);
             // 
             // Percorsi_NomePercorso
             // 
@@ -388,6 +423,8 @@ namespace DatabaseProject
             this.Percorsi_NomePercorso.Size = new System.Drawing.Size(178, 22);
             this.Percorsi_NomePercorso.TabIndex = 7;
             this.Percorsi_NomePercorso.Text = "Nome";
+            this.Percorsi_NomePercorso.Enter += new System.EventHandler(this.Percorsi_NomePercorso_Enter);
+            this.Percorsi_NomePercorso.Leave += new System.EventHandler(this.Percorsi_NomePercorso_Leave);
             // 
             // Percorsi_Difficolta
             // 
@@ -396,6 +433,8 @@ namespace DatabaseProject
             this.Percorsi_Difficolta.Size = new System.Drawing.Size(178, 22);
             this.Percorsi_Difficolta.TabIndex = 6;
             this.Percorsi_Difficolta.Text = "Difficoltà";
+            this.Percorsi_Difficolta.Enter += new System.EventHandler(this.Percorsi_Difficolta_Enter);
+            this.Percorsi_Difficolta.Leave += new System.EventHandler(this.Percorsi_Difficolta_Leave);
             // 
             // Percorsi_IDpercorso
             // 
@@ -405,6 +444,8 @@ namespace DatabaseProject
             this.Percorsi_IDpercorso.TabIndex = 5;
             this.Percorsi_IDpercorso.Text = "ID Percorso";
             this.Percorsi_IDpercorso.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.Percorsi_IDpercorso.Enter += new System.EventHandler(this.Percorsi_IDpercorso_Enter);
+            this.Percorsi_IDpercorso.Leave += new System.EventHandler(this.Percorsi_IDpercorso_Leave);
             // 
             // TabellaPercorsi
             // 
@@ -441,6 +482,8 @@ namespace DatabaseProject
             this.Magazzini_IDsede.Size = new System.Drawing.Size(178, 22);
             this.Magazzini_IDsede.TabIndex = 10;
             this.Magazzini_IDsede.Text = "ID Sede";
+            this.Magazzini_IDsede.Enter += new System.EventHandler(this.Magazzini_IDsede_Enter);
+            this.Magazzini_IDsede.Leave += new System.EventHandler(this.Magazzini_IDsede_Leave);
             // 
             // AggiungiMagazzino
             // 
@@ -450,6 +493,7 @@ namespace DatabaseProject
             this.AggiungiMagazzino.TabIndex = 9;
             this.AggiungiMagazzino.Text = "Aggiungi Magazzino";
             this.AggiungiMagazzino.UseVisualStyleBackColor = true;
+            this.AggiungiMagazzino.Click += new System.EventHandler(this.AggiungiMagazzino_Click);
             // 
             // Magazzini_IDindirizzo
             // 
@@ -458,6 +502,8 @@ namespace DatabaseProject
             this.Magazzini_IDindirizzo.Size = new System.Drawing.Size(178, 22);
             this.Magazzini_IDindirizzo.TabIndex = 8;
             this.Magazzini_IDindirizzo.Text = "ID Indirizzo";
+            this.Magazzini_IDindirizzo.Enter += new System.EventHandler(this.Magazzini_IDindirizzo_Enter);
+            this.Magazzini_IDindirizzo.Leave += new System.EventHandler(this.Magazzini_IDindirizzo_Leave);
             // 
             // Magazzini_IDmagazzino
             // 
@@ -466,6 +512,8 @@ namespace DatabaseProject
             this.Magazzini_IDmagazzino.Size = new System.Drawing.Size(178, 22);
             this.Magazzini_IDmagazzino.TabIndex = 7;
             this.Magazzini_IDmagazzino.Text = "ID Magazzino";
+            this.Magazzini_IDmagazzino.Enter += new System.EventHandler(this.Magazzini_IDmagazzino_Enter);
+            this.Magazzini_IDmagazzino.Leave += new System.EventHandler(this.Magazzini_IDmagazzino_Leave);
             // 
             // Magazzini_CapMaxBici
             // 
@@ -474,6 +522,8 @@ namespace DatabaseProject
             this.Magazzini_CapMaxBici.Size = new System.Drawing.Size(178, 22);
             this.Magazzini_CapMaxBici.TabIndex = 6;
             this.Magazzini_CapMaxBici.Text = "Capienza Max Bici";
+            this.Magazzini_CapMaxBici.Enter += new System.EventHandler(this.Magazzini_CapMaxBici_Enter);
+            this.Magazzini_CapMaxBici.Leave += new System.EventHandler(this.Magazzini_CapMaxBici_Leave);
             // 
             // Magazzini_CapMaxAccessori
             // 
@@ -482,6 +532,8 @@ namespace DatabaseProject
             this.Magazzini_CapMaxAccessori.Size = new System.Drawing.Size(178, 22);
             this.Magazzini_CapMaxAccessori.TabIndex = 5;
             this.Magazzini_CapMaxAccessori.Text = "Capienza Max Accessori";
+            this.Magazzini_CapMaxAccessori.Enter += new System.EventHandler(this.Magazzini_CapMaxAccessori_Enter);
+            this.Magazzini_CapMaxAccessori.Leave += new System.EventHandler(this.Magazzini_CapMaxAccessori_Leave);
             // 
             // TabellaMagazzini
             // 
@@ -516,6 +568,7 @@ namespace DatabaseProject
             this.AggiungiPrenotazione.TabIndex = 9;
             this.AggiungiPrenotazione.Text = "Aggiungi Prenotazione";
             this.AggiungiPrenotazione.UseVisualStyleBackColor = true;
+            this.AggiungiPrenotazione.Click += new System.EventHandler(this.AggiungiPrenotazione_Click);
             // 
             // Prenotazioni_IDtour
             // 
@@ -524,6 +577,8 @@ namespace DatabaseProject
             this.Prenotazioni_IDtour.Size = new System.Drawing.Size(178, 22);
             this.Prenotazioni_IDtour.TabIndex = 6;
             this.Prenotazioni_IDtour.Text = "ID Tour";
+            this.Prenotazioni_IDtour.Enter += new System.EventHandler(this.Prenotazioni_IDtour_Enter);
+            this.Prenotazioni_IDtour.Leave += new System.EventHandler(this.Prenotazioni_IDtour_Leave);
             // 
             // Prenotazioni_CFcliente
             // 
@@ -532,6 +587,8 @@ namespace DatabaseProject
             this.Prenotazioni_CFcliente.Size = new System.Drawing.Size(178, 22);
             this.Prenotazioni_CFcliente.TabIndex = 5;
             this.Prenotazioni_CFcliente.Text = "Codice Fiscale Cliente";
+            this.Prenotazioni_CFcliente.Enter += new System.EventHandler(this.Prenotazioni_CFcliente_Enter);
+            this.Prenotazioni_CFcliente.Leave += new System.EventHandler(this.Prenotazioni_CFcliente_Leave);
             // 
             // TabellaPrenotazioni
             // 
@@ -666,6 +723,7 @@ namespace DatabaseProject
             this.AggiungiTour.TabIndex = 9;
             this.AggiungiTour.Text = "Aggiungi Tour";
             this.AggiungiTour.UseVisualStyleBackColor = true;
+            this.AggiungiTour.Click += new System.EventHandler(this.AggiungiTour_Click);
             // 
             // Tour_DataFine
             // 
@@ -674,6 +732,8 @@ namespace DatabaseProject
             this.Tour_DataFine.Size = new System.Drawing.Size(178, 22);
             this.Tour_DataFine.TabIndex = 8;
             this.Tour_DataFine.Text = "Data Fine (YYYY-MM-DD)";
+            this.Tour_DataFine.Enter += new System.EventHandler(this.Tour_DataFine_Enter);
+            this.Tour_DataFine.Leave += new System.EventHandler(this.Tour_DataFine_Leave);
             // 
             // Tour_DataInizio
             // 
@@ -682,6 +742,8 @@ namespace DatabaseProject
             this.Tour_DataInizio.Size = new System.Drawing.Size(178, 22);
             this.Tour_DataInizio.TabIndex = 7;
             this.Tour_DataInizio.Text = "Data Inizio (YYYY-MM-DD)";
+            this.Tour_DataInizio.Enter += new System.EventHandler(this.Tour_DataInizio_Enter);
+            this.Tour_DataInizio.Leave += new System.EventHandler(this.Tour_DataInizio_Leave);
             // 
             // Tour_Nome
             // 
@@ -690,6 +752,8 @@ namespace DatabaseProject
             this.Tour_Nome.Size = new System.Drawing.Size(178, 22);
             this.Tour_Nome.TabIndex = 6;
             this.Tour_Nome.Text = "Nome";
+            this.Tour_Nome.Enter += new System.EventHandler(this.Tour_Nome_Enter);
+            this.Tour_Nome.Leave += new System.EventHandler(this.Tour_Nome_Leave);
             // 
             // Tour_Destinazione
             // 
@@ -698,6 +762,8 @@ namespace DatabaseProject
             this.Tour_Destinazione.Size = new System.Drawing.Size(178, 22);
             this.Tour_Destinazione.TabIndex = 5;
             this.Tour_Destinazione.Text = "Destinazione";
+            this.Tour_Destinazione.Enter += new System.EventHandler(this.Tour_Destinazione_Enter);
+            this.Tour_Destinazione.Leave += new System.EventHandler(this.Tour_Destinazione_Leave);
             // 
             // TabellaTour
             // 
@@ -756,6 +822,8 @@ namespace DatabaseProject
             this.Tour_CFtourManager.Size = new System.Drawing.Size(178, 22);
             this.Tour_CFtourManager.TabIndex = 13;
             this.Tour_CFtourManager.Text = "CF del Tour Manager";
+            this.Tour_CFtourManager.Enter += new System.EventHandler(this.Tour_CFtourManager_Enter);
+            this.Tour_CFtourManager.Leave += new System.EventHandler(this.Tour_CFtourManager_Leave);
             // 
             // Tour_IDsede
             // 
@@ -764,6 +832,8 @@ namespace DatabaseProject
             this.Tour_IDsede.Size = new System.Drawing.Size(178, 22);
             this.Tour_IDsede.TabIndex = 12;
             this.Tour_IDsede.Text = "ID Sede";
+            this.Tour_IDsede.Enter += new System.EventHandler(this.Tour_IDsede_Enter);
+            this.Tour_IDsede.Leave += new System.EventHandler(this.Tour_IDsede_Leave);
             // 
             // Tour_IDtour
             // 
@@ -772,6 +842,8 @@ namespace DatabaseProject
             this.Tour_IDtour.Size = new System.Drawing.Size(178, 22);
             this.Tour_IDtour.TabIndex = 11;
             this.Tour_IDtour.Text = "ID Tour";
+            this.Tour_IDtour.Enter += new System.EventHandler(this.Tour_IDtour_Enter);
+            this.Tour_IDtour.Leave += new System.EventHandler(this.Tour_IDtour_Leave);
             // 
             // Tour_Prezzo
             // 
@@ -780,6 +852,8 @@ namespace DatabaseProject
             this.Tour_Prezzo.Size = new System.Drawing.Size(178, 22);
             this.Tour_Prezzo.TabIndex = 10;
             this.Tour_Prezzo.Text = "Prezzo";
+            this.Tour_Prezzo.Enter += new System.EventHandler(this.Tour_Prezzo_Enter);
+            this.Tour_Prezzo.Leave += new System.EventHandler(this.Tour_Prezzo_Leave);
             // 
             // DatabaseViewAdmin
             // 

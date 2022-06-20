@@ -225,7 +225,377 @@ namespace DatabaseProject
 
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Prenotazioni_CFcliente_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Prenotazioni_CFcliente_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Prenotazioni_IDtour_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Prenotazioni_IDtour_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AggiungiPrenotazione_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_CapMaxAccessori_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_CapMaxAccessori_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_CapMaxBici_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_CapMaxBici_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_IDmagazzino_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_IDmagazzino_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_IDindirizzo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_IDindirizzo_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_IDsede_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Magazzini_IDsede_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AggiungiMagazzino_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_IDpercorso_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_IDpercorso_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_Difficolta_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_Difficolta_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_NomePercorso_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_NomePercorso_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_NumTappe_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_NumTappe_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_LunghezzaPercorso_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_LunghezzaPercorso_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_IDsede_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_IDsede_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AggiungiPercorso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_PIVA_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_PIVA_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_NomeSocio_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_NomeSocio_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_CostoServizio_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_CostoServizio_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_Telefono_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_Telefono_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_Tipologia_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BP_Tipologia_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AggiungiBusinessPartner_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Nome_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Nome_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Cognome_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Cognome_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_CF_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_CF_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Telefono_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Telefono_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_CodiceDipendente_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_CodiceDipendente_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Stipendio_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Stipendio_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_IDsede_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_IDsede_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_CFsuperiore_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_CFsuperiore_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AggiungiDipendente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_Destinazione_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_Destinazione_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_Nome_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_Nome_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_DataInizio_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_DataInizio_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_DataFine_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_DataFine_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_Prezzo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_Prezzo_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_IDtour_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_IDtour_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_IDsede_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_IDsede_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_CFtourManager_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tour_CFtourManager_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AggiungiTour_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dipendenti_Ruolo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
