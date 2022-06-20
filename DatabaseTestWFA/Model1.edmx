@@ -9,9 +9,9 @@
           <Key>
             <PropertyRef Name="IDaccessorio" />
           </Key>
-          <Property Name="Tipologia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Tipologia" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UltimoControllo" Type="date" Nullable="false" />
-          <Property Name="Produttore" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Produttore" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Taglia" Type="char" MaxLength="1" />
           <Property Name="IDaccessorio" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="IDmagazzino" Type="char" MaxLength="3" Nullable="false" />
@@ -29,7 +29,7 @@
             <PropertyRef Name="PIVA" />
           </Key>
           <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
-          <Property Name="Nome" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="NumTotDipendenti" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="attrazione">
@@ -37,60 +37,53 @@
             <PropertyRef Name="PIVA" />
           </Key>
           <Property Name="Recapito" Type="char" MaxLength="12" Nullable="false" />
-          <Property Name="NomeSocio" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NomeSocio" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="CostoServizio" Type="float" Nullable="false" />
-          <Property Name="TipoAttrazione" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="EtàMinima" Type="bigint" Nullable="false" />
+          <Property Name="TipoAttrazione" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EtaMinima" Type="int" Nullable="false" />
           <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
         </EntityType>
         <EntityType Name="bicicletta">
           <Key>
             <PropertyRef Name="NumTelaio" />
           </Key>
-          <Property Name="Produttore" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Produttore" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="NumTelaio" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="Taglia" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="RaggioRuota" Type="int" Nullable="false" />
-          <Property Name="Tipologia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Tipologia" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UltimoControllo" Type="date" Nullable="false" />
           <Property Name="NumRapportiAnteriori" Type="int" Nullable="false" />
           <Property Name="NumRapportiPosteriori" Type="int" Nullable="false" />
-          <Property Name="isElettrica" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="isElettrica" Type="tinyint" Nullable="false" />
           <Property Name="PotenzaBatteria" Type="int" />
           <Property Name="CapacitàBatteria" Type="int" />
-          <Property Name="DurataBatteria" Type="int" />
           <Property Name="IDmagazzino" Type="char" MaxLength="3" Nullable="false" />
         </EntityType>
         <EntityType Name="cliente">
           <Key>
             <PropertyRef Name="CF" />
           </Key>
-          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Cognome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cognome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CF" Type="char" MaxLength="16" Nullable="false" />
-          <Property Name="NumTelefono" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="Recapito" Type="char" MaxLength="12" Nullable="false" />
         </EntityType>
         <EntityType Name="dipendente">
           <Key>
             <PropertyRef Name="CF" />
           </Key>
-          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Cognome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cognome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CF" Type="char" MaxLength="16" Nullable="false" />
           <Property Name="Recapito" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="CodiceDipendente" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="Stipendio" Type="float" Nullable="false" />
-          <Property Name="isGuida" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="isTourManager" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="isAltro" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="isGuida" Type="tinyint" Nullable="false" />
+          <Property Name="isTourManager" Type="tinyint" Nullable="false" />
+          <Property Name="isAltro" Type="tinyint" Nullable="false" />
           <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
-        </EntityType>
-        <EntityType Name="gerarchia">
-          <Key>
-            <PropertyRef Name="CFsottoposto" />
-          </Key>
-          <Property Name="CFsottoposto" Type="char" MaxLength="16" Nullable="false" />
           <Property Name="CFsuperiore" Type="char" MaxLength="16" />
         </EntityType>
         <EntityType Name="indirizzo">
@@ -98,9 +91,9 @@
             <PropertyRef Name="IDIndirizzo" />
           </Key>
           <Property Name="NumCivico" Type="varchar" MaxLength="3" Nullable="false" />
-          <Property Name="Via" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Via" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CAP" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="Paese" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Paese" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
         </EntityType>
         <EntityType Name="magazzino">
@@ -175,10 +168,10 @@
             <PropertyRef Name="IDpercorso" />
           </Key>
           <Property Name="IDpercorso" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="Difficolta" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Difficolta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="NumTappe" Type="int" Nullable="false" />
-          <Property Name="LunghezzaPercorso" Type="int" Nullable="false" />
+          <Property Name="LunghezzaPercorso" Type="float" Nullable="false" />
           <Property Name="IDsede" Type="char" MaxLength="3" Nullable="false" />
         </EntityType>
         <EntityType Name="pernottamento">
@@ -202,7 +195,7 @@
             <PropertyRef Name="PIVA" />
           </Key>
           <Property Name="Recapito" Type="char" MaxLength="12" Nullable="false" />
-          <Property Name="NomeSocio" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="NomeSocio" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="CostoServizio" Type="float" Nullable="false" />
           <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
@@ -238,7 +231,6 @@
           </Key>
           <Property Name="DataInizio" Type="date" Nullable="false" />
           <Property Name="DataFine" Type="date" Nullable="false" />
-          <Property Name="CostoGiornaliero" Type="float" Nullable="false" />
           <Property Name="IDservizio" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="tipoServizio" Type="enum" Nullable="false" />
           <Property Name="IDpacchetto" Type="char" MaxLength="6" Nullable="false" />
@@ -249,19 +241,19 @@
           <Key>
             <PropertyRef Name="PIVA" />
           </Key>
-          <Property Name="Recapito" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="NomeSocio" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Recapito" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="NomeSocio" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PIVA" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="CostoServizio" Type="float" Nullable="false" />
-          <Property Name="TipoSoggiorno" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TipoSoggiorno" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDIndirizzo" Type="char" MaxLength="7" Nullable="false" />
         </EntityType>
         <EntityType Name="tappa">
           <Key>
             <PropertyRef Name="IDtappa" />
           </Key>
-          <Property Name="Inizio" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Fine" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Inizio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fine" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LunghezzaTappa" Type="float" Nullable="false" />
           <Property Name="IDtappa" Type="char" MaxLength="4" Nullable="false" />
         </EntityType>
@@ -269,8 +261,8 @@
           <Key>
             <PropertyRef Name="IDtour" />
           </Key>
-          <Property Name="Destinazione" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Destinazione" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DataInizio" Type="date" Nullable="false" />
           <Property Name="DataFine" Type="date" Nullable="false" />
           <Property Name="Prezzo" Type="float" Nullable="false" />
@@ -323,6 +315,18 @@
             </Principal>
             <Dependent Role="noleggiobicicletta">
               <PropertyRef Name="NumTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCFsuperiore">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="0..1" />
+          <End Role="dipendente1" Type="Self.dipendente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="dipendente1">
+              <PropertyRef Name="CFsuperiore" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -698,18 +702,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKSottoposto">
-          <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
-          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="dipendente">
-              <PropertyRef Name="CF" />
-            </Principal>
-            <Dependent Role="gerarchia">
-              <PropertyRef Name="CFsottoposto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKStoccaggioAccessorio">
           <End Role="magazzino" Type="Self.magazzino" Multiplicity="1" />
           <End Role="accessorio" Type="Self.accessorio" Multiplicity="*" />
@@ -746,18 +738,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKSuperiore">
-          <End Role="dipendente" Type="Self.dipendente" Multiplicity="0..1" />
-          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dipendente">
-              <PropertyRef Name="CF" />
-            </Principal>
-            <Dependent Role="gerarchia">
-              <PropertyRef Name="CFsuperiore" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKViaggio">
           <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
           <End Role="tour" Type="Self.tour" Multiplicity="*" />
@@ -778,7 +758,6 @@
           <EntitySet Name="bicicletta" EntityType="Self.bicicletta" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
           <EntitySet Name="cliente" EntityType="Self.cliente" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
           <EntitySet Name="dipendente" EntityType="Self.dipendente" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
-          <EntitySet Name="gerarchia" EntityType="Self.gerarchia" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
           <EntitySet Name="indirizzo" EntityType="Self.indirizzo" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
           <EntitySet Name="magazzino" EntityType="Self.magazzino" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
           <EntitySet Name="noleggioaccessorio" EntityType="Self.noleggioaccessorio" Schema="gestionale_per_agenzie_rel" store:Type="Tables" />
@@ -814,6 +793,10 @@
           <AssociationSet Name="FKBicicletta" Association="Self.FKBicicletta">
             <End Role="bicicletta" EntitySet="bicicletta" />
             <End Role="noleggiobicicletta" EntitySet="noleggiobicicletta" />
+          </AssociationSet>
+          <AssociationSet Name="FKCFsuperiore" Association="Self.FKCFsuperiore">
+            <End Role="dipendente" EntitySet="dipendente" />
+            <End Role="dipendente1" EntitySet="dipendente" />
           </AssociationSet>
           <AssociationSet Name="FKComposizioneServizio" Association="Self.FKComposizioneServizio">
             <End Role="pacchetto" EntitySet="pacchetto" />
@@ -939,10 +922,6 @@
             <End Role="servizio" EntitySet="servizio" />
             <End Role="noleggiobicicletta" EntitySet="noleggiobicicletta" />
           </AssociationSet>
-          <AssociationSet Name="FKSottoposto" Association="Self.FKSottoposto">
-            <End Role="dipendente" EntitySet="dipendente" />
-            <End Role="gerarchia" EntitySet="gerarchia" />
-          </AssociationSet>
           <AssociationSet Name="FKStoccaggioAccessorio" Association="Self.FKStoccaggioAccessorio">
             <End Role="magazzino" EntitySet="magazzino" />
             <End Role="accessorio" EntitySet="accessorio" />
@@ -954,10 +933,6 @@
           <AssociationSet Name="FKStoccaggioM" Association="Self.FKStoccaggioM">
             <End Role="sede" EntitySet="sede" />
             <End Role="magazzino" EntitySet="magazzino" />
-          </AssociationSet>
-          <AssociationSet Name="FKSuperiore" Association="Self.FKSuperiore">
-            <End Role="dipendente" EntitySet="dipendente" />
-            <End Role="gerarchia" EntitySet="gerarchia" />
           </AssociationSet>
           <AssociationSet Name="FKViaggio" Association="Self.FKViaggio">
             <End Role="dipendente" EntitySet="dipendente" />
@@ -973,9 +948,9 @@
           <Key>
             <PropertyRef Name="IDaccessorio" />
           </Key>
-          <Property Name="Tipologia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipologia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UltimoControllo" Type="DateTime" Nullable="false" />
-          <Property Name="Produttore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Produttore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Taglia" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="IDaccessorio" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDmagazzino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
@@ -987,7 +962,7 @@
             <PropertyRef Name="PIVA" />
           </Key>
           <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nome" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumTotDipendenti" Type="Int64" Nullable="false" />
           <NavigationProperty Name="sedes" Relationship="Self.FKFiliale" FromRole="agenzia" ToRole="sede" />
           <NavigationProperty Name="attraziones" Relationship="Self.partnershipattrazione" FromRole="agenzia" ToRole="attrazione" />
@@ -999,11 +974,11 @@
             <PropertyRef Name="PIVA" />
           </Key>
           <Property Name="Recapito" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NomeSocio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeSocio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CostoServizio" Type="Single" Nullable="false" />
-          <Property Name="TipoAttrazione" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="EtàMinima" Type="Int64" Nullable="false" />
+          <Property Name="TipoAttrazione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EtaMinima" Type="Int32" Nullable="false" />
           <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="indirizzo" Relationship="Self.FKIndirizzoAttrazione" FromRole="attrazione" ToRole="indirizzo" />
           <NavigationProperty Name="tours" Relationship="Self.acquistobiglietto" FromRole="attrazione" ToRole="tour" />
@@ -1013,18 +988,17 @@
           <Key>
             <PropertyRef Name="NumTelaio" />
           </Key>
-          <Property Name="Produttore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Produttore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumTelaio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Taglia" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RaggioRuota" Type="Int32" Nullable="false" />
-          <Property Name="Tipologia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipologia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UltimoControllo" Type="DateTime" Nullable="false" />
           <Property Name="NumRapportiAnteriori" Type="Int32" Nullable="false" />
           <Property Name="NumRapportiPosteriori" Type="Int32" Nullable="false" />
-          <Property Name="isElettrica" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isElettrica" Type="SByte" Nullable="false" />
           <Property Name="PotenzaBatteria" Type="Int32" />
           <Property Name="CapacitàBatteria" Type="Int32" />
-          <Property Name="DurataBatteria" Type="Int32" />
           <Property Name="IDmagazzino" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="magazzino" Relationship="Self.FKStoccaggioBicicletta" FromRole="bicicletta" ToRole="magazzino" />
           <NavigationProperty Name="servizios" Relationship="Self.noleggiobicicletta" FromRole="bicicletta" ToRole="servizio" />
@@ -1033,10 +1007,10 @@
           <Key>
             <PropertyRef Name="CF" />
           </Key>
-          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cognome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CF" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NumTelefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Recapito" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="pacchettoes" Relationship="Self.FKRichiesta" FromRole="cliente" ToRole="pacchetto" />
           <NavigationProperty Name="tours" Relationship="Self.prenotazione" FromRole="cliente" ToRole="tour" />
         </EntityType>
@@ -1044,39 +1018,31 @@
           <Key>
             <PropertyRef Name="CF" />
           </Key>
-          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cognome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CF" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Recapito" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CodiceDipendente" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Stipendio" Type="Single" Nullable="false" />
-          <Property Name="isGuida" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="isTourManager" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="isAltro" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isGuida" Type="SByte" Nullable="false" />
+          <Property Name="isTourManager" Type="SByte" Nullable="false" />
+          <Property Name="isAltro" Type="SByte" Nullable="false" />
           <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CFsuperiore" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dipendente1" Relationship="Self.FKCFsuperiore" FromRole="dipendente" ToRole="dipendente1" />
+          <NavigationProperty Name="dipendente2" Relationship="Self.FKCFsuperiore" FromRole="dipendente1" ToRole="dipendente" />
           <NavigationProperty Name="sede" Relationship="Self.FKLavoro" FromRole="dipendente" ToRole="sede" />
-          <NavigationProperty Name="gerarchia" Relationship="Self.FKSottoposto" FromRole="dipendente" ToRole="gerarchia" />
-          <NavigationProperty Name="gerarchias" Relationship="Self.FKSuperiore" FromRole="dipendente" ToRole="gerarchia" />
           <NavigationProperty Name="tours" Relationship="Self.FKViaggio" FromRole="dipendente" ToRole="tour" />
           <NavigationProperty Name="servizios" Relationship="Self.partecipazione" FromRole="dipendente" ToRole="servizio" />
-        </EntityType>
-        <EntityType Name="gerarchia">
-          <Key>
-            <PropertyRef Name="CFsottoposto" />
-          </Key>
-          <Property Name="CFsottoposto" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CFsuperiore" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="dipendente" Relationship="Self.FKSottoposto" FromRole="gerarchia" ToRole="dipendente" />
-          <NavigationProperty Name="dipendente1" Relationship="Self.FKSuperiore" FromRole="gerarchia" ToRole="dipendente" />
         </EntityType>
         <EntityType Name="indirizzo">
           <Key>
             <PropertyRef Name="IDIndirizzo" />
           </Key>
           <Property Name="NumCivico" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Via" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Via" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CAP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Paese" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Paese" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="attraziones" Relationship="Self.FKIndirizzoAttrazione" FromRole="indirizzo" ToRole="attrazione" />
           <NavigationProperty Name="magazzinoes" Relationship="Self.FKIndirizzoMagazzino_FK" FromRole="indirizzo" ToRole="magazzino" />
@@ -1114,10 +1080,10 @@
             <PropertyRef Name="IDpercorso" />
           </Key>
           <Property Name="IDpercorso" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Difficolta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Difficolta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumTappe" Type="Int32" Nullable="false" />
-          <Property Name="LunghezzaPercorso" Type="Int32" Nullable="false" />
+          <Property Name="LunghezzaPercorso" Type="Single" Nullable="false" />
           <Property Name="IDsede" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="sede" Relationship="Self.FKOffertaPercorsi" FromRole="percorso" ToRole="sede" />
           <NavigationProperty Name="sequenzas" Relationship="Self.FKPercorso" FromRole="percorso" ToRole="sequenza" />
@@ -1128,7 +1094,7 @@
             <PropertyRef Name="PIVA" />
           </Key>
           <Property Name="Recapito" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NomeSocio" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeSocio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CostoServizio" Type="Single" Nullable="false" />
           <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1168,7 +1134,6 @@
           </Key>
           <Property Name="DataInizio" Type="DateTime" Nullable="false" />
           <Property Name="DataFine" Type="DateTime" Nullable="false" />
-          <Property Name="CostoGiornaliero" Type="Single" Nullable="false" />
           <Property Name="IDservizio" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipoServizio" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDpacchetto" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1185,11 +1150,11 @@
           <Key>
             <PropertyRef Name="PIVA" />
           </Key>
-          <Property Name="Recapito" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NomeSocio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Recapito" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeSocio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PIVA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CostoServizio" Type="Single" Nullable="false" />
-          <Property Name="TipoSoggiorno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoSoggiorno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDIndirizzo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="indirizzo" Relationship="Self.FKIndirizzoSoggiorno" FromRole="soggiorno" ToRole="indirizzo" />
           <NavigationProperty Name="agenzias" Relationship="Self.partnershipsoggiorno" FromRole="soggiorno" ToRole="agenzia" />
@@ -1199,8 +1164,8 @@
           <Key>
             <PropertyRef Name="IDtappa" />
           </Key>
-          <Property Name="Inizio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Fine" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Inizio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LunghezzaTappa" Type="Single" Nullable="false" />
           <Property Name="IDtappa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="sequenzas" Relationship="Self.FKSeq_TAP" FromRole="tappa" ToRole="sequenza" />
@@ -1209,8 +1174,8 @@
           <Key>
             <PropertyRef Name="IDtour" />
           </Key>
-          <Property Name="Destinazione" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Destinazione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DataInizio" Type="DateTime" Nullable="false" />
           <Property Name="DataFine" Type="DateTime" Nullable="false" />
           <Property Name="Prezzo" Type="Single" Nullable="false" />
@@ -1284,6 +1249,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FKCFsuperiore">
+          <End Role="dipendente" Type="Self.dipendente" Multiplicity="0..1" />
+          <End Role="dipendente1" Type="Self.dipendente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dipendente">
+              <PropertyRef Name="CF" />
+            </Principal>
+            <Dependent Role="dipendente1">
+              <PropertyRef Name="CFsuperiore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKLavoro">
           <End Role="sede" Type="Self.sede" Multiplicity="1" />
           <End Role="dipendente" Type="Self.dipendente" Multiplicity="*" />
@@ -1293,30 +1270,6 @@
             </Principal>
             <Dependent Role="dipendente">
               <PropertyRef Name="IDsede" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKSottoposto">
-          <End Role="dipendente" Type="Self.dipendente" Multiplicity="1" />
-          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="dipendente">
-              <PropertyRef Name="CF" />
-            </Principal>
-            <Dependent Role="gerarchia">
-              <PropertyRef Name="CFsottoposto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKSuperiore">
-          <End Role="dipendente" Type="Self.dipendente" Multiplicity="0..1" />
-          <End Role="gerarchia" Type="Self.gerarchia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dipendente">
-              <PropertyRef Name="CF" />
-            </Principal>
-            <Dependent Role="gerarchia">
-              <PropertyRef Name="CFsuperiore" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1516,14 +1469,13 @@
           <End Role="ristorante" Type="Self.ristorante" Multiplicity="*" />
           <End Role="tour" Type="Self.tour" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="gestionale_per_agenzie_relEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="gestionale_per_agenzie_relEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="accessorios" EntityType="Self.accessorio" />
           <EntitySet Name="agenzias" EntityType="Self.agenzia" />
           <EntitySet Name="attraziones" EntityType="Self.attrazione" />
           <EntitySet Name="biciclettas" EntityType="Self.bicicletta" />
           <EntitySet Name="clientes" EntityType="Self.cliente" />
           <EntitySet Name="dipendentes" EntityType="Self.dipendente" />
-          <EntitySet Name="gerarchias" EntityType="Self.gerarchia" />
           <EntitySet Name="indirizzoes" EntityType="Self.indirizzo" />
           <EntitySet Name="magazzinoes" EntityType="Self.magazzino" />
           <EntitySet Name="pacchettoes" EntityType="Self.pacchetto" />
@@ -1555,17 +1507,13 @@
             <End Role="cliente" EntitySet="clientes" />
             <End Role="pacchetto" EntitySet="pacchettoes" />
           </AssociationSet>
+          <AssociationSet Name="FKCFsuperiore" Association="Self.FKCFsuperiore">
+            <End Role="dipendente" EntitySet="dipendentes" />
+            <End Role="dipendente1" EntitySet="dipendentes" />
+          </AssociationSet>
           <AssociationSet Name="FKLavoro" Association="Self.FKLavoro">
             <End Role="sede" EntitySet="sedes" />
             <End Role="dipendente" EntitySet="dipendentes" />
-          </AssociationSet>
-          <AssociationSet Name="FKSottoposto" Association="Self.FKSottoposto">
-            <End Role="dipendente" EntitySet="dipendentes" />
-            <End Role="gerarchia" EntitySet="gerarchias" />
-          </AssociationSet>
-          <AssociationSet Name="FKSuperiore" Association="Self.FKSuperiore">
-            <End Role="dipendente" EntitySet="dipendentes" />
-            <End Role="gerarchia" EntitySet="gerarchias" />
           </AssociationSet>
           <AssociationSet Name="FKViaggio" Association="Self.FKViaggio">
             <End Role="dipendente" EntitySet="dipendentes" />
@@ -1665,7 +1613,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="gestionale_per_agenzie_relModelStoreContainer" CdmEntityContainer="gestionale_per_agenzie_relEntities1">
+        <EntityContainerMapping StorageEntityContainer="gestionale_per_agenzie_relModelStoreContainer" CdmEntityContainer="gestionale_per_agenzie_relEntities2">
           <EntitySetMapping Name="accessorios">
             <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.accessorio">
               <MappingFragment StoreEntitySet="accessorio">
@@ -1695,7 +1643,7 @@
                 <ScalarProperty Name="PIVA" ColumnName="PIVA" />
                 <ScalarProperty Name="CostoServizio" ColumnName="CostoServizio" />
                 <ScalarProperty Name="TipoAttrazione" ColumnName="TipoAttrazione" />
-                <ScalarProperty Name="EtàMinima" ColumnName="EtàMinima" />
+                <ScalarProperty Name="EtaMinima" ColumnName="EtaMinima" />
                 <ScalarProperty Name="IDIndirizzo" ColumnName="IDIndirizzo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1714,7 +1662,6 @@
                 <ScalarProperty Name="isElettrica" ColumnName="isElettrica" />
                 <ScalarProperty Name="PotenzaBatteria" ColumnName="PotenzaBatteria" />
                 <ScalarProperty Name="CapacitàBatteria" ColumnName="CapacitàBatteria" />
-                <ScalarProperty Name="DurataBatteria" ColumnName="DurataBatteria" />
                 <ScalarProperty Name="IDmagazzino" ColumnName="IDmagazzino" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1725,7 +1672,7 @@
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Cognome" ColumnName="Cognome" />
                 <ScalarProperty Name="CF" ColumnName="CF" />
-                <ScalarProperty Name="NumTelefono" ColumnName="NumTelefono" />
+                <ScalarProperty Name="Recapito" ColumnName="Recapito" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1742,13 +1689,6 @@
                 <ScalarProperty Name="isTourManager" ColumnName="isTourManager" />
                 <ScalarProperty Name="isAltro" ColumnName="isAltro" />
                 <ScalarProperty Name="IDsede" ColumnName="IDsede" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="gerarchias">
-            <EntityTypeMapping TypeName="gestionale_per_agenzie_relModel.gerarchia">
-              <MappingFragment StoreEntitySet="gerarchia">
-                <ScalarProperty Name="CFsottoposto" ColumnName="CFsottoposto" />
                 <ScalarProperty Name="CFsuperiore" ColumnName="CFsuperiore" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1831,7 +1771,6 @@
               <MappingFragment StoreEntitySet="servizio">
                 <ScalarProperty Name="DataInizio" ColumnName="DataInizio" />
                 <ScalarProperty Name="DataFine" ColumnName="DataFine" />
-                <ScalarProperty Name="CostoGiornaliero" ColumnName="CostoGiornaliero" />
                 <ScalarProperty Name="IDservizio" ColumnName="IDservizio" />
                 <ScalarProperty Name="tipoServizio" ColumnName="tipoServizio" />
                 <ScalarProperty Name="IDpacchetto" ColumnName="IDpacchetto" />

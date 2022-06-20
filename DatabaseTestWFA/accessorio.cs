@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;
     
-    [global::System.Data.Linq.Mapping.TableAttribute(Name ="db.Accessori")]
     public partial class accessorio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

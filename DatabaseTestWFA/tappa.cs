@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;

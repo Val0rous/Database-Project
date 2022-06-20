@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace DatabaseProject
         public string Difficolta { get; set; }
         public string Nome { get; set; }
         public int NumTappe { get; set; }
-        public int LunghezzaPercorso { get; set; }
+        public float LunghezzaPercorso { get; set; }
         public string IDsede { get; set; }
     
         public virtual sede sede { get; set; }

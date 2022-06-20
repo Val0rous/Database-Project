@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;
@@ -24,7 +24,6 @@ namespace DatabaseProject
     
         public System.DateTime DataInizio { get; set; }
         public System.DateTime DataFine { get; set; }
-        public float CostoGiornaliero { get; set; }
         public string IDservizio { get; set; }
         public string tipoServizio { get; set; }
         public string IDpacchetto { get; set; }

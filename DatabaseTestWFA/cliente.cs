@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace DatabaseProject
         public string Nome { get; set; }
         public string Cognome { get; set; }
         public string CF { get; set; }
-        public string NumTelefono { get; set; }
+        public string Recapito { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pacchetto> pacchettoes { get; set; }

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class gestionale_per_agenzie_relEntities1 : DbContext
+    public partial class gestionale_per_agenzie_relEntities2 : DbContext
     {
-        public gestionale_per_agenzie_relEntities1()
-            : base("name=gestionale_per_agenzie_relEntities1")
+        public gestionale_per_agenzie_relEntities2()
+            : base("name=gestionale_per_agenzie_relEntities2")
         {
         }
     
@@ -31,7 +31,6 @@ namespace DatabaseProject
         public virtual DbSet<bicicletta> biciclettas { get; set; }
         public virtual DbSet<cliente> clientes { get; set; }
         public virtual DbSet<dipendente> dipendentes { get; set; }
-        public virtual DbSet<gerarchia> gerarchias { get; set; }
         public virtual DbSet<indirizzo> indirizzoes { get; set; }
         public virtual DbSet<magazzino> magazzinoes { get; set; }
         public virtual DbSet<pacchetto> pacchettoes { get; set; }

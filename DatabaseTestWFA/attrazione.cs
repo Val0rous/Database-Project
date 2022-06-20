@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;
@@ -26,7 +26,7 @@ namespace DatabaseProject
         public string PIVA { get; set; }
         public float CostoServizio { get; set; }
         public string TipoAttrazione { get; set; }
-        public long EtàMinima { get; set; }
+        public int EtaMinima { get; set; }
         public string IDIndirizzo { get; set; }
     
         public virtual indirizzo indirizzo { get; set; }

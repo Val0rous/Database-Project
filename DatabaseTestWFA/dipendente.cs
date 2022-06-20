@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace DatabaseProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public dipendente()
         {
-            this.gerarchias = new HashSet<gerarchia>();
+            this.dipendente1 = new HashSet<dipendente>();
             this.tours = new HashSet<tour>();
             this.servizios = new HashSet<servizio>();
         }
@@ -28,15 +28,16 @@ namespace DatabaseProject
         public string Recapito { get; set; }
         public string CodiceDipendente { get; set; }
         public float Stipendio { get; set; }
-        public string isGuida { get; set; }
-        public string isTourManager { get; set; }
-        public string isAltro { get; set; }
+        public sbyte isGuida { get; set; }
+        public sbyte isTourManager { get; set; }
+        public sbyte isAltro { get; set; }
         public string IDsede { get; set; }
+        public string CFsuperiore { get; set; }
     
-        public virtual sede sede { get; set; }
-        public virtual gerarchia gerarchia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<gerarchia> gerarchias { get; set; }
+        public virtual ICollection<dipendente> dipendente1 { get; set; }
+        public virtual dipendente dipendente2 { get; set; }
+        public virtual sede sede { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tour> tours { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

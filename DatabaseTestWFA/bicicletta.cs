@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseProject
+namespace DatabaseTestWFA
 {
     using System;
     using System.Collections.Generic;
@@ -28,10 +28,9 @@ namespace DatabaseProject
         public System.DateTime UltimoControllo { get; set; }
         public int NumRapportiAnteriori { get; set; }
         public int NumRapportiPosteriori { get; set; }
-        public string isElettrica { get; set; }
+        public sbyte isElettrica { get; set; }
         public Nullable<int> PotenzaBatteria { get; set; }
         public Nullable<int> CapacitàBatteria { get; set; }
-        public Nullable<int> DurataBatteria { get; set; }
         public string IDmagazzino { get; set; }
     
         public virtual magazzino magazzino { get; set; }
