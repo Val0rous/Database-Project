@@ -144,8 +144,8 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@Cognome", Cognome);
             command.Parameters.AddWithValue("@CF", CF);
             command.Parameters.AddWithValue("@Recapito", Recapito);
-            command.CommandText = "INSERT INTO cliente (Nome, Cognome, CF, NumTelefono) " +
-                "VALUES (@Nome, @Cognome, @CF, @NumTelefono)";
+            command.CommandText = "INSERT INTO cliente (Nome, Cognome, CF, Recapito) " +
+                "VALUES (@Nome, @Cognome, @CF, @Recapito)";
             try
             {
                 if (command.ExecuteNonQuery() > 0) return true;
@@ -153,6 +153,10 @@ namespace DatabaseProject
 
             }
             catch (MySqlException)
+            {
+                return false;
+            }
+            catch (Exception)
             {
                 return false;
             }

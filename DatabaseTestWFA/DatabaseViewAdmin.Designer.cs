@@ -237,7 +237,7 @@ namespace DatabaseProject
             this.AggiungiCliente.TabIndex = 4;
             this.AggiungiCliente.Text = "Aggiungi Cliente";
             this.AggiungiCliente.UseVisualStyleBackColor = true;
-            this.AggiungiCliente.Click += new System.EventHandler(this.button1_Click);
+            this.AggiungiCliente.Click += new System.EventHandler(this.AggiungiCliente_Click);
             // 
             // Telefono
             // 
@@ -246,7 +246,8 @@ namespace DatabaseProject
             this.Telefono.Size = new System.Drawing.Size(165, 22);
             this.Telefono.TabIndex = 3;
             this.Telefono.Text = "Numero di Telefono";
-            this.Telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
+            this.Telefono.Enter += new System.EventHandler(this.Telefono_Enter);
+            this.Telefono.Leave += new System.EventHandler(this.Telefono_Leave);
             // 
             // CodiceFiscale
             // 
@@ -255,7 +256,8 @@ namespace DatabaseProject
             this.CodiceFiscale.Size = new System.Drawing.Size(165, 22);
             this.CodiceFiscale.TabIndex = 2;
             this.CodiceFiscale.Text = "Codice Fiscale";
-            this.CodiceFiscale.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            this.CodiceFiscale.Enter += new System.EventHandler(this.CodiceFiscale_Enter);
+            this.CodiceFiscale.Leave += new System.EventHandler(this.CodiceFiscale_Leave);
             // 
             // Cognome
             // 
@@ -264,7 +266,8 @@ namespace DatabaseProject
             this.Cognome.Size = new System.Drawing.Size(165, 22);
             this.Cognome.TabIndex = 1;
             this.Cognome.Text = "Cognome";
-            this.Cognome.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.Cognome.Enter += new System.EventHandler(this.Cognome_Enter);
+            this.Cognome.Leave += new System.EventHandler(this.Cognome_Leave);
             // 
             // Nome
             // 
@@ -273,6 +276,8 @@ namespace DatabaseProject
             this.Nome.Size = new System.Drawing.Size(165, 22);
             this.Nome.TabIndex = 0;
             this.Nome.Text = "Nome";
+            this.Nome.Enter += new System.EventHandler(this.Nome_Enter);
+            this.Nome.Leave += new System.EventHandler(this.Nome_Leave);
             // 
             // TabPage
             // 

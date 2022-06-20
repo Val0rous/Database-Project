@@ -18,8 +18,6 @@ namespace DatabaseProject
         {
             InitializeComponent();
             this.PreviousWindow = PreviousWindow;
-            this.UsernameBox.ForeColor = Color.Gray;
-            this.PasswordBox.ForeColor = Color.Gray;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -86,6 +84,12 @@ namespace DatabaseProject
             {
                 this.LoginButton_Click(sender, e);
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.UsernameBox.ForeColor = Color.Gray;
+            this.PasswordBox.ForeColor = Color.Gray;
         }
     }
 }
