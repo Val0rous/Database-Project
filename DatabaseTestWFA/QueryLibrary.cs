@@ -414,6 +414,18 @@ namespace DatabaseProject
             "AND A.IDmagazzino IN(SELECT IDmagazzino FROM sede S, magazzino M WHERE S.IDsede=" + Convert(IDsede) + " AND M.IDsede= S.IDsede);";
             return command;
         }
+        public MySqlCommand LeggiAccessorioPiuRichiesto(String IDsede, int Month)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            //command.Parameters.AddWithValue("@IDsede", IDsede);
+            //command.Parameters.AddWithValue("@Date", Date);
+            command.CommandText = "SELECT A.IDaccessorio, COUNT(NA.IDservizio) "+
+                "FROM accessorio AS A, noleggioAccessorio AS NA, servizio AS S"+
+                "WHERE A.IDaccessorio=NA.IDaccessorio AND NA.IDservizio=S.IDservizio "+
+                "AND S.IDsede=" + Convert(IDSede) + $" AND MONTH(S.DataInizio)={Month} " + 
+                "ORDER BY Count(NA.IDservizio) DESC LIMIT 1";
+            return command;
+        }
         public MySqlCommand LeggiBiciclette()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -562,6 +574,20 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede="+Convert(IDsede);
             return command;
         }
+        public MySqlCommand LeggiPeriodoMedioPrenotazioneAccessori()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT AVG(CAST(DATEDIFF(DataInizio, DataFine) AS float)) AS PeriodoMedioAccessori "+
+                "FROM Servizi WHERE TipoServizio = 'Noleggio_Accessori' GROUP BY IDSede";
+            return command;
+        }
+        public MySqlCommand LeggiPeriodoMedioPrenotazioneBici()
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT AVG(CAST(DATEDIFF(DataInizio, DataFine) AS float)) AS PeriodoMedioBici "+
+                "FROM Servizi WHERE TipoServizio = 'Noleggio_Biciclette' GROUP BY IDSede";
+            return command;
+        }
         public MySqlCommand LeggiPrenotazioni()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -604,7 +630,15 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto="+Convert(IDpacchetto);
             return command;
         }
-        
+        public MySqlCommand LeggiTagliaBicicletta(String IDsede, int Month)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT B.Taglia, COUNT(NB.IDservizio) FROM bicicletta AS B, noleggioBicicletta AS NB, servizio AS S " +
+                    "WHERE B.NumTelaio=NB.NumTelaio AND NB.IDservizio=S.IDservizio " + 
+                    "AND S.IDsede=" + Convert(IDsede) + $" AND MONTH(S.DataInizio)={Month} " + 
+                    "GROUP BY B.Taglia ORDER BY Count(NB.IDservizio) DESC LIMIT 1";
+            return command;
+        }
         public MySqlCommand LeggiTour()
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -623,5 +657,6 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM tour AS t WHERE t.IDsede=" + Convert(IDsede) + " AND " + Convert(Date) + " >= t.DataInizio AND " + Convert(Date) + " <= t.DataFine ";
             return command;
         }
+        
     }
 }
