@@ -600,14 +600,14 @@ namespace DatabaseProject
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioAccessori "+
-                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA)+" AND V.TipoServizio = 'Noleggio_Accessori' AND S.IDsede = V.IDsede GROUP BY IDSede";
+                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA) + " AND V.TipoServizio = 'Noleggio_Accessori' AND S.IDsede = V.IDsede GROUP BY IDSede";
             return command;
         }
         public MySqlCommand LeggiPeriodoMedioPrenotazioneBici(String PIVA)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioBici "+
-                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA)+" AND V.TipoServizio = 'Noleggio_Bici' AND S.IDsede = V.IDsede GROUP BY IDSede";
+                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA) + " AND V.TipoServizio = 'Noleggio_Bici' AND S.IDsede = V.IDsede GROUP BY IDSede";
             return command;
         }
         public MySqlCommand LeggiPrenotazioni()
