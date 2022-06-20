@@ -22,6 +22,5 @@ namespace DatabaseProject
             this.Builder.Database = "gestionale_per_agenzie_rel";
             this.Connection = new MySqlConnection(this.Builder.ToString());
         }
-        
     }
 }
