@@ -62,6 +62,12 @@ namespace DatabaseProject
         bool tour_IDsede;
         bool tour_CFtourManager;
 
+        bool tappa_inizio;
+        bool tappa_fine;
+        bool tappa_lunghezzaTappa;
+        bool tappa_ID;
+        bool tappa_IDPercorso;
+
         public DatabaseViewAdmin(bool isAdmin, string PIVAagenzia, string IDsede)
         {
             this.IsAdmin = isAdmin;
@@ -644,7 +650,40 @@ namespace DatabaseProject
 
         private void AggiungiBusinessPartner_Click(object sender, EventArgs e)
         {
+            if (this.bp_PIVA && this.bp_nomeSocio && this.bp_costoServizio && this.bp_telefono && this.bp_tipologia)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
 
+                try
+                {
+                    var result = queries.Inserisci(this.BP_PIVA.Text, this.BP_NomeSocio.Text, this.BP_CostoServizio.Text, this.BP_Telefono.Text, this.BP_Tipologia);
+                    if (result)
+                    {
+                        MessageBox.Show("BP inserito correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("BP non inserito",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception) { }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
 
         private void Dipendenti_Nome_Enter(object sender, EventArgs e)
@@ -980,6 +1019,59 @@ namespace DatabaseProject
         private void Dipendenti_Ruolo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void AggiungiTappa_Click(object sender, EventArgs e)
+        {
+            if (this.tappa_inizio && this.tappa_fine && this.tappa_lunghezzaTappa && this.tappa_ID && this.tappa_IDPercorso)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
+
+                try
+                {
+                    var result = queries.InserisciTappa(this.Tappa_Inizio.Text, this.Tappa_Fine.Text, this.Tappa_LunghezzaPercorso.Text, this.Tappa_ID.Text);
+                    if (result)
+                    {
+                        result = queries.InserisciSequenza(this.Tappa_ID.Text, this.Tappa_IDPercorso);
+                        if (result)
+                        {
+                            MessageBox.Show("Tappa inserita correttamente",
+                            "Info",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tappa non inserita",
+                            "Errore",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        }
+                        MessageBox.Show("Tappa inserita correttamente",
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tappa non inserita",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    
+                }
+                catch (Exception) { }
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Si prega di completare tutti i campi",
+                "Attenzione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
     }
 }

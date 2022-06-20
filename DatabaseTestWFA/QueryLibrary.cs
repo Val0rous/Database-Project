@@ -90,6 +90,28 @@ namespace DatabaseProject
                 return false;
             }
         }
+        /**DA FAREE**/
+        public bool InserisciBusinessPartner(String IDpercorso, String Difficolta, int NumTappe, float LunghezzaPercorso, String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
+            command.Parameters.AddWithValue("@Difficolta", Difficolta);
+            command.Parameters.AddWithValue("@NumTappe", NumTappe);
+            command.Parameters.AddWithValue("@LunghezzaPercorso", LunghezzaPercorso);
+            command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "INSERT INTO percorso (IDpercorso, Difficolta, NumTappe, LunghezzaPercorso, IDsede) " +
+                "VALUES (@IDpercorso, @Difficolta, @NumTappe, @LunghezzaPercorso, @IDsede)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+        }
         public bool InserisciPercorso(String IDpercorso, String Difficolta, int NumTappe, float LunghezzaPercorso, String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -131,14 +153,14 @@ namespace DatabaseProject
                 return false;
             }
         }
-        public bool InserisciSequenza(String IDtappa, int Indice, String IDpercorso)
+        public bool InserisciSequenza(String IDtappa, String IDpercorso)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDtappa", IDtappa);
-            command.Parameters.AddWithValue("@Indice", Indice);
+            //command.Parameters.AddWithValue("@Indice", Indice);
             command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
             command.CommandText = "INSERT INTO sequenza (IDtappa, Indice, IDpercorso) " +
-                "VALUES (@IDtappa, @Indice, @IDpercorso)";
+                "VALUES (@IDtappa, (SELECT 1+COUNT(*) FROM Sequenze WHERE IDPercorso = @IDpercorso), @IDpercorso)";
             try
             {
                 if (command.ExecuteNonQuery() > 0) return true;
