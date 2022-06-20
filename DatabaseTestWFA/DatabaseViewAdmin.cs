@@ -50,10 +50,10 @@ namespace DatabaseProject
 
             connection.Connection.Close();
 
-            this.Nome.ForeColor = Color.Gray;
-            this.Cognome.ForeColor = Color.Gray;
-            this.CodiceFiscale.ForeColor = Color.Gray;
-            this.Telefono.ForeColor = Color.Gray;
+            this.Clienti_Nome.ForeColor = Color.Gray;
+            this.Clienti_Cognome.ForeColor = Color.Gray;
+            this.Clienti_CF.ForeColor = Color.Gray;
+            this.Clienti_Telefono.ForeColor = Color.Gray;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace DatabaseProject
 
                 try
                 {
-                    var result = queries.InserisciCliente(this.Nome.Text, this.Cognome.Text, this.CodiceFiscale.Text, this.Telefono.Text);
+                    var result = queries.InserisciCliente(this.Clienti_Nome.Text, this.Clienti_Cognome.Text, this.Clienti_CF.Text, this.Clienti_Telefono.Text);
                     if (result)
                     {
                         MessageBox.Show("Cliente inserito correttamente",
@@ -137,82 +137,97 @@ namespace DatabaseProject
 
         private void Nome_Enter(object sender, EventArgs e)
         {
-            if (this.Nome.Text.Equals("Nome"))
+            if (this.Clienti_Nome.Text.Equals("Nome"))
             {
-                this.Nome.Text = "";
+                this.Clienti_Nome.Text = "";
             }
-            this.Nome.ForeColor = Color.Black;
+            this.Clienti_Nome.ForeColor = Color.Black;
             this.nome = true;
         }
 
         private void Nome_Leave(object sender, EventArgs e)
         {
-            if (this.Nome.Text.Equals(""))
+            if (this.Clienti_Nome.Text.Equals(""))
             {
-                this.Nome.Text = "Nome";
-                this.Nome.ForeColor = Color.Gray;
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
                 this.nome = false;
             }
         }
 
         private void Cognome_Enter(object sender, EventArgs e)
         {
-            if (this.Cognome.Text.Equals("Cognome"))
+            if (this.Clienti_Cognome.Text.Equals("Cognome"))
             {
-                this.Cognome.Text = "";
+                this.Clienti_Cognome.Text = "";
             }
-            this.Cognome.ForeColor = Color.Black;
+            this.Clienti_Cognome.ForeColor = Color.Black;
             this.cognome = true;
         }
 
         private void Cognome_Leave(object sender, EventArgs e)
         {
-            if (this.Cognome.Text.Equals(""))
+            if (this.Clienti_Cognome.Text.Equals(""))
             {
-                this.Cognome.Text = "Cognome";
-                this.Cognome.ForeColor = Color.Gray;
+                this.Clienti_Cognome.Text = "Cognome";
+                this.Clienti_Cognome.ForeColor = Color.Gray;
                 this.cognome = false;
             }
         }
 
         private void CodiceFiscale_Enter(object sender, EventArgs e)
         {
-            if (this.CodiceFiscale.Text.Equals("Codice Fiscale"))
+            if (this.Clienti_CF.Text.Equals("Codice Fiscale"))
             {
-                this.CodiceFiscale.Text = "";
+                this.Clienti_CF.Text = "";
             }
-            this.CodiceFiscale.ForeColor = Color.Black;
+            this.Clienti_CF.ForeColor = Color.Black;
             this.CF = true;
         }
 
         private void CodiceFiscale_Leave(object sender, EventArgs e)
         {
-            if (this.CodiceFiscale.Text.Equals(""))
+            if (this.Clienti_CF.Text.Equals(""))
             {
-                this.CodiceFiscale.Text = "Codice Fiscale";
-                this.CodiceFiscale.ForeColor = Color.Gray;
+                this.Clienti_CF.Text = "Codice Fiscale";
+                this.Clienti_CF.ForeColor = Color.Gray;
                 this.CF = false;
             }
         }
 
         private void Telefono_Enter(object sender, EventArgs e)
         {
-            if (this.Telefono.Text.Equals("Numero di Telefono"))
+            if (this.Clienti_Telefono.Text.Equals("Numero di Telefono"))
             {
-                this.Telefono.Text = "";
+                this.Clienti_Telefono.Text = "";
             }
-            this.Telefono.ForeColor = Color.Black;
+            this.Clienti_Telefono.ForeColor = Color.Black;
             this.telefono = true;
         }
 
         private void Telefono_Leave(object sender, EventArgs e)
         {
-            if (this.Telefono.Text.Equals(""))
+            if (this.Clienti_Telefono.Text.Equals(""))
             {
-                this.Telefono.Text = "Numero di Telefono";
-                this.Telefono.ForeColor = Color.Gray;
+                this.Clienti_Telefono.Text = "Numero di Telefono";
+                this.Clienti_Telefono.ForeColor = Color.Gray;
                 this.telefono = false;
             }
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Percorsi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
