@@ -515,7 +515,7 @@ namespace DatabaseProject
         public MySqlCommand LeggiIndirizzi()
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM insirizzo";
+            command.CommandText = "SELECT * FROM indirizzo";
             return command;
         }
         public MySqlCommand LeggiIndirizzi(String IDindirizzo)
@@ -595,15 +595,15 @@ namespace DatabaseProject
         public MySqlCommand LeggiPeriodoMedioPrenotazioneAccessori(String PIVA)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataInizio, V.DataFine) AS float)) AS PeriodoMedioAccessori "+
-                "FROM Servizi V, Sede S WHERE S.PIVAagenzia = " + Convert(PIVA)+" AND V.TipoServizio = 'Noleggio_Accessori' AND S.IDsede = V.IDsede GROUP BY IDSede";
+            command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioAccessori "+
+                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA)+" AND V.TipoServizio = 'Noleggio_Accessori' AND S.IDsede = V.IDsede GROUP BY IDSede";
             return command;
         }
         public MySqlCommand LeggiPeriodoMedioPrenotazioneBici()
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataInizio, V.DataFine) AS float)) AS PeriodoMedioBici "+
-                "FROM Servizi V, Sede S WHERE S.PIVAagenzia = " + Convert(PIVA)+" AND V.TipoServizio = 'Noleggio_Bici' AND S.IDsede = V.IDsede GROUP BY IDSede";
+            command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioBici "+
+                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA)+" AND V.TipoServizio = 'Noleggio_Bici' AND S.IDsede = V.IDsede GROUP BY IDSede";
             return command;
         }
         public MySqlCommand LeggiPrenotazioni()
