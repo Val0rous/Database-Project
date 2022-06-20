@@ -22,17 +22,6 @@ namespace DatabaseProject
             this.PIVAagenzia = PIVAagenzia;
             this.IDsede = IDsede;
             InitializeComponent();
-            
-            var connection = new CreateConnection();
-            var queries = new QueryLibrary(connection.Connection);
-
-            FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
-            FillTable(TabellaMagazzini, queries.LeggiMagazzini(this.IDsede).CommandText, connection.Connection);
-            FillTable(TabellaTour, queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
-            FillTable(TabellaBusinessPartners, queries.LeggiBusinessPartner(this.PIVAagenzia).CommandText, connection.Connection);
-            FillTable(TabellaPercorsi, queries.LeggiPercorso(this.IDsede).CommandText, connection.Connection);
-            FillTable(TabellaClienti, queries.LeggiClienti().CommandText, connection.Connection);
-            FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
         }
 
         private void DatabaseViewAdmin_Load(object sender, EventArgs e)
@@ -43,6 +32,16 @@ namespace DatabaseProject
             // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet2.dipendente' table. You can move, or remove it, as needed.
             //this.dipendenteTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet2.dipendente);
 
+            var connection = new CreateConnection();
+            var queries = new QueryLibrary(connection.Connection);
+
+            FillTable(TabellaClienti, queries.LeggiClienti().CommandText, connection.Connection);
+            FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
+            FillTable(TabellaMagazzini, queries.LeggiMagazzini(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaPercorsi, queries.LeggiPercorso(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaBusinessPartners, queries.LeggiBusinessPartner(this.PIVAagenzia).CommandText, connection.Connection);
+            FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaTour, queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
@@ -85,6 +84,25 @@ namespace DatabaseProject
             var SBind = new BindingSource();
             SBind.DataSource = table;
             grid.DataSource = SBind;
+        }
+
+        private void RefreshAll(object sender, EventArgs e)
+        {
+            this.DatabaseViewAdmin_Load(sender, e);
+            TabellaClienti.Update();
+            TabellaClienti.Refresh();
+            TabellaPrenotazioni.Update();
+            TabellaPrenotazioni.Refresh();
+            TabellaMagazzini.Update();
+            TabellaMagazzini.Refresh();
+            TabellaPercorsi.Update();
+            TabellaPercorsi.Refresh();
+            TabellaBusinessPartners.Update();
+            TabellaBusinessPartners.Refresh();
+            TabellaDipendenti.Update();
+            TabellaDipendenti.Refresh();
+            TabellaTour.Update();
+            TabellaTour.Refresh();
         }
     }
 }
