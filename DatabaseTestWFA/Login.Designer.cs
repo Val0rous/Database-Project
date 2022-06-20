@@ -96,6 +96,7 @@ namespace DatabaseProject
             this.Name = "Login";
             this.ShowInTaskbar = false;
             this.Text = "Agenzia di Cicloturismo";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
