@@ -156,10 +156,6 @@ namespace DatabaseProject
             {
                 return false;
             }
-            catch (Exception)
-            {
-                return false;
-            }
         }
         public bool InserisciDipendente(String Nome, String Cognome, String CF, String Recapito, String CodiceDipendente, float Stipendio, byte isGuida, byte isTourManager, byte isAltro, String IDsede)
         {

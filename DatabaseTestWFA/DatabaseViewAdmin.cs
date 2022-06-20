@@ -37,6 +37,7 @@ namespace DatabaseProject
             //this.dipendenteTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet2.dipendente);
 
             var connection = new CreateConnection();
+            connection.Connection.Open();
             var queries = new QueryLibrary(connection.Connection);
 
             FillTable(TabellaClienti, queries.LeggiClienti().CommandText, connection.Connection);
@@ -46,6 +47,8 @@ namespace DatabaseProject
             FillTable(TabellaBusinessPartners, queries.LeggiBusinessPartner(this.PIVAagenzia).CommandText, connection.Connection);
             FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
+
+            connection.Connection.Close();
 
             this.Nome.ForeColor = Color.Gray;
             this.Cognome.ForeColor = Color.Gray;
@@ -99,6 +102,7 @@ namespace DatabaseProject
             if (this.nome && this.cognome && this.CF && this.telefono)
             {
                 var connection = new CreateConnection();
+                connection.Connection.Open();
                 var queries = new QueryLibrary(connection.Connection);
 
                 try
@@ -120,6 +124,7 @@ namespace DatabaseProject
                     }
                 }
                 catch (Exception) { }
+                connection.Connection.Close();
             }
             else
             {

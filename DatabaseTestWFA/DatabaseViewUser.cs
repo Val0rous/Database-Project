@@ -40,12 +40,15 @@ namespace DatabaseProject
             //this.clienteTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet.cliente);
             
             var connection = new CreateConnection();
+            connection.Connection.Open();
             var queries = new QueryLibrary(connection.Connection);
 
             FillTable(TabellaClienti, queries.LeggiClienti().CommandText, connection.Connection);
             FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
             FillTable(TabellaPercorsi, queries.LeggiPercorso().CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour().CommandText, connection.Connection);
+
+            connection.Connection.Close();
         }
 
         private static void FillTable(DataGridView grid, string command, MySqlConnection connection)
