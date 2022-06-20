@@ -1432,5 +1432,10 @@ namespace DatabaseProject
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

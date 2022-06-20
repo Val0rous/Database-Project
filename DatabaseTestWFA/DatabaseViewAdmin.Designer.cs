@@ -40,61 +40,61 @@ namespace DatabaseProject
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.Tour = new System.Windows.Forms.TabPage();
-            this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.AggiungiTour = new System.Windows.Forms.Button();
+            this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.Dipendenti = new System.Windows.Forms.TabPage();
-            this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
-            this.Dipendenti_Nome = new System.Windows.Forms.TextBox();
-            this.Dipendenti_Cognome = new System.Windows.Forms.TextBox();
-            this.Dipendenti_CF = new System.Windows.Forms.TextBox();
-            this.Dipendenti_Telefono = new System.Windows.Forms.TextBox();
-            this.AggiungiDipendente = new System.Windows.Forms.Button();
-            this.Dipendenti_CodiceDipendente = new System.Windows.Forms.TextBox();
-            this.Dipendenti_Stipendio = new System.Windows.Forms.TextBox();
-            this.Dipendenti_IDsede = new System.Windows.Forms.TextBox();
-            this.Dipendenti_CFsuperiore = new System.Windows.Forms.TextBox();
-            this.Dipendente_isGuida = new System.Windows.Forms.CheckBox();
-            this.Dipendente_isTourManager = new System.Windows.Forms.CheckBox();
             this.Dipendente_isAltro = new System.Windows.Forms.CheckBox();
+            this.Dipendente_isTourManager = new System.Windows.Forms.CheckBox();
+            this.Dipendente_isGuida = new System.Windows.Forms.CheckBox();
+            this.Dipendenti_CFsuperiore = new System.Windows.Forms.TextBox();
+            this.Dipendenti_IDsede = new System.Windows.Forms.TextBox();
+            this.Dipendenti_Stipendio = new System.Windows.Forms.TextBox();
+            this.Dipendenti_CodiceDipendente = new System.Windows.Forms.TextBox();
+            this.Dipendenti_Telefono = new System.Windows.Forms.TextBox();
+            this.Dipendenti_CF = new System.Windows.Forms.TextBox();
+            this.Dipendenti_Cognome = new System.Windows.Forms.TextBox();
+            this.Dipendenti_Nome = new System.Windows.Forms.TextBox();
+            this.AggiungiDipendente = new System.Windows.Forms.Button();
+            this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
             this.Business_Partners = new System.Windows.Forms.TabPage();
-            this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.AggiungiBusinessPartner = new System.Windows.Forms.Button();
+            this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.Percorsi = new System.Windows.Forms.TabPage();
-            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
-            this.Percorsi_IDpercorso = new System.Windows.Forms.TextBox();
-            this.Percorsi_Difficolta = new System.Windows.Forms.TextBox();
-            this.Percorsi_NomePercorso = new System.Windows.Forms.TextBox();
-            this.Percorsi_NumTappe = new System.Windows.Forms.TextBox();
-            this.AggiungiPercorso = new System.Windows.Forms.Button();
-            this.Percorsi_LunghezzaPercorso = new System.Windows.Forms.TextBox();
-            this.Percorsi_IDsede = new System.Windows.Forms.TextBox();
-            this.Magazzini = new System.Windows.Forms.TabPage();
-            this.TabellaMagazzini = new System.Windows.Forms.DataGridView();
-            this.Magazzini_CapMaxAccessori = new System.Windows.Forms.TextBox();
-            this.Magazzini_CapMaxBici = new System.Windows.Forms.TextBox();
-            this.Magazzini_IDmagazzino = new System.Windows.Forms.TextBox();
-            this.Magazzini_IDindirizzo = new System.Windows.Forms.TextBox();
-            this.AggiungiMagazzino = new System.Windows.Forms.Button();
-            this.Magazzini_IDsede = new System.Windows.Forms.TextBox();
-            this.Prenotazioni = new System.Windows.Forms.TabPage();
-            this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
-            this.Prenotazioni_CFcliente = new System.Windows.Forms.TextBox();
-            this.Prenotazioni_IDtour = new System.Windows.Forms.TextBox();
-            this.AggiungiPrenotazione = new System.Windows.Forms.Button();
-            this.Clienti = new System.Windows.Forms.TabPage();
-            this.Clienti_Nome = new System.Windows.Forms.TextBox();
-            this.Clienti_Cognome = new System.Windows.Forms.TextBox();
-            this.Clienti_CF = new System.Windows.Forms.TextBox();
-            this.Clienti_Telefono = new System.Windows.Forms.TextBox();
-            this.AggiungiCliente = new System.Windows.Forms.Button();
-            this.TabellaClienti = new System.Windows.Forms.DataGridView();
-            this.TabPage = new System.Windows.Forms.TabControl();
-            this.NuovaTappa_Inizio = new System.Windows.Forms.TextBox();
-            this.NuovaTappa_Fine = new System.Windows.Forms.TextBox();
-            this.NuovaTappa_Lunghezza = new System.Windows.Forms.TextBox();
-            this.NuovaTappa_IDtappa = new System.Windows.Forms.TextBox();
-            this.NuovaTappa_IDpercorso = new System.Windows.Forms.TextBox();
             this.AggiungiTappa = new System.Windows.Forms.Button();
+            this.NuovaTappa_IDpercorso = new System.Windows.Forms.TextBox();
+            this.NuovaTappa_IDtappa = new System.Windows.Forms.TextBox();
+            this.NuovaTappa_Lunghezza = new System.Windows.Forms.TextBox();
+            this.NuovaTappa_Fine = new System.Windows.Forms.TextBox();
+            this.NuovaTappa_Inizio = new System.Windows.Forms.TextBox();
+            this.Percorsi_IDsede = new System.Windows.Forms.TextBox();
+            this.Percorsi_LunghezzaPercorso = new System.Windows.Forms.TextBox();
+            this.Percorsi_NumTappe = new System.Windows.Forms.TextBox();
+            this.Percorsi_NomePercorso = new System.Windows.Forms.TextBox();
+            this.Percorsi_Difficolta = new System.Windows.Forms.TextBox();
+            this.Percorsi_IDpercorso = new System.Windows.Forms.TextBox();
+            this.AggiungiPercorso = new System.Windows.Forms.Button();
+            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
+            this.Magazzini = new System.Windows.Forms.TabPage();
+            this.Magazzini_IDsede = new System.Windows.Forms.TextBox();
+            this.Magazzini_IDindirizzo = new System.Windows.Forms.TextBox();
+            this.Magazzini_IDmagazzino = new System.Windows.Forms.TextBox();
+            this.Magazzini_CapMaxBici = new System.Windows.Forms.TextBox();
+            this.Magazzini_CapMaxAccessori = new System.Windows.Forms.TextBox();
+            this.AggiungiMagazzino = new System.Windows.Forms.Button();
+            this.TabellaMagazzini = new System.Windows.Forms.DataGridView();
+            this.Prenotazioni = new System.Windows.Forms.TabPage();
+            this.AggiungiPrenotazione = new System.Windows.Forms.Button();
+            this.Prenotazioni_IDtour = new System.Windows.Forms.TextBox();
+            this.Prenotazioni_CFcliente = new System.Windows.Forms.TextBox();
+            this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
+            this.Clienti = new System.Windows.Forms.TabPage();
+            this.TabellaClienti = new System.Windows.Forms.DataGridView();
+            this.AggiungiCliente = new System.Windows.Forms.Button();
+            this.Clienti_Telefono = new System.Windows.Forms.TextBox();
+            this.Clienti_CF = new System.Windows.Forms.TextBox();
+            this.Clienti_Cognome = new System.Windows.Forms.TextBox();
+            this.Clienti_Nome = new System.Windows.Forms.TextBox();
+            this.TabPage = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).BeginInit();
@@ -178,6 +178,16 @@ namespace DatabaseProject
             this.Tour.Text = "Tour";
             this.Tour.UseVisualStyleBackColor = true;
             // 
+            // AggiungiTour
+            // 
+            this.AggiungiTour.Location = new System.Drawing.Point(6, 232);
+            this.AggiungiTour.Name = "AggiungiTour";
+            this.AggiungiTour.Size = new System.Drawing.Size(178, 35);
+            this.AggiungiTour.TabIndex = 9;
+            this.AggiungiTour.Text = "Aggiungi Tour";
+            this.AggiungiTour.UseVisualStyleBackColor = true;
+            this.AggiungiTour.Click += new System.EventHandler(this.AggiungiTour_Click);
+            // 
             // TabellaTour
             // 
             this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -188,16 +198,6 @@ namespace DatabaseProject
             this.TabellaTour.RowTemplate.Height = 24;
             this.TabellaTour.Size = new System.Drawing.Size(755, 486);
             this.TabellaTour.TabIndex = 0;
-            // 
-            // AggiungiTour
-            // 
-            this.AggiungiTour.Location = new System.Drawing.Point(6, 232);
-            this.AggiungiTour.Name = "AggiungiTour";
-            this.AggiungiTour.Size = new System.Drawing.Size(178, 35);
-            this.AggiungiTour.TabIndex = 9;
-            this.AggiungiTour.Text = "Aggiungi Tour";
-            this.AggiungiTour.UseVisualStyleBackColor = true;
-            this.AggiungiTour.Click += new System.EventHandler(this.AggiungiTour_Click);
             // 
             // Dipendenti
             // 
@@ -223,106 +223,25 @@ namespace DatabaseProject
             this.Dipendenti.UseVisualStyleBackColor = true;
             this.Dipendenti.Click += new System.EventHandler(this.Dipendenti_Click);
             // 
-            // TabellaDipendenti
+            // Dipendente_isAltro
             // 
-            this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaDipendenti.Location = new System.Drawing.Point(190, 6);
-            this.TabellaDipendenti.Name = "TabellaDipendenti";
-            this.TabellaDipendenti.ReadOnly = true;
-            this.TabellaDipendenti.RowHeadersWidth = 51;
-            this.TabellaDipendenti.RowTemplate.Height = 24;
-            this.TabellaDipendenti.Size = new System.Drawing.Size(755, 486);
-            this.TabellaDipendenti.TabIndex = 0;
+            this.Dipendente_isAltro.AutoSize = true;
+            this.Dipendente_isAltro.Location = new System.Drawing.Point(7, 230);
+            this.Dipendente_isAltro.Name = "Dipendente_isAltro";
+            this.Dipendente_isAltro.Size = new System.Drawing.Size(59, 21);
+            this.Dipendente_isAltro.TabIndex = 21;
+            this.Dipendente_isAltro.Text = "Altro";
+            this.Dipendente_isAltro.UseVisualStyleBackColor = true;
             // 
-            // Dipendenti_Nome
+            // Dipendente_isTourManager
             // 
-            this.Dipendenti_Nome.Location = new System.Drawing.Point(6, 6);
-            this.Dipendenti_Nome.Name = "Dipendenti_Nome";
-            this.Dipendenti_Nome.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_Nome.TabIndex = 5;
-            this.Dipendenti_Nome.Text = "Nome";
-            this.Dipendenti_Nome.Enter += new System.EventHandler(this.Dipendenti_Nome_Enter);
-            this.Dipendenti_Nome.Leave += new System.EventHandler(this.Dipendenti_Nome_Leave);
-            // 
-            // Dipendenti_Cognome
-            // 
-            this.Dipendenti_Cognome.Location = new System.Drawing.Point(6, 34);
-            this.Dipendenti_Cognome.Name = "Dipendenti_Cognome";
-            this.Dipendenti_Cognome.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_Cognome.TabIndex = 6;
-            this.Dipendenti_Cognome.Text = "Cognome";
-            this.Dipendenti_Cognome.Enter += new System.EventHandler(this.Dipendenti_Cognome_Enter);
-            this.Dipendenti_Cognome.Leave += new System.EventHandler(this.Dipendenti_Cognome_Leave);
-            // 
-            // Dipendenti_CF
-            // 
-            this.Dipendenti_CF.Location = new System.Drawing.Point(6, 62);
-            this.Dipendenti_CF.Name = "Dipendenti_CF";
-            this.Dipendenti_CF.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_CF.TabIndex = 7;
-            this.Dipendenti_CF.Text = "Codice Fiscale";
-            this.Dipendenti_CF.Enter += new System.EventHandler(this.Dipendenti_CF_Enter);
-            this.Dipendenti_CF.Leave += new System.EventHandler(this.Dipendenti_CF_Leave);
-            // 
-            // Dipendenti_Telefono
-            // 
-            this.Dipendenti_Telefono.Location = new System.Drawing.Point(6, 91);
-            this.Dipendenti_Telefono.Name = "Dipendenti_Telefono";
-            this.Dipendenti_Telefono.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_Telefono.TabIndex = 8;
-            this.Dipendenti_Telefono.Text = "Numero di Telefono";
-            this.Dipendenti_Telefono.Enter += new System.EventHandler(this.Dipendenti_Telefono_Enter);
-            this.Dipendenti_Telefono.Leave += new System.EventHandler(this.Dipendenti_Telefono_Leave);
-            // 
-            // AggiungiDipendente
-            // 
-            this.AggiungiDipendente.Location = new System.Drawing.Point(3, 309);
-            this.AggiungiDipendente.Name = "AggiungiDipendente";
-            this.AggiungiDipendente.Size = new System.Drawing.Size(178, 47);
-            this.AggiungiDipendente.TabIndex = 9;
-            this.AggiungiDipendente.Text = "Aggiungi Dipendente";
-            this.AggiungiDipendente.UseVisualStyleBackColor = true;
-            this.AggiungiDipendente.Click += new System.EventHandler(this.AggiungiDipendente_Click);
-            // 
-            // Dipendenti_CodiceDipendente
-            // 
-            this.Dipendenti_CodiceDipendente.Location = new System.Drawing.Point(6, 119);
-            this.Dipendenti_CodiceDipendente.Name = "Dipendenti_CodiceDipendente";
-            this.Dipendenti_CodiceDipendente.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_CodiceDipendente.TabIndex = 10;
-            this.Dipendenti_CodiceDipendente.Text = "Codice Dipendente";
-            this.Dipendenti_CodiceDipendente.Enter += new System.EventHandler(this.Dipendenti_CodiceDipendente_Enter);
-            this.Dipendenti_CodiceDipendente.Leave += new System.EventHandler(this.Dipendenti_CodiceDipendente_Leave);
-            // 
-            // Dipendenti_Stipendio
-            // 
-            this.Dipendenti_Stipendio.Location = new System.Drawing.Point(6, 147);
-            this.Dipendenti_Stipendio.Name = "Dipendenti_Stipendio";
-            this.Dipendenti_Stipendio.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_Stipendio.TabIndex = 11;
-            this.Dipendenti_Stipendio.Text = "Stipendio";
-            this.Dipendenti_Stipendio.Enter += new System.EventHandler(this.Dipendenti_Stipendio_Enter);
-            this.Dipendenti_Stipendio.Leave += new System.EventHandler(this.Dipendenti_Stipendio_Leave);
-            // 
-            // Dipendenti_IDsede
-            // 
-            this.Dipendenti_IDsede.Location = new System.Drawing.Point(3, 253);
-            this.Dipendenti_IDsede.Name = "Dipendenti_IDsede";
-            this.Dipendenti_IDsede.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_IDsede.TabIndex = 16;
-            this.Dipendenti_IDsede.Text = "ID Sede";
-            this.Dipendenti_IDsede.Enter += new System.EventHandler(this.Dipendenti_IDsede_Enter);
-            this.Dipendenti_IDsede.Leave += new System.EventHandler(this.Dipendenti_IDsede_Leave);
-            // 
-            // Dipendenti_CFsuperiore
-            // 
-            this.Dipendenti_CFsuperiore.Location = new System.Drawing.Point(3, 281);
-            this.Dipendenti_CFsuperiore.Name = "Dipendenti_CFsuperiore";
-            this.Dipendenti_CFsuperiore.Size = new System.Drawing.Size(178, 22);
-            this.Dipendenti_CFsuperiore.TabIndex = 17;
-            this.Dipendenti_CFsuperiore.Text = "Cod. Fiscale del Superiore";
-            this.Dipendenti_CFsuperiore.Enter += new System.EventHandler(this.Dipendenti_CFsuperiore_Enter);
-            this.Dipendenti_CFsuperiore.Leave += new System.EventHandler(this.Dipendenti_CFsuperiore_Leave);
+            this.Dipendente_isTourManager.AutoSize = true;
+            this.Dipendente_isTourManager.Location = new System.Drawing.Point(7, 203);
+            this.Dipendente_isTourManager.Name = "Dipendente_isTourManager";
+            this.Dipendente_isTourManager.Size = new System.Drawing.Size(116, 21);
+            this.Dipendente_isTourManager.TabIndex = 20;
+            this.Dipendente_isTourManager.Text = "TourManager";
+            this.Dipendente_isTourManager.UseVisualStyleBackColor = true;
             // 
             // Dipendente_isGuida
             // 
@@ -335,25 +254,106 @@ namespace DatabaseProject
             this.Dipendente_isGuida.UseVisualStyleBackColor = true;
             this.Dipendente_isGuida.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // Dipendente_isTourManager
+            // Dipendenti_CFsuperiore
             // 
-            this.Dipendente_isTourManager.AutoSize = true;
-            this.Dipendente_isTourManager.Location = new System.Drawing.Point(7, 203);
-            this.Dipendente_isTourManager.Name = "Dipendente_isTourManager";
-            this.Dipendente_isTourManager.Size = new System.Drawing.Size(116, 21);
-            this.Dipendente_isTourManager.TabIndex = 20;
-            this.Dipendente_isTourManager.Text = "TourManager";
-            this.Dipendente_isTourManager.UseVisualStyleBackColor = true;
+            this.Dipendenti_CFsuperiore.Location = new System.Drawing.Point(3, 281);
+            this.Dipendenti_CFsuperiore.Name = "Dipendenti_CFsuperiore";
+            this.Dipendenti_CFsuperiore.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_CFsuperiore.TabIndex = 17;
+            this.Dipendenti_CFsuperiore.Text = "Cod. Fiscale del Superiore";
+            this.Dipendenti_CFsuperiore.Enter += new System.EventHandler(this.Dipendenti_CFsuperiore_Enter);
+            this.Dipendenti_CFsuperiore.Leave += new System.EventHandler(this.Dipendenti_CFsuperiore_Leave);
             // 
-            // Dipendente_isAltro
+            // Dipendenti_IDsede
             // 
-            this.Dipendente_isAltro.AutoSize = true;
-            this.Dipendente_isAltro.Location = new System.Drawing.Point(7, 230);
-            this.Dipendente_isAltro.Name = "Dipendente_isAltro";
-            this.Dipendente_isAltro.Size = new System.Drawing.Size(59, 21);
-            this.Dipendente_isAltro.TabIndex = 21;
-            this.Dipendente_isAltro.Text = "Altro";
-            this.Dipendente_isAltro.UseVisualStyleBackColor = true;
+            this.Dipendenti_IDsede.Location = new System.Drawing.Point(3, 253);
+            this.Dipendenti_IDsede.Name = "Dipendenti_IDsede";
+            this.Dipendenti_IDsede.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_IDsede.TabIndex = 16;
+            this.Dipendenti_IDsede.Text = "ID Sede";
+            this.Dipendenti_IDsede.Enter += new System.EventHandler(this.Dipendenti_IDsede_Enter);
+            this.Dipendenti_IDsede.Leave += new System.EventHandler(this.Dipendenti_IDsede_Leave);
+            // 
+            // Dipendenti_Stipendio
+            // 
+            this.Dipendenti_Stipendio.Location = new System.Drawing.Point(6, 147);
+            this.Dipendenti_Stipendio.Name = "Dipendenti_Stipendio";
+            this.Dipendenti_Stipendio.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_Stipendio.TabIndex = 11;
+            this.Dipendenti_Stipendio.Text = "Stipendio";
+            this.Dipendenti_Stipendio.Enter += new System.EventHandler(this.Dipendenti_Stipendio_Enter);
+            this.Dipendenti_Stipendio.Leave += new System.EventHandler(this.Dipendenti_Stipendio_Leave);
+            // 
+            // Dipendenti_CodiceDipendente
+            // 
+            this.Dipendenti_CodiceDipendente.Location = new System.Drawing.Point(6, 119);
+            this.Dipendenti_CodiceDipendente.Name = "Dipendenti_CodiceDipendente";
+            this.Dipendenti_CodiceDipendente.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_CodiceDipendente.TabIndex = 10;
+            this.Dipendenti_CodiceDipendente.Text = "Codice Dipendente";
+            this.Dipendenti_CodiceDipendente.Enter += new System.EventHandler(this.Dipendenti_CodiceDipendente_Enter);
+            this.Dipendenti_CodiceDipendente.Leave += new System.EventHandler(this.Dipendenti_CodiceDipendente_Leave);
+            // 
+            // Dipendenti_Telefono
+            // 
+            this.Dipendenti_Telefono.Location = new System.Drawing.Point(6, 91);
+            this.Dipendenti_Telefono.Name = "Dipendenti_Telefono";
+            this.Dipendenti_Telefono.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_Telefono.TabIndex = 8;
+            this.Dipendenti_Telefono.Text = "Numero di Telefono";
+            this.Dipendenti_Telefono.Enter += new System.EventHandler(this.Dipendenti_Telefono_Enter);
+            this.Dipendenti_Telefono.Leave += new System.EventHandler(this.Dipendenti_Telefono_Leave);
+            // 
+            // Dipendenti_CF
+            // 
+            this.Dipendenti_CF.Location = new System.Drawing.Point(6, 62);
+            this.Dipendenti_CF.Name = "Dipendenti_CF";
+            this.Dipendenti_CF.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_CF.TabIndex = 7;
+            this.Dipendenti_CF.Text = "Codice Fiscale";
+            this.Dipendenti_CF.Enter += new System.EventHandler(this.Dipendenti_CF_Enter);
+            this.Dipendenti_CF.Leave += new System.EventHandler(this.Dipendenti_CF_Leave);
+            // 
+            // Dipendenti_Cognome
+            // 
+            this.Dipendenti_Cognome.Location = new System.Drawing.Point(6, 34);
+            this.Dipendenti_Cognome.Name = "Dipendenti_Cognome";
+            this.Dipendenti_Cognome.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_Cognome.TabIndex = 6;
+            this.Dipendenti_Cognome.Text = "Cognome";
+            this.Dipendenti_Cognome.Enter += new System.EventHandler(this.Dipendenti_Cognome_Enter);
+            this.Dipendenti_Cognome.Leave += new System.EventHandler(this.Dipendenti_Cognome_Leave);
+            // 
+            // Dipendenti_Nome
+            // 
+            this.Dipendenti_Nome.Location = new System.Drawing.Point(6, 6);
+            this.Dipendenti_Nome.Name = "Dipendenti_Nome";
+            this.Dipendenti_Nome.Size = new System.Drawing.Size(178, 22);
+            this.Dipendenti_Nome.TabIndex = 5;
+            this.Dipendenti_Nome.Text = "Nome";
+            this.Dipendenti_Nome.Enter += new System.EventHandler(this.Dipendenti_Nome_Enter);
+            this.Dipendenti_Nome.Leave += new System.EventHandler(this.Dipendenti_Nome_Leave);
+            // 
+            // AggiungiDipendente
+            // 
+            this.AggiungiDipendente.Location = new System.Drawing.Point(3, 309);
+            this.AggiungiDipendente.Name = "AggiungiDipendente";
+            this.AggiungiDipendente.Size = new System.Drawing.Size(178, 47);
+            this.AggiungiDipendente.TabIndex = 9;
+            this.AggiungiDipendente.Text = "Aggiungi Dipendente";
+            this.AggiungiDipendente.UseVisualStyleBackColor = true;
+            this.AggiungiDipendente.Click += new System.EventHandler(this.AggiungiDipendente_Click);
+            // 
+            // TabellaDipendenti
+            // 
+            this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaDipendenti.Location = new System.Drawing.Point(190, 6);
+            this.TabellaDipendenti.Name = "TabellaDipendenti";
+            this.TabellaDipendenti.ReadOnly = true;
+            this.TabellaDipendenti.RowHeadersWidth = 51;
+            this.TabellaDipendenti.RowTemplate.Height = 24;
+            this.TabellaDipendenti.Size = new System.Drawing.Size(755, 486);
+            this.TabellaDipendenti.TabIndex = 0;
             // 
             // Business_Partners
             // 
@@ -367,6 +367,16 @@ namespace DatabaseProject
             this.Business_Partners.Text = "Business Partners";
             this.Business_Partners.UseVisualStyleBackColor = true;
             // 
+            // AggiungiBusinessPartner
+            // 
+            this.AggiungiBusinessPartner.Location = new System.Drawing.Point(3, 147);
+            this.AggiungiBusinessPartner.Name = "AggiungiBusinessPartner";
+            this.AggiungiBusinessPartner.Size = new System.Drawing.Size(178, 50);
+            this.AggiungiBusinessPartner.TabIndex = 9;
+            this.AggiungiBusinessPartner.Text = "Aggiungi Business Partner";
+            this.AggiungiBusinessPartner.UseVisualStyleBackColor = true;
+            this.AggiungiBusinessPartner.Click += new System.EventHandler(this.AggiungiBusinessPartner_Click);
+            // 
             // TabellaBusinessPartners
             // 
             this.TabellaBusinessPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -378,16 +388,6 @@ namespace DatabaseProject
             this.TabellaBusinessPartners.Size = new System.Drawing.Size(755, 483);
             this.TabellaBusinessPartners.TabIndex = 0;
             this.TabellaBusinessPartners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // AggiungiBusinessPartner
-            // 
-            this.AggiungiBusinessPartner.Location = new System.Drawing.Point(3, 147);
-            this.AggiungiBusinessPartner.Name = "AggiungiBusinessPartner";
-            this.AggiungiBusinessPartner.Size = new System.Drawing.Size(178, 50);
-            this.AggiungiBusinessPartner.TabIndex = 9;
-            this.AggiungiBusinessPartner.Text = "Aggiungi Business Partner";
-            this.AggiungiBusinessPartner.UseVisualStyleBackColor = true;
-            this.AggiungiBusinessPartner.Click += new System.EventHandler(this.AggiungiBusinessPartner_Click);
             // 
             // Percorsi
             // 
@@ -414,16 +414,115 @@ namespace DatabaseProject
             this.Percorsi.UseVisualStyleBackColor = true;
             this.Percorsi.Click += new System.EventHandler(this.Percorsi_Click);
             // 
-            // TabellaPercorsi
+            // AggiungiTappa
             // 
-            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaPercorsi.Location = new System.Drawing.Point(190, 6);
-            this.TabellaPercorsi.Name = "TabellaPercorsi";
-            this.TabellaPercorsi.ReadOnly = true;
-            this.TabellaPercorsi.RowHeadersWidth = 51;
-            this.TabellaPercorsi.RowTemplate.Height = 24;
-            this.TabellaPercorsi.Size = new System.Drawing.Size(755, 486);
-            this.TabellaPercorsi.TabIndex = 0;
+            this.AggiungiTappa.Location = new System.Drawing.Point(6, 356);
+            this.AggiungiTappa.Name = "AggiungiTappa";
+            this.AggiungiTappa.Size = new System.Drawing.Size(178, 35);
+            this.AggiungiTappa.TabIndex = 17;
+            this.AggiungiTappa.Text = "Aggiungi Tappa";
+            this.AggiungiTappa.UseVisualStyleBackColor = true;
+            this.AggiungiTappa.Click += new System.EventHandler(this.AggiungiTappa_Click_1);
+            // 
+            // NuovaTappa_IDpercorso
+            // 
+            this.NuovaTappa_IDpercorso.Location = new System.Drawing.Point(6, 328);
+            this.NuovaTappa_IDpercorso.Name = "NuovaTappa_IDpercorso";
+            this.NuovaTappa_IDpercorso.Size = new System.Drawing.Size(178, 22);
+            this.NuovaTappa_IDpercorso.TabIndex = 16;
+            this.NuovaTappa_IDpercorso.Text = "ID Percorso";
+            this.NuovaTappa_IDpercorso.Enter += new System.EventHandler(this.NuovaTappa_IDpercorso_Enter);
+            this.NuovaTappa_IDpercorso.Leave += new System.EventHandler(this.NuovaTappa_IDpercorso_Leave);
+            // 
+            // NuovaTappa_IDtappa
+            // 
+            this.NuovaTappa_IDtappa.Location = new System.Drawing.Point(6, 300);
+            this.NuovaTappa_IDtappa.Name = "NuovaTappa_IDtappa";
+            this.NuovaTappa_IDtappa.Size = new System.Drawing.Size(178, 22);
+            this.NuovaTappa_IDtappa.TabIndex = 15;
+            this.NuovaTappa_IDtappa.Text = "ID Tappa";
+            this.NuovaTappa_IDtappa.Enter += new System.EventHandler(this.NuovaTappa_IDtappa_Enter);
+            this.NuovaTappa_IDtappa.Leave += new System.EventHandler(this.NuovaTappa_IDtappa_Leave);
+            // 
+            // NuovaTappa_Lunghezza
+            // 
+            this.NuovaTappa_Lunghezza.Location = new System.Drawing.Point(6, 272);
+            this.NuovaTappa_Lunghezza.Name = "NuovaTappa_Lunghezza";
+            this.NuovaTappa_Lunghezza.Size = new System.Drawing.Size(178, 22);
+            this.NuovaTappa_Lunghezza.TabIndex = 14;
+            this.NuovaTappa_Lunghezza.Text = "Lunghezza Tappa";
+            this.NuovaTappa_Lunghezza.Enter += new System.EventHandler(this.NuovaTappa_Lunghezza_Enter);
+            this.NuovaTappa_Lunghezza.Leave += new System.EventHandler(this.NuovaTappa_Lunghezza_Leave);
+            // 
+            // NuovaTappa_Fine
+            // 
+            this.NuovaTappa_Fine.Location = new System.Drawing.Point(6, 244);
+            this.NuovaTappa_Fine.Name = "NuovaTappa_Fine";
+            this.NuovaTappa_Fine.Size = new System.Drawing.Size(178, 22);
+            this.NuovaTappa_Fine.TabIndex = 13;
+            this.NuovaTappa_Fine.Text = "Fine";
+            this.NuovaTappa_Fine.Enter += new System.EventHandler(this.NuovaTappa_Fine_Enter);
+            this.NuovaTappa_Fine.Leave += new System.EventHandler(this.NuovaTappa_Fine_Leave);
+            // 
+            // NuovaTappa_Inizio
+            // 
+            this.NuovaTappa_Inizio.Location = new System.Drawing.Point(6, 216);
+            this.NuovaTappa_Inizio.Name = "NuovaTappa_Inizio";
+            this.NuovaTappa_Inizio.Size = new System.Drawing.Size(178, 22);
+            this.NuovaTappa_Inizio.TabIndex = 12;
+            this.NuovaTappa_Inizio.Text = "Inizio";
+            this.NuovaTappa_Inizio.Enter += new System.EventHandler(this.NuovaTappa_Inizio_Enter);
+            this.NuovaTappa_Inizio.Leave += new System.EventHandler(this.NuovaTappa_Inizio_Leave);
+            // 
+            // Percorsi_IDsede
+            // 
+            this.Percorsi_IDsede.Location = new System.Drawing.Point(6, 147);
+            this.Percorsi_IDsede.Name = "Percorsi_IDsede";
+            this.Percorsi_IDsede.Size = new System.Drawing.Size(178, 22);
+            this.Percorsi_IDsede.TabIndex = 11;
+            this.Percorsi_IDsede.Text = "ID Sede";
+            this.Percorsi_IDsede.Enter += new System.EventHandler(this.Percorsi_IDsede_Enter);
+            this.Percorsi_IDsede.Leave += new System.EventHandler(this.Percorsi_IDsede_Leave);
+            // 
+            // Percorsi_LunghezzaPercorso
+            // 
+            this.Percorsi_LunghezzaPercorso.Location = new System.Drawing.Point(6, 119);
+            this.Percorsi_LunghezzaPercorso.Name = "Percorsi_LunghezzaPercorso";
+            this.Percorsi_LunghezzaPercorso.Size = new System.Drawing.Size(178, 22);
+            this.Percorsi_LunghezzaPercorso.TabIndex = 10;
+            this.Percorsi_LunghezzaPercorso.Text = "Lunghezza Percorso";
+            this.Percorsi_LunghezzaPercorso.Enter += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Enter);
+            this.Percorsi_LunghezzaPercorso.Leave += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Leave);
+            // 
+            // Percorsi_NumTappe
+            // 
+            this.Percorsi_NumTappe.Location = new System.Drawing.Point(6, 91);
+            this.Percorsi_NumTappe.Name = "Percorsi_NumTappe";
+            this.Percorsi_NumTappe.Size = new System.Drawing.Size(178, 22);
+            this.Percorsi_NumTappe.TabIndex = 8;
+            this.Percorsi_NumTappe.Text = "Numero di Tappe";
+            this.Percorsi_NumTappe.Enter += new System.EventHandler(this.Percorsi_NumTappe_Enter);
+            this.Percorsi_NumTappe.Leave += new System.EventHandler(this.Percorsi_NumTappe_Leave);
+            // 
+            // Percorsi_NomePercorso
+            // 
+            this.Percorsi_NomePercorso.Location = new System.Drawing.Point(6, 62);
+            this.Percorsi_NomePercorso.Name = "Percorsi_NomePercorso";
+            this.Percorsi_NomePercorso.Size = new System.Drawing.Size(178, 22);
+            this.Percorsi_NomePercorso.TabIndex = 7;
+            this.Percorsi_NomePercorso.Text = "Nome";
+            this.Percorsi_NomePercorso.Enter += new System.EventHandler(this.Percorsi_NomePercorso_Enter);
+            this.Percorsi_NomePercorso.Leave += new System.EventHandler(this.Percorsi_NomePercorso_Leave);
+            // 
+            // Percorsi_Difficolta
+            // 
+            this.Percorsi_Difficolta.Location = new System.Drawing.Point(6, 34);
+            this.Percorsi_Difficolta.Name = "Percorsi_Difficolta";
+            this.Percorsi_Difficolta.Size = new System.Drawing.Size(178, 22);
+            this.Percorsi_Difficolta.TabIndex = 6;
+            this.Percorsi_Difficolta.Text = "Difficoltà";
+            this.Percorsi_Difficolta.Enter += new System.EventHandler(this.Percorsi_Difficolta_Enter);
+            this.Percorsi_Difficolta.Leave += new System.EventHandler(this.Percorsi_Difficolta_Leave);
             // 
             // Percorsi_IDpercorso
             // 
@@ -436,36 +535,6 @@ namespace DatabaseProject
             this.Percorsi_IDpercorso.Enter += new System.EventHandler(this.Percorsi_IDpercorso_Enter);
             this.Percorsi_IDpercorso.Leave += new System.EventHandler(this.Percorsi_IDpercorso_Leave);
             // 
-            // Percorsi_Difficolta
-            // 
-            this.Percorsi_Difficolta.Location = new System.Drawing.Point(6, 34);
-            this.Percorsi_Difficolta.Name = "Percorsi_Difficolta";
-            this.Percorsi_Difficolta.Size = new System.Drawing.Size(178, 22);
-            this.Percorsi_Difficolta.TabIndex = 6;
-            this.Percorsi_Difficolta.Text = "Difficoltà";
-            this.Percorsi_Difficolta.Enter += new System.EventHandler(this.Percorsi_Difficolta_Enter);
-            this.Percorsi_Difficolta.Leave += new System.EventHandler(this.Percorsi_Difficolta_Leave);
-            // 
-            // Percorsi_NomePercorso
-            // 
-            this.Percorsi_NomePercorso.Location = new System.Drawing.Point(6, 62);
-            this.Percorsi_NomePercorso.Name = "Percorsi_NomePercorso";
-            this.Percorsi_NomePercorso.Size = new System.Drawing.Size(178, 22);
-            this.Percorsi_NomePercorso.TabIndex = 7;
-            this.Percorsi_NomePercorso.Text = "Nome";
-            this.Percorsi_NomePercorso.Enter += new System.EventHandler(this.Percorsi_NomePercorso_Enter);
-            this.Percorsi_NomePercorso.Leave += new System.EventHandler(this.Percorsi_NomePercorso_Leave);
-            // 
-            // Percorsi_NumTappe
-            // 
-            this.Percorsi_NumTappe.Location = new System.Drawing.Point(6, 91);
-            this.Percorsi_NumTappe.Name = "Percorsi_NumTappe";
-            this.Percorsi_NumTappe.Size = new System.Drawing.Size(178, 22);
-            this.Percorsi_NumTappe.TabIndex = 8;
-            this.Percorsi_NumTappe.Text = "Numero di Tappe";
-            this.Percorsi_NumTappe.Enter += new System.EventHandler(this.Percorsi_NumTappe_Enter);
-            this.Percorsi_NumTappe.Leave += new System.EventHandler(this.Percorsi_NumTappe_Leave);
-            // 
             // AggiungiPercorso
             // 
             this.AggiungiPercorso.Location = new System.Drawing.Point(6, 175);
@@ -476,25 +545,16 @@ namespace DatabaseProject
             this.AggiungiPercorso.UseVisualStyleBackColor = true;
             this.AggiungiPercorso.Click += new System.EventHandler(this.AggiungiPercorso_Click);
             // 
-            // Percorsi_LunghezzaPercorso
+            // TabellaPercorsi
             // 
-            this.Percorsi_LunghezzaPercorso.Location = new System.Drawing.Point(6, 119);
-            this.Percorsi_LunghezzaPercorso.Name = "Percorsi_LunghezzaPercorso";
-            this.Percorsi_LunghezzaPercorso.Size = new System.Drawing.Size(178, 22);
-            this.Percorsi_LunghezzaPercorso.TabIndex = 10;
-            this.Percorsi_LunghezzaPercorso.Text = "Lunghezza Percorso";
-            this.Percorsi_LunghezzaPercorso.Enter += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Enter);
-            this.Percorsi_LunghezzaPercorso.Leave += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Leave);
-            // 
-            // Percorsi_IDsede
-            // 
-            this.Percorsi_IDsede.Location = new System.Drawing.Point(6, 147);
-            this.Percorsi_IDsede.Name = "Percorsi_IDsede";
-            this.Percorsi_IDsede.Size = new System.Drawing.Size(178, 22);
-            this.Percorsi_IDsede.TabIndex = 11;
-            this.Percorsi_IDsede.Text = "ID Sede";
-            this.Percorsi_IDsede.Enter += new System.EventHandler(this.Percorsi_IDsede_Enter);
-            this.Percorsi_IDsede.Leave += new System.EventHandler(this.Percorsi_IDsede_Leave);
+            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPercorsi.Location = new System.Drawing.Point(190, 6);
+            this.TabellaPercorsi.Name = "TabellaPercorsi";
+            this.TabellaPercorsi.ReadOnly = true;
+            this.TabellaPercorsi.RowHeadersWidth = 51;
+            this.TabellaPercorsi.RowTemplate.Height = 24;
+            this.TabellaPercorsi.Size = new System.Drawing.Size(755, 486);
+            this.TabellaPercorsi.TabIndex = 0;
             // 
             // Magazzini
             // 
@@ -513,46 +573,15 @@ namespace DatabaseProject
             this.Magazzini.Text = "Magazzini";
             this.Magazzini.UseVisualStyleBackColor = true;
             // 
-            // TabellaMagazzini
+            // Magazzini_IDsede
             // 
-            this.TabellaMagazzini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaMagazzini.Location = new System.Drawing.Point(190, 6);
-            this.TabellaMagazzini.Name = "TabellaMagazzini";
-            this.TabellaMagazzini.ReadOnly = true;
-            this.TabellaMagazzini.RowHeadersWidth = 51;
-            this.TabellaMagazzini.RowTemplate.Height = 24;
-            this.TabellaMagazzini.Size = new System.Drawing.Size(755, 483);
-            this.TabellaMagazzini.TabIndex = 0;
-            // 
-            // Magazzini_CapMaxAccessori
-            // 
-            this.Magazzini_CapMaxAccessori.Location = new System.Drawing.Point(6, 6);
-            this.Magazzini_CapMaxAccessori.Name = "Magazzini_CapMaxAccessori";
-            this.Magazzini_CapMaxAccessori.Size = new System.Drawing.Size(178, 22);
-            this.Magazzini_CapMaxAccessori.TabIndex = 5;
-            this.Magazzini_CapMaxAccessori.Text = "Capienza Max Accessori";
-            this.Magazzini_CapMaxAccessori.Enter += new System.EventHandler(this.Magazzini_CapMaxAccessori_Enter);
-            this.Magazzini_CapMaxAccessori.Leave += new System.EventHandler(this.Magazzini_CapMaxAccessori_Leave);
-            // 
-            // Magazzini_CapMaxBici
-            // 
-            this.Magazzini_CapMaxBici.Location = new System.Drawing.Point(6, 34);
-            this.Magazzini_CapMaxBici.Name = "Magazzini_CapMaxBici";
-            this.Magazzini_CapMaxBici.Size = new System.Drawing.Size(178, 22);
-            this.Magazzini_CapMaxBici.TabIndex = 6;
-            this.Magazzini_CapMaxBici.Text = "Capienza Max Bici";
-            this.Magazzini_CapMaxBici.Enter += new System.EventHandler(this.Magazzini_CapMaxBici_Enter);
-            this.Magazzini_CapMaxBici.Leave += new System.EventHandler(this.Magazzini_CapMaxBici_Leave);
-            // 
-            // Magazzini_IDmagazzino
-            // 
-            this.Magazzini_IDmagazzino.Location = new System.Drawing.Point(6, 62);
-            this.Magazzini_IDmagazzino.Name = "Magazzini_IDmagazzino";
-            this.Magazzini_IDmagazzino.Size = new System.Drawing.Size(178, 22);
-            this.Magazzini_IDmagazzino.TabIndex = 7;
-            this.Magazzini_IDmagazzino.Text = "ID Magazzino";
-            this.Magazzini_IDmagazzino.Enter += new System.EventHandler(this.Magazzini_IDmagazzino_Enter);
-            this.Magazzini_IDmagazzino.Leave += new System.EventHandler(this.Magazzini_IDmagazzino_Leave);
+            this.Magazzini_IDsede.Location = new System.Drawing.Point(6, 119);
+            this.Magazzini_IDsede.Name = "Magazzini_IDsede";
+            this.Magazzini_IDsede.Size = new System.Drawing.Size(178, 22);
+            this.Magazzini_IDsede.TabIndex = 10;
+            this.Magazzini_IDsede.Text = "ID Sede";
+            this.Magazzini_IDsede.Enter += new System.EventHandler(this.Magazzini_IDsede_Enter);
+            this.Magazzini_IDsede.Leave += new System.EventHandler(this.Magazzini_IDsede_Leave);
             // 
             // Magazzini_IDindirizzo
             // 
@@ -564,6 +593,36 @@ namespace DatabaseProject
             this.Magazzini_IDindirizzo.Enter += new System.EventHandler(this.Magazzini_IDindirizzo_Enter);
             this.Magazzini_IDindirizzo.Leave += new System.EventHandler(this.Magazzini_IDindirizzo_Leave);
             // 
+            // Magazzini_IDmagazzino
+            // 
+            this.Magazzini_IDmagazzino.Location = new System.Drawing.Point(6, 62);
+            this.Magazzini_IDmagazzino.Name = "Magazzini_IDmagazzino";
+            this.Magazzini_IDmagazzino.Size = new System.Drawing.Size(178, 22);
+            this.Magazzini_IDmagazzino.TabIndex = 7;
+            this.Magazzini_IDmagazzino.Text = "ID Magazzino";
+            this.Magazzini_IDmagazzino.Enter += new System.EventHandler(this.Magazzini_IDmagazzino_Enter);
+            this.Magazzini_IDmagazzino.Leave += new System.EventHandler(this.Magazzini_IDmagazzino_Leave);
+            // 
+            // Magazzini_CapMaxBici
+            // 
+            this.Magazzini_CapMaxBici.Location = new System.Drawing.Point(6, 34);
+            this.Magazzini_CapMaxBici.Name = "Magazzini_CapMaxBici";
+            this.Magazzini_CapMaxBici.Size = new System.Drawing.Size(178, 22);
+            this.Magazzini_CapMaxBici.TabIndex = 6;
+            this.Magazzini_CapMaxBici.Text = "Capienza Max Bici";
+            this.Magazzini_CapMaxBici.Enter += new System.EventHandler(this.Magazzini_CapMaxBici_Enter);
+            this.Magazzini_CapMaxBici.Leave += new System.EventHandler(this.Magazzini_CapMaxBici_Leave);
+            // 
+            // Magazzini_CapMaxAccessori
+            // 
+            this.Magazzini_CapMaxAccessori.Location = new System.Drawing.Point(6, 6);
+            this.Magazzini_CapMaxAccessori.Name = "Magazzini_CapMaxAccessori";
+            this.Magazzini_CapMaxAccessori.Size = new System.Drawing.Size(178, 22);
+            this.Magazzini_CapMaxAccessori.TabIndex = 5;
+            this.Magazzini_CapMaxAccessori.Text = "Capienza Max Accessori";
+            this.Magazzini_CapMaxAccessori.Enter += new System.EventHandler(this.Magazzini_CapMaxAccessori_Enter);
+            this.Magazzini_CapMaxAccessori.Leave += new System.EventHandler(this.Magazzini_CapMaxAccessori_Leave);
+            // 
             // AggiungiMagazzino
             // 
             this.AggiungiMagazzino.Location = new System.Drawing.Point(6, 147);
@@ -574,15 +633,16 @@ namespace DatabaseProject
             this.AggiungiMagazzino.UseVisualStyleBackColor = true;
             this.AggiungiMagazzino.Click += new System.EventHandler(this.AggiungiMagazzino_Click);
             // 
-            // Magazzini_IDsede
+            // TabellaMagazzini
             // 
-            this.Magazzini_IDsede.Location = new System.Drawing.Point(6, 119);
-            this.Magazzini_IDsede.Name = "Magazzini_IDsede";
-            this.Magazzini_IDsede.Size = new System.Drawing.Size(178, 22);
-            this.Magazzini_IDsede.TabIndex = 10;
-            this.Magazzini_IDsede.Text = "ID Sede";
-            this.Magazzini_IDsede.Enter += new System.EventHandler(this.Magazzini_IDsede_Enter);
-            this.Magazzini_IDsede.Leave += new System.EventHandler(this.Magazzini_IDsede_Leave);
+            this.TabellaMagazzini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaMagazzini.Location = new System.Drawing.Point(190, 6);
+            this.TabellaMagazzini.Name = "TabellaMagazzini";
+            this.TabellaMagazzini.ReadOnly = true;
+            this.TabellaMagazzini.RowHeadersWidth = 51;
+            this.TabellaMagazzini.RowTemplate.Height = 24;
+            this.TabellaMagazzini.Size = new System.Drawing.Size(755, 483);
+            this.TabellaMagazzini.TabIndex = 0;
             // 
             // Prenotazioni
             // 
@@ -598,26 +658,15 @@ namespace DatabaseProject
             this.Prenotazioni.Text = "Prenotazioni";
             this.Prenotazioni.UseVisualStyleBackColor = true;
             // 
-            // TabellaPrenotazioni
+            // AggiungiPrenotazione
             // 
-            this.TabellaPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaPrenotazioni.Location = new System.Drawing.Point(190, 6);
-            this.TabellaPrenotazioni.Name = "TabellaPrenotazioni";
-            this.TabellaPrenotazioni.ReadOnly = true;
-            this.TabellaPrenotazioni.RowHeadersWidth = 51;
-            this.TabellaPrenotazioni.RowTemplate.Height = 24;
-            this.TabellaPrenotazioni.Size = new System.Drawing.Size(755, 483);
-            this.TabellaPrenotazioni.TabIndex = 0;
-            // 
-            // Prenotazioni_CFcliente
-            // 
-            this.Prenotazioni_CFcliente.Location = new System.Drawing.Point(6, 6);
-            this.Prenotazioni_CFcliente.Name = "Prenotazioni_CFcliente";
-            this.Prenotazioni_CFcliente.Size = new System.Drawing.Size(178, 22);
-            this.Prenotazioni_CFcliente.TabIndex = 5;
-            this.Prenotazioni_CFcliente.Text = "Codice Fiscale Cliente";
-            this.Prenotazioni_CFcliente.Enter += new System.EventHandler(this.Prenotazioni_CFcliente_Enter);
-            this.Prenotazioni_CFcliente.Leave += new System.EventHandler(this.Prenotazioni_CFcliente_Leave);
+            this.AggiungiPrenotazione.Location = new System.Drawing.Point(6, 62);
+            this.AggiungiPrenotazione.Name = "AggiungiPrenotazione";
+            this.AggiungiPrenotazione.Size = new System.Drawing.Size(178, 34);
+            this.AggiungiPrenotazione.TabIndex = 9;
+            this.AggiungiPrenotazione.Text = "Aggiungi Prenotazione";
+            this.AggiungiPrenotazione.UseVisualStyleBackColor = true;
+            this.AggiungiPrenotazione.Click += new System.EventHandler(this.AggiungiPrenotazione_Click);
             // 
             // Prenotazioni_IDtour
             // 
@@ -629,15 +678,26 @@ namespace DatabaseProject
             this.Prenotazioni_IDtour.Enter += new System.EventHandler(this.Prenotazioni_IDtour_Enter);
             this.Prenotazioni_IDtour.Leave += new System.EventHandler(this.Prenotazioni_IDtour_Leave);
             // 
-            // AggiungiPrenotazione
+            // Prenotazioni_CFcliente
             // 
-            this.AggiungiPrenotazione.Location = new System.Drawing.Point(6, 62);
-            this.AggiungiPrenotazione.Name = "AggiungiPrenotazione";
-            this.AggiungiPrenotazione.Size = new System.Drawing.Size(178, 34);
-            this.AggiungiPrenotazione.TabIndex = 9;
-            this.AggiungiPrenotazione.Text = "Aggiungi Prenotazione";
-            this.AggiungiPrenotazione.UseVisualStyleBackColor = true;
-            this.AggiungiPrenotazione.Click += new System.EventHandler(this.AggiungiPrenotazione_Click);
+            this.Prenotazioni_CFcliente.Location = new System.Drawing.Point(6, 6);
+            this.Prenotazioni_CFcliente.Name = "Prenotazioni_CFcliente";
+            this.Prenotazioni_CFcliente.Size = new System.Drawing.Size(178, 22);
+            this.Prenotazioni_CFcliente.TabIndex = 5;
+            this.Prenotazioni_CFcliente.Text = "Codice Fiscale Cliente";
+            this.Prenotazioni_CFcliente.Enter += new System.EventHandler(this.Prenotazioni_CFcliente_Enter);
+            this.Prenotazioni_CFcliente.Leave += new System.EventHandler(this.Prenotazioni_CFcliente_Leave);
+            // 
+            // TabellaPrenotazioni
+            // 
+            this.TabellaPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPrenotazioni.Location = new System.Drawing.Point(190, 6);
+            this.TabellaPrenotazioni.Name = "TabellaPrenotazioni";
+            this.TabellaPrenotazioni.ReadOnly = true;
+            this.TabellaPrenotazioni.RowHeadersWidth = 51;
+            this.TabellaPrenotazioni.RowTemplate.Height = 24;
+            this.TabellaPrenotazioni.Size = new System.Drawing.Size(755, 483);
+            this.TabellaPrenotazioni.TabIndex = 0;
             // 
             // Clienti
             // 
@@ -655,45 +715,16 @@ namespace DatabaseProject
             this.Clienti.Text = "Clienti";
             this.Clienti.UseVisualStyleBackColor = true;
             // 
-            // Clienti_Nome
+            // TabellaClienti
             // 
-            this.Clienti_Nome.Location = new System.Drawing.Point(6, 6);
-            this.Clienti_Nome.Name = "Clienti_Nome";
-            this.Clienti_Nome.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_Nome.TabIndex = 0;
-            this.Clienti_Nome.Text = "Nome";
-            this.Clienti_Nome.Enter += new System.EventHandler(this.Nome_Enter);
-            this.Clienti_Nome.Leave += new System.EventHandler(this.Nome_Leave);
-            // 
-            // Clienti_Cognome
-            // 
-            this.Clienti_Cognome.Location = new System.Drawing.Point(6, 34);
-            this.Clienti_Cognome.Name = "Clienti_Cognome";
-            this.Clienti_Cognome.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_Cognome.TabIndex = 1;
-            this.Clienti_Cognome.Text = "Cognome";
-            this.Clienti_Cognome.Enter += new System.EventHandler(this.Cognome_Enter);
-            this.Clienti_Cognome.Leave += new System.EventHandler(this.Cognome_Leave);
-            // 
-            // Clienti_CF
-            // 
-            this.Clienti_CF.Location = new System.Drawing.Point(6, 62);
-            this.Clienti_CF.Name = "Clienti_CF";
-            this.Clienti_CF.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_CF.TabIndex = 2;
-            this.Clienti_CF.Text = "Codice Fiscale";
-            this.Clienti_CF.Enter += new System.EventHandler(this.CodiceFiscale_Enter);
-            this.Clienti_CF.Leave += new System.EventHandler(this.CodiceFiscale_Leave);
-            // 
-            // Clienti_Telefono
-            // 
-            this.Clienti_Telefono.Location = new System.Drawing.Point(6, 91);
-            this.Clienti_Telefono.Name = "Clienti_Telefono";
-            this.Clienti_Telefono.Size = new System.Drawing.Size(178, 22);
-            this.Clienti_Telefono.TabIndex = 3;
-            this.Clienti_Telefono.Text = "Numero di Telefono";
-            this.Clienti_Telefono.Enter += new System.EventHandler(this.Telefono_Enter);
-            this.Clienti_Telefono.Leave += new System.EventHandler(this.Telefono_Leave);
+            this.TabellaClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaClienti.Location = new System.Drawing.Point(190, 6);
+            this.TabellaClienti.Name = "TabellaClienti";
+            this.TabellaClienti.ReadOnly = true;
+            this.TabellaClienti.RowHeadersWidth = 51;
+            this.TabellaClienti.RowTemplate.Height = 24;
+            this.TabellaClienti.Size = new System.Drawing.Size(755, 483);
+            this.TabellaClienti.TabIndex = 5;
             // 
             // AggiungiCliente
             // 
@@ -705,16 +736,45 @@ namespace DatabaseProject
             this.AggiungiCliente.UseVisualStyleBackColor = true;
             this.AggiungiCliente.Click += new System.EventHandler(this.AggiungiCliente_Click);
             // 
-            // TabellaClienti
+            // Clienti_Telefono
             // 
-            this.TabellaClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaClienti.Location = new System.Drawing.Point(190, 6);
-            this.TabellaClienti.Name = "TabellaClienti";
-            this.TabellaClienti.ReadOnly = true;
-            this.TabellaClienti.RowHeadersWidth = 51;
-            this.TabellaClienti.RowTemplate.Height = 24;
-            this.TabellaClienti.Size = new System.Drawing.Size(755, 483);
-            this.TabellaClienti.TabIndex = 5;
+            this.Clienti_Telefono.Location = new System.Drawing.Point(6, 91);
+            this.Clienti_Telefono.Name = "Clienti_Telefono";
+            this.Clienti_Telefono.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_Telefono.TabIndex = 3;
+            this.Clienti_Telefono.Text = "Numero di Telefono";
+            this.Clienti_Telefono.Enter += new System.EventHandler(this.Telefono_Enter);
+            this.Clienti_Telefono.Leave += new System.EventHandler(this.Telefono_Leave);
+            // 
+            // Clienti_CF
+            // 
+            this.Clienti_CF.Location = new System.Drawing.Point(6, 62);
+            this.Clienti_CF.Name = "Clienti_CF";
+            this.Clienti_CF.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_CF.TabIndex = 2;
+            this.Clienti_CF.Text = "Codice Fiscale";
+            this.Clienti_CF.Enter += new System.EventHandler(this.CodiceFiscale_Enter);
+            this.Clienti_CF.Leave += new System.EventHandler(this.CodiceFiscale_Leave);
+            // 
+            // Clienti_Cognome
+            // 
+            this.Clienti_Cognome.Location = new System.Drawing.Point(6, 34);
+            this.Clienti_Cognome.Name = "Clienti_Cognome";
+            this.Clienti_Cognome.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_Cognome.TabIndex = 1;
+            this.Clienti_Cognome.Text = "Cognome";
+            this.Clienti_Cognome.Enter += new System.EventHandler(this.Cognome_Enter);
+            this.Clienti_Cognome.Leave += new System.EventHandler(this.Cognome_Leave);
+            // 
+            // Clienti_Nome
+            // 
+            this.Clienti_Nome.Location = new System.Drawing.Point(6, 6);
+            this.Clienti_Nome.Name = "Clienti_Nome";
+            this.Clienti_Nome.Size = new System.Drawing.Size(178, 22);
+            this.Clienti_Nome.TabIndex = 0;
+            this.Clienti_Nome.Text = "Nome";
+            this.Clienti_Nome.Enter += new System.EventHandler(this.Nome_Enter);
+            this.Clienti_Nome.Leave += new System.EventHandler(this.Nome_Leave);
             // 
             // TabPage
             // 
@@ -732,66 +792,6 @@ namespace DatabaseProject
             this.TabPage.Size = new System.Drawing.Size(959, 524);
             this.TabPage.TabIndex = 4;
             this.TabPage.Tag = "";
-            // 
-            // NuovaTappa_Inizio
-            // 
-            this.NuovaTappa_Inizio.Location = new System.Drawing.Point(6, 216);
-            this.NuovaTappa_Inizio.Name = "NuovaTappa_Inizio";
-            this.NuovaTappa_Inizio.Size = new System.Drawing.Size(178, 22);
-            this.NuovaTappa_Inizio.TabIndex = 12;
-            this.NuovaTappa_Inizio.Text = "Inizio";
-            this.NuovaTappa_Inizio.Enter += new System.EventHandler(this.NuovaTappa_Inizio_Enter);
-            this.NuovaTappa_Inizio.Leave += new System.EventHandler(this.NuovaTappa_Inizio_Leave);
-            // 
-            // NuovaTappa_Fine
-            // 
-            this.NuovaTappa_Fine.Location = new System.Drawing.Point(6, 244);
-            this.NuovaTappa_Fine.Name = "NuovaTappa_Fine";
-            this.NuovaTappa_Fine.Size = new System.Drawing.Size(178, 22);
-            this.NuovaTappa_Fine.TabIndex = 13;
-            this.NuovaTappa_Fine.Text = "Fine";
-            this.NuovaTappa_Fine.Enter += new System.EventHandler(this.NuovaTappa_Fine_Enter);
-            this.NuovaTappa_Fine.Leave += new System.EventHandler(this.NuovaTappa_Fine_Leave);
-            // 
-            // NuovaTappa_Lunghezza
-            // 
-            this.NuovaTappa_Lunghezza.Location = new System.Drawing.Point(6, 272);
-            this.NuovaTappa_Lunghezza.Name = "NuovaTappa_Lunghezza";
-            this.NuovaTappa_Lunghezza.Size = new System.Drawing.Size(178, 22);
-            this.NuovaTappa_Lunghezza.TabIndex = 14;
-            this.NuovaTappa_Lunghezza.Text = "Lunghezza Tappa";
-            this.NuovaTappa_Lunghezza.Enter += new System.EventHandler(this.NuovaTappa_Lunghezza_Enter);
-            this.NuovaTappa_Lunghezza.Leave += new System.EventHandler(this.NuovaTappa_Lunghezza_Leave);
-            // 
-            // NuovaTappa_IDtappa
-            // 
-            this.NuovaTappa_IDtappa.Location = new System.Drawing.Point(6, 300);
-            this.NuovaTappa_IDtappa.Name = "NuovaTappa_IDtappa";
-            this.NuovaTappa_IDtappa.Size = new System.Drawing.Size(178, 22);
-            this.NuovaTappa_IDtappa.TabIndex = 15;
-            this.NuovaTappa_IDtappa.Text = "ID Tappa";
-            this.NuovaTappa_IDtappa.Enter += new System.EventHandler(this.NuovaTappa_IDtappa_Enter);
-            this.NuovaTappa_IDtappa.Leave += new System.EventHandler(this.NuovaTappa_IDtappa_Leave);
-            // 
-            // NuovaTappa_IDpercorso
-            // 
-            this.NuovaTappa_IDpercorso.Location = new System.Drawing.Point(6, 328);
-            this.NuovaTappa_IDpercorso.Name = "NuovaTappa_IDpercorso";
-            this.NuovaTappa_IDpercorso.Size = new System.Drawing.Size(178, 22);
-            this.NuovaTappa_IDpercorso.TabIndex = 16;
-            this.NuovaTappa_IDpercorso.Text = "ID Percorso";
-            this.NuovaTappa_IDpercorso.Enter += new System.EventHandler(this.NuovaTappa_IDpercorso_Enter);
-            this.NuovaTappa_IDpercorso.Leave += new System.EventHandler(this.NuovaTappa_IDpercorso_Leave);
-            // 
-            // AggiungiTappa
-            // 
-            this.AggiungiTappa.Location = new System.Drawing.Point(6, 356);
-            this.AggiungiTappa.Name = "AggiungiTappa";
-            this.AggiungiTappa.Size = new System.Drawing.Size(178, 35);
-            this.AggiungiTappa.TabIndex = 17;
-            this.AggiungiTappa.Text = "Aggiungi Tappa";
-            this.AggiungiTappa.UseVisualStyleBackColor = true;
-            this.AggiungiTappa.Click += new System.EventHandler(this.AggiungiTappa_Click_1);
             // 
             // DatabaseViewAdmin
             // 
@@ -898,6 +898,19 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox NuovaTappa_Lunghezza;
         private System.Windows.Forms.TextBox NuovaTappa_Fine;
         private System.Windows.Forms.TextBox NuovaTappa_Inizio;
+        private System.Windows.Forms.TextBox BP_PIVA;
+        private System.Windows.Forms.TextBox BP_NomeSocio;
+        private System.Windows.Forms.TextBox BP_CostoServizio;
+        private System.Windows.Forms.TextBox BP_Telefono;
+        private System.Windows.Forms.TextBox BP_Tipologia;
+        private System.Windows.Forms.TextBox Tour_Destinazione;
+        private System.Windows.Forms.TextBox Tour_Nome;
+        private System.Windows.Forms.TextBox Tour_DataInizio;
+        private System.Windows.Forms.TextBox Tour_DataFine;
+        private System.Windows.Forms.TextBox Tour_Prezzo;
+        private System.Windows.Forms.TextBox Tour_IDtour;
+        private System.Windows.Forms.TextBox Tour_IDsede;
+        private System.Windows.Forms.TextBox Tour_CFtourManager;
     }
 }
 
