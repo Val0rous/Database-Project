@@ -635,6 +635,13 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM dipendente WHERE dipendente.IDsede=" + Convert(IDsede);
             return command;
         }
+        public MySqlCommand LeggiDipendentiAgenzia(String PIVAagenzia)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            //command.Parameters.AddWithValue("@IDsede", IDsede);
+            command.CommandText = "SELECT * FROM dipendente WHERE dipendente.IDsede=ANY(SELECT IDSede FROM sede WHERE PIVAagenzia=" + Convert(PIVAagenzia) + ") ORDER BY IDSede";
+            return command;
+        }
         public MySqlCommand LeggiGuide(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
