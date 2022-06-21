@@ -91,7 +91,7 @@ namespace DatabaseProject
             //FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
             //FillTable(TabellaPercorsi, queries.LeggiPercorso().CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour(IDsede).CommandText, connection.Connection);
-
+            FillTable(Tabella_StoricoServiziCliente, queries.LeggiServiziCliente(this.ClienteCF.Text).CommandText, connection.Connection);
             //this.Pacchetto_ID.ForeColor = Color.Gray;
             this.Pacchetto_Sconto.ForeColor = Color.Gray;
 
@@ -126,7 +126,10 @@ namespace DatabaseProject
             {
                 this.Pacchetto_ID.Text = queries.GetNextID("pacchetto", "IDpacchetto");
             }
-
+            if (this.TabPage.SelectedTab.Text == "Storico servizi")
+            {
+                FillTable(Tabella_StoricoServiziCliente, queries.LeggiServiziCliente(this.ClienteCF.Text).CommandText, connection.Connection);
+            }
             connection.Connection.Close();
         }
         private void CreaPacchettoButton_Click(object sender, EventArgs e)

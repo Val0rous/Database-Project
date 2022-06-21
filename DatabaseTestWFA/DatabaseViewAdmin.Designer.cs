@@ -1140,6 +1140,8 @@ namespace DatabaseProject
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet3 gestionale_per_agenzie_relDataSet3;
         private System.Windows.Forms.BindingSource magazzinoBindingSource;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter magazzinoTableAdapter;
+        private Label Dipendenti_StipendioMedio;
+        private Label label6;
         private Button DipendentiAgenzia;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.TabPage Tour;
