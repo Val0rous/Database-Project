@@ -1555,12 +1555,22 @@ namespace DatabaseProject
 
         private void NuovaTappa_IDtappa_Enter(object sender, EventArgs e)
         {
-
+            if (this.NuovaTappa_IDpercorso.Text.Equals("ID Tappa"))
+            {
+                this.NuovaTappa_IDpercorso.Text = "";
+            }
+            this.NuovaTappa_IDpercorso.ForeColor = Color.Black;
+            this.nuovatappa_IDpercorso = true;
         }
 
         private void NuovaTappa_IDtappa_Leave(object sender, EventArgs e)
         {
-
+            if (this.NuovaTappa_IDpercorso.Text.Equals(""))
+            {
+                this.NuovaTappa_IDpercorso.Text = "ID Tappa";
+                this.NuovaTappa_IDpercorso.ForeColor = Color.Gray;
+                this.nuovatappa_IDpercorso = false;
+            }
         }
 
         private void NuovaTappa_IDpercorso_Enter(object sender, EventArgs e)
@@ -1628,7 +1638,7 @@ namespace DatabaseProject
         }
         private void Servizi_DataInizio_Enter(object sender, EventArgs e)
         {
-            if (this.Servizi_DataInizio.Text.Equals("DataInizio"))
+            if (this.Servizi_DataInizio.Text.Equals("Data Inizio (YYYY-MM-DD)"))
             {
                 this.Servizi_DataInizio.Text = "";
             }
@@ -1640,14 +1650,14 @@ namespace DatabaseProject
         {
             if (this.Servizi_DataInizio.Text.Equals(""))
             {
-                this.Servizi_DataInizio.Text = "DataInizio";
+                this.Servizi_DataInizio.Text = "Data Inizio (YYYY-MM-DD)";
                 this.Servizi_DataInizio.ForeColor = Color.Gray;
                 this.servizi_DataInizio = false;
             }
         }
         private void Servizi_DataFine_Enter(object sender, EventArgs e)
         {
-            if (this.Servizi_DataFine.Text.Equals("DataFine"))
+            if (this.Servizi_DataFine.Text.Equals("Data Fine (YYYY-MM-DD)"))
             {
                 this.Servizi_DataFine.Text = "";
             }
@@ -1659,7 +1669,7 @@ namespace DatabaseProject
         {
             if (this.Servizi_DataFine.Text.Equals(""))
             {
-                this.Servizi_DataFine.Text = "DataFine";
+                this.Servizi_DataFine.Text = "Data Fine (YYYY-MM-DD)";
                 this.Servizi_DataFine.ForeColor = Color.Gray;
                 this.servizi_DataFine = false;
             }

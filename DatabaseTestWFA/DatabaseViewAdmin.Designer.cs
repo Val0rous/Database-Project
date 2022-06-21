@@ -602,7 +602,7 @@ namespace DatabaseProject
             this.NuovaTappa_IDpercorso.Location = new System.Drawing.Point(5, 327);
             this.NuovaTappa_IDpercorso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NuovaTappa_IDpercorso.Name = "NuovaTappa_IDpercorso";
-            this.NuovaTappa_IDpercorso.Size = new System.Drawing.Size(177, 22);
+            this.NuovaTappa_IDpercorso.Size = new System.Drawing.Size(179, 22);
             this.NuovaTappa_IDpercorso.TabIndex = 16;
             this.NuovaTappa_IDpercorso.Text = "ID Percorso";
             this.NuovaTappa_IDpercorso.Enter += new System.EventHandler(this.NuovaTappa_IDpercorso_Enter);
@@ -615,7 +615,7 @@ namespace DatabaseProject
             this.NuovaTappa_IDtappa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NuovaTappa_IDtappa.Name = "NuovaTappa_IDtappa";
             this.NuovaTappa_IDtappa.ReadOnly = true;
-            this.NuovaTappa_IDtappa.Size = new System.Drawing.Size(177, 22);
+            this.NuovaTappa_IDtappa.Size = new System.Drawing.Size(179, 22);
             this.NuovaTappa_IDtappa.TabIndex = 15;
             this.NuovaTappa_IDtappa.Text = "ID Tappa";
             // 
@@ -624,7 +624,7 @@ namespace DatabaseProject
             this.NuovaTappa_Lunghezza.Location = new System.Drawing.Point(5, 272);
             this.NuovaTappa_Lunghezza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NuovaTappa_Lunghezza.Name = "NuovaTappa_Lunghezza";
-            this.NuovaTappa_Lunghezza.Size = new System.Drawing.Size(177, 22);
+            this.NuovaTappa_Lunghezza.Size = new System.Drawing.Size(179, 22);
             this.NuovaTappa_Lunghezza.TabIndex = 14;
             this.NuovaTappa_Lunghezza.Text = "Lunghezza Tappa";
             this.NuovaTappa_Lunghezza.Enter += new System.EventHandler(this.NuovaTappa_Lunghezza_Enter);
@@ -635,7 +635,7 @@ namespace DatabaseProject
             this.NuovaTappa_Fine.Location = new System.Drawing.Point(5, 244);
             this.NuovaTappa_Fine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NuovaTappa_Fine.Name = "NuovaTappa_Fine";
-            this.NuovaTappa_Fine.Size = new System.Drawing.Size(177, 22);
+            this.NuovaTappa_Fine.Size = new System.Drawing.Size(179, 22);
             this.NuovaTappa_Fine.TabIndex = 13;
             this.NuovaTappa_Fine.Text = "Fine";
             this.NuovaTappa_Fine.Enter += new System.EventHandler(this.NuovaTappa_Fine_Enter);
@@ -646,7 +646,7 @@ namespace DatabaseProject
             this.NuovaTappa_Inizio.Location = new System.Drawing.Point(5, 217);
             this.NuovaTappa_Inizio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NuovaTappa_Inizio.Name = "NuovaTappa_Inizio";
-            this.NuovaTappa_Inizio.Size = new System.Drawing.Size(177, 22);
+            this.NuovaTappa_Inizio.Size = new System.Drawing.Size(179, 22);
             this.NuovaTappa_Inizio.TabIndex = 12;
             this.NuovaTappa_Inizio.Text = "Inizio";
             this.NuovaTappa_Inizio.Enter += new System.EventHandler(this.NuovaTappa_Inizio_Enter);
@@ -654,10 +654,10 @@ namespace DatabaseProject
             // 
             // Percorsi_IDsede
             // 
-            this.Percorsi_IDsede.Location = new System.Drawing.Point(5, 146);
+            this.Percorsi_IDsede.Location = new System.Drawing.Point(4, 120);
             this.Percorsi_IDsede.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Percorsi_IDsede.Name = "Percorsi_IDsede";
-            this.Percorsi_IDsede.Size = new System.Drawing.Size(177, 22);
+            this.Percorsi_IDsede.Size = new System.Drawing.Size(180, 22);
             this.Percorsi_IDsede.TabIndex = 11;
             this.Percorsi_IDsede.Text = "ID Sede";
             this.Percorsi_IDsede.Enter += new System.EventHandler(this.Percorsi_IDsede_Enter);
@@ -665,10 +665,10 @@ namespace DatabaseProject
             // 
             // Percorsi_Lunghezza
             // 
-            this.Percorsi_Lunghezza.Location = new System.Drawing.Point(7, 146);
+            this.Percorsi_Lunghezza.Location = new System.Drawing.Point(5, 146);
             this.Percorsi_Lunghezza.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Percorsi_Lunghezza.Name = "Percorsi_Lunghezza";
-            this.Percorsi_Lunghezza.Size = new System.Drawing.Size(235, 22);
+            this.Percorsi_Lunghezza.Size = new System.Drawing.Size(179, 22);
             this.Percorsi_Lunghezza.TabIndex = 10;
             this.Percorsi_Lunghezza.Text = "Lunghezza Percorso";
             this.Percorsi_Lunghezza.Enter += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Enter);
@@ -679,7 +679,7 @@ namespace DatabaseProject
             this.Percorsi_NumTappe.Location = new System.Drawing.Point(5, 91);
             this.Percorsi_NumTappe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Percorsi_NumTappe.Name = "Percorsi_NumTappe";
-            this.Percorsi_NumTappe.Size = new System.Drawing.Size(177, 22);
+            this.Percorsi_NumTappe.Size = new System.Drawing.Size(179, 22);
             this.Percorsi_NumTappe.TabIndex = 8;
             this.Percorsi_NumTappe.Text = "Numero di Tappe";
             this.Percorsi_NumTappe.Enter += new System.EventHandler(this.Percorsi_NumTappe_Enter);
@@ -687,10 +687,10 @@ namespace DatabaseProject
             // 
             // Percorsi_Nome
             // 
-            this.Percorsi_Nome.Location = new System.Drawing.Point(7, 76);
+            this.Percorsi_Nome.Location = new System.Drawing.Point(4, 60);
             this.Percorsi_Nome.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Percorsi_Nome.Name = "Percorsi_Nome";
-            this.Percorsi_Nome.Size = new System.Drawing.Size(235, 22);
+            this.Percorsi_Nome.Size = new System.Drawing.Size(180, 22);
             this.Percorsi_Nome.TabIndex = 7;
             this.Percorsi_Nome.Text = "Nome";
             this.Percorsi_Nome.Enter += new System.EventHandler(this.Percorsi_NomePercorso_Enter);
@@ -701,7 +701,7 @@ namespace DatabaseProject
             this.Percorsi_Difficolta.Location = new System.Drawing.Point(5, 34);
             this.Percorsi_Difficolta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Percorsi_Difficolta.Name = "Percorsi_Difficolta";
-            this.Percorsi_Difficolta.Size = new System.Drawing.Size(177, 22);
+            this.Percorsi_Difficolta.Size = new System.Drawing.Size(179, 22);
             this.Percorsi_Difficolta.TabIndex = 6;
             this.Percorsi_Difficolta.Text = "Difficoltà";
             this.Percorsi_Difficolta.Enter += new System.EventHandler(this.Percorsi_Difficolta_Enter);
@@ -712,7 +712,7 @@ namespace DatabaseProject
             this.Percorsi_IDpercorso.Location = new System.Drawing.Point(5, 6);
             this.Percorsi_IDpercorso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Percorsi_IDpercorso.Name = "Percorsi_IDpercorso";
-            this.Percorsi_IDpercorso.Size = new System.Drawing.Size(177, 22);
+            this.Percorsi_IDpercorso.Size = new System.Drawing.Size(179, 22);
             this.Percorsi_IDpercorso.TabIndex = 5;
             this.Percorsi_IDpercorso.Text = "ID Percorso";
             this.Percorsi_IDpercorso.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
@@ -721,7 +721,7 @@ namespace DatabaseProject
             // 
             // AggiungiPercorso
             // 
-            this.AggiungiPercorso.Location = new System.Drawing.Point(5, 175);
+            this.AggiungiPercorso.Location = new System.Drawing.Point(5, 172);
             this.AggiungiPercorso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AggiungiPercorso.Name = "AggiungiPercorso";
             this.AggiungiPercorso.Size = new System.Drawing.Size(179, 34);
@@ -1008,9 +1008,9 @@ namespace DatabaseProject
             this.Servizi_DataFine.Location = new System.Drawing.Point(5, 36);
             this.Servizi_DataFine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Servizi_DataFine.Name = "Servizi_DataFine";
-            this.Servizi_DataFine.Size = new System.Drawing.Size(132, 22);
+            this.Servizi_DataFine.Size = new System.Drawing.Size(225, 22);
             this.Servizi_DataFine.TabIndex = 7;
-            this.Servizi_DataFine.Text = "Data Fine";
+            this.Servizi_DataFine.Text = "Data Fine (YYYY-MM-DD)";
             this.Servizi_DataFine.Enter += new System.EventHandler(this.Servizi_DataFine_Enter);
             this.Servizi_DataFine.Leave += new System.EventHandler(this.Servizi_DataFine_Leave);
             // 
@@ -1060,7 +1060,7 @@ namespace DatabaseProject
             this.Servizi_Calcola.Location = new System.Drawing.Point(4, 70);
             this.Servizi_Calcola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Servizi_Calcola.Name = "Servizi_Calcola";
-            this.Servizi_Calcola.Size = new System.Drawing.Size(100, 28);
+            this.Servizi_Calcola.Size = new System.Drawing.Size(226, 28);
             this.Servizi_Calcola.TabIndex = 2;
             this.Servizi_Calcola.Text = "Calcola";
             this.Servizi_Calcola.UseVisualStyleBackColor = true;
@@ -1071,9 +1071,9 @@ namespace DatabaseProject
             this.Servizi_DataInizio.Location = new System.Drawing.Point(5, 5);
             this.Servizi_DataInizio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Servizi_DataInizio.Name = "Servizi_DataInizio";
-            this.Servizi_DataInizio.Size = new System.Drawing.Size(132, 22);
+            this.Servizi_DataInizio.Size = new System.Drawing.Size(225, 22);
             this.Servizi_DataInizio.TabIndex = 1;
-            this.Servizi_DataInizio.Text = "Data Inizio";
+            this.Servizi_DataInizio.Text = "Data Inizio (YYYY-MM-DD)";
             this.Servizi_DataInizio.Enter += new System.EventHandler(this.Servizi_DataInizio_Enter);
             this.Servizi_DataInizio.Leave += new System.EventHandler(this.Servizi_DataInizio_Leave);
             // 
