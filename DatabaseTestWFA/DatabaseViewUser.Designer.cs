@@ -50,6 +50,8 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet();
             this.clienteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter();
             this.prenotazioneTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter();
+            this.Clienti_StoricoServizi = new System.Windows.Forms.TabPage();
+            this.Tabella_StoricoServiziCliente = new System.Windows.Forms.DataGridView();
             this.TabPage.SuspendLayout();
             this.Pacchetti.SuspendLayout();
             this.Tour.SuspendLayout();
@@ -58,6 +60,8 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).BeginInit();
+            this.Clienti_StoricoServizi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -76,6 +80,7 @@ namespace DatabaseProject
             // 
             this.TabPage.Controls.Add(this.Pacchetti);
             this.TabPage.Controls.Add(this.Tour);
+            this.TabPage.Controls.Add(this.Clienti_StoricoServizi);
             this.TabPage.Location = new System.Drawing.Point(12, 55);
             this.TabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabPage.Name = "TabPage";
@@ -242,6 +247,26 @@ namespace DatabaseProject
             // 
             this.prenotazioneTableAdapter.ClearBeforeFill = true;
             // 
+            // Clienti_StoricoServizi
+            // 
+            this.Clienti_StoricoServizi.Controls.Add(this.Tabella_StoricoServiziCliente);
+            this.Clienti_StoricoServizi.Location = new System.Drawing.Point(4, 25);
+            this.Clienti_StoricoServizi.Name = "Clienti_StoricoServizi";
+            this.Clienti_StoricoServizi.Size = new System.Drawing.Size(779, 364);
+            this.Clienti_StoricoServizi.TabIndex = 5;
+            this.Clienti_StoricoServizi.Text = "Storico servizi";
+            this.Clienti_StoricoServizi.UseVisualStyleBackColor = true;
+            // 
+            // Tabella_StoricoServiziCliente
+            // 
+            this.Tabella_StoricoServiziCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Tabella_StoricoServiziCliente.Location = new System.Drawing.Point(3, 3);
+            this.Tabella_StoricoServiziCliente.Name = "Tabella_StoricoServiziCliente";
+            this.Tabella_StoricoServiziCliente.RowHeadersWidth = 51;
+            this.Tabella_StoricoServiziCliente.RowTemplate.Height = 24;
+            this.Tabella_StoricoServiziCliente.Size = new System.Drawing.Size(773, 361);
+            this.Tabella_StoricoServiziCliente.TabIndex = 0;
+            // 
             // DatabaseViewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -268,6 +293,8 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).EndInit();
+            this.Clienti_StoricoServizi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +321,7 @@ namespace DatabaseProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TourID;
         private System.Windows.Forms.Button TourButton;
+        private System.Windows.Forms.TabPage Clienti_StoricoServizi;
+        private System.Windows.Forms.DataGridView Tabella_StoricoServiziCliente;
     }
 }
