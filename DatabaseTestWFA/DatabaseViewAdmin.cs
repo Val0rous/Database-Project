@@ -1613,7 +1613,7 @@ namespace DatabaseProject
                 {
                     reader = queries.LeggiPeriodoMedioPrenotazioneBici(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
                     reader.Read();
-                    if (!reader.IsDBNull(0)) Servizio_PeriodoMedioBici.Text = reader.GetString("PeriodoMedioBici");
+                    if (!reader.IsDBNull(0)) Servizio_PeriodoMedioBici.Text = reader.GetFloat("PeriodoMedioBici").ToString();
                     else Servizio_PeriodoMedioBici.Text = "x";
                     reader.Close();
                 }
@@ -1625,7 +1625,7 @@ namespace DatabaseProject
                 {
                     reader = queries.LeggiPeriodoMedioPrenotazioneAccessori(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
                     reader.Read();
-                    if (!reader.IsDBNull(0)) Servizio_PeriodoMedioAccessori.Text = reader.GetString("PeriodoMedioAccessori");
+                    if (!reader.IsDBNull(0)) Servizio_PeriodoMedioAccessori.Text = reader.GetFloat("PeriodoMedioAccessori").ToString();
                     else Servizio_PeriodoMedioAccessori.Text = "x";
                     reader.Close();
                 }
