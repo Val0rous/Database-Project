@@ -73,6 +73,9 @@ namespace DatabaseProject
         bool tappa_ID;
         bool tappa_IDPercorso;
 
+        bool servizi_DataInizio;
+        bool servizi_DataFine;
+
         public DatabaseViewAdmin(bool isAdmin, string PIVAagenzia, string IDsede)
         {
             this.IsAdmin = isAdmin;
@@ -122,6 +125,7 @@ namespace DatabaseProject
             FillTable(TabellaBusinessPartners, queries.LeggiBusinessPartner(this.PIVAagenzia).CommandText, connection.Connection);
             FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
+            FillTable(TabellaServizi, queries.LeggiServiziSede(this.IDsede).CommandText, connection.Connection);
 
             connection.Connection.Close();
 
@@ -1581,6 +1585,80 @@ namespace DatabaseProject
         private void AggiungiTappa_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Servizi_DataInizio_Enter(object sender, EventArgs e)
+        {
+            if (this.Servizi_DataInizio.Text.Equals("DataInizio"))
+            {
+                this.Servizi_DataInizio.Text = "";
+            }
+            this.Servizi_DataInizio.ForeColor = Color.Black;
+            this.servizi_DataInizio = true;
+        }
+
+        private void Servizi_DataInizio_Leave(object sender, EventArgs e)
+        {
+            if (this.Servizi_DataInizio.Text.Equals(""))
+            {
+                this.Servizi_DataInizio.Text = "DataInizio";
+                this.Servizi_DataInizio.ForeColor = Color.Gray;
+                this.servizi_DataInizio = false;
+            }
+        }
+        private void Servizi_DataFine_Enter(object sender, EventArgs e)
+        {
+            if (this.Servizi_DataFine.Text.Equals("DataFine"))
+            {
+                this.Servizi_DataFine.Text = "";
+            }
+            this.Servizi_DataFine.ForeColor = Color.Black;
+            this.servizi_DataFine = true;
+        }
+
+        private void Servizi_DataFine_Leave(object sender, EventArgs e)
+        {
+            if (this.Servizi_DataFine.Text.Equals(""))
+            {
+                this.Servizi_DataFine.Text = "DataFine";
+                this.Servizi_DataFine.ForeColor = Color.Gray;
+                this.servizi_DataFine = false;
+            }
+        }
+        private void Servizi_Calcola_Click(object sender, EventArgs e)
+        {
+            bool condition = this.servizi_DataFine && this.servizi_DataInizio;
+            if (condition)
+            {
+                var connection = new CreateConnection();
+                connection.Connection.Open();
+                var queries = new QueryLibrary(connection.Connection);
+                FillTable(TabellaServizi, queries.LeggiServiziSede(this.IDsede,Servizi_DataInizio.Text, Servizi_DataFine.Text).CommandText, connection.Connection);
+                var reader = queries.LeggiTagliaBicicletta(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
+                reader.Read();
+                Servizio_TagliaBiciTop.Text = reader.GetString(0);
+                reader.Close();
+                reader = queries.LeggiPeriodoMedioPrenotazioneBici(this.PIVAagenzia).ExecuteReader();
+                reader.Read();
+                Servizio_PeriodoMedioBici.Text = reader.GetString(0);
+                reader.Close();
+                reader = queries.LeggiAccessorioPiuRichiesto(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
+                reader.Read();
+                Servizio_AccessorioTop.Text = reader.GetString(0);
+                reader.Close();
+                connection.Connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Impossile visualizzare servizi",
+                "Errore",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
+            }
         }
     }
 }

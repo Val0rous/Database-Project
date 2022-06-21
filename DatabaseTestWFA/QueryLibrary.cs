@@ -468,6 +468,18 @@ namespace DatabaseProject
                 "ORDER BY Count(NA.IDservizio) DESC LIMIT 1";
             return command;
         }
+        public MySqlCommand LeggiAccessorioPiuRichiesto(String IDsede, String DataInizio, String DataFine)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            //command.Parameters.AddWithValue("@IDsede", IDsede);
+            //command.Parameters.AddWithValue("@Date", Date);
+            command.CommandText = "SELECT A.IDaccessorio, COUNT(NA.IDservizio) " +
+                "FROM accessorio AS A, noleggioaccessorio AS NA, servizio AS S" +
+                "WHERE A.IDaccessorio=NA.IDaccessorio AND NA.IDservizio=S.IDservizio " +
+                "AND S.IDsede=" + Convert(IDsede) + " AND S.DataInizio>=" + Convert(DataInizio) +" AND S.DataFine<="+Convert(DataFine)+
+                " ORDER BY Count(NA.IDservizio) DESC LIMIT 1";
+            return command;
+        }
         public MySqlCommand LeggiAccessoriOrdinati(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -698,6 +710,19 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM servizio WHERE servizio.IDpacchetto="+Convert(IDpacchetto);
             return command;
         }
+        public MySqlCommand LeggiServiziSede(String IDsede)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDsede=" + Convert(IDsede);
+            return command;
+        }
+        public MySqlCommand LeggiServiziSede(String IDsede, String DataInizio, String DataFine)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM servizio WHERE servizio.IDsede=" + Convert(IDsede)+
+                " AND servizio.DataInizio>="+Convert(DataInizio)+" AND servizio.DataFine<="+Convert(DataFine);
+            return command;
+        }
         public MySqlCommand LeggiTagliaBicicletta(String IDsede, int Month)
         {
             MySqlCommand command = this.Connection.CreateCommand();
@@ -705,6 +730,15 @@ namespace DatabaseProject
                     "WHERE B.NumTelaio=NB.NumTelaio AND NB.IDservizio=S.IDservizio " + 
                     "AND S.IDsede=" + Convert(IDsede) + $" AND MONTH(S.DataInizio)={Month} " + 
                     "GROUP BY B.Taglia ORDER BY Count(NB.IDservizio) DESC LIMIT 1";
+            return command;
+        }
+        public MySqlCommand LeggiTagliaBicicletta(String IDsede, String DataInizio, String DataFine)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT B.Taglia, COUNT(NB.IDservizio) FROM bicicletta AS B, noleggioBicicletta AS NB, servizio AS S " +
+                    "WHERE B.NumTelaio=NB.NumTelaio AND NB.IDservizio=S.IDservizio " +
+                    "AND S.IDsede=" + Convert(IDsede) +" AND S.DataInizio>=" + Convert(DataInizio)+ "AND S.DataFine<="+Convert(DataFine) +
+                    " GROUP BY B.Taglia ORDER BY Count(NB.IDservizio) DESC LIMIT 1";
             return command;
         }
         public MySqlCommand LeggiServiziCliente(String CFcliente)
