@@ -10,9 +10,30 @@ namespace DatabaseProject
     public class QueryLibrary
     {
         MySqlConnection Connection { get; set; }
+        MySqlTransaction Transaction { get; set; }
+        public bool transactionActive = false;
         public QueryLibrary(MySqlConnection connection)
         {
             this.Connection = connection;
+        }
+        public void StartTransaction()
+        {
+            if (!transactionActive)
+            {
+                Transaction = Connection.BeginTransaction();
+                transactionActive = true;
+            }
+                
+        }
+        public void Rollback()
+        {
+            Transaction.Rollback();
+            transactionActive = false;
+        }
+        public void Commit()
+        {
+            Transaction.Commit();
+            transactionActive = false;
         }
 
         private static string Convert(string parameter)
@@ -272,6 +293,7 @@ namespace DatabaseProject
         public bool InserisciServizio(String DataInizio, String DataFine,  String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
         {
             MySqlCommand command = this.Connection.CreateCommand();
+
             command.Parameters.AddWithValue("@DataInizio", DataInizio);
             command.Parameters.AddWithValue("@DataFine", DataFine);
             command.Parameters.AddWithValue("@IDservizio", IDservizio);
@@ -324,6 +346,7 @@ namespace DatabaseProject
         public bool InserisciNoleggioAccessorio(String IDservizio, String IDaccessorio)
         {
             MySqlCommand command = this.Connection.CreateCommand();
+
             command.Parameters.AddWithValue("@IDservizio", IDservizio);
             command.Parameters.AddWithValue("@IDaccessorio", IDaccessorio);
             command.CommandText = "INSERT INTO noleggioaccessorio (IDservizio, IDaccessorio) " +
@@ -342,6 +365,7 @@ namespace DatabaseProject
         public bool InserisciPartecipazione(String IDpercorsoGuidato, String CFguida)
         {
             MySqlCommand command = this.Connection.CreateCommand();
+
             command.Parameters.AddWithValue("@IDpercorsoGuidato", IDpercorsoGuidato);
             command.Parameters.AddWithValue("@CFguida", CFguida);
             command.CommandText = "INSERT INTO partecipazione (IDpercorsoGuidato, CFguida) " +

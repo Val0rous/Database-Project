@@ -37,33 +37,23 @@ namespace DatabaseProject
             this.CreaPacchettoButton = new System.Windows.Forms.Button();
             this.Pacchetto_Sconto = new System.Windows.Forms.TextBox();
             this.Pacchetto_ID = new System.Windows.Forms.TextBox();
-            this.Prenotazioni = new System.Windows.Forms.TabPage();
-            this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
-            this.Percorsi = new System.Windows.Forms.TabPage();
-            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
+            this.prenotazioneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gestionale_per_agenzie_relDataSet1 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1();
             this.Tour = new System.Windows.Forms.TabPage();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.ClienteCF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cFclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDtourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenotazioneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gestionale_per_agenzie_relDataSet1 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gestionale_per_agenzie_relDataSet = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet();
             this.clienteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter();
             this.prenotazioneTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter();
             this.TabPage.SuspendLayout();
             this.Pacchetti.SuspendLayout();
-            this.Prenotazioni.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).BeginInit();
-            this.Percorsi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
-            this.Tour.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
+            this.Tour.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).BeginInit();
             this.SuspendLayout();
@@ -83,8 +73,6 @@ namespace DatabaseProject
             // TabPage
             // 
             this.TabPage.Controls.Add(this.Pacchetti);
-            this.TabPage.Controls.Add(this.Prenotazioni);
-            this.TabPage.Controls.Add(this.Percorsi);
             this.TabPage.Controls.Add(this.Tour);
             this.TabPage.Location = new System.Drawing.Point(9, 45);
             this.TabPage.Margin = new System.Windows.Forms.Padding(2);
@@ -141,58 +129,15 @@ namespace DatabaseProject
             this.Pacchetto_ID.TabIndex = 0;
             this.Pacchetto_ID.Text = "IDPacchetto";
             // 
-            // Prenotazioni
+            // prenotazioneBindingSource
             // 
-            this.Prenotazioni.Controls.Add(this.TabellaPrenotazioni);
-            this.Prenotazioni.Location = new System.Drawing.Point(4, 22);
-            this.Prenotazioni.Margin = new System.Windows.Forms.Padding(2);
-            this.Prenotazioni.Name = "Prenotazioni";
-            this.Prenotazioni.Padding = new System.Windows.Forms.Padding(2);
-            this.Prenotazioni.Size = new System.Drawing.Size(582, 293);
-            this.Prenotazioni.TabIndex = 1;
-            this.Prenotazioni.Text = "Prenotazioni";
-            this.Prenotazioni.UseVisualStyleBackColor = true;
+            this.prenotazioneBindingSource.DataMember = "prenotazione";
+            this.prenotazioneBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet1;
             // 
-            // TabellaPrenotazioni
+            // gestionale_per_agenzie_relDataSet1
             // 
-            this.TabellaPrenotazioni.AutoGenerateColumns = false;
-            this.TabellaPrenotazioni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaPrenotazioni.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cFclienteDataGridViewTextBoxColumn,
-            this.iDtourDataGridViewTextBoxColumn});
-            this.TabellaPrenotazioni.DataSource = this.prenotazioneBindingSource;
-            this.TabellaPrenotazioni.Location = new System.Drawing.Point(2, 5);
-            this.TabellaPrenotazioni.Margin = new System.Windows.Forms.Padding(2);
-            this.TabellaPrenotazioni.Name = "TabellaPrenotazioni";
-            this.TabellaPrenotazioni.ReadOnly = true;
-            this.TabellaPrenotazioni.RowHeadersWidth = 51;
-            this.TabellaPrenotazioni.RowTemplate.Height = 24;
-            this.TabellaPrenotazioni.Size = new System.Drawing.Size(569, 280);
-            this.TabellaPrenotazioni.TabIndex = 0;
-            // 
-            // Percorsi
-            // 
-            this.Percorsi.Controls.Add(this.TabellaPercorsi);
-            this.Percorsi.Location = new System.Drawing.Point(4, 22);
-            this.Percorsi.Margin = new System.Windows.Forms.Padding(2);
-            this.Percorsi.Name = "Percorsi";
-            this.Percorsi.Padding = new System.Windows.Forms.Padding(2);
-            this.Percorsi.Size = new System.Drawing.Size(582, 293);
-            this.Percorsi.TabIndex = 2;
-            this.Percorsi.Text = "Percorsi";
-            this.Percorsi.UseVisualStyleBackColor = true;
-            // 
-            // TabellaPercorsi
-            // 
-            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaPercorsi.Location = new System.Drawing.Point(4, 5);
-            this.TabellaPercorsi.Margin = new System.Windows.Forms.Padding(2);
-            this.TabellaPercorsi.Name = "TabellaPercorsi";
-            this.TabellaPercorsi.ReadOnly = true;
-            this.TabellaPercorsi.RowHeadersWidth = 51;
-            this.TabellaPercorsi.RowTemplate.Height = 24;
-            this.TabellaPercorsi.Size = new System.Drawing.Size(567, 278);
-            this.TabellaPercorsi.TabIndex = 0;
+            this.gestionale_per_agenzie_relDataSet1.DataSetName = "gestionale_per_agenzie_relDataSet1";
+            this.gestionale_per_agenzie_relDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Tour
             // 
@@ -253,34 +198,6 @@ namespace DatabaseProject
             this.label1.TabIndex = 12;
             this.label1.Text = "CF Cliente";
             // 
-            // cFclienteDataGridViewTextBoxColumn
-            // 
-            this.cFclienteDataGridViewTextBoxColumn.DataPropertyName = "CFcliente";
-            this.cFclienteDataGridViewTextBoxColumn.HeaderText = "CFcliente";
-            this.cFclienteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cFclienteDataGridViewTextBoxColumn.Name = "cFclienteDataGridViewTextBoxColumn";
-            this.cFclienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cFclienteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDtourDataGridViewTextBoxColumn
-            // 
-            this.iDtourDataGridViewTextBoxColumn.DataPropertyName = "IDtour";
-            this.iDtourDataGridViewTextBoxColumn.HeaderText = "IDtour";
-            this.iDtourDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDtourDataGridViewTextBoxColumn.Name = "iDtourDataGridViewTextBoxColumn";
-            this.iDtourDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDtourDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // prenotazioneBindingSource
-            // 
-            this.prenotazioneBindingSource.DataMember = "prenotazione";
-            this.prenotazioneBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet1;
-            // 
-            // gestionale_per_agenzie_relDataSet1
-            // 
-            this.gestionale_per_agenzie_relDataSet1.DataSetName = "gestionale_per_agenzie_relDataSet1";
-            this.gestionale_per_agenzie_relDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataMember = "cliente";
@@ -317,14 +234,10 @@ namespace DatabaseProject
             this.TabPage.ResumeLayout(false);
             this.Pacchetti.ResumeLayout(false);
             this.Pacchetti.PerformLayout();
-            this.Prenotazioni.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).EndInit();
-            this.Percorsi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
-            this.Tour.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).EndInit();
+            this.Tour.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -336,19 +249,13 @@ namespace DatabaseProject
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl TabPage;
-        private System.Windows.Forms.TabPage Prenotazioni;
-        private System.Windows.Forms.TabPage Percorsi;
         private System.Windows.Forms.TabPage Tour;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet gestionale_per_agenzie_relDataSet;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter clienteTableAdapter;
-        private System.Windows.Forms.DataGridView TabellaPrenotazioni;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet1 gestionale_per_agenzie_relDataSet1;
         private System.Windows.Forms.BindingSource prenotazioneBindingSource;
         private DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter prenotazioneTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cFclienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDtourDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView TabellaPercorsi;
         private System.Windows.Forms.DataGridView TabellaTour;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.TabPage Pacchetti;

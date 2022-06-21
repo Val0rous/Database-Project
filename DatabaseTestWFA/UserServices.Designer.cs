@@ -40,15 +40,6 @@ namespace DatabaseProject
             this.NoleggiaBiciButton = new System.Windows.Forms.Button();
             this.Dipendenti = new System.Windows.Forms.TabPage();
             this.Tour = new System.Windows.Forms.TabPage();
-            this.TourPrezzo = new System.Windows.Forms.TextBox();
-            this.TourCFManager = new System.Windows.Forms.TextBox();
-            this.TourDataFine = new System.Windows.Forms.TextBox();
-            this.TourDataInizio = new System.Windows.Forms.TextBox();
-            this.TourNome = new System.Windows.Forms.TextBox();
-            this.TourDestinazione = new System.Windows.Forms.TextBox();
-            this.Tour_ID = new System.Windows.Forms.TextBox();
-            this.AggiungiTour = new System.Windows.Forms.Button();
-            this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.Pacchetto_Prezzo = new System.Windows.Forms.TextBox();
             this.Pacchetto_Sconto = new System.Windows.Forms.TextBox();
@@ -65,13 +56,24 @@ namespace DatabaseProject
             this.Accessorio = new System.Windows.Forms.TextBox();
             this.TabellaAccessori = new System.Windows.Forms.DataGridView();
             this.NoleggiaAccessorio = new System.Windows.Forms.Button();
+            this.Guide_Lista = new System.Windows.Forms.ListView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.AggiungiGuida = new System.Windows.Forms.Button();
+            this.Guida = new System.Windows.Forms.TextBox();
+            this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
+            this.CreaPercorsoGuidato = new System.Windows.Forms.Button();
+            this.Percorso = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TabellaGuide = new System.Windows.Forms.DataGridView();
             this.TabPage.SuspendLayout();
             this.Clienti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBici)).BeginInit();
             this.Dipendenti.SuspendLayout();
             this.Tour.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaAccessori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaGuide)).BeginInit();
             this.SuspendLayout();
             // 
             // TabPage
@@ -204,15 +206,16 @@ namespace DatabaseProject
             // 
             // Tour
             // 
-            this.Tour.Controls.Add(this.TourPrezzo);
-            this.Tour.Controls.Add(this.TourCFManager);
-            this.Tour.Controls.Add(this.TourDataFine);
-            this.Tour.Controls.Add(this.TourDataInizio);
-            this.Tour.Controls.Add(this.TourNome);
-            this.Tour.Controls.Add(this.TourDestinazione);
-            this.Tour.Controls.Add(this.Tour_ID);
-            this.Tour.Controls.Add(this.AggiungiTour);
-            this.Tour.Controls.Add(this.TabellaTour);
+            this.Tour.Controls.Add(this.TabellaGuide);
+            this.Tour.Controls.Add(this.label10);
+            this.Tour.Controls.Add(this.Percorso);
+            this.Tour.Controls.Add(this.Guide_Lista);
+            this.Tour.Controls.Add(this.label8);
+            this.Tour.Controls.Add(this.label9);
+            this.Tour.Controls.Add(this.AggiungiGuida);
+            this.Tour.Controls.Add(this.Guida);
+            this.Tour.Controls.Add(this.TabellaPercorsi);
+            this.Tour.Controls.Add(this.CreaPercorsoGuidato);
             this.Tour.Location = new System.Drawing.Point(4, 22);
             this.Tour.Margin = new System.Windows.Forms.Padding(2);
             this.Tour.Name = "Tour";
@@ -221,91 +224,6 @@ namespace DatabaseProject
             this.Tour.TabIndex = 8;
             this.Tour.Text = "Percorsi Guidati";
             this.Tour.UseVisualStyleBackColor = true;
-            // 
-            // TourPrezzo
-            // 
-            this.TourPrezzo.Location = new System.Drawing.Point(4, 121);
-            this.TourPrezzo.Margin = new System.Windows.Forms.Padding(2);
-            this.TourPrezzo.Name = "TourPrezzo";
-            this.TourPrezzo.Size = new System.Drawing.Size(134, 20);
-            this.TourPrezzo.TabIndex = 19;
-            this.TourPrezzo.Text = "Prezzo";
-            // 
-            // TourCFManager
-            // 
-            this.TourCFManager.Location = new System.Drawing.Point(4, 146);
-            this.TourCFManager.Margin = new System.Windows.Forms.Padding(2);
-            this.TourCFManager.Name = "TourCFManager";
-            this.TourCFManager.Size = new System.Drawing.Size(134, 20);
-            this.TourCFManager.TabIndex = 18;
-            this.TourCFManager.Text = "Tour Manager";
-            // 
-            // TourDataFine
-            // 
-            this.TourDataFine.Location = new System.Drawing.Point(4, 97);
-            this.TourDataFine.Margin = new System.Windows.Forms.Padding(2);
-            this.TourDataFine.Name = "TourDataFine";
-            this.TourDataFine.Size = new System.Drawing.Size(134, 20);
-            this.TourDataFine.TabIndex = 16;
-            this.TourDataFine.Text = "Data Fine";
-            // 
-            // TourDataInizio
-            // 
-            this.TourDataInizio.Location = new System.Drawing.Point(4, 74);
-            this.TourDataInizio.Margin = new System.Windows.Forms.Padding(2);
-            this.TourDataInizio.Name = "TourDataInizio";
-            this.TourDataInizio.Size = new System.Drawing.Size(134, 20);
-            this.TourDataInizio.TabIndex = 15;
-            this.TourDataInizio.Text = "Data Inizio";
-            // 
-            // TourNome
-            // 
-            this.TourNome.Location = new System.Drawing.Point(4, 50);
-            this.TourNome.Margin = new System.Windows.Forms.Padding(2);
-            this.TourNome.Name = "TourNome";
-            this.TourNome.Size = new System.Drawing.Size(134, 20);
-            this.TourNome.TabIndex = 14;
-            this.TourNome.Text = "Nome";
-            // 
-            // TourDestinazione
-            // 
-            this.TourDestinazione.Location = new System.Drawing.Point(4, 28);
-            this.TourDestinazione.Margin = new System.Windows.Forms.Padding(2);
-            this.TourDestinazione.Name = "TourDestinazione";
-            this.TourDestinazione.Size = new System.Drawing.Size(134, 20);
-            this.TourDestinazione.TabIndex = 13;
-            this.TourDestinazione.Text = "Destinazione";
-            // 
-            // Tour_ID
-            // 
-            this.Tour_ID.Location = new System.Drawing.Point(4, 5);
-            this.Tour_ID.Margin = new System.Windows.Forms.Padding(2);
-            this.Tour_ID.Name = "Tour_ID";
-            this.Tour_ID.Size = new System.Drawing.Size(134, 20);
-            this.Tour_ID.TabIndex = 12;
-            this.Tour_ID.Text = "ID Tour";
-            // 
-            // AggiungiTour
-            // 
-            this.AggiungiTour.Location = new System.Drawing.Point(4, 170);
-            this.AggiungiTour.Margin = new System.Windows.Forms.Padding(2);
-            this.AggiungiTour.Name = "AggiungiTour";
-            this.AggiungiTour.Size = new System.Drawing.Size(134, 28);
-            this.AggiungiTour.TabIndex = 9;
-            this.AggiungiTour.Text = "Aggiungi Tour";
-            this.AggiungiTour.UseVisualStyleBackColor = true;
-            // 
-            // TabellaTour
-            // 
-            this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaTour.Location = new System.Drawing.Point(142, 5);
-            this.TabellaTour.Margin = new System.Windows.Forms.Padding(2);
-            this.TabellaTour.Name = "TabellaTour";
-            this.TabellaTour.ReadOnly = true;
-            this.TabellaTour.RowHeadersWidth = 51;
-            this.TabellaTour.RowTemplate.Height = 24;
-            this.TabellaTour.Size = new System.Drawing.Size(566, 395);
-            this.TabellaTour.TabIndex = 0;
             // 
             // label1
             // 
@@ -479,6 +397,116 @@ namespace DatabaseProject
             this.NoleggiaAccessorio.UseVisualStyleBackColor = true;
             this.NoleggiaAccessorio.Click += new System.EventHandler(this.NoleggiaAccessorio_Click);
             // 
+            // Guide_Lista
+            // 
+            this.Guide_Lista.HideSelection = false;
+            this.Guide_Lista.Location = new System.Drawing.Point(6, 181);
+            this.Guide_Lista.Name = "Guide_Lista";
+            this.Guide_Lista.Size = new System.Drawing.Size(111, 172);
+            this.Guide_Lista.TabIndex = 31;
+            this.Guide_Lista.UseCompatibleStateImageBehavior = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.Window;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label8.Location = new System.Drawing.Point(5, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 13);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Seleziona la guida:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.Window;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label9.Location = new System.Drawing.Point(6, 165);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Lista delle guide:";
+            // 
+            // AggiungiGuida
+            // 
+            this.AggiungiGuida.Location = new System.Drawing.Point(6, 109);
+            this.AggiungiGuida.Margin = new System.Windows.Forms.Padding(2);
+            this.AggiungiGuida.Name = "AggiungiGuida";
+            this.AggiungiGuida.Size = new System.Drawing.Size(112, 32);
+            this.AggiungiGuida.TabIndex = 28;
+            this.AggiungiGuida.Text = "Aggiungi Guida";
+            this.AggiungiGuida.UseVisualStyleBackColor = true;
+            this.AggiungiGuida.Click += new System.EventHandler(this.AggiungiGuida_Click);
+            // 
+            // Guida
+            // 
+            this.Guida.BackColor = System.Drawing.SystemColors.Window;
+            this.Guida.Location = new System.Drawing.Point(7, 85);
+            this.Guida.Margin = new System.Windows.Forms.Padding(2);
+            this.Guida.Name = "Guida";
+            this.Guida.Size = new System.Drawing.Size(111, 20);
+            this.Guida.TabIndex = 27;
+            this.Guida.Text = "ID Accessorio";
+            // 
+            // TabellaPercorsi
+            // 
+            this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaPercorsi.Location = new System.Drawing.Point(122, 4);
+            this.TabellaPercorsi.Margin = new System.Windows.Forms.Padding(2);
+            this.TabellaPercorsi.Name = "TabellaPercorsi";
+            this.TabellaPercorsi.ReadOnly = true;
+            this.TabellaPercorsi.RowHeadersWidth = 51;
+            this.TabellaPercorsi.RowTemplate.Height = 24;
+            this.TabellaPercorsi.Size = new System.Drawing.Size(439, 174);
+            this.TabellaPercorsi.TabIndex = 26;
+            // 
+            // CreaPercorsoGuidato
+            // 
+            this.CreaPercorsoGuidato.Location = new System.Drawing.Point(6, 357);
+            this.CreaPercorsoGuidato.Margin = new System.Windows.Forms.Padding(2);
+            this.CreaPercorsoGuidato.Name = "CreaPercorsoGuidato";
+            this.CreaPercorsoGuidato.Size = new System.Drawing.Size(111, 38);
+            this.CreaPercorsoGuidato.TabIndex = 25;
+            this.CreaPercorsoGuidato.Text = "Crea Percorso Guidato";
+            this.CreaPercorsoGuidato.UseVisualStyleBackColor = true;
+            this.CreaPercorsoGuidato.Click += new System.EventHandler(this.CreaPercorsoGuidato_Click);
+            // 
+            // Percorso
+            // 
+            this.Percorso.BackColor = System.Drawing.SystemColors.Window;
+            this.Percorso.Location = new System.Drawing.Point(7, 28);
+            this.Percorso.Margin = new System.Windows.Forms.Padding(2);
+            this.Percorso.Name = "Percorso";
+            this.Percorso.Size = new System.Drawing.Size(111, 20);
+            this.Percorso.TabIndex = 32;
+            this.Percorso.Text = "ID Percorso";
+            this.Percorso.Enter += new System.EventHandler(this.Percorso_Enter);
+            this.Percorso.Leave += new System.EventHandler(this.Percorso_Leave);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.Window;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label10.Location = new System.Drawing.Point(6, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 13);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Seleziona il percorso:";
+            // 
+            // TabellaGuide
+            // 
+            this.TabellaGuide.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaGuide.Location = new System.Drawing.Point(122, 192);
+            this.TabellaGuide.Margin = new System.Windows.Forms.Padding(2);
+            this.TabellaGuide.Name = "TabellaGuide";
+            this.TabellaGuide.ReadOnly = true;
+            this.TabellaGuide.RowHeadersWidth = 51;
+            this.TabellaGuide.RowTemplate.Height = 24;
+            this.TabellaGuide.Size = new System.Drawing.Size(439, 203);
+            this.TabellaGuide.TabIndex = 34;
+            // 
             // UserServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,8 +533,9 @@ namespace DatabaseProject
             this.Dipendenti.PerformLayout();
             this.Tour.ResumeLayout(false);
             this.Tour.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaAccessori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaGuide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,15 +549,6 @@ namespace DatabaseProject
         private System.Windows.Forms.Button NoleggiaBiciButton;
         private System.Windows.Forms.TabPage Dipendenti;
         private System.Windows.Forms.TabPage Tour;
-        private System.Windows.Forms.TextBox TourPrezzo;
-        private System.Windows.Forms.TextBox TourCFManager;
-        private System.Windows.Forms.TextBox TourDataFine;
-        private System.Windows.Forms.TextBox TourDataInizio;
-        private System.Windows.Forms.TextBox TourNome;
-        private System.Windows.Forms.TextBox TourDestinazione;
-        private System.Windows.Forms.TextBox Tour_ID;
-        private System.Windows.Forms.Button AggiungiTour;
-        private System.Windows.Forms.DataGridView TabellaTour;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Pacchetto_Prezzo;
         private System.Windows.Forms.TextBox Pacchetto_Sconto;
@@ -550,5 +570,15 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox Accessorio;
         private System.Windows.Forms.DataGridView TabellaAccessori;
         private System.Windows.Forms.Button NoleggiaAccessorio;
+        private System.Windows.Forms.DataGridView TabellaGuide;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox Percorso;
+        private System.Windows.Forms.ListView Guide_Lista;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button AggiungiGuida;
+        private System.Windows.Forms.TextBox Guida;
+        private System.Windows.Forms.DataGridView TabellaPercorsi;
+        private System.Windows.Forms.Button CreaPercorsoGuidato;
     }
 }

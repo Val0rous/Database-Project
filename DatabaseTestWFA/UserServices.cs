@@ -22,7 +22,14 @@ namespace DatabaseProject
         private bool servizio_datainizio;
         private bool servizio_datafine;
 
+        private bool percorso;
+
         private bool pacchetto;
+
+        private static float valoreXBici = 30;
+        private static float valoreXAccessorio = 15;
+        private static float valoreXGuida = 25;
+        private static float valorePercorso = 10;
 
         public UserServices(string IDSede, string IDPacchetto, int sconto, string cf)
         {
@@ -66,17 +73,20 @@ namespace DatabaseProject
         }
         private void CreatePacchetto()
         {
-            ExecuteQueryIf(!pacchetto, (q,c) => {
-                var result = q.InserisciPacchetto(0, Sconto, this.IDPacchetto, this.CF);
-                if (!result)
-                {
-                    MessageBox.Show("Pacchetto non creato!",
-                    "Errore",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                }
-                pacchetto = true;
-            });
+            if (!pacchetto)
+            {
+                ExecuteQueryIf(true, (q, c) => {
+                    var result = q.InserisciPacchetto(0, Sconto, this.IDPacchetto, this.CF);
+                    if (!result)
+                    {
+                        MessageBox.Show("Pacchetto non creato!",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    pacchetto = true;
+                });
+            }
         }
         private void UserServices_Load(object sender, EventArgs e)
         {
@@ -94,6 +104,8 @@ namespace DatabaseProject
             this.Servizio_DataFine.ForeColor = Color.Gray;
 
             this.Servizio_ID.Text = queries.GetNextID("servizio", "IDservizio");
+            this.Pacchetto_Sconto.Text = Sconto.ToString() + "%";
+            this.Pacchetto_Prezzo.Text = "0.00";
         }
 
         private void Servizio_DataInizio_Enter(object sender, EventArgs e)
@@ -154,6 +166,14 @@ namespace DatabaseProject
                     FillTable(TabellaAccessori, q.LeggiAccessori(IDSede, this.Servizio_DataInizio.Text, this.Servizio_DataFine.Text).CommandText, c.Connection);
                 });
             }
+            else if (TabPage.SelectedTab.Text == "Percorsi Guidati")
+            {
+                ExecuteQueryIf(this.servizio_datafine && this.servizio_datainizio, (q, c) =>
+                {
+                    FillTable(TabellaPercorsi, q.LeggiPercorso(IDSede).CommandText, c.Connection);
+                    FillTable(TabellaGuide, q.LeggiGuide(IDSede).CommandText, c.Connection);
+                });
+            }
         }
         private void AggiungiNoleggioButton_Click(object sender, EventArgs e)
         {
@@ -197,7 +217,7 @@ namespace DatabaseProject
                 NoleggioBiciclette_Lista.Items.Clear();
                 return;
             }
-
+            float valoreTot = 0;
             foreach (ListViewItem b in NoleggioBiciclette_Lista.Items)
             {
                 result = true;
@@ -211,6 +231,7 @@ namespace DatabaseProject
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }
+                    valoreTot += valoreXBici;
                 });
                 if (!result)
                 {
@@ -223,6 +244,8 @@ namespace DatabaseProject
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
             NoleggioBiciclette_Lista.Items.Clear();
+
+            this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
         }
 
         private void AggiungiNoleggio1_Click(object sender, EventArgs e)
@@ -267,7 +290,7 @@ namespace DatabaseProject
                 NoleggioAccessori_Lista.Items.Clear();
                 return;
             }
-
+            float valoreTot = 0;
             foreach (ListViewItem b in NoleggioAccessori_Lista.Items)
             {
                 result = true;
@@ -281,6 +304,7 @@ namespace DatabaseProject
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }
+                    valoreTot += valoreXAccessorio;
                 });
                 if (!result)
                 {
@@ -293,6 +317,121 @@ namespace DatabaseProject
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
             NoleggioAccessori_Lista.Items.Clear();
+
+            this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
+        }
+
+        private void Percorso_Enter(object sender, EventArgs e)
+        {
+            if (this.Percorso.Text.Equals("ID Percorso"))
+            {
+                this.Percorso.Text = "";
+            }
+            this.Percorso.ForeColor = Color.Black;
+            this.percorso = true;
+        }
+
+        private void Percorso_Leave(object sender, EventArgs e)
+        {
+            if (this.Percorso.Text.Equals(""))
+            {
+                this.Percorso.Text = "ID Percorso";
+                this.Percorso.ForeColor = Color.Gray;
+                this.percorso = false;
+            } else
+            {
+                var bindPerc = (BindingSource)TabellaPercorsi.DataSource;
+                var listaPerc = ((DataTable)bindPerc.DataSource).Rows;
+                foreach (DataRow r in listaPerc)
+                {
+                    if (r["IDpercorso"].Equals(this.Percorso.Text))
+                    {
+                        //e' nella lista
+                        return;
+                    }
+                }
+                //non e'nella lista
+                this.Percorso.Text = "ID Percorso";
+                this.Percorso.ForeColor = Color.Gray;
+                this.percorso = false;
+                MessageBox.Show("Percorso non presente",
+                       "Errore",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+            }
+        }
+
+        private void AggiungiGuida_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem v in Guide_Lista.Items)
+            {
+                if (v.Text == this.Guida.Text) return;
+            }
+            var bindAcc = (BindingSource)TabellaGuide.DataSource;
+            var listaAcc = ((DataTable)bindAcc.DataSource).Rows;
+            foreach (DataRow r in listaAcc)
+            {
+                if (r["CF"].Equals(this.Guida.Text))
+                {
+                    //aggiungi alla lista
+                    Guide_Lista.Items.Add(Guida.Text);
+                    return;
+                }
+            }
+        }
+
+        private void CreaPercorsoGuidato_Click(object sender, EventArgs e)
+        {
+            //Console.WriteLine(NoleggioBiciclette_Lista.Items.Count);
+            if (Guide_Lista.Items.Count == 0 || !percorso) return;
+            //crea pacchetto se non esiste
+            CreatePacchetto();
+            //crea il servizio 
+            bool result = true;
+            ExecuteQueryIf(this.servizio_datainizio && this.servizio_datafine, (q, c) => {
+                result = q.InserisciServizio(Servizio_DataInizio.Text, Servizio_DataFine.Text, Servizio_ID.Text, "PERCORSO_GUIDATO", IDPacchetto, IDSede, Percorso.Text);
+                if (!result)
+                {
+                    MessageBox.Show("Servizio non creato!",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
+            if (!result)
+            {
+                Guide_Lista.Items.Clear();
+                return;
+            }
+            float valoreTot = valorePercorso;
+            foreach (ListViewItem b in Guide_Lista.Items)
+            {
+                result = true;
+                ExecuteQueryIf(true, (q, c) => {
+                    result = q.InserisciPartecipazione(this.Servizio_ID.Text, b.Text);
+                    //Console.WriteLine(b);
+                    if (!result)
+                    {
+                        MessageBox.Show("Guide non registrate nel percorso guidato",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    valoreTot += valoreXGuida;
+                });
+                if (!result)
+                {
+                    Guide_Lista.Items.Clear();
+                    return;
+                }
+            }
+            MessageBox.Show("Percorso guidato prenotato correttamente",
+                       "Info",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+            Guide_Lista.Items.Clear();
+
+            this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
         }
     }
 }

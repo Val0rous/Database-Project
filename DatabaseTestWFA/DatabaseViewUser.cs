@@ -88,8 +88,8 @@ namespace DatabaseProject
             connection.Connection.Open();
             var queries = new QueryLibrary(connection.Connection);
 
-            FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
-            FillTable(TabellaPercorsi, queries.LeggiPercorso().CommandText, connection.Connection);
+            //FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
+            //FillTable(TabellaPercorsi, queries.LeggiPercorso().CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour().CommandText, connection.Connection);
 
             //this.Pacchetto_ID.ForeColor = Color.Gray;
@@ -113,10 +113,10 @@ namespace DatabaseProject
         private void RefreshAll(object sender, EventArgs e)
         {
             this.DatabaseViewUser_Load(sender, e);
-            TabellaPrenotazioni.Update();
-            TabellaPrenotazioni.Refresh();
-            TabellaPercorsi.Update();
-            TabellaPercorsi.Refresh();
+            //TabellaPrenotazioni.Update();
+            //TabellaPrenotazioni.Refresh();
+            //TabellaPercorsi.Update();
+            //TabellaPercorsi.Refresh();
             TabellaTour.Update();
             TabellaTour.Refresh();
         }
