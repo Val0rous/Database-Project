@@ -138,12 +138,12 @@ namespace DatabaseProject
             this.Dipendenti_Cognome.ForeColor = Color.Gray;
             this.Dipendenti_CF.ForeColor = Color.Gray;
             this.Dipendenti_Telefono.ForeColor = Color.Gray;
-            this.Dipendenti_CodiceDipendente.ForeColor = Color.Gray;
+            //this.Dipendenti_CodiceDipendente.ForeColor = Color.Gray;
             this.Dipendenti_Stipendio.ForeColor = Color.Gray;
             this.Dipendenti_IDsede.ForeColor = Color.Gray;
             this.Dipendenti_CFsuperiore.ForeColor = Color.Gray;
 
-            this.TourID.ForeColor = Color.Gray;
+            //this.TourID.ForeColor = Color.Gray;
             this.TourDestinazione.ForeColor = Color.Gray;
             this.TourNome.ForeColor = Color.Gray;
             this.TourDataInizio.ForeColor = Color.Gray;
@@ -1750,6 +1750,8 @@ namespace DatabaseProject
             connection.Connection.Open();
             var queries = new QueryLibrary(connection.Connection);
             FillTable(TabellaDipendenti, queries.LeggiDipendentiAgenzia(this.PIVAagenzia).CommandText, connection.Connection);
+            TabellaDipendenti.Update();
+            TabellaDipendenti.Refresh();
         }
     }
 }
