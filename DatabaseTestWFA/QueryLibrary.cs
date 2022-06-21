@@ -445,13 +445,13 @@ namespace DatabaseProject
                 "WHERE accessorio.IDmagazzino=magazzino.IDmagazzino AND magazzino.IDsede=" + Convert(IDsede);
             return command;
         }
-        public MySqlCommand LeggiAccessori(String IDsede, String Date)
+        public MySqlCommand LeggiAccessori(String IDsede, String DateI, String DateF)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             //command.Parameters.AddWithValue("@IDsede", IDsede);
             //command.Parameters.AddWithValue("@Date", Date);
             command.CommandText = "WITH NoleggiAccessoriAttivi(IDaccessorio) AS(SELECT A.IDaccessorio FROM accessorio A, noleggioaccessorio NA, servizio S " +
-            "WHERE A.IDaccessorio = NA.IDaccessorio AND NA.IDservizio = S.IDservizio AND " + Convert(Date) + " >= S.DataInizio AND " + Convert(Date) + " <= S.DataFine) " +
+            "WHERE A.IDaccessorio = NA.IDaccessorio AND NA.IDservizio = S.IDservizio AND " + Convert(DateF) + " >= S.DataInizio AND " + Convert(DateI) + " <= S.DataFine) " +
             "SELECT * FROM accessorio A WHERE A.IDaccessorio NOT IN(SELECT NAA.IDaccessorio FROM NoleggiAccessoriAttivi AS NAA) " +
             "AND A.IDmagazzino IN(SELECT IDmagazzino FROM sede S, magazzino M WHERE S.IDsede=" + Convert(IDsede) + " AND M.IDsede= S.IDsede);";
             return command;

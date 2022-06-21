@@ -31,6 +31,7 @@ namespace DatabaseProject
         {
             this.TabPage = new System.Windows.Forms.TabControl();
             this.Clienti = new System.Windows.Forms.TabPage();
+            this.NoleggioBiciclette_Lista = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.AggiungiNoleggioButton = new System.Windows.Forms.Button();
@@ -38,19 +39,6 @@ namespace DatabaseProject
             this.TabellaBici = new System.Windows.Forms.DataGridView();
             this.NoleggiaBiciButton = new System.Windows.Forms.Button();
             this.Dipendenti = new System.Windows.Forms.TabPage();
-            this.Dipendente_isAltro = new System.Windows.Forms.CheckBox();
-            this.Dipendente_isTourManager = new System.Windows.Forms.CheckBox();
-            this.Dipendente_isGuida = new System.Windows.Forms.CheckBox();
-            this.Dipendenti_CFsuperiore = new System.Windows.Forms.TextBox();
-            this.Dipendenti_IDsede = new System.Windows.Forms.TextBox();
-            this.Dipendenti_Stipendio = new System.Windows.Forms.TextBox();
-            this.Dipendenti_CodiceDipendente = new System.Windows.Forms.TextBox();
-            this.Dipendenti_Telefono = new System.Windows.Forms.TextBox();
-            this.Dipendenti_CF = new System.Windows.Forms.TextBox();
-            this.Dipendenti_Cognome = new System.Windows.Forms.TextBox();
-            this.Dipendenti_Nome = new System.Windows.Forms.TextBox();
-            this.AggiungiDipendente = new System.Windows.Forms.Button();
-            this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
             this.Tour = new System.Windows.Forms.TabPage();
             this.TourPrezzo = new System.Windows.Forms.TextBox();
             this.TourCFManager = new System.Windows.Forms.TextBox();
@@ -70,14 +58,20 @@ namespace DatabaseProject
             this.Servizio_ID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.AggiornaButton = new System.Windows.Forms.Button();
-            this.NoleggioBiciclette_Lista = new System.Windows.Forms.ListView();
+            this.NoleggioAccessori_Lista = new System.Windows.Forms.ListView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.AggiungiNoleggio1 = new System.Windows.Forms.Button();
+            this.Accessorio = new System.Windows.Forms.TextBox();
+            this.TabellaAccessori = new System.Windows.Forms.DataGridView();
+            this.NoleggiaAccessorio = new System.Windows.Forms.Button();
             this.TabPage.SuspendLayout();
             this.Clienti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBici)).BeginInit();
             this.Dipendenti.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).BeginInit();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaAccessori)).BeginInit();
             this.SuspendLayout();
             // 
             // TabPage
@@ -114,6 +108,15 @@ namespace DatabaseProject
             this.Clienti.TabIndex = 0;
             this.Clienti.Text = "Noleggio Biciclette";
             this.Clienti.UseVisualStyleBackColor = true;
+            // 
+            // NoleggioBiciclette_Lista
+            // 
+            this.NoleggioBiciclette_Lista.HideSelection = false;
+            this.NoleggioBiciclette_Lista.Location = new System.Drawing.Point(7, 140);
+            this.NoleggioBiciclette_Lista.Name = "NoleggioBiciclette_Lista";
+            this.NoleggioBiciclette_Lista.Size = new System.Drawing.Size(111, 214);
+            this.NoleggioBiciclette_Lista.TabIndex = 17;
+            this.NoleggioBiciclette_Lista.UseCompatibleStateImageBehavior = false;
             // 
             // label5
             // 
@@ -183,19 +186,13 @@ namespace DatabaseProject
             // 
             // Dipendenti
             // 
-            this.Dipendenti.Controls.Add(this.Dipendente_isAltro);
-            this.Dipendenti.Controls.Add(this.Dipendente_isTourManager);
-            this.Dipendenti.Controls.Add(this.Dipendente_isGuida);
-            this.Dipendenti.Controls.Add(this.Dipendenti_CFsuperiore);
-            this.Dipendenti.Controls.Add(this.Dipendenti_IDsede);
-            this.Dipendenti.Controls.Add(this.Dipendenti_Stipendio);
-            this.Dipendenti.Controls.Add(this.Dipendenti_CodiceDipendente);
-            this.Dipendenti.Controls.Add(this.Dipendenti_Telefono);
-            this.Dipendenti.Controls.Add(this.Dipendenti_CF);
-            this.Dipendenti.Controls.Add(this.Dipendenti_Cognome);
-            this.Dipendenti.Controls.Add(this.Dipendenti_Nome);
-            this.Dipendenti.Controls.Add(this.AggiungiDipendente);
-            this.Dipendenti.Controls.Add(this.TabellaDipendenti);
+            this.Dipendenti.Controls.Add(this.NoleggioAccessori_Lista);
+            this.Dipendenti.Controls.Add(this.label6);
+            this.Dipendenti.Controls.Add(this.label7);
+            this.Dipendenti.Controls.Add(this.AggiungiNoleggio1);
+            this.Dipendenti.Controls.Add(this.Accessorio);
+            this.Dipendenti.Controls.Add(this.TabellaAccessori);
+            this.Dipendenti.Controls.Add(this.NoleggiaAccessorio);
             this.Dipendenti.Location = new System.Drawing.Point(4, 22);
             this.Dipendenti.Margin = new System.Windows.Forms.Padding(2);
             this.Dipendenti.Name = "Dipendenti";
@@ -204,133 +201,6 @@ namespace DatabaseProject
             this.Dipendenti.TabIndex = 7;
             this.Dipendenti.Text = "Noleggio Accessori";
             this.Dipendenti.UseVisualStyleBackColor = true;
-            // 
-            // Dipendente_isAltro
-            // 
-            this.Dipendente_isAltro.AutoSize = true;
-            this.Dipendente_isAltro.Location = new System.Drawing.Point(5, 187);
-            this.Dipendente_isAltro.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendente_isAltro.Name = "Dipendente_isAltro";
-            this.Dipendente_isAltro.Size = new System.Drawing.Size(47, 17);
-            this.Dipendente_isAltro.TabIndex = 21;
-            this.Dipendente_isAltro.Text = "Altro";
-            this.Dipendente_isAltro.UseVisualStyleBackColor = true;
-            // 
-            // Dipendente_isTourManager
-            // 
-            this.Dipendente_isTourManager.AutoSize = true;
-            this.Dipendente_isTourManager.Location = new System.Drawing.Point(5, 165);
-            this.Dipendente_isTourManager.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendente_isTourManager.Name = "Dipendente_isTourManager";
-            this.Dipendente_isTourManager.Size = new System.Drawing.Size(90, 17);
-            this.Dipendente_isTourManager.TabIndex = 20;
-            this.Dipendente_isTourManager.Text = "TourManager";
-            this.Dipendente_isTourManager.UseVisualStyleBackColor = true;
-            // 
-            // Dipendente_isGuida
-            // 
-            this.Dipendente_isGuida.AutoSize = true;
-            this.Dipendente_isGuida.Location = new System.Drawing.Point(4, 142);
-            this.Dipendente_isGuida.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendente_isGuida.Name = "Dipendente_isGuida";
-            this.Dipendente_isGuida.Size = new System.Drawing.Size(54, 17);
-            this.Dipendente_isGuida.TabIndex = 19;
-            this.Dipendente_isGuida.Text = "Guida";
-            this.Dipendente_isGuida.UseVisualStyleBackColor = true;
-            // 
-            // Dipendenti_CFsuperiore
-            // 
-            this.Dipendenti_CFsuperiore.Location = new System.Drawing.Point(2, 228);
-            this.Dipendenti_CFsuperiore.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_CFsuperiore.Name = "Dipendenti_CFsuperiore";
-            this.Dipendenti_CFsuperiore.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_CFsuperiore.TabIndex = 17;
-            this.Dipendenti_CFsuperiore.Text = "Cod. Fiscale del Superiore";
-            // 
-            // Dipendenti_IDsede
-            // 
-            this.Dipendenti_IDsede.Location = new System.Drawing.Point(2, 206);
-            this.Dipendenti_IDsede.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_IDsede.Name = "Dipendenti_IDsede";
-            this.Dipendenti_IDsede.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_IDsede.TabIndex = 16;
-            this.Dipendenti_IDsede.Text = "ID Sede";
-            // 
-            // Dipendenti_Stipendio
-            // 
-            this.Dipendenti_Stipendio.Location = new System.Drawing.Point(4, 119);
-            this.Dipendenti_Stipendio.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_Stipendio.Name = "Dipendenti_Stipendio";
-            this.Dipendenti_Stipendio.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_Stipendio.TabIndex = 11;
-            this.Dipendenti_Stipendio.Text = "Stipendio";
-            // 
-            // Dipendenti_CodiceDipendente
-            // 
-            this.Dipendenti_CodiceDipendente.Location = new System.Drawing.Point(4, 97);
-            this.Dipendenti_CodiceDipendente.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_CodiceDipendente.Name = "Dipendenti_CodiceDipendente";
-            this.Dipendenti_CodiceDipendente.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_CodiceDipendente.TabIndex = 10;
-            this.Dipendenti_CodiceDipendente.Text = "Codice Dipendente";
-            // 
-            // Dipendenti_Telefono
-            // 
-            this.Dipendenti_Telefono.Location = new System.Drawing.Point(4, 74);
-            this.Dipendenti_Telefono.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_Telefono.Name = "Dipendenti_Telefono";
-            this.Dipendenti_Telefono.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_Telefono.TabIndex = 8;
-            this.Dipendenti_Telefono.Text = "Numero di Telefono";
-            // 
-            // Dipendenti_CF
-            // 
-            this.Dipendenti_CF.Location = new System.Drawing.Point(4, 50);
-            this.Dipendenti_CF.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_CF.Name = "Dipendenti_CF";
-            this.Dipendenti_CF.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_CF.TabIndex = 7;
-            this.Dipendenti_CF.Text = "Codice Fiscale";
-            // 
-            // Dipendenti_Cognome
-            // 
-            this.Dipendenti_Cognome.Location = new System.Drawing.Point(4, 28);
-            this.Dipendenti_Cognome.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_Cognome.Name = "Dipendenti_Cognome";
-            this.Dipendenti_Cognome.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_Cognome.TabIndex = 6;
-            this.Dipendenti_Cognome.Text = "Cognome";
-            // 
-            // Dipendenti_Nome
-            // 
-            this.Dipendenti_Nome.Location = new System.Drawing.Point(4, 5);
-            this.Dipendenti_Nome.Margin = new System.Windows.Forms.Padding(2);
-            this.Dipendenti_Nome.Name = "Dipendenti_Nome";
-            this.Dipendenti_Nome.Size = new System.Drawing.Size(134, 20);
-            this.Dipendenti_Nome.TabIndex = 5;
-            this.Dipendenti_Nome.Text = "Nome";
-            // 
-            // AggiungiDipendente
-            // 
-            this.AggiungiDipendente.Location = new System.Drawing.Point(2, 251);
-            this.AggiungiDipendente.Margin = new System.Windows.Forms.Padding(2);
-            this.AggiungiDipendente.Name = "AggiungiDipendente";
-            this.AggiungiDipendente.Size = new System.Drawing.Size(134, 38);
-            this.AggiungiDipendente.TabIndex = 9;
-            this.AggiungiDipendente.Text = "Aggiungi Dipendente";
-            this.AggiungiDipendente.UseVisualStyleBackColor = true;
-            // 
-            // TabellaDipendenti
-            // 
-            this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaDipendenti.Location = new System.Drawing.Point(142, 5);
-            this.TabellaDipendenti.Margin = new System.Windows.Forms.Padding(2);
-            this.TabellaDipendenti.Name = "TabellaDipendenti";
-            this.TabellaDipendenti.ReadOnly = true;
-            this.TabellaDipendenti.RowHeadersWidth = 51;
-            this.TabellaDipendenti.RowTemplate.Height = 24;
-            this.TabellaDipendenti.Size = new System.Drawing.Size(566, 395);
-            this.TabellaDipendenti.TabIndex = 0;
             // 
             // Tour
             // 
@@ -534,14 +404,80 @@ namespace DatabaseProject
             this.AggiornaButton.UseVisualStyleBackColor = true;
             this.AggiornaButton.Enter += new System.EventHandler(this.AggiornaButton_Enter);
             // 
-            // NoleggioBiciclette_Lista
+            // NoleggioAccessori_Lista
             // 
-            this.NoleggioBiciclette_Lista.HideSelection = false;
-            this.NoleggioBiciclette_Lista.Location = new System.Drawing.Point(7, 140);
-            this.NoleggioBiciclette_Lista.Name = "NoleggioBiciclette_Lista";
-            this.NoleggioBiciclette_Lista.Size = new System.Drawing.Size(111, 214);
-            this.NoleggioBiciclette_Lista.TabIndex = 17;
-            this.NoleggioBiciclette_Lista.UseCompatibleStateImageBehavior = false;
+            this.NoleggioAccessori_Lista.HideSelection = false;
+            this.NoleggioAccessori_Lista.Location = new System.Drawing.Point(7, 139);
+            this.NoleggioAccessori_Lista.Name = "NoleggioAccessori_Lista";
+            this.NoleggioAccessori_Lista.Size = new System.Drawing.Size(111, 214);
+            this.NoleggioAccessori_Lista.TabIndex = 24;
+            this.NoleggioAccessori_Lista.UseCompatibleStateImageBehavior = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Window;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(7, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Seleziona l\'accessorio:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Window;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label7.Location = new System.Drawing.Point(7, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 26);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Lista accessori\r\nnoleggiati:";
+            // 
+            // AggiungiNoleggio1
+            // 
+            this.AggiungiNoleggio1.Location = new System.Drawing.Point(7, 65);
+            this.AggiungiNoleggio1.Margin = new System.Windows.Forms.Padding(2);
+            this.AggiungiNoleggio1.Name = "AggiungiNoleggio1";
+            this.AggiungiNoleggio1.Size = new System.Drawing.Size(112, 32);
+            this.AggiungiNoleggio1.TabIndex = 21;
+            this.AggiungiNoleggio1.Text = "Aggiungi al Noleggio";
+            this.AggiungiNoleggio1.UseVisualStyleBackColor = true;
+            this.AggiungiNoleggio1.Click += new System.EventHandler(this.AggiungiNoleggio1_Click);
+            // 
+            // Accessorio
+            // 
+            this.Accessorio.BackColor = System.Drawing.SystemColors.Window;
+            this.Accessorio.Location = new System.Drawing.Point(7, 41);
+            this.Accessorio.Margin = new System.Windows.Forms.Padding(2);
+            this.Accessorio.Name = "Accessorio";
+            this.Accessorio.Size = new System.Drawing.Size(111, 20);
+            this.Accessorio.TabIndex = 20;
+            this.Accessorio.Text = "ID Accessorio";
+            // 
+            // TabellaAccessori
+            // 
+            this.TabellaAccessori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaAccessori.Location = new System.Drawing.Point(123, 4);
+            this.TabellaAccessori.Margin = new System.Windows.Forms.Padding(2);
+            this.TabellaAccessori.Name = "TabellaAccessori";
+            this.TabellaAccessori.ReadOnly = true;
+            this.TabellaAccessori.RowHeadersWidth = 51;
+            this.TabellaAccessori.RowTemplate.Height = 24;
+            this.TabellaAccessori.Size = new System.Drawing.Size(439, 392);
+            this.TabellaAccessori.TabIndex = 19;
+            // 
+            // NoleggiaAccessorio
+            // 
+            this.NoleggiaAccessorio.Location = new System.Drawing.Point(7, 357);
+            this.NoleggiaAccessorio.Margin = new System.Windows.Forms.Padding(2);
+            this.NoleggiaAccessorio.Name = "NoleggiaAccessorio";
+            this.NoleggiaAccessorio.Size = new System.Drawing.Size(111, 38);
+            this.NoleggiaAccessorio.TabIndex = 18;
+            this.NoleggiaAccessorio.Text = "Noleggia Accessorio";
+            this.NoleggiaAccessorio.UseVisualStyleBackColor = true;
+            this.NoleggiaAccessorio.Click += new System.EventHandler(this.NoleggiaAccessorio_Click);
             // 
             // UserServices
             // 
@@ -567,10 +503,10 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBici)).EndInit();
             this.Dipendenti.ResumeLayout(false);
             this.Dipendenti.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).EndInit();
             this.Tour.ResumeLayout(false);
             this.Tour.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaAccessori)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,19 +519,6 @@ namespace DatabaseProject
         private System.Windows.Forms.DataGridView TabellaBici;
         private System.Windows.Forms.Button NoleggiaBiciButton;
         private System.Windows.Forms.TabPage Dipendenti;
-        private System.Windows.Forms.CheckBox Dipendente_isAltro;
-        private System.Windows.Forms.CheckBox Dipendente_isTourManager;
-        private System.Windows.Forms.CheckBox Dipendente_isGuida;
-        private System.Windows.Forms.TextBox Dipendenti_CFsuperiore;
-        private System.Windows.Forms.TextBox Dipendenti_IDsede;
-        private System.Windows.Forms.TextBox Dipendenti_Stipendio;
-        private System.Windows.Forms.TextBox Dipendenti_CodiceDipendente;
-        private System.Windows.Forms.TextBox Dipendenti_Telefono;
-        private System.Windows.Forms.TextBox Dipendenti_CF;
-        private System.Windows.Forms.TextBox Dipendenti_Cognome;
-        private System.Windows.Forms.TextBox Dipendenti_Nome;
-        private System.Windows.Forms.Button AggiungiDipendente;
-        private System.Windows.Forms.DataGridView TabellaDipendenti;
         private System.Windows.Forms.TabPage Tour;
         private System.Windows.Forms.TextBox TourPrezzo;
         private System.Windows.Forms.TextBox TourCFManager;
@@ -620,5 +543,12 @@ namespace DatabaseProject
         private System.Windows.Forms.Button AggiornaButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView NoleggioBiciclette_Lista;
+        private System.Windows.Forms.ListView NoleggioAccessori_Lista;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button AggiungiNoleggio1;
+        private System.Windows.Forms.TextBox Accessorio;
+        private System.Windows.Forms.DataGridView TabellaAccessori;
+        private System.Windows.Forms.Button NoleggiaAccessorio;
     }
 }

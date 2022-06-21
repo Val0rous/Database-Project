@@ -142,14 +142,25 @@ namespace DatabaseProject
         {
             if (TabPage.SelectedTab.Text == "Noleggio Biciclette")
             {
-                ExecuteQueryIf(this.servizio_datafine && this.servizio_datainizio, (q, c) => {
+                ExecuteQueryIf(this.servizio_datafine && this.servizio_datainizio, (q, c) =>
+                {
                     FillTable(TabellaBici, q.LeggiBiciclette(IDSede, this.Servizio_DataInizio.Text, this.Servizio_DataFine.Text).CommandText, c.Connection);
                 });
             }
+            else if (TabPage.SelectedTab.Text == "Noleggio Accessori")
+            {
+                ExecuteQueryIf(this.servizio_datafine && this.servizio_datainizio, (q, c) =>
+                {
+                    FillTable(TabellaAccessori, q.LeggiAccessori(IDSede, this.Servizio_DataInizio.Text, this.Servizio_DataFine.Text).CommandText, c.Connection);
+                });
+            }
         }
-
         private void AggiungiNoleggioButton_Click(object sender, EventArgs e)
         {
+            foreach (ListViewItem v in NoleggioBiciclette_Lista.Items)
+            {
+                if (v.Text == this.Bici.Text) return;
+            }
             var bindBici = (BindingSource)TabellaBici.DataSource;
             var listaBici = ((DataTable)bindBici.DataSource).Rows;
             foreach (DataRow r in listaBici)
@@ -165,13 +176,14 @@ namespace DatabaseProject
 
         private void NoleggiaBiciButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(NoleggioBiciclette_Lista.Items.Count);
+            //Console.WriteLine(NoleggioBiciclette_Lista.Items.Count);
             if (NoleggioBiciclette_Lista.Items.Count == 0) return;
             //crea pacchetto se non esiste
             CreatePacchetto();
             //crea il servizio 
-            ExecuteQueryIf(true, (q,c) => {
-                var result = q.InserisciServizio(Servizio_DataInizio.Text, Servizio_DataFine.Text, Servizio_ID.Text, "NOLEGGIO_BICICLETTE", IDPacchetto, IDSede, "");
+            bool result = true;
+            ExecuteQueryIf(this.servizio_datainizio && this.servizio_datafine, (q,c) => {
+                result = q.InserisciServizio(Servizio_DataInizio.Text, Servizio_DataFine.Text, Servizio_ID.Text, "NOLEGGIO_BICICLETTE", IDPacchetto, IDSede, "");
                 if (!result)
                 {
                     MessageBox.Show("Servizio non creato!",
@@ -180,10 +192,15 @@ namespace DatabaseProject
                     MessageBoxIcon.Error);
                 }
             });
+            if (!result)
+            {
+                NoleggioBiciclette_Lista.Items.Clear();
+                return;
+            }
 
             foreach (ListViewItem b in NoleggioBiciclette_Lista.Items)
             {
-                bool result = true;
+                result = true;
                 ExecuteQueryIf(true, (q, c) => {
                     result = q.InserisciNoleggioBicicletta(this.Servizio_ID.Text, b.Text);
                     //Console.WriteLine(b);
@@ -197,6 +214,7 @@ namespace DatabaseProject
                 });
                 if (!result)
                 {
+                    NoleggioBiciclette_Lista.Items.Clear();
                     return;
                 }
             }
@@ -204,6 +222,77 @@ namespace DatabaseProject
                        "Info",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
+            NoleggioBiciclette_Lista.Items.Clear();
+        }
+
+        private void AggiungiNoleggio1_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem v in NoleggioAccessori_Lista.Items)
+            {
+                if (v.Text == this.Accessorio.Text) return;
+            }
+            var bindAcc = (BindingSource)TabellaAccessori.DataSource;
+            var listaAcc = ((DataTable)bindAcc.DataSource).Rows;
+            foreach (DataRow r in listaAcc)
+            {
+                if (r["IDaccessorio"].Equals(this.Accessorio.Text))
+                {
+                    //aggiungi alla lista
+                    NoleggioAccessori_Lista.Items.Add(Accessorio.Text);
+                    return;
+                }
+            }
+        }
+
+        private void NoleggiaAccessorio_Click(object sender, EventArgs e)
+        {
+            //Console.WriteLine(NoleggioBiciclette_Lista.Items.Count);
+            if (NoleggioAccessori_Lista.Items.Count == 0) return;
+            //crea pacchetto se non esiste
+            CreatePacchetto();
+            //crea il servizio 
+            bool result = true;
+            ExecuteQueryIf(this.servizio_datainizio && this.servizio_datafine, (q, c) => {
+                result = q.InserisciServizio(Servizio_DataInizio.Text, Servizio_DataFine.Text, Servizio_ID.Text, "NOLEGGIO_ACCESSORI", IDPacchetto, IDSede, "");
+                if (!result)
+                {
+                    MessageBox.Show("Servizio non creato!",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
+            if (!result)
+            {
+                NoleggioAccessori_Lista.Items.Clear();
+                return;
+            }
+
+            foreach (ListViewItem b in NoleggioAccessori_Lista.Items)
+            {
+                result = true;
+                ExecuteQueryIf(true, (q, c) => {
+                    result = q.InserisciNoleggioAccessorio(this.Servizio_ID.Text, b.Text);
+                    //Console.WriteLine(b);
+                    if (!result)
+                    {
+                        MessageBox.Show("Accessori non noleggiati",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                });
+                if (!result)
+                {
+                    NoleggioAccessori_Lista.Items.Clear();
+                    return;
+                }
+            }
+            MessageBox.Show("Accessori noleggiati correttamente",
+                       "Info",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+            NoleggioAccessori_Lista.Items.Clear();
         }
     }
 }
