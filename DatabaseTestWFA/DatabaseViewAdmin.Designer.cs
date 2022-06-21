@@ -202,7 +202,7 @@ namespace DatabaseProject
             this.TourCFManager.Name = "TourCFManager";
             this.TourCFManager.Size = new System.Drawing.Size(177, 22);
             this.TourCFManager.TabIndex = 18;
-            this.TourCFManager.Text = "Tour Manager";
+            this.TourCFManager.Text = "CF del Tour Manager";
             this.TourCFManager.Enter += new System.EventHandler(this.TourCFtourManager_Enter);
             this.TourCFManager.Leave += new System.EventHandler(this.TourCFtourManager_Leave);
             // 
@@ -213,7 +213,7 @@ namespace DatabaseProject
             this.TourDataFine.Name = "TourDataFine";
             this.TourDataFine.Size = new System.Drawing.Size(177, 22);
             this.TourDataFine.TabIndex = 16;
-            this.TourDataFine.Text = "Data Fine";
+            this.TourDataFine.Text = "Data Fine (YYYY-MM-DD)";
             this.TourDataFine.Enter += new System.EventHandler(this.TourDataFine_Enter);
             this.TourDataFine.Leave += new System.EventHandler(this.TourDataFine_Leave);
             // 
@@ -224,7 +224,7 @@ namespace DatabaseProject
             this.TourDataInizio.Name = "TourDataInizio";
             this.TourDataInizio.Size = new System.Drawing.Size(177, 22);
             this.TourDataInizio.TabIndex = 15;
-            this.TourDataInizio.Text = "Data Inizio";
+            this.TourDataInizio.Text = "Data Inizio (YYYY-MM-DD)";
             this.TourDataInizio.Enter += new System.EventHandler(this.TourDataInizio_Enter);
             this.TourDataInizio.Leave += new System.EventHandler(this.TourDataInizio_Leave);
             // 
@@ -1010,7 +1010,7 @@ namespace DatabaseProject
             this.Servizi_DataFine.Name = "Servizi_DataFine";
             this.Servizi_DataFine.Size = new System.Drawing.Size(132, 22);
             this.Servizi_DataFine.TabIndex = 7;
-            this.Servizi_DataFine.Text = "DataFine";
+            this.Servizi_DataFine.Text = "Data Fine";
             this.Servizi_DataFine.Enter += new System.EventHandler(this.Servizi_DataFine_Enter);
             this.Servizi_DataFine.Leave += new System.EventHandler(this.Servizi_DataFine_Leave);
             // 
@@ -1073,7 +1073,7 @@ namespace DatabaseProject
             this.Servizi_DataInizio.Name = "Servizi_DataInizio";
             this.Servizi_DataInizio.Size = new System.Drawing.Size(132, 22);
             this.Servizi_DataInizio.TabIndex = 1;
-            this.Servizi_DataInizio.Text = "DataInizio";
+            this.Servizi_DataInizio.Text = "Data Inizio";
             this.Servizi_DataInizio.Enter += new System.EventHandler(this.Servizi_DataInizio_Enter);
             this.Servizi_DataInizio.Leave += new System.EventHandler(this.Servizi_DataInizio_Leave);
             // 

@@ -1302,7 +1302,7 @@ namespace DatabaseProject
         {
             if (this.TourDataFine.Text.Equals(""))
             {
-                this.TourDataFine.Text = "Data Inizio (YYYY-MM-DD)";
+                this.TourDataFine.Text = "Data Fine (YYYY-MM-DD)";
                 this.TourDataFine.ForeColor = Color.Gray;
                 this.tour_dataFine = false;
             }
