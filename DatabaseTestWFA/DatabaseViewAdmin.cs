@@ -119,7 +119,7 @@ namespace DatabaseProject
             var queries = new QueryLibrary(connection.Connection);
 
             FillTable(TabellaClienti, queries.LeggiClienti().CommandText, connection.Connection);
-            FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
+            //FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
             FillTable(TabellaMagazzini, queries.LeggiMagazzini(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaPercorsi, queries.LeggiPercorso(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaBusinessPartners, queries.LeggiBusinessPartner(this.PIVAagenzia).CommandText, connection.Connection);
@@ -214,8 +214,8 @@ namespace DatabaseProject
             this.DatabaseViewAdmin_Load(sender, e);
             TabellaClienti.Update();
             TabellaClienti.Refresh();
-            TabellaPrenotazioni.Update();
-            TabellaPrenotazioni.Refresh();
+            //TabellaPrenotazioni.Update();
+            //TabellaPrenotazioni.Refresh();
             TabellaMagazzini.Update();
             TabellaMagazzini.Refresh();
             TabellaPercorsi.Update();
@@ -240,6 +240,17 @@ namespace DatabaseProject
                 TabellaTour.Update();
                 TabellaTour.Refresh();
                 this.TourID.Text = queries.GetNextID("tour", "IDtour");
+            }
+            else if (this.TabPage.SelectedTab.Text == "Dipendenti")
+            {
+                FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
+                this.Dipendenti_CodiceDipendente.Text = queries.GetNextID("dipendente", "CodiceDipendente");
+            }
+            else if (this.TabPage.SelectedTab.Text == "Percorsi")
+            {
+                TabellaPercorsi.Update();
+                TabellaPercorsi.Refresh();
+                this.NuovaTappa_IDtappa.Text = queries.GetNextID("tappa", "IDtappa");
             }
         }
 
@@ -401,7 +412,7 @@ namespace DatabaseProject
         {
 
         }
-
+        /*
         private void Prenotazioni_CFcliente_Enter(object sender, EventArgs e)
         {
             if (this.Prenotazioni_CFcliente.Text.Equals("Codice Fiscale Cliente"))
@@ -441,7 +452,7 @@ namespace DatabaseProject
                 this.prenotazione_IDtour = false;
             }
         }
-
+        */
         private void AggiungiPrenotazione_Click(object sender, EventArgs e)
         {
             /*if (this.prenotazione_CF && this.prenotazione_IDtour)
@@ -479,7 +490,7 @@ namespace DatabaseProject
                 "Attenzione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
-            }*/
+            }
             bool condition = this.prenotazione_CF && this.prenotazione_IDtour;
             ExecuteQueryIf(condition, q => {
                 var result = q.InserisciPrenotazione(
@@ -499,7 +510,7 @@ namespace DatabaseProject
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 }
-            });
+            });*/
         }
 
         private void Magazzini_CapMaxAccessori_Enter(object sender, EventArgs e)
@@ -1544,22 +1555,12 @@ namespace DatabaseProject
 
         private void NuovaTappa_IDtappa_Enter(object sender, EventArgs e)
         {
-            if (this.NuovaTappa_IDtappa.Text.Equals("ID Tappa"))
-            {
-                this.NuovaTappa_IDtappa.Text = "";
-            }
-            this.NuovaTappa_IDtappa.ForeColor = Color.Black;
-            this.nuovatappa_IDtappa = true;
+
         }
 
         private void NuovaTappa_IDtappa_Leave(object sender, EventArgs e)
         {
-            if (this.NuovaTappa_IDtappa.Text.Equals(""))
-            {
-                this.NuovaTappa_IDtappa.Text = "ID Tappa";
-                this.NuovaTappa_IDtappa.ForeColor = Color.Gray;
-                this.nuovatappa_IDtappa = false;
-            }
+
         }
 
         private void NuovaTappa_IDpercorso_Enter(object sender, EventArgs e)
@@ -1584,7 +1585,41 @@ namespace DatabaseProject
 
         private void AggiungiTappa_Click_1(object sender, EventArgs e)
         {
-
+            bool condition = this.nuovatappa_IDpercorso && this.nuovatappa_inizio && this.nuovatappa_fine && this.nuovatappa_lunghezza;
+            ExecuteQueryIf(condition, q =>
+            {
+                var result = q.InserisciTappa(NuovaTappa_Inizio.Text, NuovaTappa_Fine.Text, float.Parse(NuovaTappa_Lunghezza.Text), NuovaTappa_IDtappa.Text);
+                if (result)
+                {
+                    ExecuteQueryIf(true, qq =>
+                    {
+                        result = qq.InserisciSequenza(NuovaTappa_IDtappa.Text, NuovaTappa_IDpercorso.Text);
+                        if (result)
+                        {
+                            qq.UpdatePercorso(NuovaTappa_IDpercorso.Text, NuovaTappa_IDtappa.Text);
+                            MessageBox.Show("tappa inserita correttamente",
+                            "Info",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tappa non inserita",
+                            "Errore",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        }
+                    });
+                    this.NuovaTappa_IDtappa.Text = q.GetNextID("tappa", "IDtappa");
+                }
+                else
+                {
+                    MessageBox.Show("Tappa non inserita",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -1659,6 +1694,14 @@ namespace DatabaseProject
                  MessageBoxButtons.OK,
                  MessageBoxIcon.Error);
             }
+        }
+
+        private void DipendentiAgenzia_Click(object sender, EventArgs e)
+        {
+            var connection = new CreateConnection();
+            connection.Connection.Open();
+            var queries = new QueryLibrary(connection.Connection);
+            FillTable(TabellaDipendenti, queries.LeggiDipendentiAgenzia(this.PIVAagenzia).CommandText, connection.Connection);
         }
     }
 }
