@@ -108,7 +108,6 @@ namespace DatabaseProject
         }
         private void DatabaseViewAdmin_Load(object sender, EventArgs e)
         {
-
             // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet3.magazzino' table. You can move, or remove it, as needed.
             //this.magazzinoTableAdapter.Fill(this.gestionale_per_agenzie_relDataSet3.magazzino);
             // TODO: This line of code loads data into the 'gestionale_per_agenzie_relDataSet2.dipendente' table. You can move, or remove it, as needed.
@@ -278,48 +277,6 @@ namespace DatabaseProject
 
         private void AggiungiCliente_Click(object sender, EventArgs e)
         {
-            /*if (this.cliente_nome 
-                && this.cliente_cognome 
-                && this.cliente_CF 
-                && this.cliente_telefono)
-            {
-                var connection = new CreateConnection();
-                connection.Connection.Open();
-                var queries = new QueryLibrary(connection.Connection);
-
-                try
-                {
-                    var result = queries.InserisciCliente(
-                        this.Clienti_Nome.Text, 
-                        this.Clienti_Cognome.Text, 
-                        this.Clienti_CF.Text, 
-                        this.Clienti_Telefono.Text);
-                    if (result)
-                    {
-                        MessageBox.Show("Cliente inserito correttamente",
-                        "Info",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cliente non inserito",
-                        "Errore",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception) { }
-                connection.Connection.Close();
-            }
-            else
-            {
-                MessageBox.Show("Si prega di completare tutti i campi",
-                "Attenzione",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
-            }
-            */
             bool condition = this.cliente_nome && this.cliente_cognome && this.cliente_CF && this.cliente_telefono;
             ExecuteQueryIf(condition, q =>
             {
