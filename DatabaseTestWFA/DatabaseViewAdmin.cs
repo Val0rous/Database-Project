@@ -134,36 +134,6 @@ namespace DatabaseProject
             this.Clienti_CF.ForeColor = Color.Gray;
             this.Clienti_Telefono.ForeColor = Color.Gray;
 
-            this.Prenotazioni_CFcliente.ForeColor = Color.Gray;
-            this.Prenotazioni_IDtour.ForeColor = Color.Gray;
-
-            this.Magazzini_CapMaxAccessori.ForeColor = Color.Gray;
-            this.Magazzini_CapMaxBici.ForeColor = Color.Gray;
-            this.Magazzini_IDmagazzino.ForeColor = Color.Gray;
-            this.Magazzini_IDindirizzo.ForeColor = Color.Gray;
-            this.Magazzini_IDsede.ForeColor = Color.Gray;
-
-            this.Percorsi_IDpercorso.ForeColor = Color.Gray;
-            this.Percorsi_Difficolta.ForeColor = Color.Gray;
-            this.Percorsi_NomePercorso.ForeColor = Color.Gray;
-            this.Percorsi_NumTappe.ForeColor = Color.Gray;
-            this.Percorsi_LunghezzaPercorso.ForeColor = Color.Gray;
-            this.Percorsi_IDsede.ForeColor = Color.Gray;
-
-            this.NuovaTappa_Inizio.ForeColor = Color.Gray;
-            this.NuovaTappa_Fine.ForeColor = Color.Gray;
-            this.NuovaTappa_Lunghezza.ForeColor = Color.Gray;
-            this.NuovaTappa_IDtappa.ForeColor = Color.Gray;
-            this.NuovaTappa_IDpercorso.ForeColor = Color.Gray;
-
-            /*
-            this.BP_PIVA.ForeColor = Color.Gray;
-            this.BP_NomeSocio.ForeColor = Color.Gray;
-            this.BP_CostoServizio.ForeColor = Color.Gray;
-            this.BP_Telefono.ForeColor = Color.Gray;
-            this.BP_Tipologia.ForeColor = Color.Gray;
-            */
-
             this.Dipendenti_Nome.ForeColor = Color.Gray;
             this.Dipendenti_Cognome.ForeColor = Color.Gray;
             this.Dipendenti_CF.ForeColor = Color.Gray;
@@ -173,18 +143,48 @@ namespace DatabaseProject
             this.Dipendenti_IDsede.ForeColor = Color.Gray;
             this.Dipendenti_CFsuperiore.ForeColor = Color.Gray;
 
-            /*
-            this.Tour_Destinazione.ForeColor = Color.Gray;
-            this.Tour_Nome.ForeColor = Color.Gray;
-            this.Tour_DataInizio.ForeColor = Color.Gray;
-            this.Tour_DataFine.ForeColor = Color.Gray;
-            this.Tour_Prezzo.ForeColor = Color.Gray;
-            this.Tour_IDtour.ForeColor = Color.Gray;
-            this.Tour_IDsede.ForeColor = Color.Gray;
-            this.Tour_CFtourManager.ForeColor = Color.Gray;
-            */
+            this.TourID.ForeColor = Color.Gray;
+            this.TourDestinazione.ForeColor = Color.Gray;
+            this.TourNome.ForeColor = Color.Gray;
+            this.TourDataInizio.ForeColor = Color.Gray;
+            this.TourDataFine.ForeColor = Color.Gray;
+            this.TourPrezzo.ForeColor = Color.Gray;
+            this.TourCFManager.ForeColor = Color.Gray;
+            //this.Tour_IDsede.ForeColor = Color.Gray;
 
-            this.ThisSedeID.Text = "ID Sede: " + this.IDsede;
+            this.Prenotazioni_CFcliente.ForeColor = Color.Gray;
+            this.Prenotazioni_IDtour.ForeColor = Color.Gray;
+
+            this.Servizi_DataInizio.ForeColor = Color.Gray;
+            this.Servizi_DataFine.ForeColor = Color.Gray;
+
+            this.Magazzini_CapMaxAccessori.ForeColor = Color.Gray;
+            this.Magazzini_CapMaxBici.ForeColor = Color.Gray;
+            this.Magazzini_IDmagazzino.ForeColor = Color.Gray;
+            this.Magazzini_IDindirizzo.ForeColor = Color.Gray;
+            this.Magazzini_IDsede.ForeColor = Color.Gray;
+
+            this.Percorsi_IDpercorso.ForeColor = Color.Gray;
+            this.Percorsi_Difficolta.ForeColor = Color.Gray;
+            this.Percorsi_Nome.ForeColor = Color.Gray;
+            this.Percorsi_NumTappe.ForeColor = Color.Gray;
+            this.Percorsi_Lunghezza.ForeColor = Color.Gray;
+            this.Percorsi_IDsede.ForeColor = Color.Gray;
+
+            this.NuovaTappa_Inizio.ForeColor = Color.Gray;
+            this.NuovaTappa_Fine.ForeColor = Color.Gray;
+            this.NuovaTappa_Lunghezza.ForeColor = Color.Gray;
+            this.NuovaTappa_IDtappa.ForeColor = Color.Gray;
+            this.NuovaTappa_IDpercorso.ForeColor = Color.Gray;
+
+            
+            this.BPPIVA.ForeColor = Color.Gray;
+            this.BPNomeSocio.ForeColor = Color.Gray;
+            this.BPCostoServizio.ForeColor = Color.Gray;
+            this.BPTelefono.ForeColor = Color.Gray;
+            this.BPTipologia.ForeColor = Color.Gray;
+
+            this.ThisSedeID.Text = "ID Sede: " + this.IDsede + "    P.IVA Agenzia: " + this.PIVAagenzia;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -239,7 +239,7 @@ namespace DatabaseProject
             {
                 TabellaTour.Update();
                 TabellaTour.Refresh();
-                this.Tour_ID.Text = queries.GetNextID("tour", "IDtour");
+                this.TourID.Text = queries.GetNextID("tour", "IDtour");
             }
         }
 
@@ -710,27 +710,27 @@ namespace DatabaseProject
 
         private void Percorsi_NomePercorso_Enter(object sender, EventArgs e)
         {
-            if (this.Percorsi_NomePercorso.Text.Equals("Nome"))
+            if (this.Percorsi_Nome.Text.Equals("Nome"))
             {
-                this.Percorsi_NomePercorso.Text = "";
+                this.Percorsi_Nome.Text = "";
             }
-            this.Percorsi_NomePercorso.ForeColor = Color.Black;
+            this.Percorsi_Nome.ForeColor = Color.Black;
             this.percorso_nome = true;
         }
 
         private void Percorsi_NomePercorso_Leave(object sender, EventArgs e)
         {
-            if (this.Percorsi_NomePercorso.Text.Equals(""))
+            if (this.Percorsi_Nome.Text.Equals(""))
             {
-                this.Percorsi_NomePercorso.Text = "Nome";
-                this.Percorsi_NomePercorso.ForeColor = Color.Gray;
+                this.Percorsi_Nome.Text = "Nome";
+                this.Percorsi_Nome.ForeColor = Color.Gray;
                 this.percorso_nome = false;
             }
         }
 
         private void Percorsi_NumTappe_Enter(object sender, EventArgs e)
         {
-            if (this.Percorsi_NumTappe.Text.Equals("Numero di tappe"))
+            if (this.Percorsi_NumTappe.Text.Equals("Numero di Tappe"))
             {
                 this.Percorsi_NumTappe.Text = "";
             }
@@ -750,27 +750,27 @@ namespace DatabaseProject
 
         private void Percorsi_LunghezzaPercorso_Enter(object sender, EventArgs e)
         {
-            if (this.Percorsi_LunghezzaPercorso.Text.Equals("Lunghezza Percorso"))
+            if (this.Percorsi_Lunghezza.Text.Equals("Lunghezza Percorso"))
             {
-                this.Percorsi_LunghezzaPercorso.Text = "";
+                this.Percorsi_Lunghezza.Text = "";
             }
-            this.Percorsi_LunghezzaPercorso.ForeColor = Color.Black;
+            this.Percorsi_Lunghezza.ForeColor = Color.Black;
             this.percorso_lunghezzaPercorso = true;
         }
 
         private void Percorsi_LunghezzaPercorso_Leave(object sender, EventArgs e)
         {
-            if (this.Percorsi_LunghezzaPercorso.Text.Equals(""))
+            if (this.Percorsi_Lunghezza.Text.Equals(""))
             {
-                this.Percorsi_LunghezzaPercorso.Text = "Lunghezza Percorso";
-                this.Percorsi_LunghezzaPercorso.ForeColor = Color.Gray;
+                this.Percorsi_Lunghezza.Text = "Lunghezza Percorso";
+                this.Percorsi_Lunghezza.ForeColor = Color.Gray;
                 this.percorso_lunghezzaPercorso = false;
             }
         }
 
         private void Percorsi_IDsede_Enter(object sender, EventArgs e)
         {
-            if (this.Percorsi_IDsede.Text.Equals("ID sede"))
+            if (this.Percorsi_IDsede.Text.Equals("ID Sede"))
             {
                 this.Percorsi_IDsede.Text = "";
             }
@@ -840,7 +840,7 @@ namespace DatabaseProject
                         this.Percorsi_IDpercorso.Text,
                         this.Percorsi_Difficolta.Text,
                         int.Parse(this.Percorsi_NumTappe.Text),
-                        float.Parse(this.Percorsi_LunghezzaPercorso.Text),
+                        float.Parse(this.Percorsi_Lunghezza.Text),
                         this.Percorsi_IDsede.Text);
                 if (result)
                 {
@@ -859,102 +859,102 @@ namespace DatabaseProject
             });
         }
 
-        private void BP_PIVA_Enter(object sender, EventArgs e)
+        private void BPPIVA_Enter(object sender, EventArgs e)
         {
-            if (this.BP_PIVA.Text.Equals("Partita IVA"))
+            if (this.BPPIVA.Text.Equals("Partita IVA"))
             {
-                this.BP_PIVA.Text = "";
+                this.BPPIVA.Text = "";
             }
-            this.BP_PIVA.ForeColor = Color.Black;
+            this.BPPIVA.ForeColor = Color.Black;
             this.bp_PIVA = true;
         }
 
-        private void BP_PIVA_Leave(object sender, EventArgs e)
+        private void BPPIVA_Leave(object sender, EventArgs e)
         {
-            if (this.BP_PIVA.Text.Equals(""))
+            if (this.BPPIVA.Text.Equals(""))
             {
-                this.BP_PIVA.Text = "Partita IVA";
-                this.BP_PIVA.ForeColor = Color.Gray;
+                this.BPPIVA.Text = "Partita IVA";
+                this.BPPIVA.ForeColor = Color.Gray;
                 this.bp_PIVA = false;
             }
         }
 
-        private void BP_NomeSocio_Enter(object sender, EventArgs e)
+        private void BPNomeSocio_Enter(object sender, EventArgs e)
         {
-            if (this.BP_NomeSocio.Text.Equals("Nome Socio"))
+            if (this.BPNomeSocio.Text.Equals("Nome Socio"))
             {
-                this.BP_NomeSocio.Text = "";
+                this.BPNomeSocio.Text = "";
             }
-            this.BP_NomeSocio.ForeColor = Color.Black;
+            this.BPNomeSocio.ForeColor = Color.Black;
             this.bp_nomeSocio = true;
         }
 
-        private void BP_NomeSocio_Leave(object sender, EventArgs e)
+        private void BPNomeSocio_Leave(object sender, EventArgs e)
         {
-            if (this.BP_NomeSocio.Text.Equals(""))
+            if (this.BPNomeSocio.Text.Equals(""))
             {
-                this.BP_NomeSocio.Text = "Nome Socio";
-                this.BP_NomeSocio.ForeColor = Color.Gray;
+                this.BPNomeSocio.Text = "Nome Socio";
+                this.BPNomeSocio.ForeColor = Color.Gray;
                 this.bp_nomeSocio = false;
             }
         }
 
-        private void BP_CostoServizio_Enter(object sender, EventArgs e)
+        private void BPCostoServizio_Enter(object sender, EventArgs e)
         {
-            if (this.BP_CostoServizio.Text.Equals("Costo Servizio"))
+            if (this.BPCostoServizio.Text.Equals("Costo Servizio"))
             {
-                this.BP_CostoServizio.Text = "";
+                this.BPCostoServizio.Text = "";
             }
-            this.BP_CostoServizio.ForeColor = Color.Black;
+            this.BPCostoServizio.ForeColor = Color.Black;
             this.bp_costoServizio = true;
         }
 
-        private void BP_CostoServizio_Leave(object sender, EventArgs e)
+        private void BPCostoServizio_Leave(object sender, EventArgs e)
         {
-            if (this.BP_CostoServizio.Text.Equals(""))
+            if (this.BPCostoServizio.Text.Equals(""))
             {
-                this.BP_CostoServizio.Text = "Nome";
-                this.BP_CostoServizio.ForeColor = Color.Gray;
+                this.BPCostoServizio.Text = "Costo Servizio";
+                this.BPCostoServizio.ForeColor = Color.Gray;
                 this.bp_costoServizio = false;
             }
         }
 
-        private void BP_Telefono_Enter(object sender, EventArgs e)
+        private void BPTelefono_Enter(object sender, EventArgs e)
         {
-            if (this.BP_Telefono.Text.Equals("Numero di Telefono"))
+            if (this.BPTelefono.Text.Equals("Numero di Telefono"))
             {
-                this.BP_Telefono.Text = "";
+                this.BPTelefono.Text = "";
             }
-            this.BP_Telefono.ForeColor = Color.Black;
+            this.BPTelefono.ForeColor = Color.Black;
             this.bp_telefono = true;
         }
 
-        private void BP_Telefono_Leave(object sender, EventArgs e)
+        private void BPTelefono_Leave(object sender, EventArgs e)
         {
-            if (this.BP_Telefono.Text.Equals(""))
+            if (this.BPTelefono.Text.Equals(""))
             {
-                this.BP_Telefono.Text = "Numero di Telefono";
-                this.BP_Telefono.ForeColor = Color.Gray;
+                this.BPTelefono.Text = "Numero di Telefono";
+                this.BPTelefono.ForeColor = Color.Gray;
                 this.bp_telefono = false;
             }
         }
 
-        private void BP_Tipologia_Enter(object sender, EventArgs e)
+        private void BPTipologia_Enter(object sender, EventArgs e)
         {
-            if (this.BP_Tipologia.Text.Equals("Tipologia"))
+            if (this.BPTipologia.Text.Equals("Tipologia"))
             {
-                this.BP_Tipologia.Text = "";
+                this.BPTipologia.Text = "";
             }
-            this.BP_Tipologia.ForeColor = Color.Black;
+            this.BPTipologia.ForeColor = Color.Black;
             this.bp_tipologia = true;
         }
 
-        private void BP_Tipologia_Leave(object sender, EventArgs e)
+        private void BPTipologia_Leave(object sender, EventArgs e)
         {
-            if (this.BP_Tipologia.Text.Equals(""))
+            if (this.BPTipologia.Text.Equals(""))
             {
-                this.BP_Tipologia.Text = "Tipologia";
-                this.BP_Tipologia.ForeColor = Color.Gray;
+                this.BPTipologia.Text = "Tipologia";
+                this.BPTipologia.ForeColor = Color.Gray;
                 this.bp_tipologia = false;
             }
         }
@@ -1319,20 +1319,20 @@ namespace DatabaseProject
 
         private void Tour_ID_Enter(object sender, EventArgs e)
         {
-            if (this.Tour_ID.Text.Equals("ID Tour"))
+            if (this.TourID.Text.Equals("ID Tour"))
             {
-                this.Tour_ID.Text = "";
+                this.TourID.Text = "";
             }
-            this.Tour_ID.ForeColor = Color.Black;
+            this.TourID.ForeColor = Color.Black;
             this.tour_IDtour = true;
         }
 
         private void Tour_ID_Leave(object sender, EventArgs e)
         {
-            if (this.Tour_ID.Text.Equals(""))
+            if (this.TourID.Text.Equals(""))
             {
-                this.Tour_ID.Text = "ID Tour";
-                this.Tour_ID.ForeColor = Color.Gray;
+                this.TourID.Text = "ID Tour";
+                this.TourID.ForeColor = Color.Gray;
                 this.tour_IDtour = false;
             }
         }
@@ -1361,7 +1361,7 @@ namespace DatabaseProject
         {
             bool condition = this.tour_dataInizio && this.tour_dataFine && this.tour_prezzo && this.tour_CFtourManager;
             ExecuteQueryIf(condition, q => {
-                var result = q.InserisciTour(this.TourDestinazione.Text, this.TourNome.Text, this.TourDataInizio.Text, this.TourDataFine.Text, float.Parse(this.TourPrezzo.Text), this.Tour_ID.Text, this.IDsede, this.TourCFManager.Text);
+                var result = q.InserisciTour(this.TourDestinazione.Text, this.TourNome.Text, this.TourDataInizio.Text, this.TourDataFine.Text, float.Parse(this.TourPrezzo.Text), this.TourID.Text, this.IDsede, this.TourCFManager.Text);
                 if (result)
                 {
                     MessageBox.Show("Tour inserito correttamente",

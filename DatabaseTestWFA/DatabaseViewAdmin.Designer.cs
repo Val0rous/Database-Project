@@ -40,7 +40,7 @@ namespace DatabaseProject
             this.TourDataInizio = new System.Windows.Forms.TextBox();
             this.TourNome = new System.Windows.Forms.TextBox();
             this.TourDestinazione = new System.Windows.Forms.TextBox();
-            this.Tour_ID = new System.Windows.Forms.TextBox();
+            this.TourID = new System.Windows.Forms.TextBox();
             this.AggiungiTour = new System.Windows.Forms.Button();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.Dipendenti = new System.Windows.Forms.TabPage();
@@ -58,6 +58,11 @@ namespace DatabaseProject
             this.AggiungiDipendente = new System.Windows.Forms.Button();
             this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
             this.Business_Partners = new System.Windows.Forms.TabPage();
+            this.BPTipologia = new System.Windows.Forms.TextBox();
+            this.BPTelefono = new System.Windows.Forms.TextBox();
+            this.BPCostoServizio = new System.Windows.Forms.TextBox();
+            this.BPNomeSocio = new System.Windows.Forms.TextBox();
+            this.BPPIVA = new System.Windows.Forms.TextBox();
             this.AggiungiBusinessPartner = new System.Windows.Forms.Button();
             this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.Percorsi = new System.Windows.Forms.TabPage();
@@ -68,9 +73,9 @@ namespace DatabaseProject
             this.NuovaTappa_Fine = new System.Windows.Forms.TextBox();
             this.NuovaTappa_Inizio = new System.Windows.Forms.TextBox();
             this.Percorsi_IDsede = new System.Windows.Forms.TextBox();
-            this.Percorsi_LunghezzaPercorso = new System.Windows.Forms.TextBox();
+            this.Percorsi_Lunghezza = new System.Windows.Forms.TextBox();
             this.Percorsi_NumTappe = new System.Windows.Forms.TextBox();
-            this.Percorsi_NomePercorso = new System.Windows.Forms.TextBox();
+            this.Percorsi_Nome = new System.Windows.Forms.TextBox();
             this.Percorsi_Difficolta = new System.Windows.Forms.TextBox();
             this.Percorsi_IDpercorso = new System.Windows.Forms.TextBox();
             this.AggiungiPercorso = new System.Windows.Forms.Button();
@@ -96,6 +101,19 @@ namespace DatabaseProject
             this.Clienti_Cognome = new System.Windows.Forms.TextBox();
             this.Clienti_Nome = new System.Windows.Forms.TextBox();
             this.TabPage = new System.Windows.Forms.TabControl();
+            this.Servizi = new System.Windows.Forms.TabPage();
+            this.Servizio_PeriodoMedioAccessori = new System.Windows.Forms.Label();
+            this.Servizio_PeriodoMedioBici = new System.Windows.Forms.Label();
+            this.Servizio_AccessorioTop = new System.Windows.Forms.Label();
+            this.Servizio_TagliaBiciTop = new System.Windows.Forms.Label();
+            this.Servizi_DataFine = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Servizi_Calcola = new System.Windows.Forms.Button();
+            this.Servizi_DataInizio = new System.Windows.Forms.TextBox();
+            this.TabellaServizi = new System.Windows.Forms.DataGridView();
             this.ThisSedeID = new System.Windows.Forms.Label();
             this.gestionale_per_agenzie_relDataSet2 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet2();
             this.dipendenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -103,19 +121,6 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
-            this.Servizi = new System.Windows.Forms.TabPage();
-            this.TabellaServizi = new System.Windows.Forms.DataGridView();
-            this.Servizi_DataInizio = new System.Windows.Forms.TextBox();
-            this.Servizi_Calcola = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Servizi_DataFine = new System.Windows.Forms.TextBox();
-            this.Servizio_TagliaBiciTop = new System.Windows.Forms.Label();
-            this.Servizio_AccessorioTop = new System.Windows.Forms.Label();
-            this.Servizio_PeriodoMedioBici = new System.Windows.Forms.Label();
-            this.Servizio_PeriodoMedioAccessori = new System.Windows.Forms.Label();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             this.Dipendenti.SuspendLayout();
@@ -131,12 +136,12 @@ namespace DatabaseProject
             this.Clienti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).BeginInit();
             this.TabPage.SuspendLayout();
+            this.Servizi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaServizi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).BeginInit();
-            this.Servizi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaServizi)).BeginInit();
             this.SuspendLayout();
             // 
             // BackButton
@@ -171,7 +176,7 @@ namespace DatabaseProject
             this.Tour.Controls.Add(this.TourDataInizio);
             this.Tour.Controls.Add(this.TourNome);
             this.Tour.Controls.Add(this.TourDestinazione);
-            this.Tour.Controls.Add(this.Tour_ID);
+            this.Tour.Controls.Add(this.TourID);
             this.Tour.Controls.Add(this.AggiungiTour);
             this.Tour.Controls.Add(this.TabellaTour);
             this.Tour.Location = new System.Drawing.Point(4, 25);
@@ -249,16 +254,16 @@ namespace DatabaseProject
             this.TourDestinazione.Enter += new System.EventHandler(this.TourDestinazione_Enter);
             this.TourDestinazione.Leave += new System.EventHandler(this.TourDestinazione_Leave);
             // 
-            // Tour_ID
+            // TourID
             // 
-            this.Tour_ID.Location = new System.Drawing.Point(5, 6);
-            this.Tour_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Tour_ID.Name = "Tour_ID";
-            this.Tour_ID.Size = new System.Drawing.Size(177, 22);
-            this.Tour_ID.TabIndex = 12;
-            this.Tour_ID.Text = "ID Tour";
-            this.Tour_ID.Enter += new System.EventHandler(this.Tour_ID_Enter);
-            this.Tour_ID.Leave += new System.EventHandler(this.Tour_ID_Leave);
+            this.TourID.Location = new System.Drawing.Point(5, 6);
+            this.TourID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TourID.Name = "TourID";
+            this.TourID.Size = new System.Drawing.Size(177, 22);
+            this.TourID.TabIndex = 12;
+            this.TourID.Text = "ID Tour";
+            this.TourID.Enter += new System.EventHandler(this.Tour_ID_Enter);
+            this.TourID.Leave += new System.EventHandler(this.Tour_ID_Leave);
             // 
             // AggiungiTour
             // 
@@ -455,6 +460,11 @@ namespace DatabaseProject
             // 
             // Business_Partners
             // 
+            this.Business_Partners.Controls.Add(this.BPTipologia);
+            this.Business_Partners.Controls.Add(this.BPTelefono);
+            this.Business_Partners.Controls.Add(this.BPCostoServizio);
+            this.Business_Partners.Controls.Add(this.BPNomeSocio);
+            this.Business_Partners.Controls.Add(this.BPPIVA);
             this.Business_Partners.Controls.Add(this.AggiungiBusinessPartner);
             this.Business_Partners.Controls.Add(this.TabellaBusinessPartners);
             this.Business_Partners.Location = new System.Drawing.Point(4, 25);
@@ -466,9 +476,64 @@ namespace DatabaseProject
             this.Business_Partners.Text = "Business Partners";
             this.Business_Partners.UseVisualStyleBackColor = true;
             // 
+            // BPTipologia
+            // 
+            this.BPTipologia.Location = new System.Drawing.Point(6, 110);
+            this.BPTipologia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BPTipologia.Name = "BPTipologia";
+            this.BPTipologia.Size = new System.Drawing.Size(177, 22);
+            this.BPTipologia.TabIndex = 14;
+            this.BPTipologia.Text = "Tipologia";
+            this.BPTipologia.Enter += new System.EventHandler(this.BPTipologia_Enter);
+            this.BPTipologia.Leave += new System.EventHandler(this.BPTipologia_Leave);
+            // 
+            // BPTelefono
+            // 
+            this.BPTelefono.Location = new System.Drawing.Point(6, 84);
+            this.BPTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BPTelefono.Name = "BPTelefono";
+            this.BPTelefono.Size = new System.Drawing.Size(177, 22);
+            this.BPTelefono.TabIndex = 13;
+            this.BPTelefono.Text = "Numero di Telefono";
+            this.BPTelefono.Enter += new System.EventHandler(this.BPTelefono_Enter);
+            this.BPTelefono.Leave += new System.EventHandler(this.BPTelefono_Leave);
+            // 
+            // BPCostoServizio
+            // 
+            this.BPCostoServizio.Location = new System.Drawing.Point(6, 58);
+            this.BPCostoServizio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BPCostoServizio.Name = "BPCostoServizio";
+            this.BPCostoServizio.Size = new System.Drawing.Size(177, 22);
+            this.BPCostoServizio.TabIndex = 12;
+            this.BPCostoServizio.Text = "Costo Servizio";
+            this.BPCostoServizio.Enter += new System.EventHandler(this.BPCostoServizio_Enter);
+            this.BPCostoServizio.Leave += new System.EventHandler(this.BPCostoServizio_Leave);
+            // 
+            // BPNomeSocio
+            // 
+            this.BPNomeSocio.Location = new System.Drawing.Point(6, 32);
+            this.BPNomeSocio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BPNomeSocio.Name = "BPNomeSocio";
+            this.BPNomeSocio.Size = new System.Drawing.Size(177, 22);
+            this.BPNomeSocio.TabIndex = 11;
+            this.BPNomeSocio.Text = "Nome Socio";
+            this.BPNomeSocio.Enter += new System.EventHandler(this.BPNomeSocio_Enter);
+            this.BPNomeSocio.Leave += new System.EventHandler(this.BPNomeSocio_Leave);
+            // 
+            // BPPIVA
+            // 
+            this.BPPIVA.Location = new System.Drawing.Point(6, 6);
+            this.BPPIVA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BPPIVA.Name = "BPPIVA";
+            this.BPPIVA.Size = new System.Drawing.Size(177, 22);
+            this.BPPIVA.TabIndex = 10;
+            this.BPPIVA.Text = "Partita IVA";
+            this.BPPIVA.Enter += new System.EventHandler(this.BPPIVA_Enter);
+            this.BPPIVA.Leave += new System.EventHandler(this.BPPIVA_Leave);
+            // 
             // AggiungiBusinessPartner
             // 
-            this.AggiungiBusinessPartner.Location = new System.Drawing.Point(3, 146);
+            this.AggiungiBusinessPartner.Location = new System.Drawing.Point(3, 136);
             this.AggiungiBusinessPartner.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AggiungiBusinessPartner.Name = "AggiungiBusinessPartner";
             this.AggiungiBusinessPartner.Size = new System.Drawing.Size(179, 50);
@@ -499,9 +564,9 @@ namespace DatabaseProject
             this.Percorsi.Controls.Add(this.NuovaTappa_Fine);
             this.Percorsi.Controls.Add(this.NuovaTappa_Inizio);
             this.Percorsi.Controls.Add(this.Percorsi_IDsede);
-            this.Percorsi.Controls.Add(this.Percorsi_LunghezzaPercorso);
+            this.Percorsi.Controls.Add(this.Percorsi_Lunghezza);
             this.Percorsi.Controls.Add(this.Percorsi_NumTappe);
-            this.Percorsi.Controls.Add(this.Percorsi_NomePercorso);
+            this.Percorsi.Controls.Add(this.Percorsi_Nome);
             this.Percorsi.Controls.Add(this.Percorsi_Difficolta);
             this.Percorsi.Controls.Add(this.Percorsi_IDpercorso);
             this.Percorsi.Controls.Add(this.AggiungiPercorso);
@@ -593,16 +658,16 @@ namespace DatabaseProject
             this.Percorsi_IDsede.Enter += new System.EventHandler(this.Percorsi_IDsede_Enter);
             this.Percorsi_IDsede.Leave += new System.EventHandler(this.Percorsi_IDsede_Leave);
             // 
-            // Percorsi_LunghezzaPercorso
+            // Percorsi_Lunghezza
             // 
-            this.Percorsi_LunghezzaPercorso.Location = new System.Drawing.Point(5, 119);
-            this.Percorsi_LunghezzaPercorso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Percorsi_LunghezzaPercorso.Name = "Percorsi_LunghezzaPercorso";
-            this.Percorsi_LunghezzaPercorso.Size = new System.Drawing.Size(177, 22);
-            this.Percorsi_LunghezzaPercorso.TabIndex = 10;
-            this.Percorsi_LunghezzaPercorso.Text = "Lunghezza Percorso";
-            this.Percorsi_LunghezzaPercorso.Enter += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Enter);
-            this.Percorsi_LunghezzaPercorso.Leave += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Leave);
+            this.Percorsi_Lunghezza.Location = new System.Drawing.Point(5, 119);
+            this.Percorsi_Lunghezza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Percorsi_Lunghezza.Name = "Percorsi_Lunghezza";
+            this.Percorsi_Lunghezza.Size = new System.Drawing.Size(177, 22);
+            this.Percorsi_Lunghezza.TabIndex = 10;
+            this.Percorsi_Lunghezza.Text = "Lunghezza Percorso";
+            this.Percorsi_Lunghezza.Enter += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Enter);
+            this.Percorsi_Lunghezza.Leave += new System.EventHandler(this.Percorsi_LunghezzaPercorso_Leave);
             // 
             // Percorsi_NumTappe
             // 
@@ -615,16 +680,16 @@ namespace DatabaseProject
             this.Percorsi_NumTappe.Enter += new System.EventHandler(this.Percorsi_NumTappe_Enter);
             this.Percorsi_NumTappe.Leave += new System.EventHandler(this.Percorsi_NumTappe_Leave);
             // 
-            // Percorsi_NomePercorso
+            // Percorsi_Nome
             // 
-            this.Percorsi_NomePercorso.Location = new System.Drawing.Point(5, 62);
-            this.Percorsi_NomePercorso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Percorsi_NomePercorso.Name = "Percorsi_NomePercorso";
-            this.Percorsi_NomePercorso.Size = new System.Drawing.Size(177, 22);
-            this.Percorsi_NomePercorso.TabIndex = 7;
-            this.Percorsi_NomePercorso.Text = "Nome";
-            this.Percorsi_NomePercorso.Enter += new System.EventHandler(this.Percorsi_NomePercorso_Enter);
-            this.Percorsi_NomePercorso.Leave += new System.EventHandler(this.Percorsi_NomePercorso_Leave);
+            this.Percorsi_Nome.Location = new System.Drawing.Point(5, 62);
+            this.Percorsi_Nome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Percorsi_Nome.Name = "Percorsi_Nome";
+            this.Percorsi_Nome.Size = new System.Drawing.Size(177, 22);
+            this.Percorsi_Nome.TabIndex = 7;
+            this.Percorsi_Nome.Text = "Nome";
+            this.Percorsi_Nome.Enter += new System.EventHandler(this.Percorsi_NomePercorso_Enter);
+            this.Percorsi_Nome.Leave += new System.EventHandler(this.Percorsi_NomePercorso_Leave);
             // 
             // Percorsi_Difficolta
             // 
@@ -932,6 +997,140 @@ namespace DatabaseProject
             this.TabPage.Tag = "";
             this.TabPage.SelectedIndexChanged += new System.EventHandler(this.TabPage_SelectedIndexChanged);
             // 
+            // Servizi
+            // 
+            this.Servizi.Controls.Add(this.Servizio_PeriodoMedioAccessori);
+            this.Servizi.Controls.Add(this.Servizio_PeriodoMedioBici);
+            this.Servizi.Controls.Add(this.Servizio_AccessorioTop);
+            this.Servizi.Controls.Add(this.Servizio_TagliaBiciTop);
+            this.Servizi.Controls.Add(this.Servizi_DataFine);
+            this.Servizi.Controls.Add(this.label4);
+            this.Servizi.Controls.Add(this.label3);
+            this.Servizi.Controls.Add(this.label2);
+            this.Servizi.Controls.Add(this.label1);
+            this.Servizi.Controls.Add(this.Servizi_Calcola);
+            this.Servizi.Controls.Add(this.Servizi_DataInizio);
+            this.Servizi.Controls.Add(this.TabellaServizi);
+            this.Servizi.Location = new System.Drawing.Point(4, 25);
+            this.Servizi.Name = "Servizi";
+            this.Servizi.Size = new System.Drawing.Size(951, 495);
+            this.Servizi.TabIndex = 9;
+            this.Servizi.Text = "Servizi";
+            this.Servizi.UseVisualStyleBackColor = true;
+            // 
+            // Servizio_PeriodoMedioAccessori
+            // 
+            this.Servizio_PeriodoMedioAccessori.AutoSize = true;
+            this.Servizio_PeriodoMedioAccessori.Location = new System.Drawing.Point(17, 369);
+            this.Servizio_PeriodoMedioAccessori.Name = "Servizio_PeriodoMedioAccessori";
+            this.Servizio_PeriodoMedioAccessori.Size = new System.Drawing.Size(14, 17);
+            this.Servizio_PeriodoMedioAccessori.TabIndex = 11;
+            this.Servizio_PeriodoMedioAccessori.Text = "x";
+            // 
+            // Servizio_PeriodoMedioBici
+            // 
+            this.Servizio_PeriodoMedioBici.AutoSize = true;
+            this.Servizio_PeriodoMedioBici.Location = new System.Drawing.Point(17, 289);
+            this.Servizio_PeriodoMedioBici.Name = "Servizio_PeriodoMedioBici";
+            this.Servizio_PeriodoMedioBici.Size = new System.Drawing.Size(14, 17);
+            this.Servizio_PeriodoMedioBici.TabIndex = 10;
+            this.Servizio_PeriodoMedioBici.Text = "x";
+            // 
+            // Servizio_AccessorioTop
+            // 
+            this.Servizio_AccessorioTop.AutoSize = true;
+            this.Servizio_AccessorioTop.Location = new System.Drawing.Point(17, 213);
+            this.Servizio_AccessorioTop.Name = "Servizio_AccessorioTop";
+            this.Servizio_AccessorioTop.Size = new System.Drawing.Size(14, 17);
+            this.Servizio_AccessorioTop.TabIndex = 9;
+            this.Servizio_AccessorioTop.Text = "x";
+            // 
+            // Servizio_TagliaBiciTop
+            // 
+            this.Servizio_TagliaBiciTop.AutoSize = true;
+            this.Servizio_TagliaBiciTop.Location = new System.Drawing.Point(17, 140);
+            this.Servizio_TagliaBiciTop.Name = "Servizio_TagliaBiciTop";
+            this.Servizio_TagliaBiciTop.Size = new System.Drawing.Size(14, 17);
+            this.Servizio_TagliaBiciTop.TabIndex = 8;
+            this.Servizio_TagliaBiciTop.Text = "x";
+            // 
+            // Servizi_DataFine
+            // 
+            this.Servizi_DataFine.Location = new System.Drawing.Point(4, 29);
+            this.Servizi_DataFine.Name = "Servizi_DataFine";
+            this.Servizi_DataFine.Size = new System.Drawing.Size(100, 22);
+            this.Servizi_DataFine.TabIndex = 7;
+            this.Servizi_DataFine.Text = "DataFine";
+            this.Servizi_DataFine.Enter += new System.EventHandler(this.Servizi_DataFine_Enter);
+            this.Servizi_DataFine.Leave += new System.EventHandler(this.Servizi_DataFine_Leave);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 332);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(250, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Periodo medio prenotazione accessori";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(211, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Periodo medio prenotazione bici";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Accessorio più richiesto";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Taglia bici piu richiesta";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // Servizi_Calcola
+            // 
+            this.Servizi_Calcola.Location = new System.Drawing.Point(3, 57);
+            this.Servizi_Calcola.Name = "Servizi_Calcola";
+            this.Servizi_Calcola.Size = new System.Drawing.Size(75, 23);
+            this.Servizi_Calcola.TabIndex = 2;
+            this.Servizi_Calcola.Text = "Calcola";
+            this.Servizi_Calcola.UseVisualStyleBackColor = true;
+            this.Servizi_Calcola.Click += new System.EventHandler(this.Servizi_Calcola_Click);
+            // 
+            // Servizi_DataInizio
+            // 
+            this.Servizi_DataInizio.Location = new System.Drawing.Point(4, 4);
+            this.Servizi_DataInizio.Name = "Servizi_DataInizio";
+            this.Servizi_DataInizio.Size = new System.Drawing.Size(100, 22);
+            this.Servizi_DataInizio.TabIndex = 1;
+            this.Servizi_DataInizio.Text = "DataInizio";
+            this.Servizi_DataInizio.Enter += new System.EventHandler(this.Servizi_DataInizio_Enter);
+            this.Servizi_DataInizio.Leave += new System.EventHandler(this.Servizi_DataInizio_Leave);
+            // 
+            // TabellaServizi
+            // 
+            this.TabellaServizi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TabellaServizi.Location = new System.Drawing.Point(287, 3);
+            this.TabellaServizi.Name = "TabellaServizi";
+            this.TabellaServizi.RowHeadersWidth = 51;
+            this.TabellaServizi.RowTemplate.Height = 24;
+            this.TabellaServizi.Size = new System.Drawing.Size(661, 496);
+            this.TabellaServizi.TabIndex = 0;
+            // 
             // ThisSedeID
             // 
             this.ThisSedeID.AutoSize = true;
@@ -971,140 +1170,6 @@ namespace DatabaseProject
             // 
             this.magazzinoTableAdapter.ClearBeforeFill = true;
             // 
-            // Servizi
-            // 
-            this.Servizi.Controls.Add(this.Servizio_PeriodoMedioAccessori);
-            this.Servizi.Controls.Add(this.Servizio_PeriodoMedioBici);
-            this.Servizi.Controls.Add(this.Servizio_AccessorioTop);
-            this.Servizi.Controls.Add(this.Servizio_TagliaBiciTop);
-            this.Servizi.Controls.Add(this.Servizi_DataFine);
-            this.Servizi.Controls.Add(this.label4);
-            this.Servizi.Controls.Add(this.label3);
-            this.Servizi.Controls.Add(this.label2);
-            this.Servizi.Controls.Add(this.label1);
-            this.Servizi.Controls.Add(this.Servizi_Calcola);
-            this.Servizi.Controls.Add(this.Servizi_DataInizio);
-            this.Servizi.Controls.Add(this.TabellaServizi);
-            this.Servizi.Location = new System.Drawing.Point(4, 25);
-            this.Servizi.Name = "Servizi";
-            this.Servizi.Size = new System.Drawing.Size(951, 495);
-            this.Servizi.TabIndex = 9;
-            this.Servizi.Text = "Servizi";
-            this.Servizi.UseVisualStyleBackColor = true;
-            // 
-            // TabellaServizi
-            // 
-            this.TabellaServizi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaServizi.Location = new System.Drawing.Point(287, 3);
-            this.TabellaServizi.Name = "TabellaServizi";
-            this.TabellaServizi.RowHeadersWidth = 51;
-            this.TabellaServizi.RowTemplate.Height = 24;
-            this.TabellaServizi.Size = new System.Drawing.Size(661, 496);
-            this.TabellaServizi.TabIndex = 0;
-            // 
-            // Servizi_DataInizio
-            // 
-            this.Servizi_DataInizio.Location = new System.Drawing.Point(4, 4);
-            this.Servizi_DataInizio.Name = "Servizi_DataInizio";
-            this.Servizi_DataInizio.Size = new System.Drawing.Size(100, 22);
-            this.Servizi_DataInizio.TabIndex = 1;
-            this.Servizi_DataInizio.Text = "DataInizio";
-            this.Servizi_DataInizio.Enter += new System.EventHandler(this.Servizi_DataInizio_Enter);
-            this.Servizi_DataInizio.Leave += new System.EventHandler(this.Servizi_DataInizio_Leave);
-            // 
-            // Servizi_DataFine
-            // 
-            this.Servizi_DataFine.Location = new System.Drawing.Point(4, 29);
-            this.Servizi_DataFine.Name = "Servizi_DataFine";
-            this.Servizi_DataFine.Size = new System.Drawing.Size(100, 22);
-            this.Servizi_DataFine.TabIndex = 7;
-            this.Servizi_DataFine.Text = "DataFine";
-            this.Servizi_DataFine.Enter += new System.EventHandler(this.Servizi_DataFine_Enter);
-            this.Servizi_DataFine.Leave += new System.EventHandler(this.Servizi_DataFine_Leave);
-            // 
-            // Servizi_Calcola
-            // 
-            this.Servizi_Calcola.Location = new System.Drawing.Point(3, 57);
-            this.Servizi_Calcola.Name = "Servizi_Calcola";
-            this.Servizi_Calcola.Size = new System.Drawing.Size(75, 23);
-            this.Servizi_Calcola.TabIndex = 2;
-            this.Servizi_Calcola.Text = "Calcola";
-            this.Servizi_Calcola.UseVisualStyleBackColor = true;
-            this.Servizi_Calcola.Click += new System.EventHandler(this.Servizi_Calcola_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Taglia bici piu richiesta";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 177);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Accessorio più richiesto";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 253);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Periodo medio prenotazione bici";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 332);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(250, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Periodo medio prenotazione accessori";
-            // 
-            // Servizio_TagliaBiciTop
-            // 
-            this.Servizio_TagliaBiciTop.AutoSize = true;
-            this.Servizio_TagliaBiciTop.Location = new System.Drawing.Point(17, 140);
-            this.Servizio_TagliaBiciTop.Name = "Servizio_TagliaBiciTop";
-            this.Servizio_TagliaBiciTop.Size = new System.Drawing.Size(14, 17);
-            this.Servizio_TagliaBiciTop.TabIndex = 8;
-            this.Servizio_TagliaBiciTop.Text = "x";
-            // 
-            // Servizio_AccessorioTop
-            // 
-            this.Servizio_AccessorioTop.AutoSize = true;
-            this.Servizio_AccessorioTop.Location = new System.Drawing.Point(17, 213);
-            this.Servizio_AccessorioTop.Name = "Servizio_AccessorioTop";
-            this.Servizio_AccessorioTop.Size = new System.Drawing.Size(14, 17);
-            this.Servizio_AccessorioTop.TabIndex = 9;
-            this.Servizio_AccessorioTop.Text = "x";
-            // 
-            // Servizio_PeriodoMedioBici
-            // 
-            this.Servizio_PeriodoMedioBici.AutoSize = true;
-            this.Servizio_PeriodoMedioBici.Location = new System.Drawing.Point(17, 289);
-            this.Servizio_PeriodoMedioBici.Name = "Servizio_PeriodoMedioBici";
-            this.Servizio_PeriodoMedioBici.Size = new System.Drawing.Size(14, 17);
-            this.Servizio_PeriodoMedioBici.TabIndex = 10;
-            this.Servizio_PeriodoMedioBici.Text = "x";
-            // 
-            // Servizio_PeriodoMedioAccessori
-            // 
-            this.Servizio_PeriodoMedioAccessori.AutoSize = true;
-            this.Servizio_PeriodoMedioAccessori.Location = new System.Drawing.Point(17, 369);
-            this.Servizio_PeriodoMedioAccessori.Name = "Servizio_PeriodoMedioAccessori";
-            this.Servizio_PeriodoMedioAccessori.Size = new System.Drawing.Size(14, 17);
-            this.Servizio_PeriodoMedioAccessori.TabIndex = 11;
-            this.Servizio_PeriodoMedioAccessori.Text = "x";
-            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1126,6 +1191,7 @@ namespace DatabaseProject
             this.Dipendenti.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).EndInit();
             this.Business_Partners.ResumeLayout(false);
+            this.Business_Partners.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
             this.Percorsi.ResumeLayout(false);
             this.Percorsi.PerformLayout();
@@ -1140,13 +1206,13 @@ namespace DatabaseProject
             this.Clienti.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaClienti)).EndInit();
             this.TabPage.ResumeLayout(false);
+            this.Servizi.ResumeLayout(false);
+            this.Servizi.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaServizi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazzinoBindingSource)).EndInit();
-            this.Servizi.ResumeLayout(false);
-            this.Servizi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaServizi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1183,9 +1249,9 @@ namespace DatabaseProject
         private System.Windows.Forms.DataGridView TabellaBusinessPartners;
         private System.Windows.Forms.TabPage Percorsi;
         private System.Windows.Forms.TextBox Percorsi_IDsede;
-        private System.Windows.Forms.TextBox Percorsi_LunghezzaPercorso;
+        private System.Windows.Forms.TextBox Percorsi_Lunghezza;
         private System.Windows.Forms.TextBox Percorsi_NumTappe;
-        private System.Windows.Forms.TextBox Percorsi_NomePercorso;
+        private System.Windows.Forms.TextBox Percorsi_Nome;
         private System.Windows.Forms.TextBox Percorsi_Difficolta;
         private System.Windows.Forms.TextBox Percorsi_IDpercorso;
         private System.Windows.Forms.Button AggiungiPercorso;
@@ -1235,7 +1301,7 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox TourDataInizio;
         private System.Windows.Forms.TextBox TourNome;
         private System.Windows.Forms.TextBox TourDestinazione;
-        private System.Windows.Forms.TextBox Tour_ID;
+        private System.Windows.Forms.TextBox TourID;
         private System.Windows.Forms.TextBox TourCFManager;
         private System.Windows.Forms.TextBox TourPrezzo;
         private System.Windows.Forms.TabPage Servizi;
@@ -1251,6 +1317,11 @@ namespace DatabaseProject
         private System.Windows.Forms.Label Servizio_PeriodoMedioBici;
         private System.Windows.Forms.Label Servizio_AccessorioTop;
         private System.Windows.Forms.Label Servizio_TagliaBiciTop;
+        private System.Windows.Forms.TextBox BPTipologia;
+        private System.Windows.Forms.TextBox BPTelefono;
+        private System.Windows.Forms.TextBox BPCostoServizio;
+        private System.Windows.Forms.TextBox BPNomeSocio;
+        private System.Windows.Forms.TextBox BPPIVA;
     }
 }
 
