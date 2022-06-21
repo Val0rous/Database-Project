@@ -549,7 +549,7 @@ namespace DatabaseProject
             //command.Parameters.AddWithValue("@IDsede", IDsede);
             //command.Parameters.AddWithValue("@Date", Date);
             command.CommandText = "SELECT A.IDaccessorio, COUNT(NA.IDservizio) " +
-                "FROM accessorio AS A, noleggioaccessorio AS NA, servizio AS S" +
+                "FROM accessorio AS A, noleggioaccessorio AS NA, servizio AS S " +
                 "WHERE A.IDaccessorio=NA.IDaccessorio AND NA.IDservizio=S.IDservizio " +
                 "AND S.IDsede=" + Convert(IDsede) + " AND S.DataInizio>=" + Convert(DataInizio) +" AND S.DataFine<="+Convert(DataFine)+
                 " ORDER BY Count(NA.IDservizio) DESC LIMIT 1";
@@ -728,18 +728,34 @@ namespace DatabaseProject
             command.CommandText = "SELECT * FROM percorso WHERE percorso.IDsede="+Convert(IDsede);
             return command;
         }
-        public MySqlCommand LeggiPeriodoMedioPrenotazioneAccessori(String PIVA)
+        public MySqlCommand LeggiPeriodoMedioPrenotazioneAccessori(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioAccessori "+
-                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA) + " AND V.TipoServizio = 'Noleggio_Accessori' AND S.IDsede = V.IDsede GROUP BY IDSede";
+                "FROM servizio V, sede S WHERE S.IDsede = " + Convert(IDsede) + " AND V.TipoServizio = 'NOLEGGIO_ACCESSORI' AND S.IDsede = V.IDsede";
             return command;
         }
-        public MySqlCommand LeggiPeriodoMedioPrenotazioneBici(String PIVA)
+        public MySqlCommand LeggiPeriodoMedioPrenotazioneAccessori(String IDsede, String DataInizio, String DataFine)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioAccessori " +
+                "FROM servizio V, sede S WHERE S.IDsede = " + Convert(IDsede) + " AND V.TipoServizio = 'NOLEGGIO_ACCESSORI' AND S.IDsede = V.IDsede " +
+                "AND V.DataInizio>=" + Convert(DataInizio) + " AND V.DataFine<=" + Convert(DataFine);
+            return command;
+        }
+        public MySqlCommand LeggiPeriodoMedioPrenotazioneBici(String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioBici "+
-                "FROM servizio V, sede S WHERE S.PIVAagenzia = " + Convert(PIVA) + " AND V.TipoServizio = 'Noleggio_Bici' AND S.IDsede = V.IDsede GROUP BY IDSede";
+                "FROM servizio V, sede S WHERE S.IDsede = " + Convert(IDsede) + " AND V.TipoServizio = 'NOLEGGIO_BICICLETTE' AND S.IDsede = V.IDsede";
+            return command;
+        }
+        public MySqlCommand LeggiPeriodoMedioPrenotazioneBici(String IDsede, String DataInizio, String DataFine)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.CommandText = "SELECT S.IDsede, AVG(CAST(DATEDIFF(V.DataFine, V.DataInizio) AS float)) AS PeriodoMedioBici " +
+                "FROM servizio V, sede S WHERE S.IDsede = " + Convert(IDsede) + " AND V.TipoServizio = 'NOLEGGIO_BICICLETTE' AND S.IDsede = V.IDsede " +
+                "AND V.DataInizio>="+Convert(DataInizio)+" AND V.DataFine<="+Convert(DataFine);
             return command;
         }
         public MySqlCommand LeggiPrenotazioni()

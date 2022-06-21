@@ -1673,19 +1673,57 @@ namespace DatabaseProject
                 connection.Connection.Open();
                 var queries = new QueryLibrary(connection.Connection);
                 FillTable(TabellaServizi, queries.LeggiServiziSede(this.IDsede,Servizi_DataInizio.Text, Servizi_DataFine.Text).CommandText, connection.Connection);
-                var reader = queries.LeggiTagliaBicicletta(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
-                reader.Read();
-                Servizio_TagliaBiciTop.Text = reader.GetString(0);
-                reader.Close();
-                reader = queries.LeggiPeriodoMedioPrenotazioneBici(this.PIVAagenzia).ExecuteReader();
-                reader.Read();
-                Servizio_PeriodoMedioBici.Text = reader.GetString(0);
-                reader.Close();
-                reader = queries.LeggiAccessorioPiuRichiesto(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
-                reader.Read();
-                Servizio_AccessorioTop.Text = reader.GetString(0);
-                reader.Close();
+                MySqlDataReader reader;
+                try
+                {
+                    reader = queries.LeggiTagliaBicicletta(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
+                    reader.Read();
+                    if (!reader.IsDBNull(0)) Servizio_TagliaBiciTop.Text = reader.GetString(0);
+                    else Servizio_TagliaBiciTop.Text = "x";
+                    reader.Close();
+                }
+                catch (MySqlException)
+                {
+                    Servizio_TagliaBiciTop.Text = "x";
+                }
+                try
+                {
+                    reader = queries.LeggiAccessorioPiuRichiesto(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
+                    reader.Read();
+                    if (!reader.IsDBNull(0)) Servizio_AccessorioTop.Text = reader.GetString(0);
+                    else Servizio_AccessorioTop.Text = "x";
+                    reader.Close();
+                }
+                catch (MySqlException)
+                {
+                    Servizio_AccessorioTop.Text = "x";
+                }
+                try
+                {
+                    reader = queries.LeggiPeriodoMedioPrenotazioneBici(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
+                    reader.Read();
+                    if (!reader.IsDBNull(0)) Servizio_PeriodoMedioBici.Text = reader.GetString("PeriodoMedioBici");
+                    else Servizio_PeriodoMedioBici.Text = "x";
+                    reader.Close();
+                }
+                catch (MySqlException)
+                {
+                    Servizio_PeriodoMedioBici.Text = "x";
+                }
+                try
+                {
+                    reader = queries.LeggiPeriodoMedioPrenotazioneAccessori(this.IDsede, Servizi_DataInizio.Text, Servizi_DataFine.Text).ExecuteReader();
+                    reader.Read();
+                    if (!reader.IsDBNull(0)) Servizio_PeriodoMedioAccessori.Text = reader.GetString("PeriodoMedioAccessori");
+                    else Servizio_PeriodoMedioAccessori.Text = "x";
+                    reader.Close();
+                }
+                catch (MySqlException)
+                {
+                    Servizio_PeriodoMedioAccessori.Text = "x";
+                }
                 connection.Connection.Close();
+                
             }
             else
             {
