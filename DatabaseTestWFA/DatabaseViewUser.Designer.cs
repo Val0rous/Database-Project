@@ -43,6 +43,12 @@ namespace DatabaseProject
             this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.Clienti_StoricoServizi = new System.Windows.Forms.TabPage();
             this.Tabella_StoricoServiziCliente = new System.Windows.Forms.DataGridView();
+            this.Registrazione_Cliente = new System.Windows.Forms.TabPage();
+            this.RegistraCliente = new System.Windows.Forms.Button();
+            this.Clienti_Telefono = new System.Windows.Forms.TextBox();
+            this.Clienti_CF = new System.Windows.Forms.TextBox();
+            this.Clienti_Cognome = new System.Windows.Forms.TextBox();
+            this.Clienti_Nome = new System.Windows.Forms.TextBox();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.ClienteCF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,6 +64,7 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             this.Clienti_StoricoServizi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).BeginInit();
+            this.Registrazione_Cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -81,6 +88,7 @@ namespace DatabaseProject
             this.TabPage.Controls.Add(this.Pacchetti);
             this.TabPage.Controls.Add(this.Tour);
             this.TabPage.Controls.Add(this.Clienti_StoricoServizi);
+            this.TabPage.Controls.Add(this.Registrazione_Cliente);
             this.TabPage.Location = new System.Drawing.Point(12, 55);
             this.TabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabPage.Name = "TabPage";
@@ -159,6 +167,8 @@ namespace DatabaseProject
             this.TourID.Size = new System.Drawing.Size(215, 22);
             this.TourID.TabIndex = 12;
             this.TourID.Text = "ID Tour";
+            this.TourID.Enter += new System.EventHandler(this.TourID_Enter);
+            this.TourID.Leave += new System.EventHandler(this.TourID_Leave);
             // 
             // TourButton
             // 
@@ -206,6 +216,77 @@ namespace DatabaseProject
             this.Tabella_StoricoServiziCliente.RowTemplate.Height = 24;
             this.Tabella_StoricoServiziCliente.Size = new System.Drawing.Size(773, 361);
             this.Tabella_StoricoServiziCliente.TabIndex = 0;
+            // 
+            // Registrazione_Cliente
+            // 
+            this.Registrazione_Cliente.Controls.Add(this.RegistraCliente);
+            this.Registrazione_Cliente.Controls.Add(this.Clienti_Telefono);
+            this.Registrazione_Cliente.Controls.Add(this.Clienti_CF);
+            this.Registrazione_Cliente.Controls.Add(this.Clienti_Cognome);
+            this.Registrazione_Cliente.Controls.Add(this.Clienti_Nome);
+            this.Registrazione_Cliente.Location = new System.Drawing.Point(4, 25);
+            this.Registrazione_Cliente.Name = "Registrazione_Cliente";
+            this.Registrazione_Cliente.Padding = new System.Windows.Forms.Padding(3);
+            this.Registrazione_Cliente.Size = new System.Drawing.Size(779, 364);
+            this.Registrazione_Cliente.TabIndex = 6;
+            this.Registrazione_Cliente.Text = "Registra Nuovo Cliente";
+            this.Registrazione_Cliente.UseVisualStyleBackColor = true;
+            this.Registrazione_Cliente.Click += new System.EventHandler(this.Registrazione_Cliente_Click);
+            // 
+            // RegistraCliente
+            // 
+            this.RegistraCliente.Location = new System.Drawing.Point(300, 219);
+            this.RegistraCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RegistraCliente.Name = "RegistraCliente";
+            this.RegistraCliente.Size = new System.Drawing.Size(179, 39);
+            this.RegistraCliente.TabIndex = 9;
+            this.RegistraCliente.Text = "Registra Cliente";
+            this.RegistraCliente.UseVisualStyleBackColor = true;
+            this.RegistraCliente.Click += new System.EventHandler(this.Registrazione_Cliente_Click);
+            // 
+            // Clienti_Telefono
+            // 
+            this.Clienti_Telefono.Location = new System.Drawing.Point(300, 191);
+            this.Clienti_Telefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clienti_Telefono.Name = "Clienti_Telefono";
+            this.Clienti_Telefono.Size = new System.Drawing.Size(177, 22);
+            this.Clienti_Telefono.TabIndex = 8;
+            this.Clienti_Telefono.Text = "Numero di Telefono";
+            this.Clienti_Telefono.Enter += new System.EventHandler(this.Clienti_Telefono_Enter);
+            this.Clienti_Telefono.Leave += new System.EventHandler(this.Clienti_Telefono_Leave);
+            // 
+            // Clienti_CF
+            // 
+            this.Clienti_CF.Location = new System.Drawing.Point(300, 162);
+            this.Clienti_CF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clienti_CF.Name = "Clienti_CF";
+            this.Clienti_CF.Size = new System.Drawing.Size(177, 22);
+            this.Clienti_CF.TabIndex = 7;
+            this.Clienti_CF.Text = "Codice Fiscale";
+            this.Clienti_CF.Enter += new System.EventHandler(this.Clienti_CF_Enter);
+            this.Clienti_CF.Leave += new System.EventHandler(this.Clienti_CF_Leave);
+            // 
+            // Clienti_Cognome
+            // 
+            this.Clienti_Cognome.Location = new System.Drawing.Point(300, 134);
+            this.Clienti_Cognome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clienti_Cognome.Name = "Clienti_Cognome";
+            this.Clienti_Cognome.Size = new System.Drawing.Size(177, 22);
+            this.Clienti_Cognome.TabIndex = 6;
+            this.Clienti_Cognome.Text = "Cognome";
+            this.Clienti_Cognome.Enter += new System.EventHandler(this.Clienti_Cognome_Enter);
+            this.Clienti_Cognome.Leave += new System.EventHandler(this.Clienti_Cognome_Leave);
+            // 
+            // Clienti_Nome
+            // 
+            this.Clienti_Nome.Location = new System.Drawing.Point(300, 106);
+            this.Clienti_Nome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clienti_Nome.Name = "Clienti_Nome";
+            this.Clienti_Nome.Size = new System.Drawing.Size(177, 22);
+            this.Clienti_Nome.TabIndex = 5;
+            this.Clienti_Nome.Text = "Nome";
+            this.Clienti_Nome.Enter += new System.EventHandler(this.Clienti_Nome_Enter);
+            this.Clienti_Nome.Leave += new System.EventHandler(this.Clienti_Nome_Leave);
             // 
             // RefreshButton
             // 
@@ -281,6 +362,7 @@ namespace DatabaseProject
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.TabPage);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DatabaseViewUser";
@@ -295,6 +377,8 @@ namespace DatabaseProject
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             this.Clienti_StoricoServizi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).EndInit();
+            this.Registrazione_Cliente.ResumeLayout(false);
+            this.Registrazione_Cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
@@ -327,5 +411,11 @@ namespace DatabaseProject
         private System.Windows.Forms.Button TourButton;
         private System.Windows.Forms.TabPage Clienti_StoricoServizi;
         private System.Windows.Forms.DataGridView Tabella_StoricoServiziCliente;
+        private System.Windows.Forms.TabPage Registrazione_Cliente;
+        private System.Windows.Forms.Button RegistraCliente;
+        private System.Windows.Forms.TextBox Clienti_Telefono;
+        private System.Windows.Forms.TextBox Clienti_CF;
+        private System.Windows.Forms.TextBox Clienti_Cognome;
+        private System.Windows.Forms.TextBox Clienti_Nome;
     }
 }

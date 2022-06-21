@@ -19,6 +19,11 @@ namespace DatabaseProject
 
         private bool pacchetto_ID;
         private bool pacchetto_sconto;
+        private bool cliente_nome;
+        private bool cliente_cognome;
+        private bool cliente_CF;
+        private bool cliente_telefono;
+        private bool tour_id;
 
         public DatabaseViewUser(bool isAdmin, string PIVAagenzia, string IDsede)
         {
@@ -94,6 +99,11 @@ namespace DatabaseProject
             FillTable(Tabella_StoricoServiziCliente, queries.LeggiServiziCliente(this.ClienteCF.Text).CommandText, connection.Connection);
             //this.Pacchetto_ID.ForeColor = Color.Gray;
             this.Pacchetto_Sconto.ForeColor = Color.Gray;
+            this.TourID.ForeColor = Color.Gray;
+            this.Clienti_Nome.ForeColor = Color.Gray;
+            this.Clienti_Cognome.ForeColor = Color.Gray;
+            this.Clienti_CF.ForeColor = Color.Gray;
+            this.Clienti_Telefono.ForeColor = Color.Gray;
 
             this.Pacchetto_ID.Text = queries.GetNextID("pacchetto", "IDpacchetto");
 
@@ -227,6 +237,133 @@ namespace DatabaseProject
         private void CloseProgram(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Registrazione_Cliente_Click(object sender, EventArgs e)
+        {
+            bool condition = this.cliente_nome && this.cliente_cognome && this.cliente_CF && this.cliente_telefono;
+            ExecuteQueryIf(condition, q =>
+            {
+                var result = q.InserisciCliente(
+                                 this.Clienti_Nome.Text,
+                                 this.Clienti_Cognome.Text,
+                                 this.Clienti_CF.Text,
+                                 this.Clienti_Telefono.Text);
+                if (result)
+                {
+                    MessageBox.Show("Cliente inserito correttamente",
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Cliente non inserito",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            });
+        }
+
+        private void Clienti_Nome_Enter(object sender, EventArgs e)
+        {
+            if (this.Clienti_Nome.Text.Equals("Nome"))
+            {
+                this.Clienti_Nome.Text = "";
+            }
+            this.Clienti_Nome.ForeColor = Color.Black;
+            this.cliente_nome = true;
+        }
+
+        private void Clienti_Nome_Leave(object sender, EventArgs e)
+        {
+            if (this.Clienti_Nome.Text.Equals(""))
+            {
+                this.Clienti_Nome.Text = "Nome";
+                this.Clienti_Nome.ForeColor = Color.Gray;
+                this.cliente_nome = false;
+            }
+        }
+
+        private void Clienti_Cognome_Enter(object sender, EventArgs e)
+        {
+            if (this.Clienti_Cognome.Text.Equals("Cognome"))
+            {
+                this.Clienti_Cognome.Text = "";
+            }
+            this.Clienti_Cognome.ForeColor = Color.Black;
+            this.cliente_cognome = true;
+        }
+
+        private void Clienti_Cognome_Leave(object sender, EventArgs e)
+        {
+            if (this.Clienti_Cognome.Text.Equals(""))
+            {
+                this.Clienti_Cognome.Text = "Cognome";
+                this.Clienti_Cognome.ForeColor = Color.Gray;
+                this.cliente_cognome = false;
+            }
+        }
+
+        private void Clienti_CF_Enter(object sender, EventArgs e)
+        {
+            if (this.Clienti_CF.Text.Equals("Codice Fiscale"))
+            {
+                this.Clienti_CF.Text = "";
+            }
+            this.Clienti_CF.ForeColor = Color.Black;
+            this.cliente_CF = true;
+        }
+
+        private void Clienti_CF_Leave(object sender, EventArgs e)
+        {
+            if (this.Clienti_CF.Text.Equals(""))
+            {
+                this.Clienti_CF.Text = "Codice Fiscale";
+                this.Clienti_CF.ForeColor = Color.Gray;
+                this.cliente_CF = false;
+            }
+        }
+
+        private void Clienti_Telefono_Enter(object sender, EventArgs e)
+        {
+            if (this.Clienti_Telefono.Text.Equals("Numero di Telefono"))
+            {
+                this.Clienti_Telefono.Text = "";
+            }
+            this.Clienti_Telefono.ForeColor = Color.Black;
+            this.cliente_telefono = true;
+        }
+
+        private void Clienti_Telefono_Leave(object sender, EventArgs e)
+        {
+            if (this.Clienti_Telefono.Text.Equals(""))
+            {
+                this.Clienti_Telefono.Text = "Numero di Telefono";
+                this.Clienti_Telefono.ForeColor = Color.Gray;
+                this.cliente_telefono = false;
+            }
+        }
+
+        private void TourID_Enter(object sender, EventArgs e)
+        {
+            if (this.TourID.Text.Equals("ID Tour"))
+            {
+                this.TourID.Text = "";
+            }
+            this.TourID.ForeColor = Color.Black;
+            this.tour_id = true;
+        }
+
+        private void TourID_Leave(object sender, EventArgs e)
+        {
+            if (this.TourID.Text.Equals(""))
+            {
+                this.TourID.Text = "ID Tour";
+                this.TourID.ForeColor = Color.Gray;
+                this.tour_id = false;
+            }
         }
     }
 }

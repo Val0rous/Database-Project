@@ -92,6 +92,7 @@ namespace DatabaseProject
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.UsernameBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.ShowInTaskbar = false;

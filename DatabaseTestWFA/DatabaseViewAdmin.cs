@@ -126,7 +126,7 @@ namespace DatabaseProject
             FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaServizi, queries.LeggiServiziSede(this.IDsede).CommandText, connection.Connection);
-            updateStipendioMedioDipendenti();
+            UpdateStipendioMedioDipendenti();
             connection.Connection.Close();
 
             this.Clienti_Nome.ForeColor = Color.Gray;
@@ -225,13 +225,13 @@ namespace DatabaseProject
             TabellaBusinessPartners.Refresh();
             TabellaDipendenti.Update();
             TabellaDipendenti.Refresh();
-            updateStipendioMedioDipendenti();
+            UpdateStipendioMedioDipendenti();
             TabellaTour.Update();
             TabellaTour.Refresh();
 
             //this.Tour_ID.Text = queries.GetNextID("tour", "IDtour");
         }
-        private void updateStipendioMedioDipendenti()
+        private void UpdateStipendioMedioDipendenti()
         {
             var connection = new CreateConnection();
             connection.Connection.Open();
