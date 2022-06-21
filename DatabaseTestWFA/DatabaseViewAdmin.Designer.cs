@@ -270,6 +270,8 @@ namespace DatabaseProject
             // 
             // TabellaTour
             // 
+            this.TabellaTour.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabellaTour.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaTour.Location = new System.Drawing.Point(189, 6);
             this.TabellaTour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -453,6 +455,8 @@ namespace DatabaseProject
             // 
             // TabellaDipendenti
             // 
+            this.TabellaDipendenti.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabellaDipendenti.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaDipendenti.Location = new System.Drawing.Point(188, 6);
             this.TabellaDipendenti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -760,6 +764,8 @@ namespace DatabaseProject
             // 
             // TabellaMagazzini
             // 
+            this.TabellaMagazzini.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabellaMagazzini.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaMagazzini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaMagazzini.Location = new System.Drawing.Point(189, 6);
             this.TabellaMagazzini.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -789,6 +795,8 @@ namespace DatabaseProject
             // 
             // TabellaClienti
             // 
+            this.TabellaClienti.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabellaClienti.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaClienti.Location = new System.Drawing.Point(189, 6);
             this.TabellaClienti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1012,6 +1020,8 @@ namespace DatabaseProject
             // 
             // TabellaServizi
             // 
+            this.TabellaServizi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabellaServizi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaServizi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaServizi.Location = new System.Drawing.Point(277, 4);
             this.TabellaServizi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
