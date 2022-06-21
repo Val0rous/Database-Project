@@ -126,7 +126,7 @@ namespace DatabaseProject
             FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour(this.IDsede).CommandText, connection.Connection);
             FillTable(TabellaServizi, queries.LeggiServiziSede(this.IDsede).CommandText, connection.Connection);
-
+            updateStipendioMedioDipendenti();
             connection.Connection.Close();
 
             this.Clienti_Nome.ForeColor = Color.Gray;
@@ -224,10 +224,31 @@ namespace DatabaseProject
             TabellaBusinessPartners.Refresh();
             TabellaDipendenti.Update();
             TabellaDipendenti.Refresh();
+            updateStipendioMedioDipendenti();
             TabellaTour.Update();
             TabellaTour.Refresh();
 
             //this.Tour_ID.Text = queries.GetNextID("tour", "IDtour");
+        }
+        private void updateStipendioMedioDipendenti()
+        {
+            var connection = new CreateConnection();
+            connection.Connection.Open();
+            var queries = new QueryLibrary(connection.Connection);
+            MySqlDataReader reader;
+            try
+            {
+                reader = queries.LeggiStipendioMedio(this.IDsede).ExecuteReader();
+                reader.Read();
+                if (!reader.IsDBNull(0)) Dipendenti_StipendioMedio.Text = reader.GetInt16("StipendioMedio").ToString();
+                else Dipendenti_StipendioMedio.Text = "x";
+                reader.Close();
+            }
+            catch (MySqlException)
+            {
+                Dipendenti_StipendioMedio.Text = "x";
+            }
+            connection.Connection.Close();
         }
         private void TabPage_SelectedIndexChanged(object sender, EventArgs e)
         {

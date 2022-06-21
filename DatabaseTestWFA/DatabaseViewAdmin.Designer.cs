@@ -119,6 +119,8 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
+            this.Dipendenti_StipendioMedio = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             this.Dipendenti.SuspendLayout();
@@ -286,6 +288,8 @@ namespace DatabaseProject
             // 
             // Dipendenti
             // 
+            this.Dipendenti.Controls.Add(this.label6);
+            this.Dipendenti.Controls.Add(this.Dipendenti_StipendioMedio);
             this.Dipendenti.Controls.Add(this.DipendentiAgenzia);
             this.Dipendenti.Controls.Add(this.Dipendente_isAltro);
             this.Dipendenti.Controls.Add(this.Dipendente_isTourManager);
@@ -313,7 +317,7 @@ namespace DatabaseProject
             // DipendentiAgenzia
             // 
             this.DipendentiAgenzia.Location = new System.Drawing.Point(3, 362);
-            this.DipendentiAgenzia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DipendentiAgenzia.Margin = new System.Windows.Forms.Padding(4);
             this.DipendentiAgenzia.Name = "DipendentiAgenzia";
             this.DipendentiAgenzia.Size = new System.Drawing.Size(175, 47);
             this.DipendentiAgenzia.TabIndex = 0;
@@ -456,13 +460,13 @@ namespace DatabaseProject
             // TabellaDipendenti
             // 
             this.TabellaDipendenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaDipendenti.Location = new System.Drawing.Point(189, 6);
+            this.TabellaDipendenti.Location = new System.Drawing.Point(188, 6);
             this.TabellaDipendenti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabellaDipendenti.Name = "TabellaDipendenti";
             this.TabellaDipendenti.ReadOnly = true;
             this.TabellaDipendenti.RowHeadersWidth = 51;
             this.TabellaDipendenti.RowTemplate.Height = 24;
-            this.TabellaDipendenti.Size = new System.Drawing.Size(755, 486);
+            this.TabellaDipendenti.Size = new System.Drawing.Size(756, 486);
             this.TabellaDipendenti.TabIndex = 0;
             // 
             // Business_Partners
@@ -958,7 +962,7 @@ namespace DatabaseProject
             this.Servizi.Controls.Add(this.Servizi_DataInizio);
             this.Servizi.Controls.Add(this.TabellaServizi);
             this.Servizi.Location = new System.Drawing.Point(4, 25);
-            this.Servizi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Servizi.Margin = new System.Windows.Forms.Padding(4);
             this.Servizi.Name = "Servizi";
             this.Servizi.Size = new System.Drawing.Size(951, 495);
             this.Servizi.TabIndex = 9;
@@ -1008,7 +1012,7 @@ namespace DatabaseProject
             // Servizi_DataFine
             // 
             this.Servizi_DataFine.Location = new System.Drawing.Point(5, 36);
-            this.Servizi_DataFine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Servizi_DataFine.Margin = new System.Windows.Forms.Padding(4);
             this.Servizi_DataFine.Name = "Servizi_DataFine";
             this.Servizi_DataFine.Size = new System.Drawing.Size(225, 22);
             this.Servizi_DataFine.TabIndex = 7;
@@ -1060,7 +1064,7 @@ namespace DatabaseProject
             // Servizi_Calcola
             // 
             this.Servizi_Calcola.Location = new System.Drawing.Point(4, 70);
-            this.Servizi_Calcola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Servizi_Calcola.Margin = new System.Windows.Forms.Padding(4);
             this.Servizi_Calcola.Name = "Servizi_Calcola";
             this.Servizi_Calcola.Size = new System.Drawing.Size(226, 28);
             this.Servizi_Calcola.TabIndex = 2;
@@ -1071,7 +1075,7 @@ namespace DatabaseProject
             // Servizi_DataInizio
             // 
             this.Servizi_DataInizio.Location = new System.Drawing.Point(5, 5);
-            this.Servizi_DataInizio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Servizi_DataInizio.Margin = new System.Windows.Forms.Padding(4);
             this.Servizi_DataInizio.Name = "Servizi_DataInizio";
             this.Servizi_DataInizio.Size = new System.Drawing.Size(225, 22);
             this.Servizi_DataInizio.TabIndex = 1;
@@ -1083,7 +1087,7 @@ namespace DatabaseProject
             // 
             this.TabellaServizi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaServizi.Location = new System.Drawing.Point(383, 4);
-            this.TabellaServizi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabellaServizi.Margin = new System.Windows.Forms.Padding(4);
             this.TabellaServizi.Name = "TabellaServizi";
             this.TabellaServizi.RowHeadersWidth = 51;
             this.TabellaServizi.RowTemplate.Height = 24;
@@ -1128,6 +1132,24 @@ namespace DatabaseProject
             // magazzinoTableAdapter
             // 
             this.magazzinoTableAdapter.ClearBeforeFill = true;
+            // 
+            // Dipendenti_StipendioMedio
+            // 
+            this.Dipendenti_StipendioMedio.AutoSize = true;
+            this.Dipendenti_StipendioMedio.Location = new System.Drawing.Point(132, 458);
+            this.Dipendenti_StipendioMedio.Name = "Dipendenti_StipendioMedio";
+            this.Dipendenti_StipendioMedio.Size = new System.Drawing.Size(14, 17);
+            this.Dipendenti_StipendioMedio.TabIndex = 22;
+            this.Dipendenti_StipendioMedio.Text = "x";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(0, 458);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Stipendio medio";
             // 
             // DatabaseViewAdmin
             // 
@@ -1274,6 +1296,8 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox BPNomeSocio;
         private System.Windows.Forms.TextBox BPPIVA;
         private Button AggiungiBusinessPartner;
+        private Label label6;
+        private Label Dipendenti_StipendioMedio;
     }
 }
 
