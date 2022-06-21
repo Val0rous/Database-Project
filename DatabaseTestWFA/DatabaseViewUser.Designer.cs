@@ -37,23 +37,25 @@ namespace DatabaseProject
             this.CreaPacchettoButton = new System.Windows.Forms.Button();
             this.Pacchetto_Sconto = new System.Windows.Forms.TextBox();
             this.Pacchetto_ID = new System.Windows.Forms.TextBox();
-            this.prenotazioneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gestionale_per_agenzie_relDataSet1 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1();
             this.Tour = new System.Windows.Forms.TabPage();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.ClienteCF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.TourButton = new System.Windows.Forms.Button();
+            this.TourID = new System.Windows.Forms.TextBox();
+            this.prenotazioneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gestionale_per_agenzie_relDataSet1 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gestionale_per_agenzie_relDataSet = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet();
             this.clienteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter();
             this.prenotazioneTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter();
             this.TabPage.SuspendLayout();
             this.Pacchetti.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).BeginInit();
             this.SuspendLayout();
@@ -129,18 +131,10 @@ namespace DatabaseProject
             this.Pacchetto_ID.TabIndex = 0;
             this.Pacchetto_ID.Text = "IDPacchetto";
             // 
-            // prenotazioneBindingSource
-            // 
-            this.prenotazioneBindingSource.DataMember = "prenotazione";
-            this.prenotazioneBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet1;
-            // 
-            // gestionale_per_agenzie_relDataSet1
-            // 
-            this.gestionale_per_agenzie_relDataSet1.DataSetName = "gestionale_per_agenzie_relDataSet1";
-            this.gestionale_per_agenzie_relDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Tour
             // 
+            this.Tour.Controls.Add(this.TourID);
+            this.Tour.Controls.Add(this.TourButton);
             this.Tour.Controls.Add(this.TabellaTour);
             this.Tour.Location = new System.Drawing.Point(4, 22);
             this.Tour.Margin = new System.Windows.Forms.Padding(2);
@@ -160,7 +154,7 @@ namespace DatabaseProject
             this.TabellaTour.ReadOnly = true;
             this.TabellaTour.RowHeadersWidth = 51;
             this.TabellaTour.RowTemplate.Height = 24;
-            this.TabellaTour.Size = new System.Drawing.Size(567, 278);
+            this.TabellaTour.Size = new System.Drawing.Size(567, 248);
             this.TabellaTour.TabIndex = 0;
             // 
             // RefreshButton
@@ -179,7 +173,7 @@ namespace DatabaseProject
             // 
             this.ClienteCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ClienteCF.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClienteCF.Location = new System.Drawing.Point(167, 16);
+            this.ClienteCF.Location = new System.Drawing.Point(247, 16);
             this.ClienteCF.Margin = new System.Windows.Forms.Padding(2);
             this.ClienteCF.Name = "ClienteCF";
             this.ClienteCF.Size = new System.Drawing.Size(233, 24);
@@ -192,11 +186,42 @@ namespace DatabaseProject
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(85, 19);
+            this.label1.Location = new System.Drawing.Point(165, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 12;
-            this.label1.Text = "CF Cliente";
+            this.label1.Text = "CF Cliente:";
+            // 
+            // TourButton
+            // 
+            this.TourButton.Location = new System.Drawing.Point(4, 257);
+            this.TourButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TourButton.Name = "TourButton";
+            this.TourButton.Size = new System.Drawing.Size(134, 30);
+            this.TourButton.TabIndex = 11;
+            this.TourButton.Text = "Prenota Tour";
+            this.TourButton.UseVisualStyleBackColor = true;
+            this.TourButton.Click += new System.EventHandler(this.TourButton_Click);
+            // 
+            // TourID
+            // 
+            this.TourID.BackColor = System.Drawing.SystemColors.Window;
+            this.TourID.Location = new System.Drawing.Point(142, 263);
+            this.TourID.Margin = new System.Windows.Forms.Padding(2);
+            this.TourID.Name = "TourID";
+            this.TourID.Size = new System.Drawing.Size(162, 20);
+            this.TourID.TabIndex = 12;
+            this.TourID.Text = "ID Tour";
+            // 
+            // prenotazioneBindingSource
+            // 
+            this.prenotazioneBindingSource.DataMember = "prenotazione";
+            this.prenotazioneBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet1;
+            // 
+            // gestionale_per_agenzie_relDataSet1
+            // 
+            this.gestionale_per_agenzie_relDataSet1.DataSetName = "gestionale_per_agenzie_relDataSet1";
+            this.gestionale_per_agenzie_relDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // clienteBindingSource
             // 
@@ -234,10 +259,11 @@ namespace DatabaseProject
             this.TabPage.ResumeLayout(false);
             this.Pacchetti.ResumeLayout(false);
             this.Pacchetti.PerformLayout();
+            this.Tour.ResumeLayout(false);
+            this.Tour.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).EndInit();
-            this.Tour.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -264,5 +290,7 @@ namespace DatabaseProject
         private System.Windows.Forms.Button CreaPacchettoButton;
         private System.Windows.Forms.TextBox ClienteCF;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TourID;
+        private System.Windows.Forms.Button TourButton;
     }
 }

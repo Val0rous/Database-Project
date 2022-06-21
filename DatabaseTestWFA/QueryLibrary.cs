@@ -290,6 +290,24 @@ namespace DatabaseProject
                 return false;
             }
         }
+        public bool UpdatePacchetto(String IDpacchetto, float Prezzo)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            command.Parameters.AddWithValue("@Prezzo", Prezzo);
+            command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
+            command.CommandText = "UPDATE pacchetto SET Prezzo = @Prezzo WHERE IDpacchetto = @IDpacchetto";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
         public bool InserisciServizio(String DataInizio, String DataFine,  String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
         {
             MySqlCommand command = this.Connection.CreateCommand();

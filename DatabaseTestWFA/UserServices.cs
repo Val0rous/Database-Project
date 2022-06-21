@@ -239,13 +239,25 @@ namespace DatabaseProject
                     return;
                 }
             }
-            MessageBox.Show("Biciclette noleggiate correttamente",
-                       "Info",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Information);
             NoleggioBiciclette_Lista.Items.Clear();
 
             this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
+            ExecuteQueryIf(true, (q, c) => {
+                result = q.UpdatePacchetto(this.IDPacchetto, float.Parse(Pacchetto_Prezzo.Text));
+                //Console.WriteLine(b);
+                if (!result)
+                {
+                    MessageBox.Show("errore aggiornamento del pacchetto",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                this.Servizio_ID.Text = q.GetNextID("servizio", "IDservizio");
+            });
+            MessageBox.Show("Biciclette noleggiate correttamente",
+                      "Info",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
         }
 
         private void AggiungiNoleggio1_Click(object sender, EventArgs e)
@@ -312,13 +324,26 @@ namespace DatabaseProject
                     return;
                 }
             }
+            
+            NoleggioAccessori_Lista.Items.Clear();
+
+            this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
+            ExecuteQueryIf(true, (q, c) => {
+                result = q.UpdatePacchetto(this.IDPacchetto, float.Parse(Pacchetto_Prezzo.Text));
+                //Console.WriteLine(b);
+                if (!result)
+                {
+                    MessageBox.Show("errore aggiornamento del pacchetto",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                this.Servizio_ID.Text = q.GetNextID("servizio", "IDservizio");
+            });
             MessageBox.Show("Accessori noleggiati correttamente",
                        "Info",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
-            NoleggioAccessori_Lista.Items.Clear();
-
-            this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
         }
 
         private void Percorso_Enter(object sender, EventArgs e)
@@ -425,13 +450,26 @@ namespace DatabaseProject
                     return;
                 }
             }
+            
+            Guide_Lista.Items.Clear();
+
+            this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
+            ExecuteQueryIf(true, (q, c) => {
+                result = q.UpdatePacchetto(this.IDPacchetto, float.Parse(Pacchetto_Prezzo.Text));
+                //Console.WriteLine(b);
+                if (!result)
+                {
+                    MessageBox.Show("errore aggiornamento del pacchetto",
+                    "Errore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                this.Servizio_ID.Text = q.GetNextID("servizio", "IDservizio");
+            });
             MessageBox.Show("Percorso guidato prenotato correttamente",
                        "Info",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
-            Guide_Lista.Items.Clear();
-
-            this.Pacchetto_Prezzo.Text = (float.Parse(Pacchetto_Prezzo.Text) + valoreTot).ToString();
         }
     }
 }

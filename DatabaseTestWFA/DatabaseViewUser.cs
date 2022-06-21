@@ -90,7 +90,7 @@ namespace DatabaseProject
 
             //FillTable(TabellaPrenotazioni, queries.LeggiPrenotazioni().CommandText, connection.Connection);
             //FillTable(TabellaPercorsi, queries.LeggiPercorso().CommandText, connection.Connection);
-            FillTable(TabellaTour, queries.LeggiTour().CommandText, connection.Connection);
+            FillTable(TabellaTour, queries.LeggiTour(IDsede).CommandText, connection.Connection);
 
             //this.Pacchetto_ID.ForeColor = Color.Gray;
             this.Pacchetto_Sconto.ForeColor = Color.Gray;
@@ -113,10 +113,6 @@ namespace DatabaseProject
         private void RefreshAll(object sender, EventArgs e)
         {
             this.DatabaseViewUser_Load(sender, e);
-            //TabellaPrenotazioni.Update();
-            //TabellaPrenotazioni.Refresh();
-            //TabellaPercorsi.Update();
-            //TabellaPercorsi.Refresh();
             TabellaTour.Update();
             TabellaTour.Refresh();
         }
@@ -182,6 +178,46 @@ namespace DatabaseProject
                 this.Pacchetto_Sconto.Text = "Sconto";
                 this.Pacchetto_Sconto.ForeColor = Color.Gray;
                 this.pacchetto_sconto = false;
+            }
+        }
+
+        private void TourButton_Click(object sender, EventArgs e)
+        {
+            var bindAcc = (BindingSource)TabellaTour.DataSource;
+            var listaAcc = ((DataTable)bindAcc.DataSource).Rows;
+            foreach (DataRow r in listaAcc)
+            {
+                if (r["IDtour"].Equals(this.TourID.Text))
+                {
+                    //Console.WriteLine("trovato");
+                    if (!CheckCF())
+                    {
+                        MessageBox.Show("Inserisci un codice fiscale gia' registrato",
+                        "Errore",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                        return;
+                    }
+                    ExecuteQueryIf(true, q =>
+                    {
+                        var result = q.InserisciPrenotazione(ClienteCF.Text, TourID.Text);
+                        if (!result)
+                        {
+                            MessageBox.Show("Errore nella prenotazione",
+                            "Errore",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        } else
+                        {
+                            MessageBox.Show("Tour prenotato correttamente",
+                               "Info",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        }
+                    });
+                    //Console.WriteLine("completato?");
+                    return;
+                }
             }
         }
     }
