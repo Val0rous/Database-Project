@@ -312,11 +312,13 @@ namespace DatabaseProject
             // 
             // DipendentiAgenzia
             // 
-            this.DipendentiAgenzia.Location = new System.Drawing.Point(0, 0);
+            this.DipendentiAgenzia.Location = new System.Drawing.Point(3, 362);
             this.DipendentiAgenzia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DipendentiAgenzia.Name = "DipendentiAgenzia";
-            this.DipendentiAgenzia.Size = new System.Drawing.Size(100, 28);
+            this.DipendentiAgenzia.Size = new System.Drawing.Size(175, 47);
             this.DipendentiAgenzia.TabIndex = 0;
+            this.DipendentiAgenzia.Text = "Visualizza tutti i dipendenti dell\'agenzia";
+            this.DipendentiAgenzia.Click += new System.EventHandler(this.DipendentiAgenzia_Click);
             // 
             // Dipendente_isAltro
             // 
