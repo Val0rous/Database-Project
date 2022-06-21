@@ -43,7 +43,7 @@ namespace DatabaseProject
 
         private void CloseProgram(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
     }
 }
