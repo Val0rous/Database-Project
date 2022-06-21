@@ -33,39 +33,39 @@ namespace DatabaseProject
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseViewUser));
             this.button1 = new System.Windows.Forms.Button();
             this.TabPage = new System.Windows.Forms.TabControl();
+            this.Pacchetti = new System.Windows.Forms.TabPage();
+            this.CreaPacchettoButton = new System.Windows.Forms.Button();
+            this.Pacchetto_Sconto = new System.Windows.Forms.TextBox();
+            this.Pacchetto_ID = new System.Windows.Forms.TextBox();
             this.Prenotazioni = new System.Windows.Forms.TabPage();
             this.TabellaPrenotazioni = new System.Windows.Forms.DataGridView();
             this.Percorsi = new System.Windows.Forms.TabPage();
             this.TabellaPercorsi = new System.Windows.Forms.DataGridView();
             this.Tour = new System.Windows.Forms.TabPage();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
-            this.Pacchetti = new System.Windows.Forms.TabPage();
-            this.Pacchetto_Sconto = new System.Windows.Forms.TextBox();
-            this.Pacchetto_ID = new System.Windows.Forms.TextBox();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.CreaPacchettoButton = new System.Windows.Forms.Button();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gestionale_per_agenzie_relDataSet = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet();
+            this.ClienteCF = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cFclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDtourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenotazioneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gestionale_per_agenzie_relDataSet1 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gestionale_per_agenzie_relDataSet = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet();
             this.clienteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter();
             this.prenotazioneTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter();
-            this.ClienteName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.TabPage.SuspendLayout();
+            this.Pacchetti.SuspendLayout();
             this.Prenotazioni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).BeginInit();
             this.Percorsi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).BeginInit();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
-            this.Pacchetti.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -93,6 +93,53 @@ namespace DatabaseProject
             this.TabPage.Size = new System.Drawing.Size(590, 319);
             this.TabPage.TabIndex = 9;
             this.TabPage.SelectedIndexChanged += new System.EventHandler(this.TabPage_SelectedIndexChanged);
+            // 
+            // Pacchetti
+            // 
+            this.Pacchetti.Controls.Add(this.CreaPacchettoButton);
+            this.Pacchetti.Controls.Add(this.Pacchetto_Sconto);
+            this.Pacchetti.Controls.Add(this.Pacchetto_ID);
+            this.Pacchetti.Location = new System.Drawing.Point(4, 22);
+            this.Pacchetti.Margin = new System.Windows.Forms.Padding(2);
+            this.Pacchetti.Name = "Pacchetti";
+            this.Pacchetti.Padding = new System.Windows.Forms.Padding(2);
+            this.Pacchetti.Size = new System.Drawing.Size(582, 293);
+            this.Pacchetti.TabIndex = 4;
+            this.Pacchetti.Text = "Pacchetti";
+            this.Pacchetti.UseVisualStyleBackColor = true;
+            // 
+            // CreaPacchettoButton
+            // 
+            this.CreaPacchettoButton.Location = new System.Drawing.Point(219, 149);
+            this.CreaPacchettoButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CreaPacchettoButton.Name = "CreaPacchettoButton";
+            this.CreaPacchettoButton.Size = new System.Drawing.Size(134, 32);
+            this.CreaPacchettoButton.TabIndex = 10;
+            this.CreaPacchettoButton.Text = "Crea Pacchetto";
+            this.CreaPacchettoButton.UseVisualStyleBackColor = true;
+            this.CreaPacchettoButton.Click += new System.EventHandler(this.CreaPacchettoButton_Click);
+            // 
+            // Pacchetto_Sconto
+            // 
+            this.Pacchetto_Sconto.Location = new System.Drawing.Point(236, 104);
+            this.Pacchetto_Sconto.Margin = new System.Windows.Forms.Padding(2);
+            this.Pacchetto_Sconto.Name = "Pacchetto_Sconto";
+            this.Pacchetto_Sconto.Size = new System.Drawing.Size(102, 20);
+            this.Pacchetto_Sconto.TabIndex = 2;
+            this.Pacchetto_Sconto.Text = "Sconto";
+            this.Pacchetto_Sconto.Enter += new System.EventHandler(this.Pacchetto_Sconto_Enter);
+            this.Pacchetto_Sconto.Leave += new System.EventHandler(this.Pacchetto_Sconto_Leave);
+            // 
+            // Pacchetto_ID
+            // 
+            this.Pacchetto_ID.BackColor = System.Drawing.SystemColors.Window;
+            this.Pacchetto_ID.Location = new System.Drawing.Point(236, 68);
+            this.Pacchetto_ID.Margin = new System.Windows.Forms.Padding(2);
+            this.Pacchetto_ID.Name = "Pacchetto_ID";
+            this.Pacchetto_ID.ReadOnly = true;
+            this.Pacchetto_ID.Size = new System.Drawing.Size(102, 20);
+            this.Pacchetto_ID.TabIndex = 0;
+            this.Pacchetto_ID.Text = "IDPacchetto";
             // 
             // Prenotazioni
             // 
@@ -171,38 +218,6 @@ namespace DatabaseProject
             this.TabellaTour.Size = new System.Drawing.Size(567, 278);
             this.TabellaTour.TabIndex = 0;
             // 
-            // Pacchetti
-            // 
-            this.Pacchetti.Controls.Add(this.CreaPacchettoButton);
-            this.Pacchetti.Controls.Add(this.Pacchetto_Sconto);
-            this.Pacchetti.Controls.Add(this.Pacchetto_ID);
-            this.Pacchetti.Location = new System.Drawing.Point(4, 22);
-            this.Pacchetti.Margin = new System.Windows.Forms.Padding(2);
-            this.Pacchetti.Name = "Pacchetti";
-            this.Pacchetti.Padding = new System.Windows.Forms.Padding(2);
-            this.Pacchetti.Size = new System.Drawing.Size(582, 293);
-            this.Pacchetti.TabIndex = 4;
-            this.Pacchetti.Text = "Pacchetti";
-            this.Pacchetti.UseVisualStyleBackColor = true;
-            // 
-            // Pacchetto_Sconto
-            // 
-            this.Pacchetto_Sconto.Location = new System.Drawing.Point(4, 29);
-            this.Pacchetto_Sconto.Margin = new System.Windows.Forms.Padding(2);
-            this.Pacchetto_Sconto.Name = "Pacchetto_Sconto";
-            this.Pacchetto_Sconto.Size = new System.Drawing.Size(76, 20);
-            this.Pacchetto_Sconto.TabIndex = 2;
-            this.Pacchetto_Sconto.Text = "Sconto";
-            // 
-            // Pacchetto_ID
-            // 
-            this.Pacchetto_ID.Location = new System.Drawing.Point(4, 5);
-            this.Pacchetto_ID.Margin = new System.Windows.Forms.Padding(2);
-            this.Pacchetto_ID.Name = "Pacchetto_ID";
-            this.Pacchetto_ID.Size = new System.Drawing.Size(76, 20);
-            this.Pacchetto_ID.TabIndex = 0;
-            this.Pacchetto_ID.Text = "IDPacchetto";
-            // 
             // RefreshButton
             // 
             this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
@@ -215,26 +230,28 @@ namespace DatabaseProject
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshAll);
             // 
-            // CreaPacchettoButton
+            // ClienteCF
             // 
-            this.CreaPacchettoButton.Location = new System.Drawing.Point(4, 53);
-            this.CreaPacchettoButton.Margin = new System.Windows.Forms.Padding(2);
-            this.CreaPacchettoButton.Name = "CreaPacchettoButton";
-            this.CreaPacchettoButton.Size = new System.Drawing.Size(134, 32);
-            this.CreaPacchettoButton.TabIndex = 10;
-            this.CreaPacchettoButton.Text = "Crea Pacchetto";
-            this.CreaPacchettoButton.UseVisualStyleBackColor = true;
-            this.CreaPacchettoButton.Click += new System.EventHandler(this.CreaPacchettoButton_Click);
+            this.ClienteCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ClienteCF.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.ClienteCF.Location = new System.Drawing.Point(167, 16);
+            this.ClienteCF.Margin = new System.Windows.Forms.Padding(2);
+            this.ClienteCF.Name = "ClienteCF";
+            this.ClienteCF.Size = new System.Drawing.Size(233, 24);
+            this.ClienteCF.TabIndex = 11;
+            this.ClienteCF.Text = "Codice Fiscale";
+            this.ClienteCF.Enter += new System.EventHandler(this.ClienteCF_Enter);
+            this.ClienteCF.Leave += new System.EventHandler(this.ClienteCF_Leave);
             // 
-            // clienteBindingSource
+            // label1
             // 
-            this.clienteBindingSource.DataMember = "cliente";
-            this.clienteBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet;
-            // 
-            // gestionale_per_agenzie_relDataSet
-            // 
-            this.gestionale_per_agenzie_relDataSet.DataSetName = "gestionale_per_agenzie_relDataSet";
-            this.gestionale_per_agenzie_relDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(85, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "CF Cliente";
             // 
             // cFclienteDataGridViewTextBoxColumn
             // 
@@ -264,6 +281,16 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet1.DataSetName = "gestionale_per_agenzie_relDataSet1";
             this.gestionale_per_agenzie_relDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "cliente";
+            this.clienteBindingSource.DataSource = this.gestionale_per_agenzie_relDataSet;
+            // 
+            // gestionale_per_agenzie_relDataSet
+            // 
+            this.gestionale_per_agenzie_relDataSet.DataSetName = "gestionale_per_agenzie_relDataSet";
+            this.gestionale_per_agenzie_relDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
@@ -272,34 +299,13 @@ namespace DatabaseProject
             // 
             this.prenotazioneTableAdapter.ClearBeforeFill = true;
             // 
-            // ClienteName
-            // 
-            this.ClienteName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ClienteName.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClienteName.Location = new System.Drawing.Point(167, 16);
-            this.ClienteName.Margin = new System.Windows.Forms.Padding(2);
-            this.ClienteName.Name = "ClienteName";
-            this.ClienteName.Size = new System.Drawing.Size(233, 24);
-            this.ClienteName.TabIndex = 11;
-            this.ClienteName.Text = "Codice Fiscale";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(85, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 18);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "CF Cliente";
-            // 
             // DatabaseViewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ClienteName);
+            this.Controls.Add(this.ClienteCF);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.TabPage);
             this.Controls.Add(this.button1);
@@ -309,18 +315,18 @@ namespace DatabaseProject
             this.Text = "Agenzia di Cicloturismo";
             this.Load += new System.EventHandler(this.DatabaseViewUser_Load);
             this.TabPage.ResumeLayout(false);
+            this.Pacchetti.ResumeLayout(false);
+            this.Pacchetti.PerformLayout();
             this.Prenotazioni.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPrenotazioni)).EndInit();
             this.Percorsi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaPercorsi)).EndInit();
             this.Tour.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
-            this.Pacchetti.ResumeLayout(false);
-            this.Pacchetti.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,7 +355,7 @@ namespace DatabaseProject
         private System.Windows.Forms.TextBox Pacchetto_ID;
         private System.Windows.Forms.TextBox Pacchetto_Sconto;
         private System.Windows.Forms.Button CreaPacchettoButton;
-        private System.Windows.Forms.TextBox ClienteName;
+        private System.Windows.Forms.TextBox ClienteCF;
         private System.Windows.Forms.Label label1;
     }
 }

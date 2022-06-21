@@ -263,31 +263,31 @@ namespace DatabaseProject
                 else return false;
 
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
-        public bool InserisciServizio(String DataInizio, String DataFine, float CostoGiornaliero, String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
+        public bool InserisciServizio(String DataInizio, String DataFine,  String IDservizio, String tipoServizio, String IDpacchetto, String IDsede, String IDpercorso)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@DataInizio", DataInizio);
             command.Parameters.AddWithValue("@DataFine", DataFine);
-            command.Parameters.AddWithValue("@CostoGiornaliero", CostoGiornaliero);
             command.Parameters.AddWithValue("@IDservizio", IDservizio);
             command.Parameters.AddWithValue("@tipoServizio", tipoServizio);
             command.Parameters.AddWithValue("@IDpacchetto", IDpacchetto);
             command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
             if (tipoServizio=="PERCORSO_GUIDATO")
             {
-                command.CommandText = "INSERT INTO servizio (DataInizio, DataFine, CostoGiornaliero, IDservizio, tipoServizio, IDpacchetto, IDsede, IDpercorso) " +
-                "VALUES (@DataInizio, @DataFine, @CostoGiornaliero, @IDservizio, @tipoServizio, @IDpacchetto, @IDsede, @IDpercorso)";
+                command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
+                command.CommandText = "INSERT INTO servizio (DataInizio, DataFine, IDservizio, tipoServizio, IDpacchetto, IDsede, IDpercorso) " +
+                "VALUES (@DataInizio, @DataFine, @IDservizio, @tipoServizio, @IDpacchetto, @IDsede, @IDpercorso)";
             }
             else
             {
-                command.CommandText = "INSERT INTO servizio (DataInizio, DataFine, CostoGiornaliero, IDservizio, tipoServizio, IDpacchetto, IDsede) " +
-                "VALUES (@DataInizio, @DataFine, @CostoGiornaliero, @IDservizio, @tipoServizio, @IDpacchetto, @IDsede)";
+                command.CommandText = "INSERT INTO servizio (DataInizio, DataFine, IDservizio, tipoServizio, IDpacchetto, IDsede) " +
+                "VALUES (@DataInizio, @DataFine, @IDservizio, @tipoServizio, @IDpacchetto, @IDsede)";
             }
             try
             {
@@ -295,8 +295,9 @@ namespace DatabaseProject
                 else return false;
 
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
@@ -314,8 +315,9 @@ namespace DatabaseProject
                 else return false;
 
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
@@ -487,13 +489,13 @@ namespace DatabaseProject
                 "WHERE bicicletta.IDmagazzino=magazzino.IDmagazzino AND magazzino.IDsede=" + Convert(IDsede);
             return command;
         }
-        public MySqlCommand LeggiBiciclette(String IDsede, String Date)
+        public MySqlCommand LeggiBiciclette(String IDsede, String DateI, String DateF)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             //command.Parameters.AddWithValue("@IDsede", IDsede);
             //command.Parameters.AddWithValue("@Date", Date);
             command.CommandText = "WITH NoleggiBicicletteAttivi(NumTelaio) AS(SELECT B.NumTelaio FROM bicicletta B, noleggiobicicletta NB, servizio S " +
-            "WHERE B.NumTelaio = NB.NumTelaio AND NB.IDservizio = S.IDservizio AND " + Convert(Date) + " >= S.DataInizio AND " + Convert(Date) + " <= S.DataFine) " +
+            "WHERE B.NumTelaio = NB.NumTelaio AND NB.IDservizio = S.IDservizio AND " + Convert(DateF) + " >= S.DataInizio AND " + Convert(DateI) + " <= S.DataFine) " +
             "SELECT * FROM bicicletta B WHERE B.NumTelaio NOT IN(SELECT NBA.NumTelaio FROM NoleggiBicicletteAttivi AS NBA) " +
             "AND B.IDmagazzino IN(SELECT IDmagazzino FROM sede S, magazzino M WHERE S.IDsede= " + Convert(IDsede) + " AND M.IDsede= S.IDsede);";
             return command;

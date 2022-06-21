@@ -50,6 +50,26 @@ namespace DatabaseProject
                 MessageBoxIcon.Warning);
             }
         }
+        private bool CheckCF()
+        {
+            string cf = this.ClienteCF.Text;
+            var connection = new CreateConnection();
+            connection.Connection.Open();
+            var queries = new QueryLibrary(connection.Connection);
+            var dataAdapter = new MySqlDataAdapter(queries.LeggiClienti().CommandText, connection.Connection);
+            var table = new DataTable();
+            dataAdapter.Fill(table);
+            foreach (DataRow r in table.Rows)
+            {
+                if (r["CF"].Equals(cf))
+                {
+                    connection.Connection.Close();
+                    return true;
+                }
+            }
+            connection.Connection.Close();
+            return false;
+        }
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -72,10 +92,12 @@ namespace DatabaseProject
             FillTable(TabellaPercorsi, queries.LeggiPercorso().CommandText, connection.Connection);
             FillTable(TabellaTour, queries.LeggiTour().CommandText, connection.Connection);
 
-            connection.Connection.Close();
-
             //this.Pacchetto_ID.ForeColor = Color.Gray;
             this.Pacchetto_Sconto.ForeColor = Color.Gray;
+
+            this.Pacchetto_ID.Text = queries.GetNextID("pacchetto", "IDpacchetto");
+
+            connection.Connection.Close();
         }
 
         private static void FillTable(DataGridView grid, string command, MySqlConnection connection)
@@ -108,10 +130,59 @@ namespace DatabaseProject
             {
                 this.Pacchetto_ID.Text = queries.GetNextID("pacchetto", "IDpacchetto");
             }
+
+            connection.Connection.Close();
         }
         private void CreaPacchettoButton_Click(object sender, EventArgs e)
         {
+            if (!CheckCF())
+            {
+                MessageBox.Show("Inserisci un codice fiscale gia' registrato",
+                "Errore",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+            var us = new UserServices(IDsede, this.Pacchetto_ID.Text, pacchetto_sconto ? Int32.Parse(this.Pacchetto_Sconto.Text) : 0, this.ClienteCF.Text);
+            us.Show();
+        }
 
+        private void ClienteCF_Enter(object sender, EventArgs e)
+        {
+            if (this.ClienteCF.Text.Equals("Codice Fiscale"))
+            {
+                this.ClienteCF.Text = "";
+            }
+            this.ClienteCF.ForeColor = Color.Black;
+        }
+
+        private void ClienteCF_Leave(object sender, EventArgs e)
+        {
+            if (this.ClienteCF.Text.Equals(""))
+            {
+                this.ClienteCF.Text = "Codice Fiscale";
+                this.ClienteCF.ForeColor = Color.Gray;
+            }
+        }
+
+        private void Pacchetto_Sconto_Enter(object sender, EventArgs e)
+        {
+            if (this.Pacchetto_Sconto.Text.Equals("Sconto"))
+            {
+                this.Pacchetto_Sconto.Text = "";
+            }
+            this.Pacchetto_Sconto.ForeColor = Color.Black;
+            this.pacchetto_sconto = true;
+        }
+
+        private void Pacchetto_Sconto_Leave(object sender, EventArgs e)
+        {
+            if (this.Pacchetto_Sconto.Text.Equals(""))
+            {
+                this.Pacchetto_Sconto.Text = "Sconto";
+                this.Pacchetto_Sconto.ForeColor = Color.Gray;
+                this.pacchetto_sconto = false;
+            }
         }
     }
 }
