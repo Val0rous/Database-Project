@@ -176,22 +176,55 @@ namespace DatabaseProject
                 return false;
             }
         }
-        public bool InserisciSequenza(String IDtappa, String IDpercorso)
+        public bool UpdatePercorso(String IDpercorso, String IDtappa)
         {
             MySqlCommand command = this.Connection.CreateCommand();
-            command.Parameters.AddWithValue("@IDtappa", IDtappa);
-            //command.Parameters.AddWithValue("@Indice", Indice);
             command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
-            command.CommandText = "INSERT INTO sequenza (IDtappa, Indice, IDpercorso) " +
-                "VALUES (@IDtappa, (SELECT 1+COUNT(*) FROM Sequenze WHERE IDPercorso = @IDpercorso), @IDpercorso)";
+            command.Parameters.AddWithValue("@IDtappa", IDtappa);
+            command.CommandText = "UPDATE percorso SET NumTappe=NumTappe+1, LunghezzaPercorso=LunghezzaPercorso+(SELECT LunghezzaTappa FROM tappa WHERE IDtappa=@IDtappa) WHERE IDpercorso=@IDpercorso";
             try
             {
                 if (command.ExecuteNonQuery() > 0) return true;
                 else return false;
 
             }
-            catch (MySqlException)
+            catch (MySqlException e)
             {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+        public bool InserisciSequenza(String IDtappa, String IDpercorso)
+        {
+            MySqlCommand command = this.Connection.CreateCommand();
+            
+            //command.Parameters.AddWithValue("@Indice", Indice);
+            command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
+            command.CommandText = "SELECT 1+MAX(Indice) FROM Sequenza WHERE IDPercorso = @IDpercorso";
+            int i = 1;
+            try
+            {
+                var r = command.ExecuteReader();
+                r.Read();
+                i = r.GetInt32(0);
+                r.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            command.Parameters.AddWithValue("@IDtappa", IDtappa);
+            command.CommandText= "INSERT INTO sequenza (IDtappa, Indice, IDpercorso) " +
+                "VALUES (@IDtappa, " + i.ToString() + ", @IDpercorso)";
+            try
+            {
+                if (command.ExecuteNonQuery() > 0) return true;
+                else return false;
+
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
