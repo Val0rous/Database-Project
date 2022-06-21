@@ -61,12 +61,6 @@ namespace DatabaseProject
             this.AggiungiDipendente = new System.Windows.Forms.Button();
             this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
             this.Business_Partners = new System.Windows.Forms.TabPage();
-            this.BPTipologia = new System.Windows.Forms.TextBox();
-            this.BPTelefono = new System.Windows.Forms.TextBox();
-            this.BPCostoServizio = new System.Windows.Forms.TextBox();
-            this.BPNomeSocio = new System.Windows.Forms.TextBox();
-            this.BPPIVA = new System.Windows.Forms.TextBox();
-            this.AggiungiBusinessPartner = new System.Windows.Forms.Button();
             this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.Percorsi = new System.Windows.Forms.TabPage();
             this.AggiungiTappa = new System.Windows.Forms.Button();
@@ -467,12 +461,6 @@ namespace DatabaseProject
             // 
             // Business_Partners
             // 
-            this.Business_Partners.Controls.Add(this.BPTipologia);
-            this.Business_Partners.Controls.Add(this.BPTelefono);
-            this.Business_Partners.Controls.Add(this.BPCostoServizio);
-            this.Business_Partners.Controls.Add(this.BPNomeSocio);
-            this.Business_Partners.Controls.Add(this.BPPIVA);
-            this.Business_Partners.Controls.Add(this.AggiungiBusinessPartner);
             this.Business_Partners.Controls.Add(this.TabellaBusinessPartners);
             this.Business_Partners.Location = new System.Drawing.Point(4, 25);
             this.Business_Partners.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -483,82 +471,18 @@ namespace DatabaseProject
             this.Business_Partners.Text = "Business Partners";
             this.Business_Partners.UseVisualStyleBackColor = true;
             // 
-            // BPTipologia
-            // 
-            this.BPTipologia.Location = new System.Drawing.Point(8, 135);
-            this.BPTipologia.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.BPTipologia.Name = "BPTipologia";
-            this.BPTipologia.Size = new System.Drawing.Size(235, 22);
-            this.BPTipologia.TabIndex = 14;
-            this.BPTipologia.Text = "Tipologia";
-            this.BPTipologia.Enter += new System.EventHandler(this.BPTipologia_Enter);
-            this.BPTipologia.Leave += new System.EventHandler(this.BPTipologia_Leave);
-            // 
-            // BPTelefono
-            // 
-            this.BPTelefono.Location = new System.Drawing.Point(8, 103);
-            this.BPTelefono.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.BPTelefono.Name = "BPTelefono";
-            this.BPTelefono.Size = new System.Drawing.Size(235, 22);
-            this.BPTelefono.TabIndex = 13;
-            this.BPTelefono.Text = "Numero di Telefono";
-            this.BPTelefono.Enter += new System.EventHandler(this.BPTelefono_Enter);
-            this.BPTelefono.Leave += new System.EventHandler(this.BPTelefono_Leave);
-            // 
-            // BPCostoServizio
-            // 
-            this.BPCostoServizio.Location = new System.Drawing.Point(8, 71);
-            this.BPCostoServizio.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.BPCostoServizio.Name = "BPCostoServizio";
-            this.BPCostoServizio.Size = new System.Drawing.Size(235, 22);
-            this.BPCostoServizio.TabIndex = 12;
-            this.BPCostoServizio.Text = "Costo Servizio";
-            this.BPCostoServizio.Enter += new System.EventHandler(this.BPCostoServizio_Enter);
-            this.BPCostoServizio.Leave += new System.EventHandler(this.BPCostoServizio_Leave);
-            // 
-            // BPNomeSocio
-            // 
-            this.BPNomeSocio.Location = new System.Drawing.Point(8, 39);
-            this.BPNomeSocio.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.BPNomeSocio.Name = "BPNomeSocio";
-            this.BPNomeSocio.Size = new System.Drawing.Size(235, 22);
-            this.BPNomeSocio.TabIndex = 11;
-            this.BPNomeSocio.Text = "Nome Socio";
-            this.BPNomeSocio.Enter += new System.EventHandler(this.BPNomeSocio_Enter);
-            this.BPNomeSocio.Leave += new System.EventHandler(this.BPNomeSocio_Leave);
-            // 
-            // BPPIVA
-            // 
-            this.BPPIVA.Location = new System.Drawing.Point(8, 7);
-            this.BPPIVA.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.BPPIVA.Name = "BPPIVA";
-            this.BPPIVA.Size = new System.Drawing.Size(235, 22);
-            this.BPPIVA.TabIndex = 10;
-            this.BPPIVA.Text = "Partita IVA";
-            this.BPPIVA.Enter += new System.EventHandler(this.BPPIVA_Enter);
-            this.BPPIVA.Leave += new System.EventHandler(this.BPPIVA_Leave);
-            // 
-            // AggiungiBusinessPartner
-            // 
-            this.AggiungiBusinessPartner.Location = new System.Drawing.Point(4, 167);
-            this.AggiungiBusinessPartner.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.AggiungiBusinessPartner.Name = "AggiungiBusinessPartner";
-            this.AggiungiBusinessPartner.Size = new System.Drawing.Size(239, 62);
-            this.AggiungiBusinessPartner.TabIndex = 9;
-            this.AggiungiBusinessPartner.Text = "Aggiungi Business Partner";
-            this.AggiungiBusinessPartner.UseVisualStyleBackColor = true;
-            this.AggiungiBusinessPartner.Click += new System.EventHandler(this.AggiungiBusinessPartner_Click);
-            // 
             // TabellaBusinessPartners
             // 
+            this.TabellaBusinessPartners.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabellaBusinessPartners.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaBusinessPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaBusinessPartners.Location = new System.Drawing.Point(5, 6);
+            this.TabellaBusinessPartners.Location = new System.Drawing.Point(3, 2);
             this.TabellaBusinessPartners.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabellaBusinessPartners.Name = "TabellaBusinessPartners";
             this.TabellaBusinessPartners.ReadOnly = true;
             this.TabellaBusinessPartners.RowHeadersWidth = 51;
             this.TabellaBusinessPartners.RowTemplate.Height = 24;
-            this.TabellaBusinessPartners.Size = new System.Drawing.Size(939, 482);
+            this.TabellaBusinessPartners.Size = new System.Drawing.Size(941, 486);
             this.TabellaBusinessPartners.TabIndex = 0;
             this.TabellaBusinessPartners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -734,6 +658,8 @@ namespace DatabaseProject
             // 
             // TabellaPercorsi
             // 
+            this.TabellaPercorsi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TabellaPercorsi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaPercorsi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaPercorsi.Location = new System.Drawing.Point(189, 6);
             this.TabellaPercorsi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -939,6 +865,7 @@ namespace DatabaseProject
             this.TabPage.Name = "TabPage";
             this.TabPage.SelectedIndex = 0;
             this.TabPage.Size = new System.Drawing.Size(959, 524);
+            this.TabPage.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.TabPage.TabIndex = 4;
             this.TabPage.Tag = "";
             this.TabPage.SelectedIndexChanged += new System.EventHandler(this.TabPage_SelectedIndexChanged);
@@ -1010,7 +937,7 @@ namespace DatabaseProject
             this.Servizi_DataFine.Location = new System.Drawing.Point(5, 36);
             this.Servizi_DataFine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Servizi_DataFine.Name = "Servizi_DataFine";
-            this.Servizi_DataFine.Size = new System.Drawing.Size(225, 22);
+            this.Servizi_DataFine.Size = new System.Drawing.Size(264, 22);
             this.Servizi_DataFine.TabIndex = 7;
             this.Servizi_DataFine.Text = "Data Fine (YYYY-MM-DD)";
             this.Servizi_DataFine.Enter += new System.EventHandler(this.Servizi_DataFine_Enter);
@@ -1062,7 +989,7 @@ namespace DatabaseProject
             this.Servizi_Calcola.Location = new System.Drawing.Point(4, 70);
             this.Servizi_Calcola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Servizi_Calcola.Name = "Servizi_Calcola";
-            this.Servizi_Calcola.Size = new System.Drawing.Size(226, 28);
+            this.Servizi_Calcola.Size = new System.Drawing.Size(265, 28);
             this.Servizi_Calcola.TabIndex = 2;
             this.Servizi_Calcola.Text = "Calcola";
             this.Servizi_Calcola.UseVisualStyleBackColor = true;
@@ -1073,7 +1000,7 @@ namespace DatabaseProject
             this.Servizi_DataInizio.Location = new System.Drawing.Point(5, 5);
             this.Servizi_DataInizio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Servizi_DataInizio.Name = "Servizi_DataInizio";
-            this.Servizi_DataInizio.Size = new System.Drawing.Size(225, 22);
+            this.Servizi_DataInizio.Size = new System.Drawing.Size(264, 22);
             this.Servizi_DataInizio.TabIndex = 1;
             this.Servizi_DataInizio.Text = "Data Inizio (YYYY-MM-DD)";
             this.Servizi_DataInizio.Enter += new System.EventHandler(this.Servizi_DataInizio_Enter);
@@ -1082,12 +1009,12 @@ namespace DatabaseProject
             // TabellaServizi
             // 
             this.TabellaServizi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaServizi.Location = new System.Drawing.Point(383, 4);
+            this.TabellaServizi.Location = new System.Drawing.Point(277, 4);
             this.TabellaServizi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TabellaServizi.Name = "TabellaServizi";
             this.TabellaServizi.RowHeadersWidth = 51;
             this.TabellaServizi.RowTemplate.Height = 24;
-            this.TabellaServizi.Size = new System.Drawing.Size(881, 610);
+            this.TabellaServizi.Size = new System.Drawing.Size(987, 610);
             this.TabellaServizi.TabIndex = 0;
             // 
             // ThisSedeID
@@ -1150,7 +1077,6 @@ namespace DatabaseProject
             this.Dipendenti.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaDipendenti)).EndInit();
             this.Business_Partners.ResumeLayout(false);
-            this.Business_Partners.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaBusinessPartners)).EndInit();
             this.Percorsi.ResumeLayout(false);
             this.Percorsi.PerformLayout();
@@ -1268,12 +1194,6 @@ namespace DatabaseProject
         private System.Windows.Forms.Label Servizio_PeriodoMedioBici;
         private System.Windows.Forms.Label Servizio_AccessorioTop;
         private System.Windows.Forms.Label Servizio_TagliaBiciTop;
-        private System.Windows.Forms.TextBox BPTipologia;
-        private System.Windows.Forms.TextBox BPTelefono;
-        private System.Windows.Forms.TextBox BPCostoServizio;
-        private System.Windows.Forms.TextBox BPNomeSocio;
-        private System.Windows.Forms.TextBox BPPIVA;
-        private Button AggiungiBusinessPartner;
     }
 }
 

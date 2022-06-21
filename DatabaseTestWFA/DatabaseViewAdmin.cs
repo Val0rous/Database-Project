@@ -177,12 +177,13 @@ namespace DatabaseProject
             this.NuovaTappa_IDtappa.ForeColor = Color.Gray;
             this.NuovaTappa_IDpercorso.ForeColor = Color.Gray;
 
-            
+            /*
             this.BPPIVA.ForeColor = Color.Gray;
             this.BPNomeSocio.ForeColor = Color.Gray;
             this.BPCostoServizio.ForeColor = Color.Gray;
             this.BPTelefono.ForeColor = Color.Gray;
             this.BPTipologia.ForeColor = Color.Gray;
+            */
 
             this.ThisSedeID.Text = "ID Sede: " + this.IDsede + "    P.IVA Agenzia: " + this.PIVAagenzia;
         }
@@ -868,106 +869,6 @@ namespace DatabaseProject
                     MessageBoxIcon.Error);
                 }
             });
-        }
-
-        private void BPPIVA_Enter(object sender, EventArgs e)
-        {
-            if (this.BPPIVA.Text.Equals("Partita IVA"))
-            {
-                this.BPPIVA.Text = "";
-            }
-            this.BPPIVA.ForeColor = Color.Black;
-            this.bp_PIVA = true;
-        }
-
-        private void BPPIVA_Leave(object sender, EventArgs e)
-        {
-            if (this.BPPIVA.Text.Equals(""))
-            {
-                this.BPPIVA.Text = "Partita IVA";
-                this.BPPIVA.ForeColor = Color.Gray;
-                this.bp_PIVA = false;
-            }
-        }
-
-        private void BPNomeSocio_Enter(object sender, EventArgs e)
-        {
-            if (this.BPNomeSocio.Text.Equals("Nome Socio"))
-            {
-                this.BPNomeSocio.Text = "";
-            }
-            this.BPNomeSocio.ForeColor = Color.Black;
-            this.bp_nomeSocio = true;
-        }
-
-        private void BPNomeSocio_Leave(object sender, EventArgs e)
-        {
-            if (this.BPNomeSocio.Text.Equals(""))
-            {
-                this.BPNomeSocio.Text = "Nome Socio";
-                this.BPNomeSocio.ForeColor = Color.Gray;
-                this.bp_nomeSocio = false;
-            }
-        }
-
-        private void BPCostoServizio_Enter(object sender, EventArgs e)
-        {
-            if (this.BPCostoServizio.Text.Equals("Costo Servizio"))
-            {
-                this.BPCostoServizio.Text = "";
-            }
-            this.BPCostoServizio.ForeColor = Color.Black;
-            this.bp_costoServizio = true;
-        }
-
-        private void BPCostoServizio_Leave(object sender, EventArgs e)
-        {
-            if (this.BPCostoServizio.Text.Equals(""))
-            {
-                this.BPCostoServizio.Text = "Costo Servizio";
-                this.BPCostoServizio.ForeColor = Color.Gray;
-                this.bp_costoServizio = false;
-            }
-        }
-
-        private void BPTelefono_Enter(object sender, EventArgs e)
-        {
-            if (this.BPTelefono.Text.Equals("Numero di Telefono"))
-            {
-                this.BPTelefono.Text = "";
-            }
-            this.BPTelefono.ForeColor = Color.Black;
-            this.bp_telefono = true;
-        }
-
-        private void BPTelefono_Leave(object sender, EventArgs e)
-        {
-            if (this.BPTelefono.Text.Equals(""))
-            {
-                this.BPTelefono.Text = "Numero di Telefono";
-                this.BPTelefono.ForeColor = Color.Gray;
-                this.bp_telefono = false;
-            }
-        }
-
-        private void BPTipologia_Enter(object sender, EventArgs e)
-        {
-            if (this.BPTipologia.Text.Equals("Tipologia"))
-            {
-                this.BPTipologia.Text = "";
-            }
-            this.BPTipologia.ForeColor = Color.Black;
-            this.bp_tipologia = true;
-        }
-
-        private void BPTipologia_Leave(object sender, EventArgs e)
-        {
-            if (this.BPTipologia.Text.Equals(""))
-            {
-                this.BPTipologia.Text = "Tipologia";
-                this.BPTipologia.ForeColor = Color.Gray;
-                this.bp_tipologia = false;
-            }
         }
 
         private void AggiungiBusinessPartner_Click(object sender, EventArgs e)
