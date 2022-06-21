@@ -105,6 +105,7 @@ namespace DatabaseProject
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelezioneSede";
             this.Text = "Agenzia di Cicloturismo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloseProgram);
             this.Load += new System.EventHandler(this.SelezioneSede_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

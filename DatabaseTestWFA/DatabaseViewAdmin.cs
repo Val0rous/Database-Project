@@ -1675,5 +1675,10 @@ namespace DatabaseProject
             TabellaDipendenti.Update();
             TabellaDipendenti.Refresh();
         }
+
+        private void CloseProgram(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -46,6 +46,8 @@ namespace DatabaseProject
             this.AggiungiTour = new System.Windows.Forms.Button();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
             this.Dipendenti = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Dipendenti_StipendioMedio = new System.Windows.Forms.Label();
             this.DipendentiAgenzia = new System.Windows.Forms.Button();
             this.Dipendente_isAltro = new System.Windows.Forms.CheckBox();
             this.Dipendente_isTourManager = new System.Windows.Forms.CheckBox();
@@ -113,8 +115,6 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
-            this.Dipendenti_StipendioMedio = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             this.Dipendenti.SuspendLayout();
@@ -309,6 +309,24 @@ namespace DatabaseProject
             this.Dipendenti.Text = "Dipendenti";
             this.Dipendenti.UseVisualStyleBackColor = true;
             this.Dipendenti.Click += new System.EventHandler(this.Dipendenti_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(0, 458);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Stipendio medio";
+            // 
+            // Dipendenti_StipendioMedio
+            // 
+            this.Dipendenti_StipendioMedio.AutoSize = true;
+            this.Dipendenti_StipendioMedio.Location = new System.Drawing.Point(132, 458);
+            this.Dipendenti_StipendioMedio.Name = "Dipendenti_StipendioMedio";
+            this.Dipendenti_StipendioMedio.Size = new System.Drawing.Size(14, 17);
+            this.Dipendenti_StipendioMedio.TabIndex = 22;
+            this.Dipendenti_StipendioMedio.Text = "x";
             // 
             // DipendentiAgenzia
             // 
@@ -1024,7 +1042,7 @@ namespace DatabaseProject
             this.TabellaServizi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaServizi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaServizi.Location = new System.Drawing.Point(277, 4);
-            this.TabellaServizi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabellaServizi.Margin = new System.Windows.Forms.Padding(4);
             this.TabellaServizi.Name = "TabellaServizi";
             this.TabellaServizi.RowHeadersWidth = 51;
             this.TabellaServizi.RowTemplate.Height = 24;
@@ -1070,24 +1088,6 @@ namespace DatabaseProject
             // 
             this.magazzinoTableAdapter.ClearBeforeFill = true;
             // 
-            // Dipendenti_StipendioMedio
-            // 
-            this.Dipendenti_StipendioMedio.AutoSize = true;
-            this.Dipendenti_StipendioMedio.Location = new System.Drawing.Point(132, 458);
-            this.Dipendenti_StipendioMedio.Name = "Dipendenti_StipendioMedio";
-            this.Dipendenti_StipendioMedio.Size = new System.Drawing.Size(14, 17);
-            this.Dipendenti_StipendioMedio.TabIndex = 22;
-            this.Dipendenti_StipendioMedio.Text = "x";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(0, 458);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 17);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Stipendio medio";
-            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1101,6 +1101,7 @@ namespace DatabaseProject
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DatabaseViewAdmin";
             this.Text = "Agenzia di Cicloturismo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloseProgram);
             this.Load += new System.EventHandler(this.DatabaseViewAdmin_Load);
             this.Tour.ResumeLayout(false);
             this.Tour.PerformLayout();
