@@ -152,8 +152,8 @@ namespace DatabaseProject
             this.TourCFManager.ForeColor = Color.Gray;
             //this.Tour_IDsede.ForeColor = Color.Gray;
 
-            this.Prenotazioni_CFcliente.ForeColor = Color.Gray;
-            this.Prenotazioni_IDtour.ForeColor = Color.Gray;
+            //this.Prenotazioni_CFcliente.ForeColor = Color.Gray;
+            //this.Prenotazioni_IDtour.ForeColor = Color.Gray;
 
             this.Servizi_DataInizio.ForeColor = Color.Gray;
             this.Servizi_DataFine.ForeColor = Color.Gray;
