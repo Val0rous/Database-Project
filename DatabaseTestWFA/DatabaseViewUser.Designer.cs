@@ -41,6 +41,8 @@ namespace DatabaseProject
             this.TourID = new System.Windows.Forms.TextBox();
             this.TourButton = new System.Windows.Forms.Button();
             this.TabellaTour = new System.Windows.Forms.DataGridView();
+            this.Clienti_StoricoServizi = new System.Windows.Forms.TabPage();
+            this.Tabella_StoricoServiziCliente = new System.Windows.Forms.DataGridView();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.ClienteCF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,18 +52,16 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet();
             this.clienteTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSetTableAdapters.clienteTableAdapter();
             this.prenotazioneTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet1TableAdapters.prenotazioneTableAdapter();
-            this.Clienti_StoricoServizi = new System.Windows.Forms.TabPage();
-            this.Tabella_StoricoServiziCliente = new System.Windows.Forms.DataGridView();
             this.TabPage.SuspendLayout();
             this.Pacchetti.SuspendLayout();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
+            this.Clienti_StoricoServizi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).BeginInit();
-            this.Clienti_StoricoServizi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -173,6 +173,8 @@ namespace DatabaseProject
             // 
             // TabellaTour
             // 
+            this.TabellaTour.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.TabellaTour.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TabellaTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TabellaTour.Location = new System.Drawing.Point(5, 6);
             this.TabellaTour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -182,6 +184,28 @@ namespace DatabaseProject
             this.TabellaTour.RowTemplate.Height = 24;
             this.TabellaTour.Size = new System.Drawing.Size(756, 305);
             this.TabellaTour.TabIndex = 0;
+            // 
+            // Clienti_StoricoServizi
+            // 
+            this.Clienti_StoricoServizi.Controls.Add(this.Tabella_StoricoServiziCliente);
+            this.Clienti_StoricoServizi.Location = new System.Drawing.Point(4, 25);
+            this.Clienti_StoricoServizi.Name = "Clienti_StoricoServizi";
+            this.Clienti_StoricoServizi.Size = new System.Drawing.Size(779, 364);
+            this.Clienti_StoricoServizi.TabIndex = 5;
+            this.Clienti_StoricoServizi.Text = "Storico servizi";
+            this.Clienti_StoricoServizi.UseVisualStyleBackColor = true;
+            // 
+            // Tabella_StoricoServiziCliente
+            // 
+            this.Tabella_StoricoServiziCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.Tabella_StoricoServiziCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.Tabella_StoricoServiziCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Tabella_StoricoServiziCliente.Location = new System.Drawing.Point(3, 3);
+            this.Tabella_StoricoServiziCliente.Name = "Tabella_StoricoServiziCliente";
+            this.Tabella_StoricoServiziCliente.RowHeadersWidth = 51;
+            this.Tabella_StoricoServiziCliente.RowTemplate.Height = 24;
+            this.Tabella_StoricoServiziCliente.Size = new System.Drawing.Size(773, 361);
+            this.Tabella_StoricoServiziCliente.TabIndex = 0;
             // 
             // RefreshButton
             // 
@@ -247,26 +271,6 @@ namespace DatabaseProject
             // 
             this.prenotazioneTableAdapter.ClearBeforeFill = true;
             // 
-            // Clienti_StoricoServizi
-            // 
-            this.Clienti_StoricoServizi.Controls.Add(this.Tabella_StoricoServiziCliente);
-            this.Clienti_StoricoServizi.Location = new System.Drawing.Point(4, 25);
-            this.Clienti_StoricoServizi.Name = "Clienti_StoricoServizi";
-            this.Clienti_StoricoServizi.Size = new System.Drawing.Size(779, 364);
-            this.Clienti_StoricoServizi.TabIndex = 5;
-            this.Clienti_StoricoServizi.Text = "Storico servizi";
-            this.Clienti_StoricoServizi.UseVisualStyleBackColor = true;
-            // 
-            // Tabella_StoricoServiziCliente
-            // 
-            this.Tabella_StoricoServiziCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Tabella_StoricoServiziCliente.Location = new System.Drawing.Point(3, 3);
-            this.Tabella_StoricoServiziCliente.Name = "Tabella_StoricoServiziCliente";
-            this.Tabella_StoricoServiziCliente.RowHeadersWidth = 51;
-            this.Tabella_StoricoServiziCliente.RowTemplate.Height = 24;
-            this.Tabella_StoricoServiziCliente.Size = new System.Drawing.Size(773, 361);
-            this.Tabella_StoricoServiziCliente.TabIndex = 0;
-            // 
             // DatabaseViewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,12 +293,12 @@ namespace DatabaseProject
             this.Tour.ResumeLayout(false);
             this.Tour.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).EndInit();
+            this.Clienti_StoricoServizi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionale_per_agenzie_relDataSet)).EndInit();
-            this.Clienti_StoricoServizi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Tabella_StoricoServiziCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
