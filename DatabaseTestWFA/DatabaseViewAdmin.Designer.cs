@@ -58,7 +58,6 @@ namespace DatabaseProject
             this.AggiungiDipendente = new System.Windows.Forms.Button();
             this.TabellaDipendenti = new System.Windows.Forms.DataGridView();
             this.Business_Partners = new System.Windows.Forms.TabPage();
-            this.AggiungiBusinessPartner = new System.Windows.Forms.Button();
             this.TabellaBusinessPartners = new System.Windows.Forms.DataGridView();
             this.Percorsi = new System.Windows.Forms.TabPage();
             this.AggiungiTappa = new System.Windows.Forms.Button();
@@ -111,6 +110,7 @@ namespace DatabaseProject
             this.gestionale_per_agenzie_relDataSet3 = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3();
             this.magazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazzinoTableAdapter = new DatabaseTestWFA.gestionale_per_agenzie_relDataSet3TableAdapters.magazzinoTableAdapter();
+            this.DipendentiAgenzia = new System.Windows.Forms.Button();
             this.Tour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabellaTour)).BeginInit();
             this.Dipendenti.SuspendLayout();
@@ -278,6 +278,7 @@ namespace DatabaseProject
             // 
             // Dipendenti
             // 
+            this.Dipendenti.Controls.Add(this.DipendentiAgenzia);
             this.Dipendenti.Controls.Add(this.Dipendente_isAltro);
             this.Dipendenti.Controls.Add(this.Dipendente_isTourManager);
             this.Dipendenti.Controls.Add(this.Dipendente_isGuida);
@@ -448,7 +449,6 @@ namespace DatabaseProject
             // 
             // Business_Partners
             // 
-            this.Business_Partners.Controls.Add(this.AggiungiBusinessPartner);
             this.Business_Partners.Controls.Add(this.TabellaBusinessPartners);
             this.Business_Partners.Location = new System.Drawing.Point(4, 22);
             this.Business_Partners.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -459,27 +459,16 @@ namespace DatabaseProject
             this.Business_Partners.Text = "Business Partners";
             this.Business_Partners.UseVisualStyleBackColor = true;
             // 
-            // AggiungiBusinessPartner
-            // 
-            this.AggiungiBusinessPartner.Location = new System.Drawing.Point(2, 119);
-            this.AggiungiBusinessPartner.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.AggiungiBusinessPartner.Name = "AggiungiBusinessPartner";
-            this.AggiungiBusinessPartner.Size = new System.Drawing.Size(134, 41);
-            this.AggiungiBusinessPartner.TabIndex = 9;
-            this.AggiungiBusinessPartner.Text = "Aggiungi Business Partner";
-            this.AggiungiBusinessPartner.UseVisualStyleBackColor = true;
-            this.AggiungiBusinessPartner.Click += new System.EventHandler(this.AggiungiBusinessPartner_Click);
-            // 
             // TabellaBusinessPartners
             // 
             this.TabellaBusinessPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabellaBusinessPartners.Location = new System.Drawing.Point(142, 5);
+            this.TabellaBusinessPartners.Location = new System.Drawing.Point(4, 5);
             this.TabellaBusinessPartners.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TabellaBusinessPartners.Name = "TabellaBusinessPartners";
             this.TabellaBusinessPartners.ReadOnly = true;
             this.TabellaBusinessPartners.RowHeadersWidth = 51;
             this.TabellaBusinessPartners.RowTemplate.Height = 24;
-            this.TabellaBusinessPartners.Size = new System.Drawing.Size(566, 392);
+            this.TabellaBusinessPartners.Size = new System.Drawing.Size(704, 392);
             this.TabellaBusinessPartners.TabIndex = 0;
             this.TabellaBusinessPartners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -1049,6 +1038,17 @@ namespace DatabaseProject
             // 
             this.magazzinoTableAdapter.ClearBeforeFill = true;
             // 
+            // DipendentiAgenzia
+            // 
+            this.DipendentiAgenzia.Location = new System.Drawing.Point(5, 358);
+            this.DipendentiAgenzia.Margin = new System.Windows.Forms.Padding(2);
+            this.DipendentiAgenzia.Name = "DipendentiAgenzia";
+            this.DipendentiAgenzia.Size = new System.Drawing.Size(134, 38);
+            this.DipendentiAgenzia.TabIndex = 22;
+            this.DipendentiAgenzia.Text = "Mostra Dipendenti Agenzia";
+            this.DipendentiAgenzia.UseVisualStyleBackColor = true;
+            this.DipendentiAgenzia.Click += new System.EventHandler(this.DipendentiAgenzia_Click);
+            // 
             // DatabaseViewAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1120,7 +1120,6 @@ namespace DatabaseProject
         private System.Windows.Forms.Button AggiungiDipendente;
         private System.Windows.Forms.DataGridView TabellaDipendenti;
         private System.Windows.Forms.TabPage Business_Partners;
-        private System.Windows.Forms.Button AggiungiBusinessPartner;
         private System.Windows.Forms.DataGridView TabellaBusinessPartners;
         private System.Windows.Forms.TabPage Percorsi;
         private System.Windows.Forms.TextBox Percorsi_IDsede;
@@ -1187,6 +1186,7 @@ namespace DatabaseProject
         private System.Windows.Forms.Label Servizio_PeriodoMedioBici;
         private System.Windows.Forms.Label Servizio_AccessorioTop;
         private System.Windows.Forms.Label Servizio_TagliaBiciTop;
+        private System.Windows.Forms.Button DipendentiAgenzia;
     }
 }
 

@@ -241,6 +241,11 @@ namespace DatabaseProject
                 TabellaTour.Refresh();
                 this.Tour_ID.Text = queries.GetNextID("tour", "IDtour");
             }
+            else if (this.TabPage.SelectedTab.Text == "Dipendenti")
+            {
+                FillTable(TabellaDipendenti, queries.LeggiDipendenti(this.IDsede).CommandText, connection.Connection);
+                this.Dipendenti_CodiceDipendente.Text = queries.GetNextID("dipendente", "CodiceDipendente");
+            }
             else if (this.TabPage.SelectedTab.Text == "Percorsi")
             {
                 TabellaPercorsi.Update();
@@ -1727,6 +1732,14 @@ namespace DatabaseProject
                  MessageBoxButtons.OK,
                  MessageBoxIcon.Error);
             }
+        }
+
+        private void DipendentiAgenzia_Click(object sender, EventArgs e)
+        {
+            var connection = new CreateConnection();
+            connection.Connection.Open();
+            var queries = new QueryLibrary(connection.Connection);
+            FillTable(TabellaDipendenti, queries.LeggiDipendentiAgenzia(this.PIVAagenzia).CommandText, connection.Connection);
         }
     }
 }
