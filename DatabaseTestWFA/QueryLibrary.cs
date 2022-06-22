@@ -135,7 +135,7 @@ namespace DatabaseProject
                 return false;
             }
         }
-        public bool InserisciPercorso(String IDpercorso, String Difficolta, int NumTappe, float LunghezzaPercorso, String IDsede)
+        public bool InserisciPercorso(String IDpercorso, String Difficolta, String Nome, int NumTappe, float LunghezzaPercorso, String IDsede)
         {
             MySqlCommand command = this.Connection.CreateCommand();
             command.Parameters.AddWithValue("@IDpercorso", IDpercorso);
@@ -143,8 +143,9 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@NumTappe", NumTappe);
             command.Parameters.AddWithValue("@LunghezzaPercorso", LunghezzaPercorso);
             command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.CommandText = "INSERT INTO percorso (IDpercorso, Difficolta, NumTappe, LunghezzaPercorso, IDsede) " +
-                "VALUES (@IDpercorso, @Difficolta, @NumTappe, @LunghezzaPercorso, @IDsede)";
+            command.Parameters.AddWithValue("@Nome", Nome);
+            command.CommandText = "INSERT INTO percorso (IDpercorso, Difficolta, Nome, NumTappe, LunghezzaPercorso, IDsede) " +
+                "VALUES (@IDpercorso, @Difficolta, @Nome, @NumTappe, @LunghezzaPercorso, @IDsede)";
             try
             {
                 if (command.ExecuteNonQuery() > 0) return true;
@@ -483,7 +484,7 @@ namespace DatabaseProject
             command.Parameters.AddWithValue("@IDmagazzino", IDmagazzino);
             command.Parameters.AddWithValue("@IDIndirizzo", IDIndirizzo);
             command.Parameters.AddWithValue("@IDsede", IDsede);
-            command.CommandText = "INSERT INTO magazzino (CapienzaMassimaAccessori, CapienzaMassimaBici, IDmagazzino, IDInidirizzo, IDsede) " +
+            command.CommandText = "INSERT INTO magazzino (CapienzaMassimaAccessori, CapienzaMassimaBici, IDmagazzino, IDIndirizzo, IDsede) " +
                 "VALUES (@CapienzaMassimaAccessori, @CapienzaMassimaBici, @IDmagazzino, @IDIndirizzo, @IDsede)";
             try
             {

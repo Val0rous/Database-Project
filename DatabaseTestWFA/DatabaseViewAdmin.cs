@@ -636,8 +636,8 @@ namespace DatabaseProject
             bool condition = this.magazzino_capMaxAccessori && this.magazzino_capMaxBici && this.magazzino_IDmagazzino && this.magazzino_IDindirizzo && this.magazzino_IDsede;
             ExecuteQueryIf(condition, q => {
                 var result = q.InserisciMagazzino(
-                        int.Parse(this.Magazzini_CapMaxAccessori.Text),
-                        int.Parse(this.Magazzini_CapMaxBici.Text),
+                        long.Parse(this.Magazzini_CapMaxAccessori.Text),
+                        long.Parse(this.Magazzini_CapMaxBici.Text),
                         this.Magazzini_IDmagazzino.Text,
                         this.Magazzini_IDindirizzo.Text,
                         this.Magazzini_IDsede.Text);
@@ -829,6 +829,7 @@ namespace DatabaseProject
                 var result = q.InserisciPercorso(
                         this.Percorsi_IDpercorso.Text,
                         this.Percorsi_Difficolta.Text,
+                        this.Percorsi_Nome.Text,
                         int.Parse(this.Percorsi_NumTappe.Text),
                         float.Parse(this.Percorsi_Lunghezza.Text),
                         this.Percorsi_IDsede.Text);
@@ -1085,7 +1086,7 @@ namespace DatabaseProject
                 MessageBoxIcon.Warning);
             }*/
             bool condition = this.dipendente_nome && this.dipendente_cognome && this.dipendente_CF && this.dipendente_telefono
-               && this.dipendente_stipendio && this.dipendente_codiceDipendente;
+               && this.dipendente_stipendio /*&& this.dipendente_codiceDipendente*/;
             ExecuteQueryIf(condition, q => {
                 var result = q.InserisciDipendente(Dipendenti_Nome.Text, Dipendenti_Cognome.Text, Dipendenti_CF.Text, Dipendenti_Telefono.Text,
                         Dipendenti_CodiceDipendente.Text, float.Parse(Dipendenti_Stipendio.Text), Convert.ToByte(Dipendente_isGuida.Checked),
